@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>СтройПодряд | Профессиональный монтаж сантехники</title>
+    <meta name="description" content="СтройПодряд — монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 5 лет. ☎ +7(977) 325-27-28">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,6 +45,15 @@
         .steps-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
         .step { background: white; padding: 25px; border-radius: 20px; text-align: center; flex: 1; min-width: 180px; border: 1px solid #edf2f7; }
         .step-number { width: 50px; height: 50px; background: #e67e22; color: white; font-size: 1.5rem; font-weight: bold; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; }
+        
+        /* Сертификаты */
+        .certificates-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 30px; }
+        .cert-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid #edf2f7; text-align: center; padding: 20px; transition: 0.3s; cursor: pointer; }
+        .cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-color: #e67e22; }
+        .cert-icon { font-size: 60px; color: #e67e22; margin-bottom: 15px; }
+        .cert-card h4 { margin-bottom: 10px; color: #1e4660; }
+        .cert-card p { font-size: 0.85rem; color: #666; }
+        
         .cta-section { background: #1e4660; color: white; border-radius: 30px; padding: 50px; text-align: center; }
         .cta-form { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 25px; }
         .cta-form input { padding: 12px 20px; border-radius: 30px; border: none; width: 250px; }
@@ -56,7 +66,7 @@
         .chat-button { position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px; background: #e67e22; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; }
         .chat-button i { color: white; font-size: 24px; }
         
-        /* Стили для модального окна калькулятора */
+        /* Модальное окно калькулятора */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -72,10 +82,7 @@
             opacity: 0;
             transition: 0.3s;
         }
-        .modal-overlay.active {
-            visibility: visible;
-            opacity: 1;
-        }
+        .modal-overlay.active { visibility: visible; opacity: 1; }
         .modal-window {
             background: white;
             border-radius: 30px;
@@ -83,12 +90,6 @@
             width: 90%;
             max-height: 90vh;
             overflow-y: auto;
-            position: relative;
-            animation: modalSlideIn 0.3s ease;
-        }
-        @keyframes modalSlideIn {
-            from { transform: translateY(-30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
         }
         .modal-header {
             background: linear-gradient(135deg, #1e4660, #2c5a6e);
@@ -97,37 +98,14 @@
             border-radius: 30px 30px 0 0;
             display: flex;
             justify-content: space-between;
-            align-items: center;
         }
-        .modal-header h3 { margin: 0; font-size: 1.4rem; }
-        .modal-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-            line-height: 1;
-        }
+        .modal-close { background: none; border: none; color: white; font-size: 28px; cursor: pointer; }
         .modal-body { padding: 25px; }
         .calc-field { margin-bottom: 20px; }
-        .calc-field label { display: block; margin-bottom: 8px; font-weight: bold; color: #2c3e50; }
-        .calc-field select, .calc-field input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            font-size: 1rem;
-        }
-        .calc-result {
-            background: #fef5e8;
-            padding: 20px;
-            border-radius: 16px;
-            text-align: center;
-            margin: 20px 0;
-        }
-        .calc-result .price { font-size: 2rem; font-weight: bold; color: #e67e22; margin: 10px 0; }
-        .calc-note { font-size: 0.8rem; color: #666; text-align: center; margin-top: 15px; }
-        .modal-btn { width: 100%; margin-top: 10px; }
+        .calc-field label { display: block; margin-bottom: 8px; font-weight: bold; }
+        .calc-field select, .calc-field input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 12px; }
+        .calc-result { background: #fef5e8; padding: 20px; border-radius: 16px; text-align: center; margin: 20px 0; }
+        .calc-result .price { font-size: 2rem; font-weight: bold; color: #e67e22; }
         
         @media (max-width: 768px) { .navbar { flex-direction: column; gap: 15px; } .stats-grid { grid-template-columns: 1fr 1fr; } .hero-content h1 { font-size: 1.8rem; } }
     </style>
@@ -142,6 +120,7 @@
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="#uslugi">Услуги</a></li>
                 <li><a href="blog.html">Статьи</a></li>
+                <li><a href="#certificates">Сертификаты</a></li>
                 <li><a href="#kontakty">Контакты</a></li>
             </ul>
             <a href="tel:+79773252728" class="header-phone"><i class="fas fa-phone-alt"></i> +7 (977) 325-27-28</a>
@@ -195,6 +174,35 @@
     </div>
 </div>
 
+<!-- Блок с сертификатами -->
+<section id="certificates">
+    <div class="container">
+        <h2 class="section-title">Наши сертификаты и лицензии</h2>
+        <div class="certificates-grid">
+            <div class="cert-card" onclick="alert('Сертификат СРО — подтверждение квалификации')">
+                <div class="cert-icon"><i class="fas fa-scroll"></i></div>
+                <h4>Сертификат СРО</h4>
+                <p>Допуск к работам особой сложности</p>
+            </div>
+            <div class="cert-card" onclick="alert('Лицензия МЧС — монтаж систем пожаротушения')">
+                <div class="cert-icon"><i class="fas fa-fire-extinguisher"></i></div>
+                <h4>Лицензия МЧС</h4>
+                <p>Монтаж систем пожаротушения</p>
+            </div>
+            <div class="cert-card" onclick="alert('ISO 9001 — международный стандарт качества')">
+                <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                <h4>ISO 9001</h4>
+                <p>Международный стандарт качества</p>
+            </div>
+            <div class="cert-card" onclick="alert('Сертификаты на оборудование Grundfos, Wilo, Rehau')">
+                <div class="cert-icon"><i class="fas fa-tools"></i></div>
+                <h4>Сертификаты производителей</h4>
+                <p>Официальный партнер ведущих брендов</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="etapy">
     <div class="container">
         <h2 class="section-title">Как мы работаем</h2>
@@ -212,12 +220,16 @@
         <div class="cta-section">
             <h2>Нужен качественный сантехмонтаж?</h2>
             <p>Оставьте заявку — получите бесплатную консультацию</p>
-            <form class="cta-form" id="callbackForm">
-                <input type="text" placeholder="Ваше имя" id="userName" required>
-                <input type="tel" placeholder="Номер телефона" id="userPhone" required>
-                <input type="text" placeholder="Тип объекта">
+            <form class="cta-form" id="callbackForm" action="https://formsubmit.co/stroypodryad50@ya.ru" method="POST">
+                <input type="hidden" name="_subject" value="Новая заявка с сайта СтройПодряд">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://stroypodryad50.github.io/thanks.html">
+                <input type="text" name="Имя" placeholder="Ваше имя" id="userName" required>
+                <input type="tel" name="Телефон" placeholder="Номер телефона" id="userPhone" required>
+                <input type="text" name="Тип объекта" placeholder="Тип объекта">
                 <button type="submit">Отправить</button>
             </form>
+            <p style="margin-top: 15px; font-size: 0.85rem;"><i class="fas fa-lock"></i> Ваши данные защищены</p>
         </div>
     </div>
 </section>
@@ -230,6 +242,7 @@
                 <a href="index.html">Главная</a>
                 <a href="#uslugi">Услуги</a>
                 <a href="blog.html">Статьи</a>
+                <a href="#certificates">Сертификаты</a>
                 <a href="#kontakty">Контакты</a>
             </div>
             <div><p><i class="fas fa-phone"></i> +7 (977) 325-27-28</p><p><i class="fas fa-envelope"></i> stroypodryad50@ya.ru</p></div>
@@ -249,7 +262,7 @@
         </div>
         <div class="modal-body">
             <div class="calc-field">
-                <label><i class="fas fa-building"></i> Тип объекта</label>
+                <label>Тип объекта</label>
                 <select id="calcObjectType">
                     <option value="tech">Техническое помещение / Котельная</option>
                     <option value="house" selected>Частный дом / Коттедж</option>
@@ -257,11 +270,11 @@
                 </select>
             </div>
             <div class="calc-field">
-                <label><i class="fas fa-vector-square"></i> Площадь объекта (м²)</label>
+                <label>Площадь объекта (м²)</label>
                 <input type="number" id="calcArea" value="100" min="10" max="500">
             </div>
             <div class="calc-field">
-                <label><i class="fas fa-tasks"></i> Вид работ</label>
+                <label>Вид работ</label>
                 <select id="calcWorkType">
                     <option value="full">Полный комплекс (вода + отопление + канализация)</option>
                     <option value="water">Только водоснабжение</option>
@@ -275,9 +288,6 @@
                 <p style="font-size:0.85rem;">*Точная стоимость после выезда специалиста</p>
             </div>
             <button class="btn btn-primary modal-btn" id="calcRequestBtn">Записаться на замер</button>
-            <div class="calc-note">
-                <i class="fas fa-phone"></i> Или позвоните: +7 (977) 325-27-28
-            </div>
         </div>
     </div>
 </div>
@@ -288,23 +298,12 @@
         const objectType = document.getElementById('calcObjectType').value;
         const area = parseInt(document.getElementById('calcArea').value) || 100;
         const workType = document.getElementById('calcWorkType').value;
-        
-        let basePrice = 0;
-        if (objectType === 'tech') basePrice = 1800;
-        else if (objectType === 'house') basePrice = 2200;
-        else basePrice = 2000;
-        
-        let multiplier = 1;
-        if (workType === 'water') multiplier = 0.4;
-        else if (workType === 'heating') multiplier = 0.35;
-        else if (workType === 'sewage') multiplier = 0.25;
-        
+        let basePrice = objectType === 'tech' ? 1800 : (objectType === 'house' ? 2200 : 2000);
+        let multiplier = workType === 'full' ? 1 : (workType === 'water' ? 0.4 : (workType === 'heating' ? 0.35 : 0.25));
         let total = Math.round(basePrice * area * multiplier);
         total = Math.max(total, 15000);
-        
         document.getElementById('calcPriceDisplay').innerHTML = `от ${total.toLocaleString()} ₽`;
     }
-    
     document.getElementById('calcObjectType').addEventListener('change', updateCalculatorPrice);
     document.getElementById('calcArea').addEventListener('input', updateCalculatorPrice);
     document.getElementById('calcWorkType').addEventListener('change', updateCalculatorPrice);
@@ -312,37 +311,10 @@
     
     // Модальное окно
     const modal = document.getElementById('calculatorModal');
-    const openBtn = document.getElementById('openCalculatorBtn');
-    const closeBtn = document.getElementById('closeModalBtn');
-    
-    openBtn.addEventListener('click', () => {
-        modal.classList.add('active');
-        updateCalculatorPrice();
-    });
-    
-    closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-    });
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-        }
-    });
-    
-    document.getElementById('calcRequestBtn').addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
-    });
-    
-    // Форма обратной связи
-    document.getElementById('callbackForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('userName').value.trim();
-        const phone = document.getElementById('userPhone').value.trim();
-        if(name && phone) { alert(`Спасибо, ${name}! Мы свяжемся с вами по номеру ${phone}`); this.reset(); }
-        else alert('Заполните имя и телефон');
-    });
+    document.getElementById('openCalculatorBtn').addEventListener('click', () => { modal.classList.add('active'); updateCalculatorPrice(); });
+    document.getElementById('closeModalBtn').addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+    document.getElementById('calcRequestBtn').addEventListener('click', () => { modal.classList.remove('active'); document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' }); });
     
     // Чат
     document.getElementById('chatButton').addEventListener('click', () => alert('Здравствуйте! Наш специалист скоро ответит. Или позвоните +7(977)325-27-28'));
