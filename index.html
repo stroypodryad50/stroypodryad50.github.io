@@ -360,71 +360,100 @@
         
         /* Маркиз - опросник */
         .marquiz-container {
+            max-width: 580px;
+            margin: 0 auto;
             background: white;
             border-radius: 28px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             overflow: hidden;
-            max-width: 700px;
-            margin: 0 auto;
-            border: 1px solid #edf2f7;
         }
         
         .marquiz-step {
             padding: 40px 35px;
+            transition: all 0.4s ease;
+            animation: fadeSlide 0.4s ease;
         }
         
-        .marquiz-header {
-            text-align: center;
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .step-progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 30px;
         }
         
-        .marquiz-icon {
-            font-size: 48px;
-            color: #e67e22;
-            margin-bottom: 15px;
+        .step-dots {
+            display: flex;
+            gap: 8px;
         }
         
-        .marquiz-header h3 {
-            font-size: 1.6rem;
+        .step-dots .dot {
+            width: 8px;
+            height: 8px;
+            background: #ddd;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .step-dots .dot.active {
+            background: #e67e22;
+            width: 20px;
+            border-radius: 10px;
+        }
+        
+        .step-label {
+            font-size: 0.8rem;
+            color: #999;
+        }
+        
+        .marquiz-step h3 {
+            font-size: 1.5rem;
             color: #1e4660;
-            margin-bottom: 8px;
+            margin-bottom: 25px;
+            font-weight: 600;
         }
         
-        .marquiz-header p {
-            color: #666;
-            font-size: 1rem;
-        }
-        
-        .marquiz-options {
+        .options-list {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
         
-        .marquiz-option {
+        .option-item {
             display: flex;
             align-items: center;
             gap: 15px;
-            padding: 14px 20px;
+            padding: 14px 18px;
             border: 2px solid #edf2f7;
             border-radius: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
         
-        .marquiz-option:hover {
+        .option-item:hover {
             border-color: #e67e22;
             background: #fef5e8;
+            transform: translateX(5px);
         }
         
-        .marquiz-option.selected {
+        .option-item.selected {
             border-color: #e67e22;
             background: #fef5e8;
             position: relative;
         }
         
-        .marquiz-option.selected::after {
+        .option-item.selected::after {
             content: '✓';
             position: absolute;
             right: 20px;
@@ -433,76 +462,78 @@
             font-weight: bold;
         }
         
-        .marquiz-option i {
+        .option-item i {
             font-size: 22px;
             color: #e67e22;
-            width: 35px;
+            width: 32px;
         }
         
-        .marquiz-option span {
+        .option-item span {
             font-size: 1rem;
             color: #2c3e50;
         }
         
-        .marquiz-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .marquiz-step-number {
-            color: #666;
-            font-size: 0.85rem;
-        }
-        
-        .marquiz-buttons {
-            display: flex;
-            gap: 12px;
-        }
-        
-        .marquiz-next, .marquiz-submit {
+        .next-btn, .submit-btn {
+            width: 100%;
             background: #e67e22;
             color: white;
             border: none;
-            padding: 10px 28px;
+            padding: 14px;
             border-radius: 40px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
         
-        .marquiz-next:disabled {
+        .next-btn:disabled {
             background: #ccc;
             cursor: not-allowed;
         }
         
-        .marquiz-next:not(:disabled):hover,
-        .marquiz-submit:hover {
+        .next-btn:not(:disabled):hover,
+        .submit-btn:hover {
             background: #d35400;
             transform: translateY(-2px);
         }
         
-        .marquiz-back {
+        .back-btn {
             background: transparent;
             border: 2px solid #e67e22;
             color: #e67e22;
-            padding: 10px 28px;
+            padding: 12px;
             border-radius: 40px;
             font-size: 0.9rem;
             font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 12px;
         }
         
-        .marquiz-back:hover {
+        .back-btn:hover {
             background: #e67e22;
             color: white;
         }
         
-        .marquiz-cookie {
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        
+        .button-group .back-btn {
+            width: auto;
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        .button-group .next-btn,
+        .button-group .submit-btn {
+            flex: 2;
+        }
+        
+        .cookie-check {
             display: flex;
             align-items: center;
             gap: 10px;
@@ -511,24 +542,26 @@
             color: #666;
         }
         
-        .marquiz-cookie input {
+        .cookie-check input {
             width: 16px;
             height: 16px;
         }
         
-        #marquizForm input {
+        .marquiz-form input {
             width: 100%;
-            padding: 12px 16px;
-            margin-bottom: 12px;
+            padding: 14px 16px;
+            margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 12px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             box-sizing: border-box;
+            transition: all 0.3s ease;
         }
         
-        #marquizForm input:focus {
+        .marquiz-form input:focus {
             outline: none;
             border-color: #e67e22;
+            box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
         }
         
         /* Price Table */
@@ -883,20 +916,16 @@
                 font-size: 1.8rem;
             }
             .marquiz-step {
-                padding: 25px 20px;
+                padding: 30px 20px;
             }
-            .marquiz-header h3 {
+            .marquiz-step h3 {
                 font-size: 1.3rem;
             }
-            .marquiz-option span {
+            .option-item span {
                 font-size: 0.85rem;
             }
-            .marquiz-footer {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .marquiz-buttons {
-                justify-content: center;
+            .step-progress {
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -946,109 +975,112 @@
     </div>
 </section>
 
-<!-- Маркиз - опросник -->
-<section style="background: #f8fafc; padding: 40px 0;">
+<!-- Маркиз - опросник (4 вопроса, анимации, узкий дизайн) -->
+<section style="background: #f8fafc; padding: 60px 0;">
     <div class="container">
+        <div style="text-align: center; margin-bottom: 35px;">
+            <h2 style="font-size: 2rem; color: #1e4660; margin-bottom: 10px;">Создай свой маркиз</h2>
+            <p style="color: #666;">Поможем подобрать идеальное решение для вашего объекта</p>
+        </div>
+        
         <div class="marquiz-container">
-            <div class="marquiz-step" id="marquizStep1">
-                <div class="marquiz-header">
-                    <div class="marquiz-icon">
-                        <i class="fas fa-hands-helping"></i>
+            <!-- Шаг 1: Тип объекта -->
+            <div class="marquiz-step" id="step1">
+                <div class="step-progress">
+                    <div class="step-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
                     </div>
-                    <h3>Поможем подобрать решение!</h3>
-                    <p>Какой объект вас интересует?</p>
+                    <span class="step-label">Шаг 1 из 4</span>
                 </div>
-                
-                <div class="marquiz-options">
-                    <div class="marquiz-option" data-value="house">
-                        <i class="fas fa-home"></i>
-                        <span>Частный дом / коттедж</span>
-                    </div>
-                    <div class="marquiz-option" data-value="apartment">
-                        <i class="fas fa-building"></i>
-                        <span>Квартира</span>
-                    </div>
-                    <div class="marquiz-option" data-value="commercial">
-                        <i class="fas fa-store"></i>
-                        <span>Коммерческий объект (офис, магазин)</span>
-                    </div>
-                    <div class="marquiz-option" data-value="industrial">
-                        <i class="fas fa-industry"></i>
-                        <span>Промышленный объект (склад, цех)</span>
-                    </div>
-                    <div class="marquiz-option" data-value="consult">
-                        <i class="fas fa-comment-dots"></i>
-                        <span>Только консультация</span>
-                    </div>
+                <h3>Какой объект вас интересует?</h3>
+                <div class="options-list" id="optionsStep1">
+                    <div class="option-item" data-value="house"><i class="fas fa-home"></i><span>Частный дом / коттедж</span></div>
+                    <div class="option-item" data-value="apartment"><i class="fas fa-building"></i><span>Квартира</span></div>
+                    <div class="option-item" data-value="commercial"><i class="fas fa-store"></i><span>Коммерческий объект (офис, магазин)</span></div>
+                    <div class="option-item" data-value="industrial"><i class="fas fa-industry"></i><span>Промышленный объект (склад, цех)</span></div>
+                    <div class="option-item" data-value="consult"><i class="fas fa-comment-dots"></i><span>Только консультация</span></div>
                 </div>
-                
-                <div class="marquiz-footer">
-                    <span class="marquiz-step-number">Шаг 1 из 3</span>
-                    <button class="marquiz-next" id="marquizNext1" disabled>Далее <i class="fas fa-arrow-right"></i></button>
+                <button class="next-btn" id="nextStep1" disabled>Далее →</button>
+            </div>
+            
+            <!-- Шаг 2: Сроки -->
+            <div class="marquiz-step" id="step2" style="display: none;">
+                <div class="step-progress">
+                    <div class="step-dots">
+                        <span class="dot"></span>
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <span class="step-label">Шаг 2 из 4</span>
+                </div>
+                <h3>Когда планируете монтаж?</h3>
+                <div class="options-list" id="optionsStep2">
+                    <div class="option-item" data-time="now"><i class="fas fa-clock"></i><span>В ближайшее время</span></div>
+                    <div class="option-item" data-time="month"><i class="fas fa-calendar-week"></i><span>В течение месяца</span></div>
+                    <div class="option-item" data-time="quarter"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
+                    <div class="option-item" data-time="planning"><i class="fas fa-chart-line"></i><span>Планирую, сроки не определены</span></div>
+                </div>
+                <div class="button-group">
+                    <button class="back-btn" id="backStep2">← Назад</button>
+                    <button class="next-btn" id="nextStep2" disabled>Далее →</button>
                 </div>
             </div>
             
-            <div class="marquiz-step" id="marquizStep2" style="display: none;">
-                <div class="marquiz-header">
-                    <div class="marquiz-icon">
-                        <i class="fas fa-calendar-alt"></i>
+            <!-- Шаг 3: Бюджет -->
+            <div class="marquiz-step" id="step3" style="display: none;">
+                <div class="step-progress">
+                    <div class="step-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
                     </div>
-                    <h3>Когда планируете монтаж?</h3>
+                    <span class="step-label">Шаг 3 из 4</span>
                 </div>
-                
-                <div class="marquiz-options">
-                    <div class="marquiz-option" data-time="now">
-                        <i class="fas fa-clock"></i>
-                        <span>В ближайшее время</span>
-                    </div>
-                    <div class="marquiz-option" data-time="month">
-                        <i class="fas fa-calendar-week"></i>
-                        <span>В течение месяца</span>
-                    </div>
-                    <div class="marquiz-option" data-time="quarter">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>В течение квартала</span>
-                    </div>
-                    <div class="marquiz-option" data-time="planning">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Планирую, сроки не определены</span>
-                    </div>
+                <h3>Какой бюджет планируете?</h3>
+                <div class="options-list" id="optionsStep3">
+                    <div class="option-item" data-budget="50"><i class="fas fa-ruble-sign"></i><span>До 50 000 ₽</span></div>
+                    <div class="option-item" data-budget="100"><i class="fas fa-ruble-sign"></i><span>50 000 - 100 000 ₽</span></div>
+                    <div class="option-item" data-budget="200"><i class="fas fa-ruble-sign"></i><span>100 000 - 200 000 ₽</span></div>
+                    <div class="option-item" data-budget="300"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
+                    <div class="option-item" data-budget="more"><i class="fas fa-chart-line"></i><span>Более 300 000 ₽</span></div>
                 </div>
-                
-                <div class="marquiz-footer">
-                    <span class="marquiz-step-number">Шаг 2 из 3</span>
-                    <div class="marquiz-buttons">
-                        <button class="marquiz-back" id="marquizBack2"><i class="fas fa-arrow-left"></i> Назад</button>
-                        <button class="marquiz-next" id="marquizNext2" disabled>Далее <i class="fas fa-arrow-right"></i></button>
-                    </div>
+                <div class="button-group">
+                    <button class="back-btn" id="backStep3">← Назад</button>
+                    <button class="next-btn" id="nextStep3" disabled>Далее →</button>
                 </div>
             </div>
             
-            <div class="marquiz-step" id="marquizStep3" style="display: none;">
-                <div class="marquiz-header">
-                    <div class="marquiz-icon">
-                        <i class="fas fa-phone-alt"></i>
+            <!-- Шаг 4: Контакты -->
+            <div class="marquiz-step" id="step4" style="display: none;">
+                <div class="step-progress">
+                    <div class="step-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot active"></span>
                     </div>
-                    <h3>Оставьте контакты</h3>
-                    <p>Мы перезвоним в удобное время</p>
+                    <span class="step-label">Шаг 4 из 4</span>
                 </div>
-                
-                <form id="marquizForm">
+                <h3>Оставьте контакты</h3>
+                <p style="color: #666; margin-bottom: 25px;">Мы перезвоним в удобное время</p>
+                <form class="marquiz-form" id="marquizForm">
                     <input type="text" id="marquizName" placeholder="Ваше имя" required>
                     <input type="tel" id="marquizPhone" placeholder="Номер телефона" required>
-                    <input type="hidden" id="marquizObjectType" value="">
-                    <input type="hidden" id="marquizTime" value="">
-                    
-                    <div class="marquiz-cookie">
+                    <input type="hidden" id="marquizObjectType">
+                    <input type="hidden" id="marquizTime">
+                    <input type="hidden" id="marquizBudget">
+                    <div class="cookie-check">
                         <input type="checkbox" id="marquizCookie" checked>
                         <label for="marquizCookie">Я соглашаюсь с политикой конфиденциальности</label>
                     </div>
-                    
-                    <div class="marquiz-footer">
-                        <div class="marquiz-buttons">
-                            <button type="button" class="marquiz-back" id="marquizBack3"><i class="fas fa-arrow-left"></i> Назад</button>
-                            <button type="submit" class="marquiz-submit">Закажите звонок!</button>
-                        </div>
+                    <div class="button-group">
+                        <button type="button" class="back-btn" id="backStep4">← Назад</button>
+                        <button type="submit" class="submit-btn">Закажите звонок!</button>
                     </div>
                 </form>
             </div>
@@ -1077,12 +1109,7 @@
         <div class="price-table-wrapper">
             <table class="price-table">
                 <thead>
-                    <tr>
-                        <th>Оборудование</th>
-                        <th>Тип услуги</th>
-                        <th>Кол-во</th>
-                        <th>Стоимость</th>
-                    </tr>
+                    <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr>
                 </thead>
                 <tbody>
                     <tr><td><strong>Труба ф16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
@@ -1096,17 +1123,11 @@
                     <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>2 500 ₽</strong></td></tr>
                 </tbody>
                 <tfoot>
-                    <tr class="total-row">
-                        <td colspan="3" style="text-align: right; font-size: 1.1rem;">ИТОГО:</td>
-                        <td class="price-total"><strong>215 500 ₽</strong></td>
-                    </tr>
+                    <tr class="total-row"><td colspan="3" style="text-align: right; font-size: 1.1rem;">ИТОГО:</td><td class="price-total"><strong>215 500 ₽</strong></td></tr>
                 </tfoot>
             </table>
         </div>
-        
-        <p style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: #666;">
-            <i class="fas fa-calculator"></i> *Окончательная стоимость зависит от сложности работ и выбранного оборудования
-        </p>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: #666;"><i class="fas fa-calculator"></i> *Окончательная стоимость зависит от сложности работ и выбранного оборудования</p>
     </div>
 </section>
 
@@ -1218,94 +1239,106 @@
 </div>
 
 <script>
-    // Маркиз - опросник
+    // ========== МАРКИЗ - 4 вопроса с анимациями ==========
     let selectedObject = null;
     let selectedTime = null;
+    let selectedBudget = null;
     
-    const step1 = document.getElementById('marquizStep1');
-    const step2 = document.getElementById('marquizStep2');
-    const step3 = document.getElementById('marquizStep3');
-    const nextBtn1 = document.getElementById('marquizNext1');
-    const nextBtn2 = document.getElementById('marquizNext2');
-    const backBtn2 = document.getElementById('marquizBack2');
-    const backBtn3 = document.getElementById('marquizBack3');
+    const step1 = document.getElementById('step1');
+    const step2 = document.getElementById('step2');
+    const step3 = document.getElementById('step3');
+    const step4 = document.getElementById('step4');
     
-    // Выбор объекта
-    document.querySelectorAll('#marquizStep1 .marquiz-option').forEach(opt => {
+    const nextBtn1 = document.getElementById('nextStep1');
+    const nextBtn2 = document.getElementById('nextStep2');
+    const nextBtn3 = document.getElementById('nextStep3');
+    const backBtn2 = document.getElementById('backStep2');
+    const backBtn3 = document.getElementById('backStep3');
+    const backBtn4 = document.getElementById('backStep4');
+    
+    // Шаг 1: выбор объекта
+    document.querySelectorAll('#optionsStep1 .option-item').forEach(opt => {
         opt.addEventListener('click', () => {
-            document.querySelectorAll('#marquizStep1 .marquiz-option').forEach(o => o.classList.remove('selected'));
+            document.querySelectorAll('#optionsStep1 .option-item').forEach(o => o.classList.remove('selected'));
             opt.classList.add('selected');
             selectedObject = opt.getAttribute('data-value');
             nextBtn1.disabled = false;
         });
     });
     
-    // Выбор времени
-    document.querySelectorAll('#marquizStep2 .marquiz-option').forEach(opt => {
+    // Шаг 2: выбор сроков
+    document.querySelectorAll('#optionsStep2 .option-item').forEach(opt => {
         opt.addEventListener('click', () => {
-            document.querySelectorAll('#marquizStep2 .marquiz-option').forEach(o => o.classList.remove('selected'));
+            document.querySelectorAll('#optionsStep2 .option-item').forEach(o => o.classList.remove('selected'));
             opt.classList.add('selected');
             selectedTime = opt.getAttribute('data-time');
             nextBtn2.disabled = false;
         });
     });
     
-    // Переходы
-    nextBtn1.addEventListener('click', () => {
-        step1.style.display = 'none';
-        step2.style.display = 'block';
+    // Шаг 3: выбор бюджета
+    document.querySelectorAll('#optionsStep3 .option-item').forEach(opt => {
+        opt.addEventListener('click', () => {
+            document.querySelectorAll('#optionsStep3 .option-item').forEach(o => o.classList.remove('selected'));
+            opt.classList.add('selected');
+            selectedBudget = opt.getAttribute('data-budget');
+            nextBtn3.disabled = false;
+        });
     });
     
-    backBtn2.addEventListener('click', () => {
-        step2.style.display = 'none';
-        step1.style.display = 'block';
-    });
+    // Переходы с анимацией
+    function switchStep(from, to) {
+        from.style.animation = 'fadeSlide 0.3s reverse';
+        setTimeout(() => {
+            from.style.display = 'none';
+            to.style.display = 'block';
+            to.style.animation = 'fadeSlide 0.4s ease';
+        }, 150);
+    }
     
-    nextBtn2.addEventListener('click', () => {
-        step2.style.display = 'none';
-        step3.style.display = 'block';
-        document.getElementById('marquizObjectType').value = selectedObject;
-        document.getElementById('marquizTime').value = selectedTime;
-    });
+    nextBtn1.addEventListener('click', () => switchStep(step1, step2));
+    backBtn2.addEventListener('click', () => switchStep(step2, step1));
+    nextBtn2.addEventListener('click', () => switchStep(step2, step3));
+    backBtn3.addEventListener('click', () => switchStep(step3, step2));
+    nextBtn3.addEventListener('click', () => switchStep(step3, step4));
+    backBtn4.addEventListener('click', () => switchStep(step4, step3));
     
-    backBtn3.addEventListener('click', () => {
-        step3.style.display = 'none';
-        step2.style.display = 'block';
-    });
-    
-    // Отправка формы маркиз
+    // Отправка формы
     document.getElementById('marquizForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('marquizName').value;
         const phone = document.getElementById('marquizPhone').value;
-        const objectType = document.getElementById('marquizObjectType').value;
-        const time = document.getElementById('marquizTime').value;
         
         if(name && phone) {
+            document.getElementById('marquizObjectType').value = selectedObject;
+            document.getElementById('marquizTime').value = selectedTime;
+            document.getElementById('marquizBudget').value = selectedBudget;
+            
             fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify({
                     Имя: name,
                     Телефон: phone,
-                    Тип_объекта: objectType,
-                    Срок: time
+                    Тип_объекта: selectedObject,
+                    Срок: selectedTime,
+                    Бюджет: selectedBudget
                 })
             });
             
             alert(`Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.`);
-            step3.style.display = 'none';
+            
+            // Сброс
+            step4.style.display = 'none';
             step1.style.display = 'block';
             document.getElementById('marquizForm').reset();
-            document.querySelectorAll('#marquizStep1 .marquiz-option').forEach(o => o.classList.remove('selected'));
-            document.querySelectorAll('#marquizStep2 .marquiz-option').forEach(o => o.classList.remove('selected'));
+            document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
             nextBtn1.disabled = true;
             nextBtn2.disabled = true;
+            nextBtn3.disabled = true;
             selectedObject = null;
             selectedTime = null;
+            selectedBudget = null;
         } else {
             alert('Пожалуйста, заполните имя и телефон');
         }
