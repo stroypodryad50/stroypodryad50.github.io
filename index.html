@@ -17,7 +17,7 @@
         .nav-links { display: flex; gap: 25px; list-style: none; }
         .nav-links a { text-decoration: none; color: #2c3e50; font-weight: 500; }
         .nav-links a:hover { color: #e67e22; }
-        .header-phone { background: #e67e22; padding: 8px 20px; border-radius: 30px; color: white; text-decoration: none; font-weight: bold; }
+        .header-phone { background: #e67e22; padding: 8px 20px; border-radius: 30px; color: white; text-decoration: none; font-weight: bold; display: inline-block; }
         .btn { display: inline-block; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; }
         .btn-primary { background: #e67e22; color: white; }
         .btn-outline { background: transparent; border: 2px solid #e67e22; color: #e67e22; }
@@ -45,15 +45,6 @@
         .steps-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
         .step { background: white; padding: 25px; border-radius: 20px; text-align: center; flex: 1; min-width: 180px; border: 1px solid #edf2f7; }
         .step-number { width: 50px; height: 50px; background: #e67e22; color: white; font-size: 1.5rem; font-weight: bold; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; }
-        
-        /* Сертификаты */
-        .certificates-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 30px; }
-        .cert-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid #edf2f7; text-align: center; padding: 20px; transition: 0.3s; cursor: pointer; }
-        .cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-color: #e67e22; }
-        .cert-icon { font-size: 60px; color: #e67e22; margin-bottom: 15px; }
-        .cert-card h4 { margin-bottom: 10px; color: #1e4660; }
-        .cert-card p { font-size: 0.85rem; color: #666; }
-        
         .cta-section { background: #1e4660; color: white; border-radius: 30px; padding: 50px; text-align: center; }
         .cta-form { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 25px; }
         .cta-form input { padding: 12px 20px; border-radius: 30px; border: none; width: 250px; }
@@ -120,7 +111,6 @@
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="#uslugi">Услуги</a></li>
                 <li><a href="blog.html">Статьи</a></li>
-                <li><a href="#certificates">Сертификаты</a></li>
                 <li><a href="#kontakty">Контакты</a></li>
             </ul>
             <a href="tel:+79773252728" class="header-phone"><i class="fas fa-phone-alt"></i> +7 (977) 325-27-28</a>
@@ -174,35 +164,6 @@
     </div>
 </div>
 
-<!-- Блок с сертификатами -->
-<section id="certificates">
-    <div class="container">
-        <h2 class="section-title">Наши сертификаты и лицензии</h2>
-        <div class="certificates-grid">
-            <div class="cert-card" onclick="alert('Сертификат СРО — подтверждение квалификации')">
-                <div class="cert-icon"><i class="fas fa-scroll"></i></div>
-                <h4>Сертификат СРО</h4>
-                <p>Допуск к работам особой сложности</p>
-            </div>
-            <div class="cert-card" onclick="alert('Лицензия МЧС — монтаж систем пожаротушения')">
-                <div class="cert-icon"><i class="fas fa-fire-extinguisher"></i></div>
-                <h4>Лицензия МЧС</h4>
-                <p>Монтаж систем пожаротушения</p>
-            </div>
-            <div class="cert-card" onclick="alert('ISO 9001 — международный стандарт качества')">
-                <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-                <h4>ISO 9001</h4>
-                <p>Международный стандарт качества</p>
-            </div>
-            <div class="cert-card" onclick="alert('Сертификаты на оборудование Grundfos, Wilo, Rehau')">
-                <div class="cert-icon"><i class="fas fa-tools"></i></div>
-                <h4>Сертификаты производителей</h4>
-                <p>Официальный партнер ведущих брендов</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section id="etapy">
     <div class="container">
         <h2 class="section-title">Как мы работаем</h2>
@@ -242,10 +203,12 @@
                 <a href="index.html">Главная</a>
                 <a href="#uslugi">Услуги</a>
                 <a href="blog.html">Статьи</a>
-                <a href="#certificates">Сертификаты</a>
                 <a href="#kontakty">Контакты</a>
             </div>
-            <div><p><i class="fas fa-phone"></i> +7 (977) 325-27-28</p><p><i class="fas fa-envelope"></i> stroypodryad50@ya.ru</p></div>
+            <div>
+                <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8; text-decoration:none;">+7 (977) 325-27-28</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8; text-decoration:none;">stroypodryad50@ya.ru</a></p>
+            </div>
         </div>
         <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
     </div>
