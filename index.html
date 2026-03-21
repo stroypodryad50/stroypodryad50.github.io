@@ -40,51 +40,45 @@
             align-items: center;
             padding: 15px 0;
             flex-wrap: wrap;
+            gap: 20px;
         }
         
-        .logo img {
-            height: 50px;
-            width: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #1e4660;
         }
         
-        .logo img:hover {
-            transform: scale(1.05);
+        .logo span {
+            color: #e67e22;
         }
         
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 15px;
             list-style: none;
+            flex-wrap: wrap;
         }
         
         .nav-links a {
             text-decoration: none;
             color: #2c3e50;
             font-weight: 500;
-            padding: 8px 0;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #e67e22;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
+            padding: 8px 18px;
+            border: 2px solid transparent;
+            border-radius: 40px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
         }
         
         .nav-links a:hover {
             color: #e67e22;
+            border-color: #e67e22;
+        }
+        
+        .nav-links a.active {
+            color: #e67e22;
+            border-color: #e67e22;
         }
         
         .header-phone {
@@ -927,6 +921,13 @@
             .step-progress {
                 margin-bottom: 20px;
             }
+            .nav-links {
+                justify-content: center;
+            }
+            .nav-links a {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -936,7 +937,7 @@
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <img src="images/orig.jpeg" alt="СтройПодряд">
+                Строй<span>Подряд</span>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Главная</a></li>
@@ -1109,8 +1110,7 @@
         <div class="price-table-wrapper">
             <table class="price-table">
                 <thead>
-                    <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr>
-                </thead>
+                    <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
                 <tbody>
                     <tr><td><strong>Труба ф16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
                     <tr><td><strong>Труба ф20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
@@ -1177,8 +1177,8 @@
     <div class="container">
         <div class="footer-content">
             <div>
-                <div class="logo" style="margin-bottom: 10px;">
-                    <img src="images/orig.jpeg" alt="СтройПодряд" style="height: 45px; width: auto; border-radius: 8px;">
+                <div class="logo" style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px;">
+                    Строй<span style="color: #e67e22;">Подряд</span>
                 </div>
                 <p>Профессиональный сантехмонтаж</p>
             </div>
