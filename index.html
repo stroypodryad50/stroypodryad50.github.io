@@ -54,34 +54,31 @@
         }
         
         .nav-links {
-    display: flex;
-    gap: 15px;
-    list-style: none;
-    flex-wrap: wrap;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #2c3e50;
-    font-weight: 500;
-    padding: 8px 18px;
-    border: 2px solid transparent;
-    border-radius: 40px;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    background: transparent;
-}
-
-.nav-links a:hover {
-    color: #e67e22;
-    border-color: #e67e22;
-}
-
-.nav-links a.active {
-    color: #e67e22;
-    border-color: #e67e22;
-}
-}
+            display: flex;
+            gap: 15px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            padding: 8px 18px;
+            border: 2px solid transparent;
+            border-radius: 40px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover {
+            color: #e67e22;
+            border-color: #e67e22;
+        }
+        
+        .nav-links a.active {
+            color: #e67e22;
+            border-color: #e67e22;
         }
         
         .header-phone {
@@ -315,76 +312,58 @@
             font-size: 1rem;
         }
         
+        /* Services - с постоянной анимацией */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
         
-
-/* При наведении — увеличение и тень */
-.service-card:hover {
-    animation: none;
-    transform: translateY(-8px) scale(1.02);
-    border-color: #e67e22;
-    box-shadow: 0 20px 35px rgba(0,0,0,0.15);
-}
-
-/* Services - с постоянной анимацией */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-.service-card {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    border: 1px solid #edf2f7;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-}
-
-/* Постоянная анимация пульсации (только тень и рамка, без transform) */
-.service-card {
-    animation: gentlePulseShadow 3s ease-in-out infinite;
-}
-
-@keyframes gentlePulseShadow {
-    0%, 100% {
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        border-color: #edf2f7;
-    }
-    50% {
-        box-shadow: 0 15px 30px rgba(230,126,34,0.25);
-        border-color: #e67e22;
-    }
-}
-
-/* При наведении — увеличение и тень */
-.service-card:hover {
-    animation: none;
-    transform: translateY(-8px);
-    border-color: #e67e22;
-    box-shadow: 0 20px 35px rgba(0,0,0,0.15);
-}
-
-/* При нажатии — эффект клика */
-.service-card:active {
-    transform: translateY(-4px) scale(0.98);
-    transition: all 0.05s ease;
-}
-
-.service-card:hover i {
-    transform: scale(1.1);
-}
-
-.service-card i {
-    font-size: 40px;
-    color: #e67e22;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
-}
-}
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #edf2f7;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            animation: gentlePulseShadow 3s ease-in-out infinite;
+        }
+        
+        @keyframes gentlePulseShadow {
+            0%, 100% {
+                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                border-color: #edf2f7;
+            }
+            50% {
+                box-shadow: 0 15px 30px rgba(230,126,34,0.25);
+                border-color: #e67e22;
+            }
+        }
+        
+        .service-card:hover {
+            animation: none;
+            transform: translateY(-8px);
+            border-color: #e67e22;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+        }
+        
+        .service-card:active {
+            transform: translateY(-4px) scale(0.98);
+            transition: all 0.05s ease;
+        }
+        
+        .service-card:hover i {
+            transform: scale(1.1);
+        }
+        
+        .service-card i {
+            font-size: 40px;
+            color: #e67e22;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
         }
         
         /* Маркиз - опросник */
@@ -1145,17 +1124,18 @@
         <div class="price-table-wrapper">
             <table class="price-table">
                 <thead>
-                    <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
+                    <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr>
+                </thead>
                 <tbody>
-                    <tr><td><strong>Труба ф16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td> </tr>
-                    <tr><td><strong>Труба ф20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td> </tr>
-                    <tr><td><strong>Труба ф25 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>20 п.м.</td><td><strong>9 600 ₽</strong></td> </tr>
-                    <tr><td><strong>Точка водоснабжения</strong></td><td>монтаж согласно тех. карте</td><td>16 ед.</td><td><strong>57 600 ₽</strong></td> </tr>
-                    <tr><td><strong>Коллектор распределительный</strong></td><td>сборка, монтаж и подключение</td><td>6 компл.</td><td><strong>43 200 ₽</strong></td> </tr>
-                    <tr><td><strong>Точка подключения полотенцесушителя</strong></td><td>монтаж согласно тех. карте</td><td>4 ед.</td><td><strong>14 400 ₽</strong></td> </tr>
-                    <tr><td><strong>Инсталляции</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>7 800 ₽</strong></td> </tr>
-                    <tr><td><strong>Клапан незамерзающий уличный</strong></td><td>монтаж</td><td>1 ед.</td><td><strong>5 400 ₽</strong></td> </tr>
-                    <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>2 500 ₽</strong></td> </tr>
+                    <tr><td><strong>Труба ф16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ф20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ф25 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>20 п.м.</td><td><strong>9 600 ₽</strong></td></tr>
+                    <tr><td><strong>Точка водоснабжения</strong></td><td>монтаж согласно тех. карте</td><td>16 ед.</td><td><strong>57 600 ₽</strong></td></tr>
+                    <tr><td><strong>Коллектор распределительный</strong></td><td>сборка, монтаж и подключение</td><td>6 компл.</td><td><strong>43 200 ₽</strong></td></tr>
+                    <tr><td><strong>Точка подключения полотенцесушителя</strong></td><td>монтаж согласно тех. карте</td><td>4 ед.</td><td><strong>14 400 ₽</strong></td></tr>
+                    <tr><td><strong>Инсталляции</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>7 800 ₽</strong></td></tr>
+                    <tr><td><strong>Клапан незамерзающий уличный</strong></td><td>монтаж</td><td>1 ед.</td><td><strong>5 400 ₽</strong></td></tr>
+                    <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>2 500 ₽</strong></td></tr>
                 </tbody>
                 <tfoot>
                     <tr class="total-row"><td colspan="3" style="text-align: right; font-size: 1.1rem;">ИТОГО:</td><td class="price-total"><strong>215 500 ₽</strong></td></tr>
@@ -1377,6 +1357,13 @@
         } else {
             alert('Пожалуйста, заполните имя и телефон');
         }
+    });
+    
+    // Клик по карточке услуг - скролл к ценам
+    document.querySelectorAll('.service-card').forEach((card) => {
+        card.addEventListener('click', () => {
+            document.getElementById('prices').scrollIntoView({ behavior: 'smooth' });
+        });
     });
     
     // Калькулятор
