@@ -312,7 +312,7 @@
             font-size: 1rem;
         }
         
-        /* Services */
+        /* Services - с постоянной анимацией */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -326,19 +326,50 @@
             text-align: center;
             border: 1px solid #edf2f7;
             transition: all 0.3s ease;
-            animation: fadeInUp 0.5s ease-out;
-            animation-fill-mode: both;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardAppear 0.6s ease-out forwards, gentlePulse 3s ease-in-out infinite;
         }
         
-        .service-card:nth-child(1) { animation-delay: 0.1s; }
-        .service-card:nth-child(2) { animation-delay: 0.2s; }
-        .service-card:nth-child(3) { animation-delay: 0.3s; }
-        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        /* Задержка появления для каждой карточки */
+        .service-card:nth-child(1) { animation-delay: 0.1s, 0.8s; }
+        .service-card:nth-child(2) { animation-delay: 0.3s, 1s; }
+        .service-card:nth-child(3) { animation-delay: 0.5s, 1.2s; }
+        .service-card:nth-child(4) { animation-delay: 0.7s, 1.4s; }
+        
+        @keyframes cardAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes gentlePulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                border-color: #edf2f7;
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 15px 30px rgba(230,126,34,0.2);
+                border-color: #e67e22;
+            }
+        }
         
         .service-card:hover {
+            animation: none;
             transform: translateY(-8px);
             border-color: #e67e22;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+        }
+        
+        .service-card:hover i {
+            transform: scale(1.1);
         }
         
         .service-card i {
@@ -346,10 +377,6 @@
             color: #e67e22;
             margin-bottom: 15px;
             transition: transform 0.3s ease;
-        }
-        
-        .service-card:hover i {
-            transform: scale(1.1);
         }
         
         /* Маркиз - опросник */
@@ -1112,15 +1139,15 @@
                 <thead>
                     <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
                 <tbody>
-                    <tr><td><strong>Труба ф16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ф20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ф25 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>20 п.м.</td><td><strong>9 600 ₽</strong></td></tr>
-                    <tr><td><strong>Точка водоснабжения</strong></td><td>монтаж согласно тех. карте</td><td>16 ед.</td><td><strong>57 600 ₽</strong></td></tr>
-                    <tr><td><strong>Коллектор распределительный</strong></td><td>сборка, монтаж и подключение</td><td>6 компл.</td><td><strong>43 200 ₽</strong></td></tr>
-                    <tr><td><strong>Точка подключения полотенцесушителя</strong></td><td>монтаж согласно тех. карте</td><td>4 ед.</td><td><strong>14 400 ₽</strong></td></tr>
-                    <tr><td><strong>Инсталляции</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>7 800 ₽</strong></td></tr>
-                    <tr><td><strong>Клапан незамерзающий уличный</strong></td><td>монтаж</td><td>1 ед.</td><td><strong>5 400 ₽</strong></td></tr>
-                    <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>2 500 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ф16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td> </tr>
+                    <tr><td><strong>Труба ф20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td> </tr>
+                    <tr><td><strong>Труба ф25 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>20 п.м.</td><td><strong>9 600 ₽</strong></td> </tr>
+                    <tr><td><strong>Точка водоснабжения</strong></td><td>монтаж согласно тех. карте</td><td>16 ед.</td><td><strong>57 600 ₽</strong></td> </tr>
+                    <tr><td><strong>Коллектор распределительный</strong></td><td>сборка, монтаж и подключение</td><td>6 компл.</td><td><strong>43 200 ₽</strong></td> </tr>
+                    <tr><td><strong>Точка подключения полотенцесушителя</strong></td><td>монтаж согласно тех. карте</td><td>4 ед.</td><td><strong>14 400 ₽</strong></td> </tr>
+                    <tr><td><strong>Инсталляции</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>7 800 ₽</strong></td> </tr>
+                    <tr><td><strong>Клапан незамерзающий уличный</strong></td><td>монтаж</td><td>1 ед.</td><td><strong>5 400 ₽</strong></td> </tr>
+                    <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>2 500 ₽</strong></td> </tr>
                 </tbody>
                 <tfoot>
                     <tr class="total-row"><td colspan="3" style="text-align: right; font-size: 1.1rem;">ИТОГО:</td><td class="price-total"><strong>215 500 ₽</strong></td></tr>
