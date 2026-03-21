@@ -3,302 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СтройПодряд | Монтаж сантехники от техпомещения до дома</title>
-    <meta name="description" content="СтройПодряд — монтаж сантехники под ключ: от технических помещений до частных домов. Водоснабжение, отопление, канализация. Гарантия 5 лет. ☎ +7(977) 325-27-28">
-    <meta name="keywords" content="монтаж сантехники, сантехник, водоснабжение, отопление, канализация, СтройПодряд">
+    <title>СтройПодряд | Монтаж сантехники</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f7fa;
-            color: #1e2a32;
-            line-height: 1.5;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        header {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            flex-wrap: wrap;
-        }
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #1e4660;
-        }
-        .logo span {
-            color: #e67e22;
-        }
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 600;
-            color: #1e2a32;
-        }
-        .nav-links a:hover {
-            color: #e67e22;
-        }
-        .header-phone {
-            background: #e67e22;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .header-phone:hover {
-            background: #d35400;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn-primary {
-            background: #e67e22;
-            color: white;
-        }
-        .btn-primary:hover {
-            background: #d35400;
-        }
-        .btn-outline {
-            border: 2px solid #e67e22;
-            color: #e67e22;
-        }
-        .btn-outline:hover {
-            background: #e67e22;
-            color: white;
-        }
-        .hero {
-            background: linear-gradient(135deg, #fef5e8, #f9ede0);
-            padding: 60px 0;
-        }
-        .hero-grid {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-        }
-        .hero-content {
-            flex: 1;
-        }
-        .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #1e4660;
-        }
-        .hero-content p {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            color: #2c4758;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .hero-image {
-            flex: 1;
-            text-align: center;
-        }
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 20px;
-        }
-        .badge-list {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        .badge-item {
-            background: white;
-            padding: 5px 15px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-        }
-        section {
-            padding: 60px 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: #1e4660;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        .service-card {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .service-icon {
-            font-size: 2.5rem;
-            color: #e67e22;
-            margin-bottom: 15px;
-        }
-        .service-card h3 {
-            margin-bottom: 10px;
-        }
-        .two-col {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-        }
-        .col-text {
-            flex: 1;
-        }
-        .col-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-        .check-list {
-            list-style: none;
-            margin-top: 20px;
-        }
-        .check-list li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .check-list li i {
-            color: #e67e22;
-        }
-        .col-img {
-            flex: 1;
-            text-align: center;
-        }
-        .col-img img {
-            max-width: 100%;
-            border-radius: 20px;
-        }
-        .steps-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .step {
-            background: white;
-            padding: 25px;
-            border-radius: 20px;
-            text-align: center;
-            flex: 1;
-            min-width: 200px;
-        }
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: #e67e22;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-        }
-        .cta-section {
-            background: linear-gradient(120deg, #1e4660, #2c5a6e);
-            color: white;
-            border-radius: 30px;
-            padding: 50px;
-            text-align: center;
-        }
-        .cta-form {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-        }
-        .cta-form input {
-            padding: 12px 20px;
-            border-radius: 30px;
-            border: none;
-            width: 250px;
-        }
-        .cta-form button {
-            background: #e67e22;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        footer {
-            background: #0a2c3b;
-            color: #cbdbe2;
-            padding: 40px 0 20px;
-        }
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-        }
-        .footer-links a {
-            color: #cbdbe2;
-            text-decoration: none;
-            margin-right: 20px;
-        }
-        .copy {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #2c5a6e;
-        }
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-            .section-title {
-                font-size: 1.6rem;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; flex-wrap: wrap; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #1e4660; }
+        .logo span { color: #e67e22; }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { text-decoration: none; color: #2c3e50; }
+        .nav-links a:hover { color: #e67e22; }
+        .header-phone { background: #e67e22; padding: 8px 20px; border-radius: 30px; color: white; text-decoration: none; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: bold; }
+        .btn-primary { background: #e67e22; color: white; }
+        .hero { padding: 60px 0; background: #fef9f0; }
+        .hero-grid { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
+        .hero-content { flex: 1; }
+        .hero-content h1 { font-size: 2.5rem; margin-bottom: 20px; }
+        .hero-content h1 span { color: #e67e22; }
+        .hero-content p { font-size: 1.1rem; color: #4a5568; margin-bottom: 25px; }
+        .hero-image { flex: 1; text-align: center; }
+        .hero-image img { max-width: 100%; border-radius: 20px; }
+        .trust-badges { display: flex; gap: 25px; margin-top: 30px; }
+        .trust-item { display: flex; align-items: center; gap: 8px; }
+        .trust-item i { color: #e67e22; }
+        section { padding: 60px 0; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .service-card { background: white; padding: 30px; border-radius: 20px; text-align: center; border: 1px solid #edf2f7; }
+        .service-card i { font-size: 40px; color: #e67e22; margin-bottom: 15px; }
+        .stats-section { background: #1e4660; color: white; border-radius: 30px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding: 50px; text-align: center; }
+        .stat-number { font-size: 2.5rem; font-weight: bold; }
+        .steps-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .step { background: white; padding: 25px; border-radius: 20px; text-align: center; flex: 1; min-width: 180px; border: 1px solid #edf2f7; }
+        .step-number { width: 50px; height: 50px; background: #e67e22; color: white; font-size: 1.5rem; font-weight: bold; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; }
+        .cta-section { background: #1e4660; color: white; border-radius: 30px; padding: 50px; text-align: center; }
+        .cta-form { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 25px; }
+        .cta-form input { padding: 12px 20px; border-radius: 30px; border: none; width: 250px; }
+        .cta-form button { background: #e67e22; color: white; border: none; padding: 12px 30px; border-radius: 30px; cursor: pointer; }
+        footer { background: #0a2c3b; color: #94a3b8; padding: 40px 0 20px; }
+        .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; margin-right: 20px; }
+        .copy { text-align: center; padding-top: 20px; margin-top: 20px; border-top: 1px solid #2c5a6e; }
+        .chat-button { position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px; background: #e67e22; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; }
+        .chat-button i { color: white; font-size: 24px; }
+        @media (max-width: 768px) { .navbar { flex-direction: column; gap: 15px; } .stats-grid { grid-template-columns: 1fr 1fr; } }
     </style>
 </head>
 <body>
@@ -308,9 +61,8 @@
         <div class="navbar">
             <div class="logo">Строй<span>Подряд</span></div>
             <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
                 <li><a href="#uslugi">Услуги</a></li>
-                <li><a href="#o-nas">О нас</a></li>
-                <li><a href="#etapy">Этапы</a></li>
                 <li><a href="#kontakty">Контакты</a></li>
             </ul>
             <a href="tel:+79773252728" class="header-phone"><i class="fas fa-phone-alt"></i> +7 (977) 325-27-28</a>
@@ -322,20 +74,17 @@
     <div class="container">
         <div class="hero-grid">
             <div class="hero-content">
-                <h1>Монтаж сантехники<br>от технического помещения до дома</h1>
-                <p><strong>СтройПодряд</strong> — профессиональный сантехмонтаж для любых объектов: котельные, цоколи, склады, техпомещения, коттеджи и частные дома. Гарантия 5 лет!</p>
-                <div class="hero-buttons">
-                    <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
-                    <a href="#uslugi" class="btn btn-outline">Наши услуги</a>
-                </div>
-                <div class="badge-list">
-                    <span class="badge-item"><i class="fas fa-building"></i> Техпомещения & Дома</span>
-                    <span class="badge-item"><i class="fas fa-clock"></i> Соблюдение сроков</span>
-                    <span class="badge-item"><i class="fas fa-shield-alt"></i> Гарантия 5 лет</span>
+                <h1>Профессиональный <span>сантехмонтаж</span><br>под ключ</h1>
+                <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 5 лет.</p>
+                <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
+                <div class="trust-badges">
+                    <div class="trust-item"><i class="fas fa-certificate"></i><span>Гарантия 5 лет</span></div>
+                    <div class="trust-item"><i class="fas fa-clock"></i><span>Соблюдение сроков</span></div>
+                    <div class="trust-item"><i class="fas fa-tools"></i><span>Современное оборудование</span></div>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23e67e22'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='20' font-family='Arial'%3EСтройПодряд%3C/text%3E%3C/svg%3E" alt="СтройПодряд">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23fef5e8'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23e67e22' font-size='24' font-family='Arial'%3EСтройПодряд%3C/text%3E%3C/svg%3E" alt="СтройПодряд">
             </div>
         </div>
     </div>
@@ -345,74 +94,33 @@
     <div class="container">
         <h2 class="section-title">Наши услуги</h2>
         <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-water"></i></div>
-                <h3>Водоснабжение</h3>
-                <p>Разводка труб, насосные станции, фильтрация</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-fire"></i></div>
-                <h3>Отопление</h3>
-                <p>Котлы, радиаторы, теплые полы, котельные</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-toilet"></i></div>
-                <h3>Сантехника</h3>
-                <p>Установка ванн, душевых, унитазов, смесителей</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-drainage"></i></div>
-                <h3>Канализация</h3>
-                <p>Внутренние и наружные сети, септики</p>
-            </div>
+            <div class="service-card"><i class="fas fa-water"></i><h3>Водоснабжение</h3><p>Разводка труб, насосные станции, фильтрация</p></div>
+            <div class="service-card"><i class="fas fa-fire"></i><h3>Отопление</h3><p>Котлы, радиаторы, теплые полы</p></div>
+            <div class="service-card"><i class="fas fa-bath"></i><h3>Сантехника</h3><p>Ванны, душевые, смесители</p></div>
+            <div class="service-card"><i class="fas fa-toilet"></i><h3>Канализация</h3><p>Септики, внутренние и наружные сети</p></div>
         </div>
     </div>
 </section>
 
-<section id="o-nas" style="background: #fef8f0;">
-    <div class="container">
-        <div class="two-col">
-            <div class="col-text">
-                <h3>От технического помещения до жилого дома</h3>
-                <p>Сантехника — это не только комфорт в доме, но и надежность в котельной, подсобке или производственном помещении. СтройПодряд выполняет монтаж систем любой сложности.</p>
-                <ul class="check-list">
-                    <li><i class="fas fa-check-circle"></i> Монтаж в техпомещениях, цоколях, подвалах</li>
-                    <li><i class="fas fa-check-circle"></i> Обвязка котельных любой мощности</li>
-                    <li><i class="fas fa-check-circle"></i> Адаптация под скважину, колодец, магистраль</li>
-                    <li><i class="fas fa-check-circle"></i> Единый стандарт качества для любых объектов</li>
-                </ul>
-            </div>
-            <div class="col-img">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='250' viewBox='0 0 350 250'%3E%3Crect width='350' height='250' fill='%23e67e22'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='18'%3EКотельная и Дом%3C/text%3E%3C/svg%3E" alt="Котельная">
-            </div>
+<div class="container">
+    <div class="stats-section">
+        <div class="stats-grid">
+            <div><div class="stat-number">150+</div><div>Выполненных объектов</div></div>
+            <div><div class="stat-number">5 лет</div><div>Гарантии</div></div>
+            <div><div class="stat-number">24/7</div><div>Поддержка</div></div>
+            <div><div class="stat-number">98%</div><div>Довольных клиентов</div></div>
         </div>
     </div>
-</section>
+</div>
 
 <section id="etapy">
     <div class="container">
         <h2 class="section-title">Как мы работаем</h2>
         <div class="steps-grid">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h4>Заявка / Замер</h4>
-                <p>Выезд инженера бесплатно</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h4>Смета + Договор</h4>
-                <p>Фиксируем сроки и гарантию</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h4>Монтаж</h4>
-                <p>Чистый монтаж с фотоотчетом</p>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <h4>Сдача + Гарантия</h4>
-                <p>Тестирование, акт, сервис</p>
-            </div>
+            <div class="step"><div class="step-number">1</div><h4>Заявка / Замер</h4><p>Бесплатный выезд инженера</p></div>
+            <div class="step"><div class="step-number">2</div><h4>Смета + Договор</h4><p>Фиксируем сроки и гарантию</p></div>
+            <div class="step"><div class="step-number">3</div><h4>Монтаж</h4><p>Чистый монтаж с фотоотчетом</p></div>
+            <div class="step"><div class="step-number">4</div><h4>ПНР и сдача</h4><p>Пусконаладочные работы</p></div>
         </div>
     </div>
 </section>
@@ -420,15 +128,14 @@
 <section id="zakaz">
     <div class="container">
         <div class="cta-section">
-            <h2>Нужен монтаж сантехники?</h2>
-            <p>Оставьте заявку — мы проконсультируем по любому объекту: от технического помещения до дома. Бесплатный выезд на замер!</p>
+            <h2>Нужен качественный сантехмонтаж?</h2>
+            <p>Оставьте заявку — получите бесплатную консультацию</p>
             <form class="cta-form" id="callbackForm">
                 <input type="text" placeholder="Ваше имя" id="userName" required>
                 <input type="tel" placeholder="Номер телефона" id="userPhone" required>
                 <input type="text" placeholder="Тип объекта">
-                <button type="submit">Отправить заявку</button>
+                <button type="submit">Отправить</button>
             </form>
-            <p style="margin-top: 15px; font-size: 0.85rem;"><i class="fas fa-lock"></i> Ваши данные защищены</p>
         </div>
     </div>
 </section>
@@ -436,39 +143,25 @@
 <footer id="kontakty">
     <div class="container">
         <div class="footer-content">
-            <div>
-                <div class="footer-logo">СтройПодряд</div>
-                <p>Сантехмонтаж: от техпомещений до домов</p>
-            </div>
-            <div class="footer-links">
-                <a href="#uslugi">Услуги</a>
-                <a href="#o-nas">О нас</a>
-                <a href="#etapy">Этапы</a>
-            </div>
-            <div>
-                <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#cbdbe2;">+7 (977) 325-27-28</a></p>
-                <p><i class="fas fa-envelope"></i> stroypodryad50@ya.ru</p>
-                <p><i class="fas fa-clock"></i> Ежедневно 9:00–21:00</p>
-            </div>
+            <div><div class="logo" style="font-size:1.2rem;">Строй<span>Подряд</span></div><p>Профессиональный сантехмонтаж</p></div>
+            <div class="footer-links"><a href="index.html">Главная</a><a href="#uslugi">Услуги</a></div>
+            <div><p><i class="fas fa-phone"></i> +7 (977) 325-27-28</p><p><i class="fas fa-envelope"></i> stroypodryad50@ya.ru</p></div>
         </div>
-        <div class="copy">
-            © 2025 СтройПодряд — Монтаж сантехники от технического помещения до дома
-        </div>
+        <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
     </div>
 </footer>
+
+<div class="chat-button" id="chatButton"><i class="fas fa-comment-dots"></i></div>
 
 <script>
     document.getElementById('callbackForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('userName').value.trim();
         const phone = document.getElementById('userPhone').value.trim();
-        if(name && phone) {
-            alert(`Спасибо, ${name}! Мы свяжемся с вами по номеру ${phone}`);
-            this.reset();
-        } else {
-            alert('Пожалуйста, заполните имя и телефон');
-        }
+        if(name && phone) { alert(`Спасибо, ${name}! Мы свяжемся с вами по номеру ${phone}`); this.reset(); }
+        else alert('Заполните имя и телефон');
     });
+    document.getElementById('chatButton').addEventListener('click', () => alert('Здравствуйте! Наш специалист скоро ответит. Или позвоните +7(977)325-27-28'));
 </script>
 </body>
 </html>
