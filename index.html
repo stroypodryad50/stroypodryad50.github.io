@@ -3,39 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СтройПодряд | Монтаж сантехники</title>
+    <title>СтройПодряд | Профессиональный монтаж сантехники</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, sans-serif; background: #fff; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; }
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; flex-wrap: wrap; }
         .logo { font-size: 1.8rem; font-weight: bold; color: #1e4660; }
         .logo span { color: #e67e22; }
         .nav-links { display: flex; gap: 25px; list-style: none; }
-        .nav-links a { text-decoration: none; color: #2c3e50; }
+        .nav-links a { text-decoration: none; color: #2c3e50; font-weight: 500; }
         .nav-links a:hover { color: #e67e22; }
-        .header-phone { background: #e67e22; padding: 8px 20px; border-radius: 30px; color: white; text-decoration: none; }
-        .btn { display: inline-block; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: bold; }
+        .header-phone { background: #e67e22; padding: 8px 20px; border-radius: 30px; color: white; text-decoration: none; font-weight: bold; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: bold; border: none; cursor: pointer; }
         .btn-primary { background: #e67e22; color: white; }
+        .btn-outline { background: transparent; border: 2px solid #e67e22; color: #e67e22; }
         .hero { padding: 60px 0; background: #fef9f0; }
         .hero-grid { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
         .hero-content { flex: 1; }
         .hero-content h1 { font-size: 2.5rem; margin-bottom: 20px; }
         .hero-content h1 span { color: #e67e22; }
         .hero-content p { font-size: 1.1rem; color: #4a5568; margin-bottom: 25px; }
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
         .hero-image { flex: 1; text-align: center; }
         .hero-image img { max-width: 100%; border-radius: 20px; }
-        .trust-badges { display: flex; gap: 25px; margin-top: 30px; }
+        .trust-badges { display: flex; gap: 25px; margin-top: 30px; flex-wrap: wrap; }
         .trust-item { display: flex; align-items: center; gap: 8px; }
-        .trust-item i { color: #e67e22; }
+        .trust-item i { color: #e67e22; font-size: 20px; }
         section { padding: 60px 0; }
         .section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-        .service-card { background: white; padding: 30px; border-radius: 20px; text-align: center; border: 1px solid #edf2f7; }
+        .service-card { background: white; padding: 30px; border-radius: 20px; text-align: center; border: 1px solid #edf2f7; transition: 0.3s; }
+        .service-card:hover { transform: translateY(-5px); border-color: #e67e22; }
         .service-card i { font-size: 40px; color: #e67e22; margin-bottom: 15px; }
-        .stats-section { background: #1e4660; color: white; border-radius: 30px; }
+        .stats-section { background: #1e4660; color: white; border-radius: 30px; margin: 20px 0; }
         .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding: 50px; text-align: center; }
         .stat-number { font-size: 2.5rem; font-weight: bold; }
         .steps-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
@@ -44,14 +47,89 @@
         .cta-section { background: #1e4660; color: white; border-radius: 30px; padding: 50px; text-align: center; }
         .cta-form { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 25px; }
         .cta-form input { padding: 12px 20px; border-radius: 30px; border: none; width: 250px; }
-        .cta-form button { background: #e67e22; color: white; border: none; padding: 12px 30px; border-radius: 30px; cursor: pointer; }
+        .cta-form button { background: #e67e22; color: white; border: none; padding: 12px 30px; border-radius: 30px; font-weight: bold; cursor: pointer; }
         footer { background: #0a2c3b; color: #94a3b8; padding: 40px 0 20px; }
         .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; }
         .footer-links a { color: #94a3b8; text-decoration: none; margin-right: 20px; }
+        .footer-links a:hover { color: #e67e22; }
         .copy { text-align: center; padding-top: 20px; margin-top: 20px; border-top: 1px solid #2c5a6e; }
-        .chat-button { position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px; background: #e67e22; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; }
+        .chat-button { position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px; background: #e67e22; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000; }
         .chat-button i { color: white; font-size: 24px; }
-        @media (max-width: 768px) { .navbar { flex-direction: column; gap: 15px; } .stats-grid { grid-template-columns: 1fr 1fr; } }
+        
+        /* Стили для модального окна калькулятора */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .modal-window {
+            background: white;
+            border-radius: 30px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+        @keyframes modalSlideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .modal-header {
+            background: linear-gradient(135deg, #1e4660, #2c5a6e);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 30px 30px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-header h3 { margin: 0; font-size: 1.4rem; }
+        .modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .modal-body { padding: 25px; }
+        .calc-field { margin-bottom: 20px; }
+        .calc-field label { display: block; margin-bottom: 8px; font-weight: bold; color: #2c3e50; }
+        .calc-field select, .calc-field input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-size: 1rem;
+        }
+        .calc-result {
+            background: #fef5e8;
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .calc-result .price { font-size: 2rem; font-weight: bold; color: #e67e22; margin: 10px 0; }
+        .calc-note { font-size: 0.8rem; color: #666; text-align: center; margin-top: 15px; }
+        .modal-btn { width: 100%; margin-top: 10px; }
+        
+        @media (max-width: 768px) { .navbar { flex-direction: column; gap: 15px; } .stats-grid { grid-template-columns: 1fr 1fr; } .hero-content h1 { font-size: 1.8rem; } }
     </style>
 </head>
 <body>
@@ -61,11 +139,11 @@
         <div class="navbar">
             <div class="logo">Строй<span>Подряд</span></div>
             <ul class="nav-links">
-    <li><a href="index.html">Главная</a></li>
-    <li><a href="#uslugi">Услуги</a></li>
-    <li><a href="blog.html">Статьи</a></li>
-    <li><a href="#kontakty">Контакты</a></li>
-</ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="#uslugi">Услуги</a></li>
+                <li><a href="blog.html">Статьи</a></li>
+                <li><a href="#kontakty">Контакты</a></li>
+            </ul>
             <a href="tel:+79773252728" class="header-phone"><i class="fas fa-phone-alt"></i> +7 (977) 325-27-28</a>
         </div>
     </div>
@@ -77,7 +155,10 @@
             <div class="hero-content">
                 <h1>Профессиональный <span>сантехмонтаж</span><br>под ключ</h1>
                 <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 5 лет.</p>
-                <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
+                <div class="hero-buttons">
+                    <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
+                    <button class="btn btn-outline" id="openCalculatorBtn"><i class="fas fa-calculator"></i> Рассчитать стоимость</button>
+                </div>
                 <div class="trust-badges">
                     <div class="trust-item"><i class="fas fa-certificate"></i><span>Гарантия 5 лет</span></div>
                     <div class="trust-item"><i class="fas fa-clock"></i><span>Соблюдение сроков</span></div>
@@ -145,7 +226,12 @@
     <div class="container">
         <div class="footer-content">
             <div><div class="logo" style="font-size:1.2rem;">Строй<span>Подряд</span></div><p>Профессиональный сантехмонтаж</p></div>
-            <div class="footer-links"><a href="index.html">Главная</a><a href="#uslugi">Услуги</a></div>
+            <div class="footer-links">
+                <a href="index.html">Главная</a>
+                <a href="#uslugi">Услуги</a>
+                <a href="blog.html">Статьи</a>
+                <a href="#kontakty">Контакты</a>
+            </div>
             <div><p><i class="fas fa-phone"></i> +7 (977) 325-27-28</p><p><i class="fas fa-envelope"></i> stroypodryad50@ya.ru</p></div>
         </div>
         <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
@@ -154,7 +240,102 @@
 
 <div class="chat-button" id="chatButton"><i class="fas fa-comment-dots"></i></div>
 
+<!-- Модальное окно калькулятора -->
+<div class="modal-overlay" id="calculatorModal">
+    <div class="modal-window">
+        <div class="modal-header">
+            <h3><i class="fas fa-calculator"></i> Калькулятор стоимости</h3>
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="calc-field">
+                <label><i class="fas fa-building"></i> Тип объекта</label>
+                <select id="calcObjectType">
+                    <option value="tech">Техническое помещение / Котельная</option>
+                    <option value="house" selected>Частный дом / Коттедж</option>
+                    <option value="apartment">Квартира</option>
+                </select>
+            </div>
+            <div class="calc-field">
+                <label><i class="fas fa-vector-square"></i> Площадь объекта (м²)</label>
+                <input type="number" id="calcArea" value="100" min="10" max="500">
+            </div>
+            <div class="calc-field">
+                <label><i class="fas fa-tasks"></i> Вид работ</label>
+                <select id="calcWorkType">
+                    <option value="full">Полный комплекс (вода + отопление + канализация)</option>
+                    <option value="water">Только водоснабжение</option>
+                    <option value="heating">Только отопление</option>
+                    <option value="sewage">Только канализация</option>
+                </select>
+            </div>
+            <div class="calc-result">
+                <p>Предварительная стоимость</p>
+                <div class="price" id="calcPriceDisplay">от 85 000 ₽</div>
+                <p style="font-size:0.85rem;">*Точная стоимость после выезда специалиста</p>
+            </div>
+            <button class="btn btn-primary modal-btn" id="calcRequestBtn">Записаться на замер</button>
+            <div class="calc-note">
+                <i class="fas fa-phone"></i> Или позвоните: +7 (977) 325-27-28
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
+    // Калькулятор
+    function updateCalculatorPrice() {
+        const objectType = document.getElementById('calcObjectType').value;
+        const area = parseInt(document.getElementById('calcArea').value) || 100;
+        const workType = document.getElementById('calcWorkType').value;
+        
+        let basePrice = 0;
+        if (objectType === 'tech') basePrice = 1800;
+        else if (objectType === 'house') basePrice = 2200;
+        else basePrice = 2000;
+        
+        let multiplier = 1;
+        if (workType === 'water') multiplier = 0.4;
+        else if (workType === 'heating') multiplier = 0.35;
+        else if (workType === 'sewage') multiplier = 0.25;
+        
+        let total = Math.round(basePrice * area * multiplier);
+        total = Math.max(total, 15000);
+        
+        document.getElementById('calcPriceDisplay').innerHTML = `от ${total.toLocaleString()} ₽`;
+    }
+    
+    document.getElementById('calcObjectType').addEventListener('change', updateCalculatorPrice);
+    document.getElementById('calcArea').addEventListener('input', updateCalculatorPrice);
+    document.getElementById('calcWorkType').addEventListener('change', updateCalculatorPrice);
+    updateCalculatorPrice();
+    
+    // Модальное окно
+    const modal = document.getElementById('calculatorModal');
+    const openBtn = document.getElementById('openCalculatorBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    
+    openBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+        updateCalculatorPrice();
+    });
+    
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+    
+    document.getElementById('calcRequestBtn').addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    // Форма обратной связи
     document.getElementById('callbackForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('userName').value.trim();
@@ -162,6 +343,8 @@
         if(name && phone) { alert(`Спасибо, ${name}! Мы свяжемся с вами по номеру ${phone}`); this.reset(); }
         else alert('Заполните имя и телефон');
     });
+    
+    // Чат
     document.getElementById('chatButton').addEventListener('click', () => alert('Здравствуйте! Наш специалист скоро ответит. Или позвоните +7(977)325-27-28'));
 </script>
 </body>
