@@ -313,70 +313,79 @@
         }
         
         /* Services - с постоянной анимацией */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid #edf2f7;
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: cardAppear 0.6s ease-out forwards, gentlePulse 3s ease-in-out infinite;
-        }
-        
-        /* Задержка появления для каждой карточки */
-        .service-card:nth-child(1) { animation-delay: 0.1s, 0.8s; }
-        .service-card:nth-child(2) { animation-delay: 0.3s, 1s; }
-        .service-card:nth-child(3) { animation-delay: 0.5s, 1.2s; }
-        .service-card:nth-child(4) { animation-delay: 0.7s, 1.4s; }
-        
-        @keyframes cardAppear {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes gentlePulse {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-                border-color: #edf2f7;
-            }
-            50% {
-                transform: scale(1.02);
-                box-shadow: 0 15px 30px rgba(230,126,34,0.2);
-                border-color: #e67e22;
-            }
-        }
-        
-        .service-card:hover {
-            animation: none;
-            transform: translateY(-8px);
-            border-color: #e67e22;
-            box-shadow: 0 20px 35px rgba(0,0,0,0.15);
-        }
-        
-        .service-card:hover i {
-            transform: scale(1.1);
-        }
-        
-        .service-card i {
-            font-size: 40px;
-            color: #e67e22;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #edf2f7;
+    transition: all 0.2s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: cardAppear 0.6s ease-out forwards, gentlePulse 3s ease-in-out infinite;
+    cursor: pointer;
+}
+
+/* Задержка появления для каждой карточки */
+.service-card:nth-child(1) { animation-delay: 0.1s, 0.8s; }
+.service-card:nth-child(2) { animation-delay: 0.3s, 1s; }
+.service-card:nth-child(3) { animation-delay: 0.5s, 1.2s; }
+.service-card:nth-child(4) { animation-delay: 0.7s, 1.4s; }
+
+@keyframes cardAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gentlePulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-color: #edf2f7;
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 15px 30px rgba(230,126,34,0.2);
+        border-color: #e67e22;
+    }
+}
+
+/* При наведении — увеличение и тень */
+.service-card:hover {
+    animation: none;
+    transform: translateY(-8px) scale(1.02);
+    border-color: #e67e22;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+}
+
+/* При нажатии (активном состоянии) — эффект клика */
+.service-card:active {
+    transform: translateY(-4px) scale(0.98);
+    transition: all 0.05s ease;
+}
+
+.service-card:hover i {
+    transform: scale(1.1);
+}
+
+.service-card i {
+    font-size: 40px;
+    color: #e67e22;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
         }
         
         /* Маркиз - опросник */
