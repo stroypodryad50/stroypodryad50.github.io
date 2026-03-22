@@ -314,6 +314,39 @@
             font-size: 1rem;
         }
         
+        /* Tab Buttons */
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            background: white;
+            border: 2px solid #e67e22;
+            color: #e67e22;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn:hover {
+            background: #e67e22;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .tab-btn.active {
+            background: #e67e22;
+            color: white;
+            box-shadow: 0 5px 15px rgba(230,126,34,0.3);
+        }
+        
         /* Services */
         .services-grid {
             display: grid;
@@ -579,7 +612,7 @@
             border-radius: 24px;
             overflow-x: auto;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-top: 30px;
+            margin-top: 10px;
         }
         
         .price-table {
@@ -912,6 +945,10 @@
             .nav-links {
                 justify-content: center;
             }
+            .tab-btn {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -1085,10 +1122,17 @@
 
 <section id="prices" style="background: #f8fafc;">
     <div class="container">
-        <h2 class="section-title">Пример расчета теплого пола</h2>
-        <div class="section-sub">для помещения 40 м² от 01.08.2025</div>
+        <h2 class="section-title">Примеры расчетов</h2>
+        <div class="section-sub">Актуальные цены на монтажные работы от 01.08.2025</div>
         
-        <div class="price-table-wrapper">
+        <!-- Вкладки для переключения -->
+        <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="warmfloor">🌡 Теплый пол (40 м²)</button>
+            <button class="tab-btn" data-tab="radiator">🔥 Радиаторное отопление (150 м²)</button>
+        </div>
+        
+        <!-- Таблица теплого пола -->
+        <div class="price-table-wrapper" id="warmfloorTab">
             <table class="price-table">
                 <thead>
                     <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr>
@@ -1104,11 +1148,33 @@
                     <tr><td><strong>Клапан незамерзающий уличный</strong></td><td>монтаж</td><td>1 ед.</td><td><strong>5 400 ₽</strong></td></tr>
                     <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>2 500 ₽</strong></td></tr>
                 </tbody>
-                <tfoot>
-                    <tr class="total-row"><td colspan="3" style="text-align: right; font-size: 1.1rem;">ИТОГО:</td><td class="price-total"><strong>215 500 ₽</strong></td></tr>
-                </tfoot>
+                <tfoot><tr class="total-row"><td colspan="3" style="text-align: right; font-size: 1.1rem;">ИТОГО (теплый пол):</td><td class="price-total"><strong>215 500 ₽</strong></td></tr></tfoot>
             </table>
         </div>
+        
+        <!-- Таблица радиаторного отопления -->
+        <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
+            <table class="price-table">
+                <thead>
+                    <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Коллектор системы радиаторного отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
+                    <tr><td><strong>Шкаф коллекторный</strong></td><td>монтаж без штробления стен</td><td>1 ед.</td><td><strong>3 000 ₽</strong></td></tr>
+                    <tr><td><strong>Радиатор отопления стальной панельный/биметаллический</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
+                    <tr><td><strong>Радиатор отопления стальной трубчатый дизайнерский</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>9 600 ₽</strong></td></tr>
+                    <tr><td><strong>Внутрипольный конвектор</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>14 400 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ф16 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>200 м.п.</td><td><strong>84 000 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ф20 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>23 м.п.</td><td><strong>10 350 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ф25 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>30 м.п.</td><td><strong>14 400 ₽</strong></td></tr>
+                    <tr><td><strong>Заполнение системы отопления</strong></td><td></td><td>1 компл.</td><td><strong>4 200 ₽</strong></td></tr>
+                    <tr><td><strong>Опрессовка системы отопления</strong></td><td></td><td>1 компл.</td><td><strong>3 600 ₽</strong></td></tr>
+                    <tr><td><strong>Расходные материалы</strong></td><td></td><td>1 компл.</td><td><strong>3 500 ₽</strong></td></tr>
+                </tbody>
+                <tfoot><tr class="total-row"><td colspan="3" style="text-align: right; font-size: 1.1rem;">ИТОГО (радиаторное отопление):</td><td class="price-total"><strong>244 250 ₽</strong></td></tr></tfoot>
+            </table>
+        </div>
+        
         <p style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: #666;"><i class="fas fa-calculator"></i> *Окончательная стоимость зависит от сложности работ и выбранного оборудования</p>
     </div>
 </section>
@@ -1241,14 +1307,8 @@
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .chat-bot-header {
@@ -1267,10 +1327,6 @@
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.chat-bot-header h4 i {
-    font-size: 1.3rem;
 }
 
 .chat-bot-header .online {
@@ -1294,7 +1350,6 @@
     color: white;
     font-size: 1.3rem;
     cursor: pointer;
-    padding: 0 5px;
 }
 
 .chat-bot-messages {
@@ -1313,14 +1368,8 @@
     max-width: 85%;
 }
 
-.message.bot {
-    align-self: flex-start;
-}
-
-.message.user {
-    align-self: flex-end;
-    flex-direction: row-reverse;
-}
+.message.bot { align-self: flex-start; }
+.message.user { align-self: flex-end; flex-direction: row-reverse; }
 
 .message-avatar {
     width: 32px;
@@ -1331,13 +1380,10 @@
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 0.8rem;
     flex-shrink: 0;
 }
 
-.message.user .message-avatar {
-    background: #1e4660;
-}
+.message.user .message-avatar { background: #1e4660; }
 
 .message-text {
     background: white;
@@ -1352,14 +1398,6 @@
 .message.user .message-text {
     background: #e67e22;
     color: white;
-}
-
-.message.bot .message-text {
-    border-bottom-left-radius: 4px;
-}
-
-.message.user .message-text {
-    border-bottom-right-radius: 4px;
 }
 
 .quick-buttons {
@@ -1402,9 +1440,7 @@
     outline: none;
 }
 
-.chat-bot-input input:focus {
-    border-color: #e67e22;
-}
+.chat-bot-input input:focus { border-color: #e67e22; }
 
 .chat-bot-input button {
     background: #e67e22;
@@ -1453,27 +1489,19 @@
         right: 20px;
         bottom: 80px;
     }
-    .chat-bot-messages {
-        height: 400px;
-    }
+    .chat-bot-messages { height: 400px; }
 }
 </style>
 
 <!-- HTML чат-бота -->
 <div class="chat-bot-container" id="chatBot">
     <div class="chat-bot-header" id="chatHeader">
-        <h4>
-            <i class="fas fa-user-circle"></i>
-            Олег, менеджер
-            <span class="online"></span>
-        </h4>
+        <h4><i class="fas fa-user-circle"></i> Олег, менеджер <span class="online"></span></h4>
         <button class="close-chat" id="closeChatBtn">×</button>
     </div>
     <div class="chat-bot-messages" id="chatMessages">
         <div class="message bot">
-            <div class="message-avatar">
-                <i class="fas fa-user"></i>
-            </div>
+            <div class="message-avatar"><i class="fas fa-user"></i></div>
             <div class="message-text">
                 Здравствуйте! 👋<br>
                 Я Олег, менеджер компании СтройПодряд.<br><br>
@@ -1489,24 +1517,20 @@
     </div>
     <div class="chat-bot-input">
         <input type="text" id="chatInput" placeholder="Напишите вопрос..." autocomplete="off">
-        <button id="sendChatBtn">
-            <i class="fas fa-paper-plane"></i>
-        </button>
+        <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
     </div>
 </div>
 
 <script>
-// === Toast уведомления ===
+// Toast notification
 function showToast(message, type = 'info') {
     const toast = document.getElementById('toast');
     toast.textContent = message;
     toast.className = `toast ${type} show`;
-    setTimeout(() => {
-        toast.classList.remove('show');
-    }, 3000);
+    setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
-// === Маска для телефона ===
+// Маска для телефона
 function setPhoneMask(inputElement) {
     if (!inputElement) return;
     inputElement.addEventListener('input', function(e) {
@@ -1522,64 +1546,64 @@ function setPhoneMask(inputElement) {
     });
 }
 
-// === Валидация телефона ===
 function validatePhone(phone) {
     const digits = phone.replace(/\D/g, '');
     return digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'));
 }
 
-// === МАРКИЗ - опросник ===
-let selectedObject = null;
-let selectedTime = null;
-let selectedBudget = null;
+// === ВКЛАДКИ ДЛЯ ТАБЛИЦ ===
+function initTabs() {
+    const tabs = document.querySelectorAll('.tab-btn');
+    const warmfloorTab = document.getElementById('warmfloorTab');
+    const radiatorTab = document.getElementById('radiatorTab');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            if (tab.dataset.tab === 'warmfloor') {
+                warmfloorTab.style.display = 'block';
+                radiatorTab.style.display = 'none';
+            } else if (tab.dataset.tab === 'radiator') {
+                warmfloorTab.style.display = 'none';
+                radiatorTab.style.display = 'block';
+            }
+        });
+    });
+}
 
-const step1 = document.getElementById('step1');
-const step2 = document.getElementById('step2');
-const step3 = document.getElementById('step3');
-const step4 = document.getElementById('step4');
-
-const nextBtn1 = document.getElementById('nextStep1');
-const nextBtn2 = document.getElementById('nextStep2');
-const nextBtn3 = document.getElementById('nextStep3');
-const backBtn2 = document.getElementById('backStep2');
-const backBtn3 = document.getElementById('backStep3');
-const backBtn4 = document.getElementById('backStep4');
+// === МАРКИЗ ===
+let selectedObject = null, selectedTime = null, selectedBudget = null;
+const step1 = document.getElementById('step1'), step2 = document.getElementById('step2'), step3 = document.getElementById('step3'), step4 = document.getElementById('step4');
+const nextBtn1 = document.getElementById('nextStep1'), nextBtn2 = document.getElementById('nextStep2'), nextBtn3 = document.getElementById('nextStep3');
+const backBtn2 = document.getElementById('backStep2'), backBtn3 = document.getElementById('backStep3'), backBtn4 = document.getElementById('backStep4');
 
 function switchStep(from, to) {
     from.style.animation = 'fadeSlide 0.3s reverse';
-    setTimeout(() => {
-        from.style.display = 'none';
-        to.style.display = 'block';
-        to.style.animation = 'fadeSlide 0.4s ease';
-    }, 150);
+    setTimeout(() => { from.style.display = 'none'; to.style.display = 'block'; to.style.animation = 'fadeSlide 0.4s ease'; }, 150);
 }
 
-document.querySelectorAll('#optionsStep1 .option-item').forEach(opt => {
-    opt.addEventListener('click', () => {
-        document.querySelectorAll('#optionsStep1 .option-item').forEach(o => o.classList.remove('selected'));
-        opt.classList.add('selected');
-        selectedObject = opt.getAttribute('data-value');
-        nextBtn1.disabled = false;
-    });
-});
+document.querySelectorAll('#optionsStep1 .option-item').forEach(opt => opt.addEventListener('click', () => {
+    document.querySelectorAll('#optionsStep1 .option-item').forEach(o => o.classList.remove('selected'));
+    opt.classList.add('selected');
+    selectedObject = opt.getAttribute('data-value');
+    nextBtn1.disabled = false;
+}));
 
-document.querySelectorAll('#optionsStep2 .option-item').forEach(opt => {
-    opt.addEventListener('click', () => {
-        document.querySelectorAll('#optionsStep2 .option-item').forEach(o => o.classList.remove('selected'));
-        opt.classList.add('selected');
-        selectedTime = opt.getAttribute('data-time');
-        nextBtn2.disabled = false;
-    });
-});
+document.querySelectorAll('#optionsStep2 .option-item').forEach(opt => opt.addEventListener('click', () => {
+    document.querySelectorAll('#optionsStep2 .option-item').forEach(o => o.classList.remove('selected'));
+    opt.classList.add('selected');
+    selectedTime = opt.getAttribute('data-time');
+    nextBtn2.disabled = false;
+}));
 
-document.querySelectorAll('#optionsStep3 .option-item').forEach(opt => {
-    opt.addEventListener('click', () => {
-        document.querySelectorAll('#optionsStep3 .option-item').forEach(o => o.classList.remove('selected'));
-        opt.classList.add('selected');
-        selectedBudget = opt.getAttribute('data-budget');
-        nextBtn3.disabled = false;
-    });
-});
+document.querySelectorAll('#optionsStep3 .option-item').forEach(opt => opt.addEventListener('click', () => {
+    document.querySelectorAll('#optionsStep3 .option-item').forEach(o => o.classList.remove('selected'));
+    opt.classList.add('selected');
+    selectedBudget = opt.getAttribute('data-budget');
+    nextBtn3.disabled = false;
+}));
 
 nextBtn1.addEventListener('click', () => switchStep(step1, step2));
 backBtn2.addEventListener('click', () => switchStep(step2, step1));
@@ -1595,45 +1619,23 @@ document.getElementById('marquizForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const name = document.getElementById('marquizName').value.trim();
     const phone = marquizPhone.value;
-    
-    if (!name) {
-        showToast('Пожалуйста, введите ваше имя', 'error');
-        return;
-    }
-    if (!validatePhone(phone)) {
-        showToast('Пожалуйста, введите корректный номер телефона (11 цифр)', 'error');
-        return;
-    }
-    
+    if (!name) { showToast('Введите имя', 'error'); return; }
+    if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
     document.getElementById('marquizObjectType').value = selectedObject || '';
     document.getElementById('marquizTime').value = selectedTime || '';
     document.getElementById('marquizBudget').value = selectedBudget || '';
-    
     fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-            Имя: name,
-            Телефон: phone,
-            Тип_объекта: selectedObject,
-            Срок: selectedTime,
-            Бюджет: selectedBudget,
-            Источник: 'Верхний опросник'
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ Имя: name, Телефон: phone, Тип_объекта: selectedObject, Срок: selectedTime, Бюджет: selectedBudget, Источник: 'Верхний опросник' })
     }).catch(console.error);
-    
-    showToast(`Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.`, 'success');
-    
+    showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
     step4.style.display = 'none';
     step1.style.display = 'block';
     document.getElementById('marquizForm').reset();
     document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
-    nextBtn1.disabled = true;
-    nextBtn2.disabled = true;
-    nextBtn3.disabled = true;
-    selectedObject = null;
-    selectedTime = null;
-    selectedBudget = null;
+    nextBtn1.disabled = true; nextBtn2.disabled = true; nextBtn3.disabled = true;
+    selectedObject = null; selectedTime = null; selectedBudget = null;
 });
 
 // === НИЖНЯЯ ФОРМА ===
@@ -1641,69 +1643,31 @@ const callbackName = document.getElementById('callbackName');
 const callbackPhoneInput = document.getElementById('callbackPhone');
 const callbackObject = document.getElementById('callbackObject');
 const callbackSubmitBtn = document.getElementById('callbackSubmitBtn');
-
 setPhoneMask(callbackPhoneInput);
 
-const callbackForm = document.getElementById('callbackForm');
-if (callbackForm) {
-    callbackForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const name = callbackName.value.trim();
-        const phone = callbackPhoneInput.value;
-        const objectType = callbackObject ? callbackObject.value.trim() : '';
-        
-        if (!name) {
-            showToast('Пожалуйста, введите ваше имя', 'error');
-            callbackName.style.border = '2px solid #e74c3c';
-            return;
-        }
-        
-        if (!validatePhone(phone)) {
-            showToast('Пожалуйста, введите корректный номер телефона (11 цифр)', 'error');
-            callbackPhoneInput.style.border = '2px solid #e74c3c';
-            return;
-        }
-        
-        callbackName.style.border = '';
-        callbackPhoneInput.style.border = '';
-        
-        callbackSubmitBtn.disabled = true;
-        callbackSubmitBtn.textContent = 'Отправка...';
-        
-        try {
-            const response = await fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({
-                    Имя: name,
-                    Телефон: phone,
-                    Тип_объекта: objectType || 'Не указан',
-                    Дата: new Date().toLocaleString('ru-RU'),
-                    Источник: 'Нижняя форма'
-                })
-            });
-            
-            if (response.ok) {
-                showToast(`✅ Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
-                callbackForm.reset();
-            } else {
-                throw new Error('Ошибка отправки');
-            }
-        } catch (error) {
-            console.error('Ошибка:', error);
-            showToast('❌ Ошибка отправки. Позвоните нам: +7 (977) 325-27-28', 'error');
-        } finally {
-            callbackSubmitBtn.disabled = false;
-            callbackSubmitBtn.textContent = 'Отправить';
-        }
-    });
-    
-    callbackName.addEventListener('focus', () => callbackName.style.border = '');
-    callbackPhoneInput.addEventListener('focus', () => callbackPhoneInput.style.border = '');
-}
+document.getElementById('callbackForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const name = callbackName.value.trim();
+    const phone = callbackPhoneInput.value;
+    const objectType = callbackObject ? callbackObject.value.trim() : '';
+    if (!name) { showToast('Введите имя', 'error'); callbackName.style.border = '2px solid #e74c3c'; return; }
+    if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); callbackPhoneInput.style.border = '2px solid #e74c3c'; return; }
+    callbackName.style.border = ''; callbackPhoneInput.style.border = '';
+    callbackSubmitBtn.disabled = true; callbackSubmitBtn.textContent = 'Отправка...';
+    try {
+        await fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ Имя: name, Телефон: phone, Тип_объекта: objectType, Источник: 'Нижняя форма' })
+        });
+        showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
+        document.getElementById('callbackForm').reset();
+    } catch (error) { showToast('Ошибка. Позвоните +7(977)325-27-28', 'error'); }
+    finally { callbackSubmitBtn.disabled = false; callbackSubmitBtn.textContent = 'Отправить'; }
+});
+callbackName.addEventListener('focus', () => callbackName.style.border = '');
+callbackPhoneInput.addEventListener('focus', () => callbackPhoneInput.style.border = '');
 
-// === Калькулятор ===
+// === КАЛЬКУЛЯТОР ===
 function updateCalculatorPrice() {
     const objectType = document.getElementById('calcObjectType').value;
     const area = parseInt(document.getElementById('calcArea').value) || 100;
@@ -1714,143 +1678,55 @@ function updateCalculatorPrice() {
     total = Math.max(total, 15000);
     document.getElementById('calcPriceDisplay').innerHTML = `от ${total.toLocaleString()} ₽`;
 }
-
-const calcObjectType = document.getElementById('calcObjectType');
-const calcArea = document.getElementById('calcArea');
-const calcWorkType = document.getElementById('calcWorkType');
-if (calcObjectType) calcObjectType.addEventListener('change', updateCalculatorPrice);
-if (calcArea) calcArea.addEventListener('input', updateCalculatorPrice);
-if (calcWorkType) calcWorkType.addEventListener('change', updateCalculatorPrice);
+document.getElementById('calcObjectType')?.addEventListener('change', updateCalculatorPrice);
+document.getElementById('calcArea')?.addEventListener('input', updateCalculatorPrice);
+document.getElementById('calcWorkType')?.addEventListener('change', updateCalculatorPrice);
 updateCalculatorPrice();
 
 const modal = document.getElementById('calculatorModal');
-const openCalculatorBtn = document.getElementById('openCalculatorBtn');
-const closeModalBtn = document.getElementById('closeModalBtn');
-const calcRequestBtn = document.getElementById('calcRequestBtn');
-
-if (openCalculatorBtn) {
-    openCalculatorBtn.addEventListener('click', () => {
-        if (modal) modal.classList.add('active');
-        updateCalculatorPrice();
-    });
-}
-if (closeModalBtn) closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
-if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
-if (calcRequestBtn) {
-    calcRequestBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
-    });
-}
-
-// === КЛИК ПО КАРТОЧКАМ УСЛУГ ===
-document.querySelectorAll('.service-card').forEach((card) => {
-    card.addEventListener('click', () => {
-        document.getElementById('prices').scrollIntoView({ behavior: 'smooth' });
-    });
+document.getElementById('openCalculatorBtn')?.addEventListener('click', () => modal.classList.add('active'));
+document.getElementById('closeModalBtn')?.addEventListener('click', () => modal.classList.remove('active'));
+modal?.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+document.getElementById('calcRequestBtn')?.addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
 });
 
-// === ЧАТ-БОТ ОЛЕГ ===
+// === КЛИК ПО КАРТОЧКАМ ===
+document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => document.getElementById('prices').scrollIntoView({ behavior: 'smooth' }));
+});
 
-// База знаний бота
+// === ЧАТ-БОТ ===
 const botAnswers = {
-    price: {
-        keywords: ['цена', 'стоимость', 'сколько стоит', 'прайс', 'расценки', 'цены', 'дорого', 'дешево'],
-        answer: '💰 Стоимость зависит от объема работ. Примерные цены:\n\n• Монтаж водоснабжения — от 15 000 ₽\n• Отопление под ключ — от 45 000 ₽\n• Теплый пол — от 2 500 ₽/м²\n• Канализация — от 25 000 ₽\n\nДля точного расчета оставьте заявку — я сделаю индивидуальную смету бесплатно!'
-    },
-    install: {
-        keywords: ['монтаж', 'установка', 'поставить', 'сделать', 'смонтировать', 'работы', 'услуги'],
-        answer: '🔧 Мы выполняем полный комплекс сантехнических работ:\n\n✓ Монтаж систем отопления\n✓ Разводка водоснабжения\n✓ Установка сантехники (унитазы, раковины, ванны)\n✓ Монтаж теплых полов\n✓ Монтаж канализации и септиков\n✓ Установка насосных станций\n\nВыезжаем на замер бесплатно!'
-    },
-    time: {
-        keywords: ['срок', 'быстро', 'долго', 'сколько дней', 'когда', 'время'],
-        answer: '⏱ Сроки выполнения работ:\n\n• Квартира (1-комнатная) — 1-2 дня\n• Квартира (3-комнатная) — 2-3 дня\n• Частный дом (до 100 м²) — 3-5 дней\n• Частный дом (100-200 м²) — 5-7 дней\n• Коттедж (200+ м²) — 7-14 дней\n\nТочные сроки скажу после выезда на замер!'
-    },
-    warranty: {
-        keywords: ['гарантия', 'гарантий', 'ответственность', 'надежно'],
-        answer: '✅ Мы даем официальную гарантию 5 лет на все виды работ!\n\nТакже у нас есть:\n• Страховка ответственности\n• Договор с четкими сроками\n• Поэтапная оплата\n• Фотоотчет о работе'
-    },
-    payment: {
-        keywords: ['оплата', 'карта', 'наличные', 'безнал', 'рассрочка', 'деньги'],
-        answer: '💳 Способы оплаты:\n\n• Наличные (по факту выполнения)\n• Банковская карта (Visa/Mastercard)\n• Безналичный расчет (для юрлиц)\n• Рассрочка от банков-партнеров (Т-Банк, Альфа-Банк)\n\nОплата поэтапно: предоплата 30%, остальное после завершения работ.'
-    },
-    measure: {
-        keywords: ['замер', 'выезд', 'приехать', 'посмотреть', 'оценка'],
-        answer: '📏 Выезд на замер — БЕСПЛАТНО!\n\nСпециалист приедет в удобное для вас время:\n• Сделает все необходимые замеры\n• Проконсультирует по материалам\n• Составит подробную смету\n• Ответит на все вопросы\n\nОставьте заявку, и мы согласуем время выезда!'
-    },
-    contact: {
-        keywords: ['телефон', 'позвонить', 'контакт', 'номер', 'связаться', 'перезвоните'],
-        answer: '📞 Наш телефон: +7 (977) 325-27-28\n\nРежим работы: ежедневно с 9:00 до 21:00\n\nИли оставьте свой номер в форме ниже — я перезвоню вам в течение 15 минут!'
-    },
-    call: {
-        keywords: ['звонок', 'позвоните', 'свяжитесь', 'обратный звонок'],
-        answer: '📱 Хорошо! Оставьте, пожалуйста, свой номер телефона в форме ниже или напишите его сюда — я перезвоню вам в течение 15 минут.'
-    },
-    thanks: {
-        keywords: ['спасибо', 'благодарю', 'отлично', 'понятно', 'хорошо'],
-        answer: 'Пожалуйста! 😊 Рад был помочь. Если есть еще вопросы — спрашивайте. Или оставьте заявку, я подготовлю для вас индивидуальный расчет.'
-    },
-    hello: {
-        keywords: ['привет', 'здравствуй', 'добрый день', 'добрый вечер', 'здрасте', 'приветствую'],
-        answer: 'Здравствуйте! 👋 Я Олег, менеджер компании СтройПодряд. Чем могу помочь? Расскажите, что вас интересует: цены, монтаж или хотите вызвать замерщика?'
-    }
+    price: { keywords: ['цена', 'стоимость', 'сколько стоит', 'прайс'], answer: '💰 Примерные цены:\n• Монтаж водоснабжения — от 15 000 ₽\n• Отопление под ключ — от 45 000 ₽\n• Теплый пол — от 2 500 ₽/м²\n\nДля точного расчета оставьте заявку!' },
+    install: { keywords: ['монтаж', 'установка', 'работы'], answer: '🔧 Выполняем: отопление, водоснабжение, сантехнику, теплые полы, канализацию. Выезжаем на замер бесплатно!' },
+    time: { keywords: ['срок', 'быстро', 'долго', 'сколько дней'], answer: '⏱ Сроки: квартира — 1-3 дня, дом до 100м² — 3-5 дней, дом до 200м² — 5-7 дней.' },
+    call: { keywords: ['звонок', 'позвоните'], answer: '📱 Оставьте свой номер в форме ниже или напишите сюда — я перезвоню через 15 минут!' }
 };
 
 function getBotAnswer(message) {
     const lowerMsg = message.toLowerCase();
-    
     for (let key in botAnswers) {
-        const keywords = botAnswers[key].keywords;
-        for (let kw of keywords) {
-            if (lowerMsg.includes(kw)) {
-                return botAnswers[key].answer;
-            }
+        for (let kw of botAnswers[key].keywords) {
+            if (lowerMsg.includes(kw)) return botAnswers[key].answer;
         }
     }
-    
     if (lowerMsg.match(/\d/) && lowerMsg.replace(/\D/g, '').length >= 10) {
         const phone = message;
-        fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                Имя: 'Клиент из чата',
-                Телефон: phone,
-                Источник: 'Чат-бот Олег',
-                Дата: new Date().toLocaleString('ru-RU')
-            })
-        }).catch(console.error);
-        return `📞 Спасибо! Я записал ваш номер ${phone}. Передаю заявку менеджеру, он перезвонит вам в течение 15 минут.`;
+        fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ Имя: 'Клиент из чата', Телефон: phone, Источник: 'Чат-бот' }) });
+        return `📞 Спасибо! Записал номер ${phone}. Менеджер перезвонит через 15 минут.`;
     }
-    
-    return 'Извините, не совсем понял вопрос 🤔\n\nЯ могу:\n💰 Рассказать о ценах\n🔧 Объяснить как проходит монтаж\n⏱ Уточнить сроки\n📏 Организовать бесплатный замер\n\nИли напишите свой номер — я перезвоню и все расскажу!';
+    return 'Извините, не понял 🤔\n\nЯ могу:\n💰 Рассказать о ценах\n🔧 Объяснить монтаж\n⏱ Уточнить сроки\n📏 Организовать замер\n\nИли напишите номер — я перезвоню!';
 }
 
 function addMessage(text, isUser = false) {
     const messagesDiv = document.getElementById('chatMessages');
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
-    
-    messageDiv.innerHTML = `
-        <div class="message-avatar">
-            <i class="fas ${isUser ? 'fa-user' : 'fa-user-circle'}"></i>
-        </div>
-        <div class="message-text">
-            ${text.replace(/\n/g, '<br>')}
-            ${!isUser && text.includes('форме') ? '<div class="quick-buttons"><div class="quick-btn" data-action="openForm">📝 Заполнить заявку</div></div>' : ''}
-        </div>
-    `;
-    
+    messageDiv.innerHTML = `<div class="message-avatar"><i class="fas ${isUser ? 'fa-user' : 'fa-user-circle'}"></i></div><div class="message-text">${text.replace(/\n/g, '<br>')}</div>`;
     messagesDiv.appendChild(messageDiv);
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
-    
-    const formBtn = messageDiv.querySelector('[data-action="openForm"]');
-    if (formBtn) {
-        formBtn.addEventListener('click', () => {
-            document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
-            addMessage('Отлично! Заполните форму ниже, и я свяжусь с вами.', false);
-        });
-    }
 }
 
 function showTyping() {
@@ -1858,90 +1734,43 @@ function showTyping() {
     const typingDiv = document.createElement('div');
     typingDiv.className = 'message bot';
     typingDiv.id = 'typingIndicator';
-    typingDiv.innerHTML = `
-        <div class="message-avatar">
-            <i class="fas fa-user-circle"></i>
-        </div>
-        <div class="typing">
-            <span></span><span></span><span></span>
-        </div>
-    `;
+    typingDiv.innerHTML = `<div class="message-avatar"><i class="fas fa-user-circle"></i></div><div class="typing"><span></span><span></span><span></span></div>`;
     messagesDiv.appendChild(typingDiv);
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
-
-function hideTyping() {
-    const typing = document.getElementById('typingIndicator');
-    if (typing) typing.remove();
-}
+function hideTyping() { const typing = document.getElementById('typingIndicator'); if (typing) typing.remove(); }
 
 async function sendMessage() {
     const input = document.getElementById('chatInput');
     const message = input.value.trim();
     if (!message) return;
-    
     addMessage(message, true);
     input.value = '';
-    
     showTyping();
-    setTimeout(() => {
-        hideTyping();
-        const answer = getBotAnswer(message);
-        addMessage(answer, false);
-    }, 600);
+    setTimeout(() => { hideTyping(); addMessage(getBotAnswer(message), false); }, 600);
 }
 
-function setupQuickButtons() {
-    document.querySelectorAll('.quick-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const question = btn.getAttribute('data-question');
-            const messages = {
-                price: 'Сколько стоят ваши услуги?',
-                install: 'Какие работы вы выполняете?',
-                time: 'Какие сроки монтажа?',
-                call: 'Закажите звонок'
-            };
-            if (messages[question]) {
-                addMessage(messages[question], true);
-                setTimeout(() => {
-                    const answer = getBotAnswer(messages[question]);
-                    addMessage(answer, false);
-                }, 500);
-            }
-        });
+document.querySelectorAll('.quick-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const q = btn.getAttribute('data-question');
+        const msgs = { price: 'Сколько стоят услуги?', install: 'Какие работы выполняете?', time: 'Какие сроки?', call: 'Закажите звонок' };
+        if (msgs[q]) { addMessage(msgs[q], true); setTimeout(() => addMessage(getBotAnswer(msgs[q]), false), 500); }
     });
-}
+});
 
 const chatBot = document.getElementById('chatBot');
 const openChatBtn = document.getElementById('openChatBtn');
 const closeChatBtn = document.getElementById('closeChatBtn');
 const chatHeader = document.getElementById('chatHeader');
-const sendChatBtn = document.getElementById('sendChatBtn');
-const chatInput = document.getElementById('chatInput');
 
-if (openChatBtn) {
-    openChatBtn.addEventListener('click', () => {
-        chatBot.style.display = 'flex';
-        openChatBtn.style.display = 'none';
-    });
-}
+openChatBtn?.addEventListener('click', () => { chatBot.style.display = 'flex'; openChatBtn.style.display = 'none'; });
+closeChatBtn?.addEventListener('click', () => { chatBot.style.display = 'none'; openChatBtn.style.display = 'flex'; });
+chatHeader?.addEventListener('click', (e) => { if (e.target !== closeChatBtn) { chatBot.style.display = 'none'; openChatBtn.style.display = 'flex'; } });
+document.getElementById('chatInput')?.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+document.getElementById('sendChatBtn')?.addEventListener('click', sendMessage);
 
-function closeChat() {
-    chatBot.style.display = 'none';
-    openChatBtn.style.display = 'flex';
-}
-
-if (closeChatBtn) closeChatBtn.addEventListener('click', closeChat);
-if (chatHeader) chatHeader.addEventListener('click', (e) => { if (e.target !== closeChatBtn) closeChat(); });
-
-if (chatInput) {
-    chatInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') sendMessage();
-    });
-}
-if (sendChatBtn) sendChatBtn.addEventListener('click', sendMessage);
-
-setTimeout(setupQuickButtons, 100);
+// Инициализация
+initTabs();
 </script>
 </body>
 </html>
