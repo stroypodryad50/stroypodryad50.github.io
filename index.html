@@ -725,39 +725,260 @@
             font-size: 20px;
         }
         
-        /* Chat Button */
+        /* ========== AI ЧАТ-БОТ СТИЛИ ========== */
         .chat-button {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 55px;
-            height: 55px;
-            background: #e67e22;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #e67e22, #d35400);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(230,126,34,0.4);
             z-index: 1000;
             transition: all 0.3s ease;
-            animation: bounce 2s infinite;
+            animation: pulse 2s infinite;
         }
         
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(230,126,34,0.7); transform: scale(1); }
+            70% { box-shadow: 0 0 0 15px rgba(230,126,34,0); transform: scale(1.05); }
+            100% { box-shadow: 0 0 0 0 rgba(230,126,34,0); transform: scale(1); }
         }
         
         .chat-button:hover {
             transform: scale(1.1);
-            background: #d35400;
             animation: none;
         }
         
         .chat-button i {
             color: white;
-            font-size: 24px;
+            font-size: 28px;
+        }
+        
+        .chat-bot-container {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            width: 400px;
+            max-width: calc(100vw - 40px);
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            z-index: 1001;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            animation: slideInUp 0.3s ease-out;
+        }
+        
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .chat-bot-header {
+            background: linear-gradient(135deg, #1e4660, #2c5a6e);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-bot-header h4 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+        
+        .ai-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #2ecc71;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .chat-bot-messages {
+            height: 450px;
+            overflow-y: auto;
+            padding: 15px;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .chat-bot-messages::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        .chat-bot-messages::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        
+        .chat-bot-messages::-webkit-scrollbar-thumb {
+            background: #e67e22;
+            border-radius: 10px;
+        }
+        
+        .message {
+            display: flex;
+            gap: 10px;
+            max-width: 85%;
+            animation: messageFadeIn 0.3s ease;
+        }
+        
+        @keyframes messageFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message.bot { align-self: flex-start; }
+        .message.user { align-self: flex-end; flex-direction: row-reverse; }
+        
+        .message-avatar {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .message.user .message-avatar {
+            background: linear-gradient(135deg, #1e4660, #2c5a6e);
+        }
+        
+        .message-text {
+            background: white;
+            padding: 10px 14px;
+            border-radius: 18px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: #2c3e50;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        .message.user .message-text {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            color: white;
+        }
+        
+        .quick-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .quick-btn {
+            background: #fef5e8;
+            border: 1px solid #e67e22;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            color: #e67e22;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .quick-btn:hover {
+            background: #e67e22;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 10px 14px;
+            background: white;
+            border-radius: 18px;
+            width: fit-content;
+        }
+        
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #94a3b8;
+            border-radius: 50%;
+            animation: typingBounce 1.4s infinite;
+        }
+        
+        @keyframes typingBounce {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+            30% { transform: translateY(-6px); opacity: 1; }
+        }
+        
+        .chat-bot-input {
+            display: flex;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #edf2f7;
+            gap: 10px;
+        }
+        
+        .chat-bot-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 25px;
+            outline: none;
+        }
+        
+        .chat-bot-input input:focus {
+            border-color: #e67e22;
+        }
+        
+        .chat-bot-input button {
+            background: #e67e22;
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .chat-bot-input button:hover {
+            background: #d35400;
+            transform: scale(1.05);
         }
         
         @media (max-width: 768px) {
@@ -799,6 +1020,21 @@
             .chat-button {
                 bottom: 20px;
                 right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+            .chat-button i {
+                font-size: 24px;
+            }
+            .chat-bot-container {
+                bottom: 85px;
+                right: 20px;
+                width: calc(100vw - 40px);
+                left: 20px;
+                right: auto;
+            }
+            .chat-bot-messages {
+                height: 400px;
             }
         }
     </style>
@@ -888,9 +1124,9 @@
                 </div>
                 <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Когда планируете монтаж?</h3>
                 <div class="options-list" id="optionsStep2">
-                    <div class="option-item" data-time="now"><i class="fas fa-clock"></i><span>В ближайшее время</span></div>
-                    <div class="option-item" data-time="month"><i class="fas fa-calendar-week"></i><span>В течение месяца</span></div>
-                    <div class="option-item" data-time="quarter"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
+                    <div class="option-item" data-time="now" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-clock"></i><span>В ближайшее время</span></div>
+                    <div class="option-item" data-time="month" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-calendar-week"></i><span>В течение месяца</span></div>
+                    <div class="option-item" data-time="quarter" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
                 </div>
                 <div style="display:flex; gap:12px; margin-top:20px;">
                     <button class="back-btn" id="backStep2" style="flex:1; background:transparent; border:2px solid #e67e22; color:#e67e22; padding:12px; border-radius:40px;">← Назад</button>
@@ -909,10 +1145,10 @@
                 </div>
                 <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Какой бюджет планируете?</h3>
                 <div class="options-list" id="optionsStep3">
-                    <div class="option-item" data-budget="50"><i class="fas fa-ruble-sign"></i><span>До 50 000 ₽</span></div>
-                    <div class="option-item" data-budget="100"><i class="fas fa-ruble-sign"></i><span>50 000 - 100 000 ₽</span></div>
-                    <div class="option-item" data-budget="200"><i class="fas fa-ruble-sign"></i><span>100 000 - 200 000 ₽</span></div>
-                    <div class="option-item" data-budget="300"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
+                    <div class="option-item" data-budget="50" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>До 50 000 ₽</span></div>
+                    <div class="option-item" data-budget="100" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>50 000 - 100 000 ₽</span></div>
+                    <div class="option-item" data-budget="200" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>100 000 - 200 000 ₽</span></div>
+                    <div class="option-item" data-budget="300" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
                 </div>
                 <div style="display:flex; gap:12px; margin-top:20px;">
                     <button class="back-btn" id="backStep3" style="flex:1; background:transparent; border:2px solid #e67e22; color:#e67e22; padding:12px; border-radius:40px;">← Назад</button>
@@ -1029,7 +1265,7 @@
         <!-- Таблица теплого пола с значком диаметра ⌀ -->
         <div class="price-table-wrapper" id="warmfloorTab">
             <table class="price-table">
-                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
+                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </tr> </thead>
                 <tbody>
                     <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
                     <tr><td><strong>Труба ⌀20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
@@ -1048,7 +1284,7 @@
         <!-- Таблица радиаторного отопления с значком диаметра ⌀ -->
         <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
             <table class="price-table">
-                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
+                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </tr> </thead>
                 <tbody>
                     <tr><td><strong>Коллектор системы радиаторного отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
                     <tr><td><strong>Шкаф коллекторный</strong></td><td>монтаж без штробления стен</td><td>1 ед.</td><td><strong>3 000 ₽</strong></td></tr>
@@ -1151,8 +1387,38 @@
     <i class="fas fa-arrow-up"></i>
 </div>
 
+<!-- Кнопка AI чат-бота -->
 <div class="chat-button" id="openChatBtn">
-    <i class="fas fa-comment-dots"></i>
+    <i class="fas fa-robot"></i>
+</div>
+
+<!-- Контейнер AI чат-бота -->
+<div class="chat-bot-container" id="chatBot">
+    <div class="chat-bot-header">
+        <h4><i class="fas fa-brain"></i> AI Ассистент <span class="ai-badge"><i class="fas fa-microchip"></i> ИИ</span><span class="status-dot"></span></h4>
+        <button class="close-chat" id="closeChatBtn">×</button>
+    </div>
+    <div class="chat-bot-messages" id="chatMessages">
+        <div class="message bot">
+            <div class="message-avatar"><i class="fas fa-robot"></i></div>
+            <div class="message-text">
+                🤖 <strong>Привет! Я AI-ассистент СтройПодряд</strong><br><br>
+                Могу помочь с подбором оборудования, расчетом стоимости и ответить на любые вопросы о сантехмонтаже.<br><br>
+                👇 Что вас интересует?
+                <div class="quick-buttons">
+                    <div class="quick-btn" data-question="price">💰 Цены</div>
+                    <div class="quick-btn" data-question="install">🔧 Монтаж</div>
+                    <div class="quick-btn" data-question="time">⏱ Сроки</div>
+                    <div class="quick-btn" data-question="calculate">📐 Рассчитать</div>
+                    <div class="quick-btn" data-question="call">📞 Заказать звонок</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-bot-input">
+        <input type="text" id="chatInput" placeholder="Спросите AI ассистента...">
+        <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+    </div>
 </div>
 
 <script>
@@ -1322,10 +1588,219 @@ document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('click', () => document.getElementById('prices').scrollIntoView({ behavior: 'smooth' }));
 });
 
-// Чат-бот
-const chatBot = document.getElementById('openChatBtn');
-chatBot?.addEventListener('click', () => {
-    showToast('Здравствуйте! Наш специалист скоро ответит. Позвоните +7(977)325-27-28', 'info');
+// ========== AI ЧАТ-БОТ ==========
+const chatBot = document.getElementById('chatBot');
+const openChatBtn = document.getElementById('openChatBtn');
+const closeChatBtn = document.getElementById('closeChatBtn');
+const chatInput = document.getElementById('chatInput');
+const sendChatBtn = document.getElementById('sendChatBtn');
+const chatMessages = document.getElementById('chatMessages');
+
+let userContext = {
+    name: null,
+    objectType: null,
+    area: null,
+    lastQuestion: null
+};
+
+// Продвинутый AI движок для распознавания намерений
+function analyzeIntent(message) {
+    const lowerMsg = message.toLowerCase();
+    
+    const intents = {
+        greeting: ['привет', 'здравствуй', 'добрый день', 'добрый вечер', 'здрасте', 'hi', 'hello'],
+        price: ['цен', 'стоимость', 'сколько', 'стоит', 'прайс', 'цена', 'расценк', 'деньги', 'оплата'],
+        install: ['монтаж', 'установк', 'поставит', 'смонтироват', 'работ', 'сделает', 'выполнит'],
+        timing: ['срок', 'долго', 'быстро', 'время', 'когда', 'дней', 'неделю', 'месяц'],
+        calculation: ['рассчитай', 'смета', 'подсчитай', 'калькулятор', 'расчет', 'посчитай'],
+        heating: ['отоплен', 'котел', 'радиатор', 'батарея', 'теплый пол', 'тёплый пол'],
+        water: ['водоснабжени', 'вода', 'труб', 'разводк', 'насос', 'фильтр'],
+        guarantee: ['гарант', 'ответственность', 'проблем', 'поломк', 'ремонт'],
+        call: ['звон', 'перезвон', 'телефон', 'номер', 'свяжит', 'контакт']
+    };
+    
+    for (const [intent, keywords] of Object.entries(intents)) {
+        if (keywords.some(k => lowerMsg.includes(k))) {
+            return intent;
+        }
+    }
+    
+    const areaMatch = lowerMsg.match(/(\d+)\s*(м2|м²|кв|квадрат)/);
+    if (areaMatch) return 'area';
+    
+    if (lowerMsg.match(/[0-9]{10,11}/) || lowerMsg.match(/[\d\(\)\-\+]{10,}/)) return 'phone_number';
+    
+    return 'unknown';
+}
+
+function generateResponse(intent, userMessage) {
+    const lowerMsg = userMessage.toLowerCase();
+    
+    switch(intent) {
+        case 'greeting':
+            return `🤖 Здравствуйте! 👋\n\nЯ AI-ассистент компании СтройПодряд. Могу помочь с подбором оборудования, расчетом стоимости сантехмонтажа или записать вас на бесплатный замер.\n\n${userContext.name ? `${userContext.name}, что` : 'Что'} именно вас интересует?`;
+        
+        case 'price':
+            return `💰 <strong>Наши цены на сантехмонтаж:</strong><br><br>
+• 🚰 Водоснабжение (квартира) — от 15 000 ₽<br>
+• 🔥 Отопление под ключ (до 100м²) — от 45 000 ₽<br>
+• 🌡 Теплый пол — от 2 500 ₽/м²<br>
+• 🚽 Установка сантехники — от 3 500 ₽<br>
+• 🔧 Монтаж котла — от 12 000 ₽<br>
+• 📏 Разводка труб — от 450 ₽/м.пог<br><br>
+📌 Нужен точный расчет? Напишите площадь объекта!`;
+        
+        case 'calculation':
+            return `📐 <strong>Рассчитаем стоимость сантехмонтажа!</strong><br><br>
+Для точного расчета мне нужно знать:<br>
+1️⃣ Тип объекта (квартира/дом)<br>
+2️⃣ Площадь помещения<br>
+3️⃣ Что нужно смонтировать (отопление/водоснабжение)<br><br>
+Напишите эти параметры!`;
+        
+        case 'install':
+            return `🔧 <strong>Мы выполняем полный комплекс сантехмонтажных работ:</strong><br><br>
+✅ Отопление: котлы, радиаторы, теплые полы<br>
+✅ Водоснабжение: разводка труб, насосные станции, фильтрация<br>
+✅ Канализация: внутренняя разводка, септики<br>
+✅ Сантехника: установка унитазов, раковин, смесителей<br><br>
+Гарантия на все работы — 5 лет!`;
+        
+        case 'timing':
+            return `⏱ <strong>Сроки выполнения:</strong><br><br>
+• Квартира (сантехника) — 1-3 дня<br>
+• Частный дом (отопление + водоснабжение) — 3-7 дней<br>
+• Коттедж (полный комплекс) — 7-14 дней<br><br>
+Всегда соблюдаем оговоренные сроки!`;
+        
+        case 'heating':
+            return `🔥 <strong>Монтаж систем отопления:</strong><br><br>
+• Газовые котлы (Baxi, Viessmann) — от 25 000 ₽ с монтажом<br>
+• Радиаторы — от 2 800 ₽/шт (установка)<br>
+• Теплый пол водяной — от 2 500 ₽/м²<br>
+• Теплый пол электрический — от 1 800 ₽/м²<br><br>
+Какой вариант вас интересует?`;
+        
+        case 'water':
+            return `🚰 <strong>Монтаж систем водоснабжения:</strong><br><br>
+• Разводка труб — от 450 ₽/м.пог<br>
+• Насосная станция — от 8 500 ₽<br>
+• Фильтры — от 3 000 ₽<br>
+• Бойлер — от 5 000 ₽<br><br>
+Нужен монтаж под ключ? Напишите площадь!`;
+        
+        case 'guarantee':
+            return `✅ <strong>Гарантия на наши работы — 5 лет!</strong><br><br>
+• Бесплатный выезд мастера при проблемах<br>
+• Ремонт или замена за наш счет (при браке)<br>
+• Постгарантийное обслуживание со скидкой 20%`;
+        
+        case 'area':
+            const areaMatch = userMessage.match(/(\d+)/);
+            if (areaMatch) {
+                userContext.area = areaMatch[0];
+                return `📏 Понял! Площадь ${userContext.area} м².\n\nДля ${userContext.area} м² примерная стоимость полного сантехмонтажа (отопление + водоснабжение) составит от ${Math.floor(userContext.area * 800)} до ${Math.floor(userContext.area * 1200)} ₽.\n\nХотите точную смету? Оставьте телефон!`;
+            }
+            return `📐 Укажите площадь объекта в м², и я сделаю предварительный расчет.`;
+        
+        case 'phone_number':
+            const phoneDigits = userMessage.replace(/\D/g, '');
+            if (phoneDigits.length >= 10) {
+                return `📱 Отлично! Записал номер ${userMessage}. Наш менеджер свяжется с вами в ближайшее время! 🔥\n\nА пока, могу ответить на любые вопросы по сантехмонтажу!`;
+            }
+            return `📞 Пожалуйста, оставьте номер телефона в формате +7 (XXX) XXX-XX-XX.`;
+        
+        case 'call':
+            return `📞 <strong>Хотите получить консультацию?</strong><br><br>
+Оставьте номер телефона, и наш специалист перезвонит в течение 15 минут. Или звоните сами: <strong>+7 (977) 325-27-28</strong><br><br>
+Напишите номер, и я запишу вас!`;
+        
+        default:
+            return `🤖 Хороший вопрос! Я пока учусь, но могу уточнить у специалиста.\n\nЧто именно вас интересует? Выберите:\n💰 Цены | 🔧 Монтаж | ⏱ Сроки | 📐 Рассчитать | 📞 Заказать звонок`;
+    }
+}
+
+function showTyping() {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'message bot';
+    typingDiv.id = 'typingIndicator';
+    typingDiv.innerHTML = `
+        <div class="message-avatar"><i class="fas fa-robot"></i></div>
+        <div class="typing-indicator"><span></span><span></span><span></span></div>
+    `;
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function hideTyping() {
+    const indicator = document.getElementById('typingIndicator');
+    if (indicator) indicator.remove();
+}
+
+function addMessage(text, isUser = false) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+    msgDiv.innerHTML = `
+        <div class="message-avatar"><i class="fas ${isUser ? 'fa-user' : 'fa-robot'}"></i></div>
+        <div class="message-text">${text.replace(/\n/g, '<br>')}</div>
+    `;
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+async function sendMessage() {
+    const msg = chatInput.value.trim();
+    if (!msg) return;
+    
+    if (!userContext.name && msg.length < 20 && !msg.match(/[0-9]/)) {
+        userContext.name = msg;
+    }
+    
+    addMessage(msg, true);
+    chatInput.value = '';
+    
+    showTyping();
+    
+    setTimeout(() => {
+        hideTyping();
+        const intent = analyzeIntent(msg);
+        const response = generateResponse(intent, msg);
+        addMessage(response, false);
+        userContext.lastQuestion = intent;
+    }, 600 + Math.random() * 400);
+}
+
+sendChatBtn.addEventListener('click', sendMessage);
+chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+
+document.querySelectorAll('.quick-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const q = btn.dataset.question;
+        const texts = { 
+            price: 'Сколько стоят ваши услуги?', 
+            install: 'Какие работы вы выполняете?', 
+            time: 'Какие сроки монтажа?',
+            calculate: 'Рассчитайте стоимость сантехмонтажа для меня',
+            call: 'Хочу заказать звонок'
+        };
+        if (texts[q]) {
+            addMessage(texts[q], true);
+            showTyping();
+            setTimeout(() => {
+                hideTyping();
+                addMessage(generateResponse(analyzeIntent(texts[q]), texts[q]), false);
+            }, 600);
+        }
+    });
+});
+
+openChatBtn.addEventListener('click', () => {
+    chatBot.style.display = 'flex';
+    openChatBtn.style.display = 'none';
+});
+closeChatBtn.addEventListener('click', () => {
+    chatBot.style.display = 'none';
+    openChatBtn.style.display = 'flex';
 });
 </script>
 </body>
