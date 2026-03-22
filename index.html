@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>СтройПодряд | Профессиональный монтаж сантехники</title>
-    <meta name="description" content="СтройПодряд — монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 5 лет. ☎ +7(977) 325-27-28">
+    <meta name="description" content="СтройПодряд — монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года. ☎ +7(977) 325-27-28">
     <meta name="keywords" content="сантехмонтаж, монтаж отопления, водоснабжение, теплый пол, сантехника">
     <meta name="author" content="СтройПодряд">
-    <meta name="yandex-verification" content="sz8pwbuh0vrymk4r">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231e4660'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%23e67e22' font-weight='bold'>C</text></svg>">
     
     <!-- Open Graph -->
     <meta property="og:title" content="СтройПодряд | Профессиональный сантехмонтаж">
-    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 5 лет.">
+    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года.">
     <meta property="og:url" content="https://stroypodryad50.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
@@ -36,27 +35,6 @@
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Preload -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
-    
-    <!-- Яндекс.Метрика -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(XXXXXXXX, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-        });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -80,7 +58,6 @@
             padding: 0 20px;
         }
         
-        /* Header */
         header {
             background: #fff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -126,12 +103,7 @@
             font-size: 0.95rem;
         }
         
-        .nav-links a:hover {
-            color: #e67e22;
-            border-color: #e67e22;
-        }
-        
-        .nav-links a.active {
+        .nav-links a:hover, .nav-links a.active {
             color: #e67e22;
             border-color: #e67e22;
         }
@@ -143,14 +115,39 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
-            display: inline-block;
             transition: all 0.3s ease;
         }
         
         .header-phone:hover {
             background: #d35400;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(230,126,34,0.3);
+        }
+        
+        /* Город в шапке */
+        .city-selector {
+            background: #fef5e8;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #e67e22;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .city-selector:hover {
+            background: #ffe8d4;
+        }
+        
+        .city-selector i {
+            font-size: 0.9rem;
+        }
+        
+        .city-selector .city-name {
+            font-weight: bold;
+            color: #1e4660;
         }
         
         .btn {
@@ -159,35 +156,21 @@
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            border: none;
-            cursor: pointer;
             transition: all 0.3s ease;
         }
         
         .btn-primary {
             background: #e67e22;
             color: white;
+            border: none;
+            cursor: pointer;
         }
         
         .btn-primary:hover {
             background: #d35400;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(230,126,34,0.3);
         }
         
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #e67e22;
-            color: #e67e22;
-        }
-        
-        .btn-outline:hover {
-            background: #e67e22;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        /* Hero Section */
         .hero {
             padding: 60px 0;
             background: #fef9f0;
@@ -219,12 +202,6 @@
             margin-bottom: 25px;
         }
         
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
         .hero-image {
             flex: 1;
             text-align: center;
@@ -236,14 +213,12 @@
             padding: 16px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.05);
             display: inline-block;
-            transition: all 0.3s ease;
         }
         
         .hero-image img {
             width: 260px;
             max-width: 100%;
             border-radius: 16px;
-            display: block;
         }
         
         .trust-badges {
@@ -264,7 +239,6 @@
         
         .trust-item i {
             color: #e67e22;
-            font-size: 20px;
         }
         
         section {
@@ -290,18 +264,8 @@
             width: 60px;
             height: 3px;
             background: #e67e22;
-            border-radius: 3px;
         }
         
-        .section-sub {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            color: #4a5568;
-            font-size: 1rem;
-        }
-        
-        /* Services */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -330,126 +294,42 @@
             margin-bottom: 15px;
         }
         
-        /* Brands Section */
         .brands-section {
-            background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+            background: #f8fafc;
             padding: 60px 0;
             text-align: center;
-            border-top: 1px solid #e9ecef;
-            border-bottom: 1px solid #e9ecef;
-        }
-        
-        .brands-title {
-            color: #1e4660;
-            margin-bottom: 40px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .brands-title:before,
-        .brands-title:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 40px;
-            height: 2px;
-            background: #e67e22;
-        }
-        
-        .brands-title:before {
-            left: -50px;
-        }
-        
-        .brands-title:after {
-            right: -50px;
         }
         
         .brands-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
             gap: 25px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        
-        .brand-item {
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
         }
         
         .brand-svg {
-            width: 160px;
-            height: 64px;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
-        }
-        
-        .brand-item:hover .brand-svg {
-            transform: translateY(-5px);
-            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
-        }
-        
-        .brand-name {
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #6c757d;
-            margin-top: 8px;
-            letter-spacing: 0.5px;
-            opacity: 0.8;
-            transition: all 0.3s ease;
-        }
-        
-        .brand-item:hover .brand-name {
-            color: #e67e22;
-            opacity: 1;
-        }
-        
-        /* Toast */
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
+            width: 140px;
+            height: 56px;
             background: #1e4660;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-size: 0.95rem;
-            z-index: 3000;
-            opacity: 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            pointer-events: none;
+            font-weight: bold;
         }
         
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
-        
-        .toast.error { background: #e74c3c; }
-        .toast.success { background: #27ae60; }
-        
-        /* Price Table */
         .price-table-wrapper {
             background: white;
             border-radius: 24px;
             overflow-x: auto;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-top: 10px;
         }
         
         .price-table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 600px;
+            min-width: 500px;
         }
         
         .price-table th {
@@ -464,43 +344,6 @@
             border-bottom: 1px solid #edf2f7;
         }
         
-        .price-table .total-row {
-            background: #fef5e8;
-            font-weight: bold;
-        }
-        
-        .price-total {
-            font-size: 1.3rem;
-            color: #e67e22;
-        }
-        
-        /* Tab Buttons */
-        .tab-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .tab-btn {
-            background: white;
-            border: 2px solid #e67e22;
-            color: #e67e22;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .tab-btn:hover, .tab-btn.active {
-            background: #e67e22;
-            color: white;
-        }
-        
-        /* Stats */
         .stats-section {
             background: #1e4660;
             color: white;
@@ -521,7 +364,6 @@
             font-weight: bold;
         }
         
-        /* Steps */
         .steps-grid {
             display: flex;
             flex-wrap: wrap;
@@ -537,12 +379,6 @@
             flex: 1;
             min-width: 180px;
             border: 1px solid #edf2f7;
-            transition: all 0.3s ease;
-        }
-        
-        .step:hover {
-            transform: translateY(-5px);
-            border-color: #e67e22;
         }
         
         .step-number {
@@ -559,66 +395,6 @@
             margin: 0 auto 15px;
         }
         
-        /* Subscribe Section */
-        .subscribe-section {
-            background: linear-gradient(135deg, #1e4660, #2c5a6e);
-            color: white;
-            border-radius: 30px;
-            padding: 50px;
-            text-align: center;
-            margin: 40px 0;
-        }
-        
-        .subscribe-section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .subscribe-section p {
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
-        
-        .subscribe-form {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .subscribe-form input {
-            flex: 1;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 40px;
-            font-size: 1rem;
-            min-width: 200px;
-        }
-        
-        .subscribe-form input:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(230,126,34,0.3);
-        }
-        
-        .subscribe-form button {
-            background: #e67e22;
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .subscribe-form button:hover {
-            background: #d35400;
-            transform: translateY(-2px);
-        }
-        
-        /* CTA */
         .cta-section {
             background: #1e4660;
             color: white;
@@ -648,17 +424,9 @@
             border: none;
             padding: 12px 30px;
             border-radius: 30px;
-            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
         }
         
-        .cta-form button:hover {
-            background: #d35400;
-            transform: translateY(-2px);
-        }
-        
-        /* Footer */
         footer {
             background: #0a2c3b;
             color: #94a3b8;
@@ -690,10 +458,9 @@
             border-top: 1px solid #2c5a6e;
         }
         
-        /* Scroll Top */
         .scroll-top {
             position: fixed;
-            bottom: 100px;
+            bottom: 30px;
             right: 30px;
             width: 45px;
             height: 45px;
@@ -707,7 +474,6 @@
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         
         .scroll-top.show {
@@ -715,52 +481,146 @@
             visibility: visible;
         }
         
-        .scroll-top:hover {
-            background: #d35400;
-            transform: translateY(-3px);
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #1e4660;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            z-index: 3000;
+            opacity: 0;
+            transition: all 0.3s ease;
         }
         
-        .scroll-top i {
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+        
+        /* Модальное окно выбора города */
+        .city-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .city-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .city-modal-content {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .city-modal.show .city-modal-content {
+            transform: scale(1);
+        }
+        
+        .city-modal-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #1e4660;
+        }
+        
+        .city-modal-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .detected-city {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #e67e22;
+            background: #fef5e8;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .city-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .city-buttons button {
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .city-confirm {
+            background: #e67e22;
             color: white;
-            font-size: 20px;
+            border: none;
+        }
+        
+        .city-confirm:hover {
+            background: #d35400;
+        }
+        
+        .city-change {
+            background: transparent;
+            border: 2px solid #e67e22;
+            color: #e67e22;
+        }
+        
+        .city-change:hover {
+            background: #e67e22;
+            color: white;
+        }
+        
+        .city-input-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .city-input-group input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 40px;
+            outline: none;
+        }
+        
+        .city-input-group button {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 40px;
+            cursor: pointer;
         }
         
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-                padding: 30px 20px;
-            }
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-            .brands-grid {
-                gap: 15px;
-            }
-            .brand-svg {
-                width: 130px;
-                height: 52px;
-            }
-            .brand-name {
-                font-size: 0.65rem;
-            }
-            .brands-title:before,
-            .brands-title:after {
-                width: 25px;
-            }
-            .brands-title:before {
-                left: -35px;
-            }
-            .brands-title:after {
-                right: -35px;
-            }
-            .scroll-top {
-                bottom: 80px;
-                right: 20px;
-            }
+            .navbar { flex-direction: column; }
+            .stats-grid { grid-template-columns: 1fr 1fr; padding: 30px 20px; }
+            .hero-content h1 { font-size: 1.8rem; }
+            .scroll-top { bottom: 20px; right: 20px; }
         }
     </style>
 </head>
@@ -768,211 +628,90 @@
 
 <div id="toast" class="toast"></div>
 
+<!-- Модальное окно выбора города -->
+<div id="cityModal" class="city-modal">
+    <div class="city-modal-content">
+        <h3><i class="fas fa-map-marker-alt"></i> Ваш город</h3>
+        <p>Мы определили ваш город как:</p>
+        <div class="detected-city" id="detectedCity">Москва</div>
+        <div class="city-buttons" id="cityButtons">
+            <button class="city-confirm" id="confirmCityBtn">Да, всё верно</button>
+            <button class="city-change" id="changeCityBtn">Выбрать другой</button>
+        </div>
+        <div id="cityInputGroup" style="display: none;" class="city-input-group">
+            <input type="text" id="manualCityInput" placeholder="Введите ваш город">
+            <button id="saveCityBtn">Сохранить</button>
+        </div>
+    </div>
+</div>
+
 <header>
     <div class="container">
         <div class="navbar">
-            <div class="logo">
-                Строй<span>Подряд</span>
-            </div>
+            <div class="logo">Строй<span>Подряд</span></div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="#" class="active">Главная</a></li>
                 <li><a href="#uslugi">Услуги</a></li>
                 <li><a href="#prices">Цены</a></li>
-                <li><a href="blog.html">Статьи</a></li>
                 <li><a href="#kontakty">Контакты</a></li>
             </ul>
-            <a href="tel:+79773252728" class="header-phone"><i class="fas fa-phone-alt"></i> +7 (977) 325-27-28</a>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <div class="city-selector" id="citySelector">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="city-name" id="headerCity">Москва</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <a href="tel:+79773252728" class="header-phone"><i class="fas fa-phone-alt"></i> +7 (977) 325-27-28</a>
+            </div>
         </div>
     </div>
 </header>
 
-<section id="hero" class="hero">
+<section class="hero">
     <div class="container">
         <div class="hero-grid">
-            <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
+            <div class="hero-content" data-aos="fade-right">
                 <h1>Профессиональный <span>сантехмонтаж</span><br>под ключ</h1>
-                <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 5 лет.</p>
+                <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. <strong>Гарантия 2 года</strong>.</p>
                 <div class="hero-buttons">
                     <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
                 </div>
                 <div class="trust-badges">
-                    <div class="trust-item"><i class="fas fa-certificate"></i><span>Гарантия 5 лет</span></div>
+                    <div class="trust-item"><i class="fas fa-certificate"></i><span>Гарантия 2 года</span></div>
                     <div class="trust-item"><i class="fas fa-clock"></i><span>Соблюдение сроков</span></div>
                     <div class="trust-item"><i class="fas fa-tools"></i><span>Современное оборудование</span></div>
                 </div>
             </div>
-            <div class="hero-image" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+            <div class="hero-image" data-aos="fade-left">
                 <div class="image-wrapper">
-                    <img src="images/orig.jpeg" alt="СтройПодряд" loading="lazy" onerror="this.src='https://via.placeholder.com/260x260?text=СтройПодряд'">
+                    <img src="https://via.placeholder.com/260x260?text=СтройПодряд" alt="СтройПодряд">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Маркиз - опросник -->
-<section style="background: #f8fafc; padding: 60px 0;" data-aos="fade-up" data-aos-duration="600">
-    <div class="container">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <h3 style="font-size: 1.8rem; color: #1e4660; margin-bottom: 10px;">Поможем подобрать решение именно для вас</h3>
-            <p style="color: #666; font-size: 1rem;">Ответьте на 4 вопроса и получите индивидуальное предложение</p>
-        </div>
-        
-        <div class="marquiz-container" style="max-width:580px; margin:0 auto; background:white; border-radius:28px; box-shadow:0 10px 30px rgba(0,0,0,0.08); overflow:hidden;">
-            <div class="marquiz-step" id="step1" style="padding:40px 35px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:30px;">
-                    <div style="display:flex; gap:8px;">
-                        <span style="width:20px; height:8px; background:#e67e22; border-radius:10px;"></span>
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                    </div>
-                    <span style="font-size:0.8rem; color:#999;">Шаг 1 из 4</span>
-                </div>
-                <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Какой объект вас интересует?</h3>
-                <div class="options-list" id="optionsStep1">
-                    <div class="option-item" data-value="house" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-home"></i><span>Частный дом / коттедж</span></div>
-                    <div class="option-item" data-value="apartment" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-building"></i><span>Квартира</span></div>
-                    <div class="option-item" data-value="commercial" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-store"></i><span>Коммерческий объект</span></div>
-                </div>
-                <button class="next-btn" id="nextStep1" disabled style="width:100%; background:#e67e22; color:white; border:none; padding:14px; border-radius:40px; font-weight:bold; cursor:pointer;">Далее →</button>
-            </div>
-            <div class="marquiz-step" id="step2" style="display:none; padding:40px 35px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:30px;">
-                    <div style="display:flex; gap:8px;">
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:20px; height:8px; background:#e67e22; border-radius:10px;"></span>
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                    </div>
-                    <span style="font-size:0.8rem; color:#999;">Шаг 2 из 4</span>
-                </div>
-                <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Когда планируете монтаж?</h3>
-                <div class="options-list" id="optionsStep2">
-                    <div class="option-item" data-time="now" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-clock"></i><span>В ближайшее время</span></div>
-                    <div class="option-item" data-time="month" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-calendar-week"></i><span>В течение месяца</span></div>
-                    <div class="option-item" data-time="quarter" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
-                </div>
-                <div style="display:flex; gap:12px; margin-top:20px;">
-                    <button class="back-btn" id="backStep2" style="flex:1; background:transparent; border:2px solid #e67e22; color:#e67e22; padding:12px; border-radius:40px;">← Назад</button>
-                    <button class="next-btn" id="nextStep2" disabled style="flex:2; background:#e67e22; color:white; border:none; padding:12px; border-radius:40px;">Далее →</button>
-                </div>
-            </div>
-            <div class="marquiz-step" id="step3" style="display:none; padding:40px 35px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:30px;">
-                    <div style="display:flex; gap:8px;">
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:20px; height:8px; background:#e67e22; border-radius:10px;"></span>
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                    </div>
-                    <span style="font-size:0.8rem; color:#999;">Шаг 3 из 4</span>
-                </div>
-                <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Какой бюджет планируете?</h3>
-                <div class="options-list" id="optionsStep3">
-                    <div class="option-item" data-budget="50" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>До 50 000 ₽</span></div>
-                    <div class="option-item" data-budget="100" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>50 000 - 100 000 ₽</span></div>
-                    <div class="option-item" data-budget="200" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>100 000 - 200 000 ₽</span></div>
-                    <div class="option-item" data-budget="300" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
-                </div>
-                <div style="display:flex; gap:12px; margin-top:20px;">
-                    <button class="back-btn" id="backStep3" style="flex:1; background:transparent; border:2px solid #e67e22; color:#e67e22; padding:12px; border-radius:40px;">← Назад</button>
-                    <button class="next-btn" id="nextStep3" disabled style="flex:2; background:#e67e22; color:white; border:none; padding:12px; border-radius:40px;">Далее →</button>
-                </div>
-            </div>
-            <div class="marquiz-step" id="step4" style="display:none; padding:40px 35px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:30px;">
-                    <div style="display:flex; gap:8px;">
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:20px; height:8px; background:#e67e22; border-radius:10px;"></span>
-                    </div>
-                    <span style="font-size:0.8rem; color:#999;">Шаг 4 из 4</span>
-                </div>
-                <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Оставьте контакты</h3>
-                <p style="color:#666; margin-bottom:25px;">Мы перезвоним в удобное время</p>
-                <form id="marquizForm">
-                    <input type="text" id="marquizName" placeholder="Ваше имя" style="width:100%; padding:14px; margin-bottom:15px; border:1px solid #ddd; border-radius:12px;">
-                    <input type="tel" id="marquizPhone" placeholder="+7 (___) ___-__-__" style="width:100%; padding:14px; margin-bottom:15px; border:1px solid #ddd; border-radius:12px;">
-                    <input type="hidden" id="marquizObjectType">
-                    <input type="hidden" id="marquizTime">
-                    <input type="hidden" id="marquizBudget">
-                    <div style="display:flex; gap:12px;">
-                        <button type="button" class="back-btn" id="backStep4" style="flex:1; background:transparent; border:2px solid #e67e22; color:#e67e22; padding:12px; border-radius:40px;">← Назад</button>
-                        <button type="submit" class="submit-btn" style="flex:2; background:#e67e22; color:white; border:none; padding:12px; border-radius:40px;">Закажите звонок!</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="uslugi" data-aos="fade-up" data-aos-duration="600">
+<section id="uslugi" data-aos="fade-up">
     <div class="container">
         <h2 class="section-title">Наши услуги</h2>
         <div class="services-grid">
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-water"></i><h3>Водоснабжение</h3><p>Разводка труб, насосные станции, фильтрация</p></div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-fire"></i><h3>Отопление</h3><p>Котлы, радиаторы, теплые полы</p></div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-bath"></i><h3>Сантехника</h3><p>Ванны, душевые, смесители</p></div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-toilet"></i><h3>Канализация</h3><p>Септики, внутренние и наружные сети</p></div>
+            <div class="service-card"><i class="fas fa-water"></i><h3>Водоснабжение</h3><p>Разводка труб, насосные станции, фильтрация</p></div>
+            <div class="service-card"><i class="fas fa-fire"></i><h3>Отопление</h3><p>Котлы, радиаторы, теплые полы</p></div>
+            <div class="service-card"><i class="fas fa-bath"></i><h3>Сантехника</h3><p>Ванны, душевые, смесители</p></div>
+            <div class="service-card"><i class="fas fa-toilet"></i><h3>Канализация</h3><p>Септики, внутренние и наружные сети</p></div>
         </div>
     </div>
 </section>
 
-<!-- Логотипы брендов -->
 <div class="brands-section" data-aos="fade-up">
     <div class="container">
-        <div class="brands-title">Доверяют профессионалам</div>
         <div class="brands-grid">
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#0066B3" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial">VIESSMANN</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">since 1917</text>
-                </svg>
-                <div class="brand-name">Viessmann</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#ED1C24" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial">BAXI</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">heating</text>
-                </svg>
-                <div class="brand-name">Baxi</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#003366" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial">VAILLANT</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">group</text>
-                </svg>
-                <div class="brand-name">Vaillant</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#0047AB" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial">BOSCH</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">invented for life</text>
-                </svg>
-                <div class="brand-name">Bosch</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#0077B6" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial">GRUNDFOS</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">pumping solutions</text>
-                </svg>
-                <div class="brand-name">Grundfos</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#00A651" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial">UPONOR</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">water solutions</text>
-                </svg>
-                <div class="brand-name">Uponor</div>
-            </div>
+            <div class="brand-svg">VIESSMANN</div>
+            <div class="brand-svg">BAXI</div>
+            <div class="brand-svg">VAILLANT</div>
+            <div class="brand-svg">BOSCH</div>
+            <div class="brand-svg">GRUNDFOS</div>
+            <div class="brand-svg">UPONOR</div>
         </div>
     </div>
 </div>
@@ -980,54 +719,17 @@
 <section id="prices" style="background: #f8fafc;" data-aos="fade-up">
     <div class="container">
         <h2 class="section-title">Примеры расчетов</h2>
-        <div class="section-sub">Актуальные цены на монтажные работы от 01.08.2025</div>
-        
-        <div class="tab-buttons">
-            <button class="tab-btn active" data-tab="warmfloor">🌡 Теплый пол (40 м²)</button>
-            <button class="tab-btn" data-tab="radiator">🔥 Радиаторное отопление (150 м²)</button>
-        </div>
-        
-        <!-- Таблица теплого пола -->
-        <div class="price-table-wrapper" id="warmfloorTab">
+        <div class="price-table-wrapper">
             <table class="price-table">
-                <thead>  <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
+                <thead>   <tr><th>Оборудование</th><th>Стоимость</th></tr> </thead>
                 <tbody>
-                    <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀25 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>20 п.м.</td><td><strong>9 600 ₽</strong></td></tr>
-                    <tr><td><strong>Точка водоснабжения</strong></td><td>монтаж согласно тех. карте</td><td>16 ед.</td><td><strong>57 600 ₽</strong></td></tr>
-                    <tr><td><strong>Коллектор распределительный</strong></td><td>сборка, монтаж и подключение</td><td>6 компл.</td><td><strong>43 200 ₽</strong></td></tr>
-                    <tr><td><strong>Точка подключения полотенцесушителя</strong></td><td>монтаж согласно тех. карте</td><td>4 ед.</td><td><strong>14 400 ₽</strong></td></tr>
-                    <tr><td><strong>Инсталляции</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>7 800 ₽</strong></td></tr>
-                    <tr><td><strong>Клапан незамерзающий уличный</strong></td><td>монтаж</td><td>1 ед.</td><td><strong>5 400 ₽</strong></td></tr>
-                    <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>2 500 ₽</strong></td></tr>
+                    <tr><td>Монтаж водоснабжения (квартира)</td><td><strong>от 15 000 ₽</strong></td></tr>
+                    <tr><td>Отопление под ключ (дом до 100м²)</td><td><strong>от 45 000 ₽</strong></td></tr>
+                    <tr><td>Теплый пол (монтаж)</td><td><strong>от 2 500 ₽/м²</strong></td></tr>
+                    <tr><td>Установка сантехники</td><td><strong>от 3 500 ₽</strong></td></tr>
                 </tbody>
-                <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (теплый пол):</td><td class="price-total"><strong>215 500 ₽</strong></td></tr></tfoot>
             </table>
         </div>
-        
-        <!-- Таблица радиаторного отопления -->
-        <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
-            <table class="price-table">
-                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
-                <tbody>
-                    <tr><td><strong>Коллектор системы радиаторного отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
-                    <tr><td><strong>Шкаф коллекторный</strong></td><td>монтаж без штробления стен</td><td>1 ед.</td><td><strong>3 000 ₽</strong></td></tr>
-                    <tr><td><strong>Радиатор отопления стальной панельный/биметаллический</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
-                    <tr><td><strong>Радиатор отопления стальной трубчатый дизайнерский</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>9 600 ₽</strong></td></tr>
-                    <tr><td><strong>Внутрипольный конвектор</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>14 400 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀16 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>200 м.п.</td><td><strong>84 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀20 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>23 м.п.</td><td><strong>10 350 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀25 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>30 м.п.</td><td><strong>14 400 ₽</strong></td></tr>
-                    <tr><td><strong>Заполнение системы отопления</strong></td><td></td><td>1 компл.</td><td><strong>4 200 ₽</strong></td></tr>
-                    <tr><td><strong>Опрессовка системы отопления</strong></td><td></td><td>1 компл.</td><td><strong>3 600 ₽</strong></td></tr>
-                    <tr><td><strong>Расходные материалы</strong></td><td></td><td>1 компл.</td><td><strong>3 500 ₽</strong></td></tr>
-                </tbody>
-                <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (радиаторное отопление):</td><td class="price-total"><strong>244 250 ₽</strong></td></tr></tfoot>
-            </table>
-        </div>
-        
-        <p style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: #666;"><i class="fas fa-calculator"></i> *Окончательная стоимость зависит от сложности работ и выбранного оборудования</p>
     </div>
 </section>
 
@@ -1035,7 +737,7 @@
     <div class="stats-section">
         <div class="stats-grid">
             <div class="stat-item"><div class="stat-number">150+</div><div>Выполненных объектов</div></div>
-            <div class="stat-item"><div class="stat-number">5 лет</div><div>Гарантии</div></div>
+            <div class="stat-item"><div class="stat-number">2 года</div><div>Гарантии</div></div>
             <div class="stat-item"><div class="stat-number">24/7</div><div>Поддержка</div></div>
             <div class="stat-item"><div class="stat-number">98%</div><div>Довольных клиентов</div></div>
         </div>
@@ -1046,26 +748,13 @@
     <div class="container">
         <h2 class="section-title">Как мы работаем</h2>
         <div class="steps-grid">
-            <div class="step" data-aos="flip-left" data-aos-delay="100"><div class="step-number">1</div><h4>Заявка / Замер</h4><p>Бесплатный выезд инженера</p></div>
-            <div class="step" data-aos="flip-left" data-aos-delay="200"><div class="step-number">2</div><h4>Смета + Договор</h4><p>Фиксируем сроки и гарантию</p></div>
-            <div class="step" data-aos="flip-left" data-aos-delay="300"><div class="step-number">3</div><h4>Монтаж</h4><p>Чистый монтаж с фотоотчетом</p></div>
-            <div class="step" data-aos="flip-left" data-aos-delay="400"><div class="step-number">4</div><h4>ПНР и сдача</h4><p>Пусконаладочные работы</p></div>
+            <div class="step"><div class="step-number">1</div><h4>Заявка / Замер</h4><p>Бесплатный выезд инженера</p></div>
+            <div class="step"><div class="step-number">2</div><h4>Смета + Договор</h4><p>Фиксируем сроки и гарантию 2 года</p></div>
+            <div class="step"><div class="step-number">3</div><h4>Монтаж</h4><p>Чистый монтаж с фотоотчетом</p></div>
+            <div class="step"><div class="step-number">4</div><h4>ПНР и сдача</h4><p>Пусконаладочные работы</p></div>
         </div>
     </div>
 </section>
-
-<!-- Подписка на рассылку -->
-<div class="subscribe-section" data-aos="fade-up">
-    <div class="container">
-        <h3>📧 Будьте в курсе акций и новинок</h3>
-        <p>Подпишитесь на нашу рассылку и получайте первыми информацию о скидках и новых услугах</p>
-        <form class="subscribe-form" id="subscribeForm">
-            <input type="email" id="subscribeEmail" placeholder="Ваш email" required>
-            <button type="submit">Подписаться</button>
-        </form>
-        <p style="font-size: 0.75rem; margin-top: 15px; opacity: 0.7;">Никакого спама, только полезная информация</p>
-    </div>
-</div>
 
 <section id="zakaz" data-aos="fade-up">
     <div class="container">
@@ -1075,8 +764,8 @@
             <form class="cta-form" id="callbackForm">
                 <input type="text" id="callbackName" placeholder="Ваше имя" required>
                 <input type="tel" id="callbackPhone" placeholder="+7 (___) ___-__-__" required>
-                <input type="text" id="callbackObject" placeholder="Тип объекта">
-                <button type="submit" id="callbackSubmitBtn">Отправить</button>
+                <input type="text" id="callbackCity" placeholder="Ваш город" value="Москва">
+                <button type="submit">Отправить</button>
             </form>
             <p style="margin-top: 15px; font-size: 0.85rem;"><i class="fas fa-lock"></i> Ваши данные защищены</p>
         </div>
@@ -1086,22 +775,9 @@
 <footer id="kontakty">
     <div class="container">
         <div class="footer-content">
-            <div>
-                <div class="logo" style="font-size: 1.3rem;">Строй<span style="color:#e67e22;">Подряд</span></div>
-                <p>Профессиональный сантехмонтаж под ключ</p>
-            </div>
-            <div class="footer-links">
-                <a href="index.html">Главная</a>
-                <a href="#uslugi">Услуги</a>
-                <a href="#prices">Цены</a>
-                <a href="blog.html">Статьи</a>
-                <a href="#kontakty">Контакты</a>
-            </div>
-            <div>
-                <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8;">stroypodryad50@ya.ru</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Москва и Московская область</p>
-            </div>
+            <div><div class="logo" style="font-size: 1.3rem;">Строй<span style="color:#e67e22;">Подряд</span></div><p>Профессиональный сантехмонтаж под ключ</p></div>
+            <div class="footer-links"><a href="#">Главная</a><a href="#uslugi">Услуги</a><a href="#prices">Цены</a><a href="#kontakty">Контакты</a></div>
+            <div><p><i class="fas fa-phone"></i> +7 (977) 325-27-28</p><p><i class="fas fa-envelope"></i> stroypodryad50@ya.ru</p></div>
         </div>
         <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
     </div>
@@ -1112,14 +788,8 @@
 </div>
 
 <script>
-// Инициализация AOS
-AOS.init({
-    once: true,
-    duration: 800,
-    offset: 100
-});
+AOS.init({ once: true, duration: 800 });
 
-// Toast notification
 function showToast(message, type = 'info') {
     const toast = document.getElementById('toast');
     toast.textContent = message;
@@ -1127,10 +797,9 @@ function showToast(message, type = 'info') {
     setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
-// Маска для телефона
-function setPhoneMask(inputElement) {
-    if (!inputElement) return;
-    inputElement.addEventListener('input', function(e) {
+function setPhoneMask(input) {
+    if (!input) return;
+    input.addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
         if (value.length > 11) value = value.slice(0, 11);
         let formatted = '';
@@ -1148,135 +817,125 @@ function validatePhone(phone) {
     return digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'));
 }
 
-// Кнопка "Наверх"
 const scrollTopBtn = document.getElementById('scrollTop');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) scrollTopBtn.classList.add('show');
-    else scrollTopBtn.classList.remove('show');
-});
+window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('show', window.scrollY > 300));
 scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-// Подписка на рассылку
-const subscribeForm = document.getElementById('subscribeForm');
-if (subscribeForm) {
-    subscribeForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const email = document.getElementById('subscribeEmail').value.trim();
-        if (!email || !email.includes('@')) {
-            showToast('Введите корректный email', 'error');
-            return;
-        }
-        const submitBtn = subscribeForm.querySelector('button');
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Отправка...';
-        try {
-            await fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ Email: email, Тип: 'Подписка на рассылку' })
-            });
-            showToast('✅ Спасибо! Вы подписаны на рассылку', 'success');
-            subscribeForm.reset();
-        } catch (error) {
-            showToast('❌ Ошибка. Попробуйте позже', 'error');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Подписаться';
-        }
-    });
-}
+const callbackPhone = document.getElementById('callbackPhone');
+setPhoneMask(callbackPhone);
 
-// Вкладки таблиц
-function initTabs() {
-    const tabs = document.querySelectorAll('.tab-btn');
-    const warmfloorTab = document.getElementById('warmfloorTab');
-    const radiatorTab = document.getElementById('radiatorTab');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            if (tab.dataset.tab === 'warmfloor') {
-                warmfloorTab.style.display = 'block';
-                radiatorTab.style.display = 'none';
-            } else {
-                warmfloorTab.style.display = 'none';
-                radiatorTab.style.display = 'block';
-            }
-        });
-    });
-}
-initTabs();
-
-// Маркиз опросник
-let selectedObject = null, selectedTime = null, selectedBudget = null;
-const step1 = document.getElementById('step1'), step2 = document.getElementById('step2'), step3 = document.getElementById('step3'), step4 = document.getElementById('step4');
-const nextBtn1 = document.getElementById('nextStep1'), nextBtn2 = document.getElementById('nextStep2'), nextBtn3 = document.getElementById('nextStep3');
-const backBtn2 = document.getElementById('backStep2'), backBtn3 = document.getElementById('backStep3'), backBtn4 = document.getElementById('backStep4');
-
-function switchStep(from, to) { from.style.display = 'none'; to.style.display = 'block'; }
-
-document.querySelectorAll('#optionsStep1 .option-item').forEach(opt => opt.addEventListener('click', () => {
-    document.querySelectorAll('#optionsStep1 .option-item').forEach(o => o.classList.remove('selected'));
-    opt.classList.add('selected');
-    selectedObject = opt.getAttribute('data-value');
-    nextBtn1.disabled = false;
-}));
-document.querySelectorAll('#optionsStep2 .option-item').forEach(opt => opt.addEventListener('click', () => {
-    document.querySelectorAll('#optionsStep2 .option-item').forEach(o => o.classList.remove('selected'));
-    opt.classList.add('selected');
-    selectedTime = opt.getAttribute('data-time');
-    nextBtn2.disabled = false;
-}));
-document.querySelectorAll('#optionsStep3 .option-item').forEach(opt => opt.addEventListener('click', () => {
-    document.querySelectorAll('#optionsStep3 .option-item').forEach(o => o.classList.remove('selected'));
-    opt.classList.add('selected');
-    selectedBudget = opt.getAttribute('data-budget');
-    nextBtn3.disabled = false;
-}));
-
-nextBtn1.addEventListener('click', () => switchStep(step1, step2));
-backBtn2.addEventListener('click', () => switchStep(step2, step1));
-nextBtn2.addEventListener('click', () => switchStep(step2, step3));
-backBtn3.addEventListener('click', () => switchStep(step3, step2));
-nextBtn3.addEventListener('click', () => switchStep(step3, step4));
-backBtn4.addEventListener('click', () => switchStep(step4, step3));
-
-const marquizPhone = document.getElementById('marquizPhone');
-setPhoneMask(marquizPhone);
-
-document.getElementById('marquizForm').addEventListener('submit', function(e) {
+document.getElementById('callbackForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('marquizName').value.trim();
-    const phone = marquizPhone.value;
+    const name = document.getElementById('callbackName').value.trim();
+    const phone = callbackPhone.value;
+    const city = document.getElementById('callbackCity').value;
     if (!name) { showToast('Введите имя', 'error'); return; }
     if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
-    showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
-    step4.style.display = 'none';
-    step1.style.display = 'block';
-    document.getElementById('marquizForm').reset();
-    document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
-    nextBtn1.disabled = true; nextBtn2.disabled = true; nextBtn3.disabled = true;
+    showToast(`Спасибо, ${name}! Мы свяжемся с вами (${city})`, 'success');
+    e.target.reset();
+    document.getElementById('callbackCity').value = currentCity;
 });
 
-// Нижняя форма
-const callbackName = document.getElementById('callbackName');
-const callbackPhoneInput = document.getElementById('callbackPhone');
-setPhoneMask(callbackPhoneInput);
-
-document.getElementById('callbackForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const name = callbackName.value.trim();
-    const phone = callbackPhoneInput.value;
-    if (!name) { showToast('Введите имя', 'error'); return; }
-    if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
-    showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
-    this.reset();
-});
-
-// Клик по карточкам услуг
 document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('click', () => document.getElementById('prices').scrollIntoView({ behavior: 'smooth' }));
 });
+
+// ========== ОПРЕДЕЛЕНИЕ ГОРОДА ==========
+let currentCity = 'Москва';
+let cityConfirmed = false;
+
+const cityModal = document.getElementById('cityModal');
+const detectedCitySpan = document.getElementById('detectedCity');
+const headerCitySpan = document.getElementById('headerCity');
+const callbackCityInput = document.getElementById('callbackCity');
+const confirmCityBtn = document.getElementById('confirmCityBtn');
+const changeCityBtn = document.getElementById('changeCityBtn');
+const citySelector = document.getElementById('citySelector');
+const cityInputGroup = document.getElementById('cityInputGroup');
+const manualCityInput = document.getElementById('manualCityInput');
+const saveCityBtn = document.getElementById('saveCityBtn');
+
+async function detectCity() {
+    try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        if (data.city) {
+            currentCity = data.city;
+            detectedCitySpan.textContent = currentCity;
+        }
+    } catch (error) {
+        console.log('Не удалось определить город, используем Москву');
+        currentCity = 'Москва';
+        detectedCitySpan.textContent = currentCity;
+    }
+    
+    const savedCity = localStorage.getItem('userCity');
+    const cityConfirmedFlag = localStorage.getItem('cityConfirmed');
+    
+    if (cityConfirmedFlag === 'true' && savedCity) {
+        currentCity = savedCity;
+        updateCityDisplay(currentCity);
+        cityModal.classList.remove('show');
+    } else {
+        cityModal.classList.add('show');
+    }
+}
+
+function updateCityDisplay(city) {
+    currentCity = city;
+    headerCitySpan.textContent = city;
+    if (callbackCityInput) callbackCityInput.value = city;
+    localStorage.setItem('userCity', city);
+}
+
+function confirmCity() {
+    localStorage.setItem('cityConfirmed', 'true');
+    updateCityDisplay(currentCity);
+    cityModal.classList.remove('show');
+    showToast(`Город ${currentCity} сохранён`, 'success');
+}
+
+function showCityInput() {
+    const cityButtons = document.getElementById('cityButtons');
+    cityButtons.style.display = 'none';
+    cityInputGroup.style.display = 'flex';
+    manualCityInput.value = currentCity;
+}
+
+function saveManualCity() {
+    const newCity = manualCityInput.value.trim();
+    if (newCity) {
+        currentCity = newCity;
+        updateCityDisplay(currentCity);
+        localStorage.setItem('cityConfirmed', 'true');
+        cityModal.classList.remove('show');
+        showToast(`Город изменён на ${currentCity}`, 'success');
+    } else {
+        showToast('Введите название города', 'error');
+    }
+}
+
+confirmCityBtn.addEventListener('click', confirmCity);
+changeCityBtn.addEventListener('click', showCityInput);
+saveCityBtn.addEventListener('click', saveManualCity);
+
+citySelector.addEventListener('click', () => {
+    cityModal.classList.add('show');
+    const cityButtons = document.getElementById('cityButtons');
+    cityButtons.style.display = 'flex';
+    cityInputGroup.style.display = 'none';
+    detectedCitySpan.textContent = currentCity;
+});
+
+cityModal.addEventListener('click', (e) => {
+    if (e.target === cityModal) {
+        if (localStorage.getItem('cityConfirmed') === 'true') {
+            cityModal.classList.remove('show');
+        }
+    }
+});
+
+detectCity();
 </script>
 </body>
 </html>
