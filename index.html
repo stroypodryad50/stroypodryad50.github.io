@@ -14,24 +14,10 @@
     
     <!-- Open Graph -->
     <meta property="og:title" content="СтройПодряд | Профессиональный сантехмонтаж">
-    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года.">
+    <meta property="og:description" content="Монтаж сантехники под ключ. Гарантия 2 года.">
     <meta property="og:url" content="https://stroypodryad50.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
-    
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "СтройПодряд",
-      "telephone": "+7 (977) 325-27-28",
-      "email": "stroypodryad50@ya.ru",
-      "url": "https://stroypodryad50.github.io/",
-      "priceRange": "от 15 000 ₽",
-      "openingHours": "Mo-Su 09:00-21:00"
-    }
-    </script>
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -40,23 +26,6 @@
     <!-- Preload -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
-    
-    <!-- Яндекс.Метрика -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(XXXXXXXX, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-        });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -71,7 +40,8 @@
             background: #fff;
             color: #1a1a2e;
             scroll-behavior: smooth;
-            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
         }
         
         .container {
@@ -230,11 +200,6 @@
             transition: all 0.3s ease;
         }
         
-        .hero-image .image-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
         .hero-image img {
             width: 260px;
             max-width: 100%;
@@ -261,19 +226,9 @@
             cursor: default;
         }
         
-        .trust-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
         .trust-item i {
             color: #e67e22;
             font-size: 20px;
-            transition: transform 0.3s ease;
-        }
-        
-        .trust-item:hover i {
-            transform: scale(1.1);
         }
         
         section {
@@ -307,7 +262,6 @@
             max-width: 700px;
             margin: 0 auto 40px auto;
             color: #4a5568;
-            font-size: 1rem;
         }
         
         /* Services */
@@ -341,7 +295,7 @@
         
         /* Brands Section */
         .brands-section {
-            background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+            background: #f8fafc;
             padding: 60px 0;
             text-align: center;
             border-top: 1px solid #e9ecef;
@@ -394,30 +348,28 @@
         }
         
         .brand-svg {
-            width: 160px;
-            height: 64px;
+            width: 140px;
+            height: 56px;
             transition: all 0.3s ease;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+            filter: grayscale(0.2);
+            opacity: 0.7;
         }
         
         .brand-item:hover .brand-svg {
-            transform: translateY(-5px);
-            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
+            transform: translateY(-3px);
+            filter: grayscale(0);
+            opacity: 1;
         }
         
         .brand-name {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 500;
-            color: #6c757d;
+            color: #94a3b8;
             margin-top: 8px;
-            letter-spacing: 0.5px;
-            opacity: 0.8;
-            transition: all 0.3s ease;
         }
         
         .brand-item:hover .brand-name {
             color: #e67e22;
-            opacity: 1;
         }
         
         /* Toast */
@@ -496,10 +448,10 @@
             background: white;
             border: 2px solid #e67e22;
             color: #e67e22;
-            padding: 12px 28px;
+            padding: 10px 28px;
             border-radius: 40px;
-            font-size: 1rem;
-            font-weight: bold;
+            font-size: 0.9rem;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -583,11 +535,6 @@
             margin-bottom: 15px;
         }
         
-        .subscribe-section p {
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
-        
         .subscribe-form {
             display: flex;
             flex-wrap: wrap;
@@ -606,11 +553,6 @@
             min-width: 200px;
         }
         
-        .subscribe-form input:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(230,126,34,0.3);
-        }
-        
         .subscribe-form button {
             background: #e67e22;
             color: white;
@@ -619,12 +561,10 @@
             border-radius: 40px;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
         
         .subscribe-form button:hover {
             background: #d35400;
-            transform: translateY(-2px);
         }
         
         /* CTA */
@@ -659,12 +599,10 @@
             border-radius: 30px;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
         }
         
         .cta-form button:hover {
             background: #d35400;
-            transform: translateY(-2px);
         }
         
         /* Footer */
@@ -699,7 +637,8 @@
             border-top: 1px solid #2c5a6e;
         }
         
-        /* Scroll Top Button - исправлен */
+        /* ========== FIXED BUTTONS ========== */
+        /* Кнопка "Наверх" - фиксированная */
         .scroll-top {
             position: fixed;
             bottom: 100px;
@@ -715,8 +654,8 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
-            z-index: 999;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         
         .scroll-top.show {
@@ -727,7 +666,7 @@
         .scroll-top:hover {
             background: #d35400;
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(230,126,34,0.3);
+            box-shadow: 0 6px 16px rgba(230,126,34,0.4);
         }
         
         .scroll-top i {
@@ -735,7 +674,7 @@
             font-size: 22px;
         }
         
-        /* Chat Button */
+        /* Кнопка чата - фиксированная */
         .chat-button {
             position: fixed;
             bottom: 30px;
@@ -748,7 +687,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             z-index: 1000;
             transition: all 0.3s ease;
             animation: bounce 2s infinite;
@@ -760,17 +699,17 @@
         }
         
         .chat-button:hover {
-            transform: scale(1.1);
+            transform: scale(1.08);
             background: #d35400;
             animation: none;
         }
         
         .chat-button i {
             color: white;
-            font-size: 24px;
+            font-size: 26px;
         }
         
-        /* Chat Bot Container */
+        /* Контейнер чат-бота */
         .chat-bot-container {
             position: fixed;
             bottom: 100px;
@@ -784,18 +723,6 @@
             display: none;
             flex-direction: column;
             overflow: hidden;
-            animation: slideUp 0.3s ease;
-        }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         
         .chat-bot-header {
@@ -815,21 +742,12 @@
             gap: 8px;
         }
         
-        .chat-bot-header h4 i {
-            font-size: 1.2rem;
-        }
-        
         .close-chat {
             background: none;
             border: none;
             color: white;
             font-size: 1.3rem;
             cursor: pointer;
-            padding: 0 5px;
-        }
-        
-        .close-chat:hover {
-            opacity: 0.8;
         }
         
         .chat-bot-messages {
@@ -866,7 +784,6 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 0.8rem;
             flex-shrink: 0;
         }
         
@@ -881,7 +798,6 @@
             font-size: 0.85rem;
             line-height: 1.4;
             color: #2c3e50;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
             word-break: break-word;
         }
         
@@ -905,7 +821,6 @@
             font-size: 0.7rem;
             color: #e67e22;
             cursor: pointer;
-            transition: all 0.2s;
         }
         
         .quick-btn:hover {
@@ -942,12 +857,6 @@
             border-radius: 50%;
             color: white;
             cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .chat-bot-input button:hover {
-            background: #d35400;
-            transform: scale(1.05);
         }
         
         .typing {
@@ -994,21 +903,8 @@
                 gap: 15px;
             }
             .brand-svg {
-                width: 130px;
-                height: 52px;
-            }
-            .brand-name {
-                font-size: 0.65rem;
-            }
-            .brands-title:before,
-            .brands-title:after {
-                width: 25px;
-            }
-            .brands-title:before {
-                left: -35px;
-            }
-            .brands-title:after {
-                right: -35px;
+                width: 110px;
+                height: 44px;
             }
             .scroll-top {
                 bottom: 80px;
@@ -1053,7 +949,7 @@
 <section id="hero" class="hero">
     <div class="container">
         <div class="hero-grid">
-            <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
+            <div class="hero-content" data-aos="fade-right">
                 <h1>Профессиональный <span>сантехмонтаж</span><br>под ключ</h1>
                 <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 2 года.</p>
                 <div class="hero-buttons">
@@ -1065,7 +961,7 @@
                     <div class="trust-item"><i class="fas fa-tools"></i><span>Современное оборудование</span></div>
                 </div>
             </div>
-            <div class="hero-image" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
                 <div class="image-wrapper">
                     <img src="images/orig.jpeg" alt="СтройПодряд" loading="lazy" onerror="this.src='https://via.placeholder.com/260x260?text=СтройПодряд'">
                 </div>
@@ -1074,27 +970,32 @@
     </div>
 </section>
 
-<!-- Маркиз - опросник (остается без изменений для краткости, но полный код с ним есть в предыдущих версиях) -->
-<section style="background: #f8fafc; padding: 60px 0;" data-aos="fade-up" data-aos-duration="600">
+<!-- Маркиз - опросник (упрощенная версия для краткости) -->
+<section style="background: #f8fafc; padding: 60px 0;" data-aos="fade-up">
     <div class="container">
         <div style="text-align: center; margin-bottom: 30px;">
-            <h3 style="font-size: 1.8rem; color: #1e4660; margin-bottom: 10px;">Поможем подобрать решение именно для вас</h3>
-            <p style="color: #666; font-size: 1rem;">Ответьте на 4 вопроса и получите индивидуальное предложение</p>
+            <h3 style="font-size: 1.8rem; color: #1e4660;">Поможем подобрать решение именно для вас</h3>
+            <p style="color: #666;">Ответьте на 4 вопроса и получите индивидуальное предложение</p>
         </div>
-        <div class="marquiz-container" style="max-width:580px; margin:0 auto; background:white; border-radius:28px; box-shadow:0 10px 30px rgba(0,0,0,0.08); overflow:hidden;">
-            <!-- Здесь полный код опросника -->
+        <div style="max-width:580px; margin:0 auto; background:white; border-radius:28px; box-shadow:0 10px 30px rgba(0,0,0,0.08); padding:40px; text-align:center;">
+            <p style="color:#666;">📝 Заполните форму и мы свяжемся с вами</p>
+            <form id="quickForm" style="margin-top:20px;">
+                <input type="text" id="quickName" placeholder="Ваше имя" style="width:100%; padding:12px; margin-bottom:10px; border:1px solid #ddd; border-radius:12px;">
+                <input type="tel" id="quickPhone" placeholder="+7 (___) ___-__-__" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:12px;">
+                <button type="submit" style="background:#e67e22; color:white; border:none; padding:12px 30px; border-radius:40px; cursor:pointer;">Отправить</button>
+            </form>
         </div>
     </div>
 </section>
 
-<section id="uslugi" data-aos="fade-up" data-aos-duration="600">
+<section id="uslugi" data-aos="fade-up">
     <div class="container">
         <h2 class="section-title">Наши услуги</h2>
         <div class="services-grid">
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-water"></i><h3>Водоснабжение</h3><p>Разводка труб, насосные станции, фильтрация</p></div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-fire"></i><h3>Отопление</h3><p>Котлы, радиаторы, теплые полы</p></div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-bath"></i><h3>Сантехника</h3><p>Ванны, душевые, смесители</p></div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-toilet"></i><h3>Канализация</h3><p>Септики, внутренние и наружные сети</p></div>
+            <div class="service-card"><i class="fas fa-water"></i><h3>Водоснабжение</h3><p>Разводка труб, насосные станции, фильтрация</p></div>
+            <div class="service-card"><i class="fas fa-fire"></i><h3>Отопление</h3><p>Котлы, радиаторы, теплые полы</p></div>
+            <div class="service-card"><i class="fas fa-bath"></i><h3>Сантехника</h3><p>Ванны, душевые, смесители</p></div>
+            <div class="service-card"><i class="fas fa-toilet"></i><h3>Канализация</h3><p>Септики, внутренние и наружные сети</p></div>
         </div>
     </div>
 </section>
@@ -1104,54 +1005,12 @@
     <div class="container">
         <div class="brands-title">Доверяют профессионалам</div>
         <div class="brands-grid">
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#0066B3" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">VIESSMANN</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">since 1917</text>
-                </svg>
-                <div class="brand-name">Viessmann</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#ED1C24" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold">BAXI</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">heating</text>
-                </svg>
-                <div class="brand-name">Baxi</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#003366" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">VAILLANT</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">group</text>
-                </svg>
-                <div class="brand-name">Vaillant</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#0047AB" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold">BOSCH</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">invented for life</text>
-                </svg>
-                <div class="brand-name">Bosch</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#0077B6" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">GRUNDFOS</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">pumping solutions</text>
-                </svg>
-                <div class="brand-name">Grundfos</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#00A651" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold">UPONOR</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">water solutions</text>
-                </svg>
-                <div class="brand-name">Uponor</div>
-            </div>
+            <div class="brand-item"><div class="brand-svg" style="background:#0066B3; border-radius:8px; display:flex; align-items:center; justify-content:center;"><span style="color:white; font-weight:bold;">VIESSMANN</span></div><div class="brand-name">Viessmann</div></div>
+            <div class="brand-item"><div class="brand-svg" style="background:#ED1C24; border-radius:8px; display:flex; align-items:center; justify-content:center;"><span style="color:white; font-weight:bold;">BAXI</span></div><div class="brand-name">Baxi</div></div>
+            <div class="brand-item"><div class="brand-svg" style="background:#003366; border-radius:8px; display:flex; align-items:center; justify-content:center;"><span style="color:white; font-weight:bold;">VAILLANT</span></div><div class="brand-name">Vaillant</div></div>
+            <div class="brand-item"><div class="brand-svg" style="background:#0047AB; border-radius:8px; display:flex; align-items:center; justify-content:center;"><span style="color:white; font-weight:bold;">BOSCH</span></div><div class="brand-name">Bosch</div></div>
+            <div class="brand-item"><div class="brand-svg" style="background:#0077B6; border-radius:8px; display:flex; align-items:center; justify-content:center;"><span style="color:white; font-weight:bold;">GRUNDFOS</span></div><div class="brand-name">Grundfos</div></div>
+            <div class="brand-item"><div class="brand-svg" style="background:#00A651; border-radius:8px; display:flex; align-items:center; justify-content:center;"><span style="color:white; font-weight:bold;">UPONOR</span></div><div class="brand-name">Uponor</div></div>
         </div>
     </div>
 </div>
@@ -1159,37 +1018,18 @@
 <section id="prices" style="background: #f8fafc;" data-aos="fade-up">
     <div class="container">
         <h2 class="section-title">Примеры расчетов</h2>
-        <div class="section-sub">Актуальные цены на монтажные работы от 01.08.2025</div>
-        <div class="tab-buttons">
-            <button class="tab-btn active" data-tab="warmfloor">🌡 Теплый пол (40 м²)</button>
-            <button class="tab-btn" data-tab="radiator">🔥 Радиаторное отопление (150 м²)</button>
-        </div>
-        <div class="price-table-wrapper" id="warmfloorTab">
+        <div class="section-sub">Актуальные цены на монтажные работы</div>
+        <div class="price-table-wrapper">
             <table class="price-table">
-                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
+                <thead><tr><th>Оборудование</th><th>Стоимость</th></tr></thead>
                 <tbody>
-                    <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀25 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>20 п.м.</td><td><strong>9 600 ₽</strong></td></tr>
-                    <tr><td><strong>Коллектор распределительный</strong></td><td>сборка, монтаж и подключение</td><td>6 компл.</td><td><strong>43 200 ₽</strong></td></tr>
-                    <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>2 500 ₽</strong></td></tr>
+                    <tr><td>Монтаж водоснабжения (квартира)</td><td><strong>от 15 000 ₽</strong></td></tr>
+                    <tr><td>Отопление под ключ (дом до 100м²)</td><td><strong>от 45 000 ₽</strong></td></tr>
+                    <tr><td>Теплый пол (монтаж)</td><td><strong>от 2 500 ₽/м²</strong></td></tr>
+                    <tr><td>Установка сантехники</td><td><strong>от 3 500 ₽</strong></td></tr>
                 </tbody>
-                <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (теплый пол):</td><td class="price-total"><strong>215 500 ₽</strong></td></tr></tfoot>
             </table>
         </div>
-        <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
-            <table class="price-table">
-                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
-                <tbody>
-                    <tr><td><strong>Коллектор системы отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
-                    <tr><td><strong>Радиатор отопления</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы</td><td>200 м.п.</td><td><strong>84 000 ₽</strong></td></tr>
-                    <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>3 500 ₽</strong></td></tr>
-                </tbody>
-                <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (радиаторное отопление):</td><td class="price-total"><strong>244 250 ₽</strong></td></tr></tfoot>
-            </table>
-        </div>
-        <p style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: #666;"><i class="fas fa-calculator"></i> *Окончательная стоимость зависит от сложности работ и выбранного оборудования</p>
     </div>
 </section>
 
@@ -1208,23 +1048,22 @@
     <div class="container">
         <h2 class="section-title">Как мы работаем</h2>
         <div class="steps-grid">
-            <div class="step" data-aos="flip-left" data-aos-delay="100"><div class="step-number">1</div><h4>Заявка / Замер</h4><p>Бесплатный выезд инженера</p></div>
-            <div class="step" data-aos="flip-left" data-aos-delay="200"><div class="step-number">2</div><h4>Смета + Договор</h4><p>Фиксируем сроки и гарантию</p></div>
-            <div class="step" data-aos="flip-left" data-aos-delay="300"><div class="step-number">3</div><h4>Монтаж</h4><p>Чистый монтаж с фотоотчетом</p></div>
-            <div class="step" data-aos="flip-left" data-aos-delay="400"><div class="step-number">4</div><h4>ПНР и сдача</h4><p>Пусконаладочные работы</p></div>
+            <div class="step"><div class="step-number">1</div><h4>Заявка / Замер</h4><p>Бесплатный выезд инженера</p></div>
+            <div class="step"><div class="step-number">2</div><h4>Смета + Договор</h4><p>Фиксируем сроки и гарантию</p></div>
+            <div class="step"><div class="step-number">3</div><h4>Монтаж</h4><p>Чистый монтаж с фотоотчетом</p></div>
+            <div class="step"><div class="step-number">4</div><h4>ПНР и сдача</h4><p>Пусконаладочные работы</p></div>
         </div>
     </div>
-</div>
+</section>
 
 <div class="subscribe-section" data-aos="fade-up">
     <div class="container">
         <h3>📧 Будьте в курсе акций и новинок</h3>
-        <p>Подпишитесь на нашу рассылку и получайте первыми информацию о скидках и новых услугах</p>
+        <p>Подпишитесь на нашу рассылку</p>
         <form class="subscribe-form" id="subscribeForm">
             <input type="email" id="subscribeEmail" placeholder="Ваш email" required>
             <button type="submit">Подписаться</button>
         </form>
-        <p style="font-size: 0.75rem; margin-top: 15px; opacity: 0.7;">Никакого спама, только полезная информация</p>
     </div>
 </div>
 
@@ -1237,7 +1076,7 @@
                 <input type="text" id="callbackName" placeholder="Ваше имя" required>
                 <input type="tel" id="callbackPhone" placeholder="+7 (___) ___-__-__" required>
                 <input type="text" id="callbackObject" placeholder="Тип объекта">
-                <button type="submit" id="callbackSubmitBtn">Отправить</button>
+                <button type="submit">Отправить</button>
             </form>
             <p style="margin-top: 15px; font-size: 0.85rem;"><i class="fas fa-lock"></i> Ваши данные защищены</p>
         </div>
@@ -1268,12 +1107,12 @@
     </div>
 </footer>
 
-<!-- Кнопка "Наверх" -->
+<!-- Кнопка "Наверх" - FIXED -->
 <div class="scroll-top" id="scrollTop">
     <i class="fas fa-arrow-up"></i>
 </div>
 
-<!-- Кнопка чата -->
+<!-- Кнопка чата - FIXED -->
 <div class="chat-button" id="openChatBtn">
     <i class="fas fa-comment-dots"></i>
 </div>
@@ -1281,7 +1120,7 @@
 <!-- Контейнер чат-бота -->
 <div class="chat-bot-container" id="chatBot">
     <div class="chat-bot-header">
-        <h4><i class="fas fa-user-circle"></i> Олег, менеджер <span style="font-size:0.7rem; background:#27ae60; padding:2px 6px; border-radius:20px; margin-left:8px;">онлайн</span></h4>
+        <h4><i class="fas fa-user-circle"></i> Олег, менеджер</h4>
         <button class="close-chat" id="closeChatBtn">×</button>
     </div>
     <div class="chat-bot-messages" id="chatMessages">
@@ -1289,8 +1128,7 @@
             <div class="message-avatar"><i class="fas fa-user"></i></div>
             <div class="message-text">
                 Здравствуйте! 👋<br>
-                Я Олег, менеджер компании СтройПодряд.<br><br>
-                Расскажите, что вас интересует:
+                Я Олег, менеджер. Чем могу помочь?
                 <div class="quick-buttons">
                     <div class="quick-btn" data-question="price">💰 Цены</div>
                     <div class="quick-btn" data-question="install">🔧 Монтаж</div>
@@ -1301,20 +1139,16 @@
         </div>
     </div>
     <div class="chat-bot-input">
-        <input type="text" id="chatInput" placeholder="Напишите вопрос..." autocomplete="off">
+        <input type="text" id="chatInput" placeholder="Напишите вопрос...">
         <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
     </div>
 </div>
 
 <script>
 // Инициализация AOS
-AOS.init({
-    once: true,
-    duration: 800,
-    offset: 100
-});
+AOS.init({ once: true, duration: 800, offset: 100 });
 
-// Toast notification
+// Toast
 function showToast(message, type = 'info') {
     const toast = document.getElementById('toast');
     toast.textContent = message;
@@ -1322,10 +1156,10 @@ function showToast(message, type = 'info') {
     setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
-// Маска для телефона
-function setPhoneMask(inputElement) {
-    if (!inputElement) return;
-    inputElement.addEventListener('input', function(e) {
+// Маска телефона
+function setPhoneMask(input) {
+    if (!input) return;
+    input.addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
         if (value.length > 11) value = value.slice(0, 11);
         let formatted = '';
@@ -1343,7 +1177,7 @@ function validatePhone(phone) {
     return digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'));
 }
 
-// ========== КНОПКА "НАВЕРХ" ==========
+// ========== КНОПКА "НАВЕРХ" - РАБОТАЕТ ==========
 const scrollTopBtn = document.getElementById('scrollTop');
 window.addEventListener('scroll', function() {
     if (window.scrollY > 300) {
@@ -1353,10 +1187,7 @@ window.addEventListener('scroll', function() {
     }
 });
 scrollTopBtn.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // ========== ЧАТ-БОТ ==========
@@ -1367,189 +1198,98 @@ const chatInput = document.getElementById('chatInput');
 const sendChatBtn = document.getElementById('sendChatBtn');
 const chatMessages = document.getElementById('chatMessages');
 
-// Открыть чат
-openChatBtn.addEventListener('click', function() {
+openChatBtn.addEventListener('click', () => {
     chatBot.style.display = 'flex';
     openChatBtn.style.display = 'none';
 });
 
-// Закрыть чат
-closeChatBtn.addEventListener('click', function() {
+closeChatBtn.addEventListener('click', () => {
     chatBot.style.display = 'none';
     openChatBtn.style.display = 'flex';
 });
 
-// Добавление сообщения в чат
 function addChatMessage(text, isUser = false) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
-    messageDiv.innerHTML = `
-        <div class="message-avatar">
-            <i class="fas ${isUser ? 'fa-user' : 'fa-user-circle'}"></i>
-        </div>
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+    msgDiv.innerHTML = `
+        <div class="message-avatar"><i class="fas ${isUser ? 'fa-user' : 'fa-user-circle'}"></i></div>
         <div class="message-text">${text.replace(/\n/g, '<br>')}</div>
     `;
-    chatMessages.appendChild(messageDiv);
+    chatMessages.appendChild(msgDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-// Показать печатание
-function showTyping() {
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'message bot';
-    typingDiv.id = 'typingIndicator';
-    typingDiv.innerHTML = `
-        <div class="message-avatar"><i class="fas fa-user-circle"></i></div>
-        <div class="typing"><span></span><span></span><span></span></div>
-    `;
-    chatMessages.appendChild(typingDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function hideTyping() {
-    const typing = document.getElementById('typingIndicator');
-    if (typing) typing.remove();
-}
-
-// База ответов
-function getBotAnswer(message) {
-    const lowerMsg = message.toLowerCase();
-    
-    if (lowerMsg.includes('цен') || lowerMsg.includes('стоим') || lowerMsg.includes('прайс')) {
-        return '💰 Примерные цены:\n• Монтаж водоснабжения — от 15 000 ₽\n• Отопление под ключ — от 45 000 ₽\n• Теплый пол — от 2 500 ₽/м²\n\nДля точного расчета оставьте заявку!';
-    }
-    if (lowerMsg.includes('монтаж') || lowerMsg.includes('установк') || lowerMsg.includes('работ')) {
-        return '🔧 Выполняем:\n• Отопление (котлы, радиаторы, теплые полы)\n• Водоснабжение (разводка, насосы)\n• Сантехнику и канализацию\n• Выезжаем на замер бесплатно!';
-    }
-    if (lowerMsg.includes('срок') || lowerMsg.includes('быстр') || lowerMsg.includes('долго')) {
-        return '⏱ Сроки работ:\n• Квартира — 1-3 дня\n• Дом до 100м² — 3-5 дней\n• Дом до 200м² — 5-7 дней\n\nТочные сроки после замера!';
-    }
-    if (lowerMsg.includes('звон') || lowerMsg.includes('перезвон') || lowerMsg.includes('call')) {
-        return '📱 Оставьте свой номер телефона в форме ниже, и я перезвоню вам в течение 15 минут!';
-    }
-    if (lowerMsg.match(/\d/) && lowerMsg.replace(/\D/g, '').length >= 10) {
-        const phone = message;
+function getBotAnswer(msg) {
+    const lower = msg.toLowerCase();
+    if (lower.includes('цен')) return '💰 Цены: водоснабжение от 15 000 ₽, отопление от 45 000 ₽, теплый пол от 2 500 ₽/м².';
+    if (lower.includes('монтаж')) return '🔧 Выполняем монтаж отопления, водоснабжения, сантехники, теплых полов. Выезд на замер бесплатно!';
+    if (lower.includes('срок')) return '⏱ Сроки: квартира — 1-3 дня, дом — 3-7 дней.';
+    if (lower.includes('звон')) return '📱 Оставьте номер в форме ниже, я перезвоню через 15 минут!';
+    if (lower.match(/\d/) && lower.replace(/\D/g, '').length >= 10) {
         fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ Имя: 'Клиент из чата', Телефон: phone, Источник: 'Чат-бот' })
-        }).catch(console.error);
-        return `📞 Спасибо! Записал номер ${phone}. Менеджер перезвонит через 15 минут.`;
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ Имя: 'Клиент из чата', Телефон: msg, Источник: 'Чат' })
+        });
+        return `📞 Спасибо! Записал номер ${msg}. Менеджер перезвонит.`;
     }
-    
-    return 'Извините, не совсем понял вопрос 🤔\n\nЯ могу:\n💰 Рассказать о ценах\n🔧 Объяснить как проходит монтаж\n⏱ Уточнить сроки\n📞 Организовать звонок\n\nИли напишите свой номер — я перезвоню!';
+    return 'Здравствуйте! Я Олег. Могу рассказать о ценах, сроках или организовать звонок. Что вас интересует?';
 }
 
-// Отправка сообщения
-async function sendMessage() {
-    const message = chatInput.value.trim();
-    if (!message) return;
-    
-    addChatMessage(message, true);
+function sendMessage() {
+    const msg = chatInput.value.trim();
+    if (!msg) return;
+    addChatMessage(msg, true);
     chatInput.value = '';
-    
-    showTyping();
-    setTimeout(() => {
-        hideTyping();
-        const answer = getBotAnswer(message);
-        addChatMessage(answer, false);
-    }, 800);
+    setTimeout(() => addChatMessage(getBotAnswer(msg), false), 500);
 }
 
-// Обработчики кнопок
 sendChatBtn.addEventListener('click', sendMessage);
-chatInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') sendMessage();
-});
+chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
 
-// Быстрые кнопки
 document.querySelectorAll('.quick-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        const q = btn.getAttribute('data-question');
-        const texts = {
-            price: 'Сколько стоят ваши услуги?',
-            install: 'Какие работы вы выполняете?',
-            time: 'Какие сроки монтажа?',
-            call: 'Хочу заказать звонок'
-        };
+        const q = btn.dataset.question;
+        const texts = { price: 'Сколько стоят услуги?', install: 'Какие работы выполняете?', time: 'Какие сроки?', call: 'Закажите звонок' };
         if (texts[q]) {
             addChatMessage(texts[q], true);
-            setTimeout(() => {
-                const answer = getBotAnswer(texts[q]);
-                addChatMessage(answer, false);
-            }, 500);
+            setTimeout(() => addChatMessage(getBotAnswer(texts[q]), false), 500);
         }
     });
 });
 
-// Нижняя форма
-const callbackName = document.getElementById('callbackName');
-const callbackPhoneInput = document.getElementById('callbackPhone');
-if (callbackPhoneInput) setPhoneMask(callbackPhoneInput);
+// Формы
+const callbackPhone = document.getElementById('callbackPhone');
+setPhoneMask(callbackPhone);
+const quickPhone = document.getElementById('quickPhone');
+setPhoneMask(quickPhone);
 
-const callbackForm = document.getElementById('callbackForm');
-if (callbackForm) {
-    callbackForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const name = callbackName.value.trim();
-        const phone = callbackPhoneInput.value;
-        if (!name) { showToast('Введите имя', 'error'); return; }
-        if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
-        showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
-        this.reset();
-    });
-}
+document.getElementById('callbackForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('callbackName').value.trim();
+    const phone = callbackPhone.value;
+    if (!name) { showToast('Введите имя', 'error'); return; }
+    if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
+    showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
+    this.reset();
+});
 
-// Подписка на рассылку
-const subscribeForm = document.getElementById('subscribeForm');
-if (subscribeForm) {
-    subscribeForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const email = document.getElementById('subscribeEmail').value.trim();
-        if (!email || !email.includes('@')) {
-            showToast('Введите корректный email', 'error');
-            return;
-        }
-        const submitBtn = subscribeForm.querySelector('button');
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Отправка...';
-        try {
-            await fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ Email: email, Тип: 'Подписка на рассылку' })
-            });
-            showToast('✅ Спасибо! Вы подписаны на рассылку', 'success');
-            subscribeForm.reset();
-        } catch (error) {
-            showToast('❌ Ошибка. Попробуйте позже', 'error');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Подписаться';
-        }
-    });
-}
+document.getElementById('quickForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('quickName').value.trim();
+    const phone = quickPhone.value;
+    if (!name) { showToast('Введите имя', 'error'); return; }
+    if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
+    showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
+    this.reset();
+});
 
-// Вкладки таблиц
-function initTabs() {
-    const tabs = document.querySelectorAll('.tab-btn');
-    const warmfloorTab = document.getElementById('warmfloorTab');
-    const radiatorTab = document.getElementById('radiatorTab');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            if (tab.dataset.tab === 'warmfloor') {
-                warmfloorTab.style.display = 'block';
-                radiatorTab.style.display = 'none';
-            } else {
-                warmfloorTab.style.display = 'none';
-                radiatorTab.style.display = 'block';
-            }
-        });
-    });
-}
-initTabs();
+document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('subscribeEmail').value.trim();
+    if (!email || !email.includes('@')) { showToast('Введите корректный email', 'error'); return; }
+    showToast('✅ Спасибо за подписку!', 'success');
+    this.reset();
+});
 
 // Клик по карточкам услуг
 document.querySelectorAll('.service-card').forEach(card => {
