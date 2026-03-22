@@ -1,0 +1,31 @@
+# robots.txt для СтройПодряд
+# Адрес: https://stroypodryad50.github.io/
+
+# Разрешаем всем поисковикам индексировать сайт
+User-agent: *
+Allow: /
+
+# Основные страницы
+Allow: /$
+Allow: /index.html$
+Allow: /blog.html$
+
+# Статьи
+Allow: /article1.html$
+Allow: /article2.html$
+Allow: /article3.html$
+
+# Служебные страницы (разрешаем, но с низким приоритетом)
+Allow: /thanks.html$
+
+# Запрещаем индексацию несуществующих страниц (на всякий случай)
+Disallow: /404.html
+
+# Указываем путь к карте сайта
+Sitemap: https://stroypodryad50.github.io/sitemap.xml
+
+# Для Яндекса указываем хост
+Host: https://stroypodryad50.github.io
+
+# Задержка между запросами (для уважения к серверу)
+Crawl-delay: 1
