@@ -41,6 +41,23 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
     
+    <!-- Яндекс.Метрика -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(XXXXXXXX, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -108,7 +125,12 @@
             font-size: 0.95rem;
         }
         
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover {
+            color: #e67e22;
+            border-color: #e67e22;
+        }
+        
+        .nav-links a.active {
             color: #e67e22;
             border-color: #e67e22;
         }
@@ -120,12 +142,14 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            display: inline-block;
             transition: all 0.3s ease;
         }
         
         .header-phone:hover {
             background: #d35400;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230,126,34,0.3);
         }
         
         .btn {
@@ -134,6 +158,8 @@
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
+            border: none;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
         
@@ -144,6 +170,19 @@
         
         .btn-primary:hover {
             background: #d35400;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230,126,34,0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #e67e22;
+            color: #e67e22;
+        }
+        
+        .btn-outline:hover {
+            background: #e67e22;
+            color: white;
             transform: translateY(-2px);
         }
         
@@ -587,10 +626,10 @@
         
         .scroll-top {
             position: fixed;
-            bottom: 100px;
+            bottom: 30px;
             right: 30px;
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             background: #e67e22;
             border-radius: 50%;
             display: flex;
@@ -601,6 +640,7 @@
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         
         .scroll-top.show {
@@ -610,229 +650,19 @@
         
         .scroll-top:hover {
             background: #d35400;
-        }
-        
-        /* ========== AI ЧАТ-БОТ СТИЛИ ========== */
-        .chat-button {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #e67e22, #d35400);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(230,126,34,0.4);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            border: none;
-            font-size: 16px;
-        }
-        
-        .chat-button i {
-            font-size: 18px;
-        }
-        
-        .chat-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(230,126,34,0.5);
         }
         
-        .chat-bot-container {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 380px;
-            max-width: calc(100vw - 40px);
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-            z-index: 1001;
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        
-        .chat-bot-header {
-            background: linear-gradient(135deg, #1e4660, #2c5a6e);
+        .scroll-top i {
             color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .chat-bot-header h4 {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-        }
-        
-        .ai-badge {
-            background: rgba(255,255,255,0.2);
-            padding: 2px 8px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-        }
-        
-        .close-chat {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.3rem;
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.2s;
-        }
-        
-        .close-chat:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        
-        .chat-bot-messages {
-            height: 420px;
-            overflow-y: auto;
-            padding: 15px;
-            background: #f8fafc;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        
-        .message {
-            display: flex;
-            gap: 10px;
-            max-width: 85%;
-        }
-        
-        .message.bot { align-self: flex-start; }
-        .message.user { align-self: flex-end; flex-direction: row-reverse; }
-        
-        .message-avatar {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #e67e22, #d35400);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            flex-shrink: 0;
-            font-size: 14px;
-        }
-        
-        .message.user .message-avatar {
-            background: linear-gradient(135deg, #1e4660, #2c5a6e);
-        }
-        
-        .message-text {
-            background: white;
-            padding: 10px 14px;
-            border-radius: 18px;
-            font-size: 0.85rem;
-            line-height: 1.4;
-            color: #2c3e50;
-        }
-        
-        .message.user .message-text {
-            background: linear-gradient(135deg, #e67e22, #d35400);
-            color: white;
-        }
-        
-        .quick-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 12px;
-        }
-        
-        .quick-btn {
-            background: #fef5e8;
-            border: 1px solid #e67e22;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            color: #e67e22;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .quick-btn:hover {
-            background: #e67e22;
-            color: white;
-        }
-        
-        .typing-indicator {
-            display: flex;
-            gap: 4px;
-            padding: 10px 14px;
-            background: white;
-            border-radius: 18px;
-            width: fit-content;
-        }
-        
-        .typing-indicator span {
-            width: 8px;
-            height: 8px;
-            background: #94a3b8;
-            border-radius: 50%;
-            animation: typingBounce 1.4s infinite;
-        }
-        
-        @keyframes typingBounce {
-            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-            30% { transform: translateY(-6px); opacity: 1; }
-        }
-        
-        .chat-bot-input {
-            display: flex;
-            padding: 15px;
-            background: white;
-            border-top: 1px solid #edf2f7;
-            gap: 10px;
-        }
-        
-        .chat-bot-input input {
-            flex: 1;
-            padding: 12px 15px;
-            border: 1px solid #e2e8f0;
-            border-radius: 25px;
-            outline: none;
-        }
-        
-        .chat-bot-input input:focus {
-            border-color: #e67e22;
-        }
-        
-        .chat-bot-input button {
-            background: #e67e22;
-            border: none;
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            color: white;
-            cursor: pointer;
+            font-size: 20px;
         }
         
         @media (max-width: 768px) {
             .navbar { flex-direction: column; }
             .stats-grid { grid-template-columns: 1fr 1fr; padding: 30px 20px; }
             .hero-content h1 { font-size: 1.8rem; }
-            .chat-button { bottom: 20px; right: 20px; padding: 10px 16px; font-size: 14px; }
-            .chat-bot-container { bottom: 80px; right: 20px; width: calc(100vw - 40px); left: 20px; right: auto; }
-            .chat-bot-messages { height: 400px; }
-            .scroll-top { bottom: 80px; right: 20px; }
+            .scroll-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
         }
     </style>
 </head>
@@ -880,7 +710,7 @@
     </div>
 </section>
 
-<!-- Маркиз - опросник -->
+<!-- Быстрая форма -->
 <section style="background: #f8fafc; padding: 60px 0;" data-aos="fade-up">
     <div class="container">
         <div style="text-align: center; margin-bottom: 30px;">
@@ -918,6 +748,8 @@
             <div class="brand-item"><div class="brand-svg" style="background:#ED1C24; border-radius:8px; display:flex; align-items:center; justify-content:center;"><span style="color:white; font-weight:bold;">BAXI</span></div><div class="brand-name">Baxi</div></div>
             <div class="brand-item"><div class="brand-svg" style="background:#003366; border-radius:8px; display:flex; align-items:center; justify-content:center;"><span style="color:white; font-weight:bold;">VAILLANT</span></div><div class="brand-name">Vaillant</div></div>
             <div class="brand-item"><div class="brand-svg" style="background:#0047AB; border-radius:8px; display:flex; align-items:center; justify-content:center;"><span style="color:white; font-weight:bold;">BOSCH</span></div><div class="brand-name">Bosch</div></div>
+            <div class="brand-item"><div class="brand-svg" style="background:#0077B6; border-radius:8px; display:flex; align-items:center; justify-content:center;"><span style="color:white; font-weight:bold;">GRUNDFOS</span></div><div class="brand-name">Grundfos</div></div>
+            <div class="brand-item"><div class="brand-svg" style="background:#00A651; border-radius:8px; display:flex; align-items:center; justify-content:center;"><span style="color:white; font-weight:bold;">UPONOR</span></div><div class="brand-name">Uponor</div></div>
         </div>
     </div>
 </div>
@@ -934,7 +766,7 @@
         
         <div class="price-table-wrapper" id="warmfloorTab">
             <table class="price-table">
-                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
+                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
                 <tbody>
                     <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
                     <tr><td><strong>Труба ⌀20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
@@ -947,7 +779,7 @@
         
         <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
             <table class="price-table">
-                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
+                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
                 <tbody>
                     <tr><td><strong>Радиатор отопления стальной панельный</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
                     <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы</td><td>200 м.п.</td><td><strong>84 000 ₽</strong></td></tr>
@@ -1021,40 +853,6 @@
 
 <div class="scroll-top" id="scrollTop">
     <i class="fas fa-arrow-up"></i>
-</div>
-
-<!-- Кнопка AI чат-бота -->
-<div class="chat-button" id="openChatBtn">
-    <i class="fas fa-comment-dots"></i> Чат
-</div>
-
-<!-- Контейнер AI чат-бота -->
-<div class="chat-bot-container" id="chatBot">
-    <div class="chat-bot-header">
-        <h4><i class="fas fa-brain"></i> AI Ассистент <span class="ai-badge">🤖 ИИ</span></h4>
-        <button class="close-chat" id="closeChatBtn">✕</button>
-    </div>
-    <div class="chat-bot-messages" id="chatMessages">
-        <div class="message bot">
-            <div class="message-avatar"><i class="fas fa-comment-dots"></i></div>
-            <div class="message-text">
-                🤖 <strong>Привет! Я AI-ассистент СтройПодряд</strong><br><br>
-                Могу помочь с подбором оборудования, расчетом стоимости и ответить на любые вопросы о сантехмонтаже.<br><br>
-                👇 Что вас интересует?
-                <div class="quick-buttons">
-                    <div class="quick-btn" data-question="price">💰 Цены</div>
-                    <div class="quick-btn" data-question="install">🔧 Монтаж</div>
-                    <div class="quick-btn" data-question="time">⏱ Сроки</div>
-                    <div class="quick-btn" data-question="calculate">📐 Рассчитать</div>
-                    <div class="quick-btn" data-question="call">📞 Заказать звонок</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="chat-bot-input">
-        <input type="text" id="chatInput" placeholder="Спросите AI ассистента...">
-        <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
-    </div>
 </div>
 
 <script>
@@ -1149,110 +947,6 @@ function initTabs() {
     }
 }
 initTabs();
-
-// ========== AI ЧАТ-БОТ ==========
-const chatBot = document.getElementById('chatBot');
-const openChatBtn = document.getElementById('openChatBtn');
-const closeChatBtn = document.getElementById('closeChatBtn');
-const chatInput = document.getElementById('chatInput');
-const sendChatBtn = document.getElementById('sendChatBtn');
-const chatMessages = document.getElementById('chatMessages');
-
-function analyzeIntent(message) {
-    const lowerMsg = message.toLowerCase();
-    const intents = {
-        price: ['цен', 'стоимость', 'сколько', 'стоит', 'прайс', 'цена'],
-        install: ['монтаж', 'установк', 'работ'],
-        timing: ['срок', 'долго', 'быстро', 'время', 'когда', 'дней'],
-        calculation: ['рассчитай', 'смета', 'расчет', 'посчитай'],
-        call: ['звон', 'телефон', 'номер']
-    };
-    for (const [intent, keywords] of Object.entries(intents)) {
-        if (keywords.some(k => lowerMsg.includes(k))) return intent;
-    }
-    if (message.match(/\d{10,11}/) || message.match(/[\d\(\)\-\+]{10,}/)) return 'phone_number';
-    if (message.match(/\d+\s*м²|\d+\s*кв/)) return 'area';
-    return 'unknown';
-}
-
-function generateResponse(intent, msg) {
-    const responses = {
-        price: '💰 <strong>Наши цены:</strong><br><br>• Водоснабжение — от 15 000 ₽<br>• Отопление под ключ — от 45 000 ₽<br>• Теплый пол — от 2 500 ₽/м²<br>• Установка сантехники — от 3 500 ₽',
-        install: '🔧 <strong>Мы монтируем:</strong><br><br>✅ Отопление (котлы, радиаторы, теплые полы)<br>✅ Водоснабжение (разводка, насосы)<br>✅ Канализация (септики, разводка)<br>✅ Сантехника (унитазы, раковины)',
-        timing: '⏱ <strong>Сроки:</strong><br><br>• Квартира — 1-3 дня<br>• Частный дом — 3-7 дней<br>• Коттедж — 7-14 дней',
-        calculation: '📐 Для расчета напишите площадь объекта в м² (например: 80 м²)',
-        call: '📞 Оставьте номер телефона, и мы перезвоним в течение 15 минут!',
-        area: (area) => `📏 Площадь ${area} м². Примерная стоимость: от ${Math.floor(area * 800)} до ${Math.floor(area * 1200)} ₽. Хотите точную смету? Оставьте телефон!`,
-        phone_number: '📱 Записал! Наш менеджер свяжется с вами в ближайшее время.',
-        unknown: '🤖 Напишите: "цены", "монтаж", "сроки", "рассчитать" или оставьте номер для звонка.'
-    };
-    
-    if (intent === 'area') {
-        const match = msg.match(/(\d+)/);
-        if (match) return responses.area(match[0]);
-    }
-    return responses[intent] || responses.unknown;
-}
-
-function showTyping() {
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'message bot';
-    typingDiv.id = 'typingIndicator';
-    typingDiv.innerHTML = `<div class="message-avatar"><i class="fas fa-comment-dots"></i></div><div class="typing-indicator"><span></span><span></span><span></span></div>`;
-    chatMessages.appendChild(typingDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function hideTyping() {
-    const indicator = document.getElementById('typingIndicator');
-    if (indicator) indicator.remove();
-}
-
-function addMessage(text, isUser = false) {
-    const msgDiv = document.createElement('div');
-    msgDiv.className = `message ${isUser ? 'user' : 'bot'}`;
-    msgDiv.innerHTML = `<div class="message-avatar"><i class="fas ${isUser ? 'fa-user' : 'fa-comment-dots'}"></i></div><div class="message-text">${text.replace(/\n/g, '<br>')}</div>`;
-    chatMessages.appendChild(msgDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function sendMessage() {
-    const msg = chatInput.value.trim();
-    if (!msg) return;
-    addMessage(msg, true);
-    chatInput.value = '';
-    showTyping();
-    setTimeout(() => {
-        hideTyping();
-        addMessage(generateResponse(analyzeIntent(msg), msg), false);
-    }, 600);
-}
-
-sendChatBtn.addEventListener('click', sendMessage);
-chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
-
-document.querySelectorAll('.quick-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const texts = { price: 'Сколько стоят услуги?', install: 'Какие работы выполняете?', time: 'Какие сроки?', calculate: 'Рассчитайте стоимость', call: 'Хочу заказать звонок' };
-        if (texts[btn.dataset.question]) {
-            addMessage(texts[btn.dataset.question], true);
-            showTyping();
-            setTimeout(() => {
-                hideTyping();
-                addMessage(generateResponse(analyzeIntent(texts[btn.dataset.question]), texts[btn.dataset.question]), false);
-            }, 600);
-        }
-    });
-});
-
-openChatBtn.addEventListener('click', () => { 
-    chatBot.style.display = 'flex'; 
-    openChatBtn.style.display = 'none';
-});
-closeChatBtn.addEventListener('click', () => { 
-    chatBot.style.display = 'none'; 
-    openChatBtn.style.display = 'flex';
-});
 </script>
 </body>
 </html>
