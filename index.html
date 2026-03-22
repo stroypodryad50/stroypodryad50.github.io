@@ -674,55 +674,93 @@
             font-size: 22px;
         }
         
-        /* Кнопка чата - фиксированная */
+        /* ========== УЛУЧШЕННЫЙ ЧАТ-БОТ ========== */
+        /* Кнопка чата с анимацией пульсации */
         .chat-button {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 55px;
-            height: 55px;
-            background: #e67e22;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e67e22, #d35400);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(230,126,34,0.4);
             z-index: 1000;
             transition: all 0.3s ease;
-            animation: bounce 2s infinite;
+            animation: pulse 2s infinite;
         }
         
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(230,126,34,0.7);
+                transform: scale(1);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(230,126,34,0);
+                transform: scale(1.05);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(230,126,34,0);
+                transform: scale(1);
+            }
         }
         
         .chat-button:hover {
-            transform: scale(1.08);
-            background: #d35400;
+            transform: scale(1.1);
             animation: none;
+            box-shadow: 0 6px 20px rgba(230,126,34,0.5);
         }
         
         .chat-button i {
             color: white;
-            font-size: 26px;
+            font-size: 28px;
         }
         
-        /* Контейнер чат-бота */
+        /* Контейнер чат-бота с анимацией появления */
         .chat-bot-container {
             position: fixed;
             bottom: 100px;
             right: 30px;
-            width: 350px;
+            width: 380px;
             max-width: calc(100vw - 40px);
             background: white;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             z-index: 1001;
             display: none;
             flex-direction: column;
             overflow: hidden;
+            animation: slideInUp 0.3s ease-out;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .chat-bot-container.closing {
+            animation: slideOutDown 0.2s ease-in forwards;
+        }
+        
+        @keyframes slideOutDown {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(30px);
+            }
         }
         
         .chat-bot-header {
@@ -742,16 +780,48 @@
             gap: 8px;
         }
         
+        .chat-bot-header h4 i {
+            font-size: 1.2rem;
+        }
+        
+        .chat-bot-header .status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 8px;
+            border-radius: 20px;
+        }
+        
+        .chat-bot-header .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #2ecc71;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
         .close-chat {
             background: none;
             border: none;
             color: white;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .close-chat:hover {
+            transform: scale(1.1);
         }
         
         .chat-bot-messages {
-            height: 350px;
+            height: 380px;
             overflow-y: auto;
             padding: 15px;
             background: #f8fafc;
@@ -760,10 +830,37 @@
             gap: 12px;
         }
         
+        /* Кастомный скроллбар */
+        .chat-bot-messages::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        .chat-bot-messages::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        
+        .chat-bot-messages::-webkit-scrollbar-thumb {
+            background: #e67e22;
+            border-radius: 10px;
+        }
+        
         .message {
             display: flex;
             gap: 10px;
             max-width: 85%;
+            animation: messageFadeIn 0.3s ease;
+        }
+        
+        @keyframes messageFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .message.bot {
@@ -776,19 +873,20 @@
         }
         
         .message-avatar {
-            width: 32px;
-            height: 32px;
-            background: #e67e22;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #e67e22, #d35400);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             flex-shrink: 0;
+            font-size: 0.9rem;
         }
         
         .message.user .message-avatar {
-            background: #1e4660;
+            background: linear-gradient(135deg, #1e4660, #2c5a6e);
         }
         
         .message-text {
@@ -799,10 +897,11 @@
             line-height: 1.4;
             color: #2c3e50;
             word-break: break-word;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
         
         .message.user .message-text {
-            background: #e67e22;
+            background: linear-gradient(135deg, #e67e22, #d35400);
             color: white;
         }
         
@@ -810,7 +909,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 10px;
+            margin-top: 12px;
         }
         
         .quick-btn {
@@ -821,11 +920,47 @@
             font-size: 0.7rem;
             color: #e67e22;
             cursor: pointer;
+            transition: all 0.2s ease;
         }
         
         .quick-btn:hover {
             background: #e67e22;
             color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Анимация печати (typing) */
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 10px 14px;
+            background: white;
+            border-radius: 18px;
+            width: fit-content;
+            align-items: center;
+        }
+        
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #94a3b8;
+            border-radius: 50%;
+            animation: typingBounce 1.4s infinite ease-in-out;
+        }
+        
+        .typing-indicator span:nth-child(1) { animation-delay: 0s; }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typingBounce {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.4;
+            }
+            30% {
+                transform: translateY(-6px);
+                opacity: 1;
+            }
         }
         
         .chat-bot-input {
@@ -838,50 +973,33 @@
         
         .chat-bot-input input {
             flex: 1;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
             border-radius: 25px;
             font-size: 0.85rem;
             outline: none;
+            transition: all 0.2s;
         }
         
         .chat-bot-input input:focus {
             border-color: #e67e22;
+            box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
         }
         
         .chat-bot-input button {
             background: #e67e22;
             border: none;
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             color: white;
             cursor: pointer;
+            transition: all 0.2s;
         }
         
-        .typing {
-            display: flex;
-            gap: 4px;
-            padding: 8px 12px;
-            background: white;
-            border-radius: 18px;
-            width: fit-content;
-        }
-        
-        .typing span {
-            width: 6px;
-            height: 6px;
-            background: #94a3b8;
-            border-radius: 50%;
-            animation: typingAnim 1.4s infinite;
-        }
-        
-        .typing span:nth-child(2) { animation-delay: 0.2s; }
-        .typing span:nth-child(3) { animation-delay: 0.4s; }
-        
-        @keyframes typingAnim {
-            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-            30% { transform: translateY(-6px); opacity: 1; }
+        .chat-bot-input button:hover {
+            background: #d35400;
+            transform: scale(1.05);
         }
         
         @media (max-width: 768px) {
@@ -915,11 +1033,21 @@
             .chat-button {
                 bottom: 20px;
                 right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+            .chat-button i {
+                font-size: 24px;
             }
             .chat-bot-container {
-                bottom: 80px;
+                bottom: 85px;
                 right: 20px;
                 width: calc(100vw - 40px);
+                left: 20px;
+                right: auto;
+            }
+            .chat-bot-messages {
+                height: 400px;
             }
         }
     </style>
@@ -970,7 +1098,6 @@
     </div>
 </section>
 
-<!-- Маркиз - опросник (упрощенная версия для краткости) -->
 <section style="background: #f8fafc; padding: 60px 0;" data-aos="fade-up">
     <div class="container">
         <div style="text-align: center; margin-bottom: 30px;">
@@ -1000,7 +1127,6 @@
     </div>
 </section>
 
-<!-- Логотипы брендов -->
 <div class="brands-section" data-aos="fade-up">
     <div class="container">
         <div class="brands-title">Доверяют профессионалам</div>
@@ -1107,12 +1233,12 @@
     </div>
 </footer>
 
-<!-- Кнопка "Наверх" - FIXED -->
+<!-- Кнопка "Наверх" -->
 <div class="scroll-top" id="scrollTop">
     <i class="fas fa-arrow-up"></i>
 </div>
 
-<!-- Кнопка чата - FIXED -->
+<!-- Кнопка чата с анимацией -->
 <div class="chat-button" id="openChatBtn">
     <i class="fas fa-comment-dots"></i>
 </div>
@@ -1120,7 +1246,7 @@
 <!-- Контейнер чат-бота -->
 <div class="chat-bot-container" id="chatBot">
     <div class="chat-bot-header">
-        <h4><i class="fas fa-user-circle"></i> Олег, менеджер</h4>
+        <h4><i class="fas fa-user-circle"></i> Олег, менеджер <span class="status"><span class="status-dot"></span> онлайн</span></h4>
         <button class="close-chat" id="closeChatBtn">×</button>
     </div>
     <div class="chat-bot-messages" id="chatMessages">
@@ -1177,7 +1303,7 @@ function validatePhone(phone) {
     return digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'));
 }
 
-// ========== КНОПКА "НАВЕРХ" - РАБОТАЕТ ==========
+// Кнопка "Наверх"
 const scrollTopBtn = document.getElementById('scrollTop');
 window.addEventListener('scroll', function() {
     if (window.scrollY > 300) {
@@ -1190,7 +1316,7 @@ scrollTopBtn.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ========== ЧАТ-БОТ ==========
+// ========== УЛУЧШЕННЫЙ ЧАТ-БОТ ==========
 const chatBot = document.getElementById('chatBot');
 const openChatBtn = document.getElementById('openChatBtn');
 const closeChatBtn = document.getElementById('closeChatBtn');
@@ -1198,16 +1324,30 @@ const chatInput = document.getElementById('chatInput');
 const sendChatBtn = document.getElementById('sendChatBtn');
 const chatMessages = document.getElementById('chatMessages');
 
-openChatBtn.addEventListener('click', () => {
-    chatBot.style.display = 'flex';
-    openChatBtn.style.display = 'none';
-});
+let isTyping = false;
 
-closeChatBtn.addEventListener('click', () => {
-    chatBot.style.display = 'none';
-    openChatBtn.style.display = 'flex';
-});
+// Показать индикатор печати
+function showTypingIndicator() {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'message bot';
+    typingDiv.id = 'typingIndicator';
+    typingDiv.innerHTML = `
+        <div class="message-avatar"><i class="fas fa-user"></i></div>
+        <div class="typing-indicator">
+            <span></span><span></span><span></span>
+        </div>
+    `;
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
 
+// Скрыть индикатор печати
+function hideTypingIndicator() {
+    const indicator = document.getElementById('typingIndicator');
+    if (indicator) indicator.remove();
+}
+
+// Добавить сообщение
 function addChatMessage(text, isUser = false) {
     const msgDiv = document.createElement('div');
     msgDiv.className = `message ${isUser ? 'user' : 'bot'}`;
@@ -1219,42 +1359,91 @@ function addChatMessage(text, isUser = false) {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
+// Получить ответ бота
 function getBotAnswer(msg) {
     const lower = msg.toLowerCase();
-    if (lower.includes('цен')) return '💰 Цены: водоснабжение от 15 000 ₽, отопление от 45 000 ₽, теплый пол от 2 500 ₽/м².';
-    if (lower.includes('монтаж')) return '🔧 Выполняем монтаж отопления, водоснабжения, сантехники, теплых полов. Выезд на замер бесплатно!';
-    if (lower.includes('срок')) return '⏱ Сроки: квартира — 1-3 дня, дом — 3-7 дней.';
-    if (lower.includes('звон')) return '📱 Оставьте номер в форме ниже, я перезвоню через 15 минут!';
-    if (lower.match(/\d/) && lower.replace(/\D/g, '').length >= 10) {
-        fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
-            method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ Имя: 'Клиент из чата', Телефон: msg, Источник: 'Чат' })
-        });
-        return `📞 Спасибо! Записал номер ${msg}. Менеджер перезвонит.`;
+    if (lower.includes('цен') || lower.includes('сто') || lower.includes('скол')) {
+        return '💰 <strong>Наши цены:</strong><br>• Водоснабжение (квартира) — от 15 000 ₽<br>• Отопление под ключ (до 100м²) — от 45 000 ₽<br>• Теплый пол — от 2 500 ₽/м²<br>• Установка сантехники — от 3 500 ₽<br><br>Нужен точный расчет? Оставьте заявку — сделаем смету бесплатно!';
     }
-    return 'Здравствуйте! Я Олег. Могу рассказать о ценах, сроках или организовать звонок. Что вас интересует?';
+    if (lower.includes('монтаж') || lower.includes('работ')) {
+        return '🔧 <strong>Что мы монтируем:</strong><br>• Водоснабжение (коллекторное/тройниковое)<br>• Отопление (котлы, радиаторы, теплые полы)<br>• Канализацию (внутреннюю и наружную)<br>• Сантехнику (унитазы, раковины, смесители)<br><br>Выезд инженера на замер — бесплатно!';
+    }
+    if (lower.includes('срок') || lower.includes('долго') || lower.includes('быстр')) {
+        return '⏱ <strong>Сроки выполнения:</strong><br>• Квартира (сантехника) — 1-3 дня<br>• Частный дом (отопление + водоснабжение) — 3-7 дней<br>• Сложные объекты — обсуждаем индивидуально<br><br>Всегда соблюдаем оговоренные сроки!';
+    }
+    if (lower.includes('звон') || lower.includes('телефон') || lower.includes('номер')) {
+        return '📞 <strong>Отлично!</strong> Оставьте ваш номер телефона, и я перезвоню в течение 15 минут для консультации.';
+    }
+    // Если сообщение содержит номер телефона
+    const phoneDigits = msg.replace(/\D/g, '');
+    if (phoneDigits.length >= 10 && phoneDigits.length <= 12) {
+        // Имитация отправки
+        addChatMessage(`📱 Спасибо! Записал номер ${msg}. Наш менеджер свяжется с вами в ближайшее время.`, false);
+        return null;
+    }
+    return 'Здравствуйте! 👋 Я Олег, менеджер. Могу помочь с вопросами о ценах, сроках или монтаже. Что вас интересует?';
 }
 
-function sendMessage() {
+// Отправить сообщение с анимацией печати
+async function sendMessage() {
     const msg = chatInput.value.trim();
     if (!msg) return;
+    
     addChatMessage(msg, true);
     chatInput.value = '';
-    setTimeout(() => addChatMessage(getBotAnswer(msg), false), 500);
+    
+    // Показываем индикатор печати
+    showTypingIndicator();
+    
+    // Имитация задержки ответа бота
+    setTimeout(() => {
+        hideTypingIndicator();
+        const answer = getBotAnswer(msg);
+        if (answer) {
+            addChatMessage(answer, false);
+        }
+    }, 800);
 }
 
 sendChatBtn.addEventListener('click', sendMessage);
 chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
 
+// Быстрые кнопки
 document.querySelectorAll('.quick-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const q = btn.dataset.question;
-        const texts = { price: 'Сколько стоят услуги?', install: 'Какие работы выполняете?', time: 'Какие сроки?', call: 'Закажите звонок' };
+        const texts = { 
+            price: 'Сколько стоят услуги?', 
+            install: 'Какие работы вы выполняете?', 
+            time: 'Какие сроки монтажа?', 
+            call: 'Закажите звонок' 
+        };
         if (texts[q]) {
             addChatMessage(texts[q], true);
-            setTimeout(() => addChatMessage(getBotAnswer(texts[q]), false), 500);
+            showTypingIndicator();
+            setTimeout(() => {
+                hideTypingIndicator();
+                const answer = getBotAnswer(texts[q]);
+                if (answer) addChatMessage(answer, false);
+            }, 800);
         }
     });
+});
+
+// Открытие/закрытие чата с анимацией
+openChatBtn.addEventListener('click', () => {
+    chatBot.style.display = 'flex';
+    openChatBtn.style.display = 'none';
+    chatBot.classList.remove('closing');
+});
+
+closeChatBtn.addEventListener('click', () => {
+    chatBot.classList.add('closing');
+    setTimeout(() => {
+        chatBot.style.display = 'none';
+        openChatBtn.style.display = 'flex';
+        chatBot.classList.remove('closing');
+    }, 200);
 });
 
 // Формы
