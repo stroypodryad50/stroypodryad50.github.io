@@ -5,26 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>СтройПодряд | Профессиональный монтаж сантехники</title>
     <meta name="description" content="СтройПодряд — монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 5 лет. ☎ +7(977) 325-27-28">
-    <meta name="keywords" content="сантехмонтаж, монтаж отопления, водоснабжение, теплый пол, сантехника, монтаж сантехники">
+    <meta name="keywords" content="сантехмонтаж, монтаж отопления, водоснабжение, теплый пол, сантехника">
     <meta name="author" content="СтройПодряд">
     <meta name="yandex-verification" content="sz8pwbuh0vrymk4r">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231e4660'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%23e67e22' font-weight='bold'>C</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231e4660'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%23e67e22' font-weight='bold'>C</text></svg>">
     
     <!-- Open Graph -->
     <meta property="og:title" content="СтройПодряд | Профессиональный сантехмонтаж">
-    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 5 лет. Бесплатный выезд на замер.">
-    <meta property="og:image" content="https://stroypodryad50.github.io/images/og-image.jpg">
+    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 5 лет.">
     <meta property="og:url" content="https://stroypodryad50.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="СтройПодряд | Профессиональный сантехмонтаж">
-    <meta name="twitter:description" content="Монтаж сантехники под ключ. Гарантия 5 лет. Бесплатный выезд на замер.">
     
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -339,15 +332,40 @@
         
         /* Brands Section */
         .brands-section {
-            background: #f8fafc;
-            padding: 40px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+            padding: 60px 0;
             text-align: center;
+            border-top: 1px solid #e9ecef;
+            border-bottom: 1px solid #e9ecef;
         }
         
-        .brands-section p {
-            color: #666;
-            margin-bottom: 25px;
-            font-size: 0.9rem;
+        .brands-title {
+            color: #1e4660;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .brands-title:before,
+        .brands-title:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 2px;
+            background: #e67e22;
+        }
+        
+        .brands-title:before {
+            left: -50px;
+        }
+        
+        .brands-title:after {
+            right: -50px;
         }
         
         .brands-grid {
@@ -355,112 +373,42 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 40px;
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
         
         .brand-item {
-            background: white;
-            padding: 15px 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         
-        .brand-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        .brand-svg {
+            width: 160px;
+            height: 64px;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
         }
         
-        .brand-item i {
-            font-size: 40px;
-            color: #1e4660;
+        .brand-item:hover .brand-svg {
+            transform: translateY(-5px);
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
         }
         
         .brand-name {
-            font-size: 0.8rem;
-            color: #666;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #6c757d;
             margin-top: 8px;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
         }
         
-        /* Calculator Section */
-        .calculator-section {
-            background: linear-gradient(135deg, #1e4660 0%, #2c5a6e 100%);
-            color: white;
-            border-radius: 30px;
-            padding: 50px;
-        }
-        
-        .calculator-section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: white;
-        }
-        
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .calc-field {
-            background: rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 20px;
-        }
-        
-        .calc-field label {
-            display: block;
-            margin-bottom: 12px;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-        
-        .calc-field select,
-        .calc-field input {
-            width: 100%;
-            padding: 12px 16px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            background: white;
-        }
-        
-        .calc-field select:focus,
-        .calc-field input:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(230,126,34,0.3);
-        }
-        
-        .calc-total {
-            background: #e67e22;
-            border-radius: 16px;
-            padding: 25px;
-            text-align: center;
-            margin-top: 20px;
-        }
-        
-        .calc-total .price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        
-        .calc-total button {
-            background: white;
+        .brand-item:hover .brand-name {
             color: #e67e22;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: all 0.3s;
-        }
-        
-        .calc-total button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            opacity: 1;
         }
         
         /* Toast */
@@ -611,6 +559,65 @@
             margin: 0 auto 15px;
         }
         
+        /* Subscribe Section */
+        .subscribe-section {
+            background: linear-gradient(135deg, #1e4660, #2c5a6e);
+            color: white;
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .subscribe-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .subscribe-section p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .subscribe-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .subscribe-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 40px;
+            font-size: 1rem;
+            min-width: 200px;
+        }
+        
+        .subscribe-form input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(230,126,34,0.3);
+        }
+        
+        .subscribe-form button {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .subscribe-form button:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+        }
+        
         /* CTA */
         .cta-section {
             background: #1e4660;
@@ -686,7 +693,7 @@
         /* Scroll Top */
         .scroll-top {
             position: fixed;
-            bottom: 30px;
+            bottom: 100px;
             right: 30px;
             width: 45px;
             height: 45px;
@@ -721,7 +728,7 @@
         /* Chat Button */
         .chat-button {
             position: fixed;
-            bottom: 100px;
+            bottom: 30px;
             right: 30px;
             width: 55px;
             height: 55px;
@@ -765,14 +772,25 @@
             .hero-content h1 {
                 font-size: 1.8rem;
             }
-            .calculator-section {
-                padding: 30px 20px;
-            }
             .brands-grid {
-                gap: 20px;
+                gap: 15px;
             }
-            .brand-item {
-                padding: 10px 18px;
+            .brand-svg {
+                width: 130px;
+                height: 52px;
+            }
+            .brand-name {
+                font-size: 0.65rem;
+            }
+            .brands-title:before,
+            .brands-title:after {
+                width: 25px;
+            }
+            .brands-title:before {
+                left: -35px;
+            }
+            .brands-title:after {
+                right: -35px;
             }
             .scroll-top {
                 bottom: 80px;
@@ -798,7 +816,6 @@
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Главная</a></li>
                 <li><a href="#uslugi">Услуги</a></li>
-                <li><a href="#calculator">Калькулятор</a></li>
                 <li><a href="#prices">Цены</a></li>
                 <li><a href="blog.html">Статьи</a></li>
                 <li><a href="#kontakty">Контакты</a></li>
@@ -816,7 +833,6 @@
                 <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 5 лет.</p>
                 <div class="hero-buttons">
                     <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
-                    <a href="#calculator" class="btn btn-outline"><i class="fas fa-calculator"></i> Рассчитать стоимость</a>
                 </div>
                 <div class="trust-badges">
                     <div class="trust-item"><i class="fas fa-certificate"></i><span>Гарантия 5 лет</span></div>
@@ -946,56 +962,59 @@
 <!-- Логотипы брендов -->
 <div class="brands-section" data-aos="fade-up">
     <div class="container">
-        <p>Работаем с оборудованием ведущих производителей</p>
+        <div class="brands-title">Доверяют профессионалам</div>
         <div class="brands-grid">
-            <div class="brand-item"><i class="fas fa-fire"></i><div class="brand-name">Viessmann</div></div>
-            <div class="brand-item"><i class="fas fa-tint"></i><div class="brand-name">Baxi</div></div>
-            <div class="brand-item"><i class="fas fa-industry"></i><div class="brand-name">Vaillant</div></div>
-            <div class="brand-item"><i class="fas fa-cog"></i><div class="brand-name">Bosch</div></div>
-            <div class="brand-item"><i class="fas fa-water"></i><div class="brand-name">Grundfos</div></div>
-            <div class="brand-item"><i class="fas fa-pipe-valve"></i><div class="brand-name">Uponor</div></div>
+            <div class="brand-item">
+                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="80" fill="#0066B3" rx="8"/>
+                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial">VIESSMANN</text>
+                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">since 1917</text>
+                </svg>
+                <div class="brand-name">Viessmann</div>
+            </div>
+            <div class="brand-item">
+                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="80" fill="#ED1C24" rx="8"/>
+                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial">BAXI</text>
+                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">heating</text>
+                </svg>
+                <div class="brand-name">Baxi</div>
+            </div>
+            <div class="brand-item">
+                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="80" fill="#003366" rx="8"/>
+                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial">VAILLANT</text>
+                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">group</text>
+                </svg>
+                <div class="brand-name">Vaillant</div>
+            </div>
+            <div class="brand-item">
+                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="80" fill="#0047AB" rx="8"/>
+                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial">BOSCH</text>
+                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">invented for life</text>
+                </svg>
+                <div class="brand-name">Bosch</div>
+            </div>
+            <div class="brand-item">
+                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="80" fill="#0077B6" rx="8"/>
+                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial">GRUNDFOS</text>
+                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">pumping solutions</text>
+                </svg>
+                <div class="brand-name">Grundfos</div>
+            </div>
+            <div class="brand-item">
+                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="80" fill="#00A651" rx="8"/>
+                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial">UPONOR</text>
+                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">water solutions</text>
+                </svg>
+                <div class="brand-name">Uponor</div>
+            </div>
         </div>
     </div>
 </div>
-
-<!-- Калькулятор -->
-<section id="calculator" data-aos="fade-up" data-aos-duration="800">
-    <div class="container">
-        <div class="calculator-section">
-            <h2><i class="fas fa-calculator"></i> Калькулятор стоимости</h2>
-            <div class="calculator-grid">
-                <div class="calc-field">
-                    <label><i class="fas fa-home"></i> Тип объекта</label>
-                    <select id="calcType">
-                        <option value="apartment">Квартира</option>
-                        <option value="house">Частный дом / Коттедж</option>
-                        <option value="commercial">Коммерческое помещение</option>
-                    </select>
-                </div>
-                <div class="calc-field">
-                    <label><i class="fas fa-arrows-alt"></i> Площадь (м²)</label>
-                    <input type="number" id="calcArea" value="80" min="20" max="500">
-                </div>
-                <div class="calc-field">
-                    <label><i class="fas fa-tools"></i> Вид работ</label>
-                    <select id="calcWork">
-                        <option value="full">Полный комплекс</option>
-                        <option value="water">Только водоснабжение</option>
-                        <option value="heating">Только отопление</option>
-                        <option value="sewage">Только канализация</option>
-                        <option value="warmfloor">Только теплый пол</option>
-                    </select>
-                </div>
-            </div>
-            <div class="calc-total">
-                <p>Предварительная стоимость</p>
-                <div class="price" id="calcPrice">от 85 000 ₽</div>
-                <p style="font-size:0.85rem; opacity:0.8;">*Точная стоимость после выезда специалиста</p>
-                <button id="calcRequestBtn"><i class="fas fa-phone-alt"></i> Записаться на замер</button>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section id="prices" style="background: #f8fafc;" data-aos="fade-up">
     <div class="container">
@@ -1007,31 +1026,47 @@
             <button class="tab-btn" data-tab="radiator">🔥 Радиаторное отопление (150 м²)</button>
         </div>
         
+        <!-- Таблица теплого пола с значком диаметра ⌀ -->
         <div class="price-table-wrapper" id="warmfloorTab">
             <table class="price-table">
-                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
+                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
                 <tbody>
-                    <tr><td><strong>Труба ф16 в изоляции</strong></td><td>прокладка трассы</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ф20 в изоляции</strong></td><td>прокладка трассы</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
-                    <tr><td><strong>Коллектор распределительный</strong></td><td>монтаж и подключение</td><td>6 компл.</td><td><strong>43 200 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ⌀20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ⌀25 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>20 п.м.</td><td><strong>9 600 ₽</strong></td></tr>
+                    <tr><td><strong>Точка водоснабжения</strong></td><td>монтаж согласно тех. карте</td><td>16 ед.</td><td><strong>57 600 ₽</strong></td></tr>
+                    <tr><td><strong>Коллектор распределительный</strong></td><td>сборка, монтаж и подключение</td><td>6 компл.</td><td><strong>43 200 ₽</strong></td></tr>
+                    <tr><td><strong>Точка подключения полотенцесушителя</strong></td><td>монтаж согласно тех. карте</td><td>4 ед.</td><td><strong>14 400 ₽</strong></td></tr>
+                    <tr><td><strong>Инсталляции</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>7 800 ₽</strong></td></tr>
+                    <tr><td><strong>Клапан незамерзающий уличный</strong></td><td>монтаж</td><td>1 ед.</td><td><strong>5 400 ₽</strong></td></tr>
                     <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>2 500 ₽</strong></td></tr>
                 </tbody>
                 <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (теплый пол):</td><td class="price-total"><strong>215 500 ₽</strong></td></tr></tfoot>
             </table>
         </div>
         
+        <!-- Таблица радиаторного отопления с значком диаметра ⌀ -->
         <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
             <table class="price-table">
-                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
+                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
                 <tbody>
-                    <tr><td><strong>Коллектор системы отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
-                    <tr><td><strong>Радиатор отопления</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ф16 в изоляции</strong></td><td>прокладка трассы</td><td>200 м.п.</td><td><strong>84 000 ₽</strong></td></tr>
-                    <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>3 500 ₽</strong></td></tr>
+                    <tr><td><strong>Коллектор системы радиаторного отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
+                    <tr><td><strong>Шкаф коллекторный</strong></td><td>монтаж без штробления стен</td><td>1 ед.</td><td><strong>3 000 ₽</strong></td></tr>
+                    <tr><td><strong>Радиатор отопления стальной панельный/биметаллический</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
+                    <tr><td><strong>Радиатор отопления стальной трубчатый дизайнерский</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>9 600 ₽</strong></td></tr>
+                    <tr><td><strong>Внутрипольный конвектор</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>14 400 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ⌀16 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>200 м.п.</td><td><strong>84 000 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ⌀20 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>23 м.п.</td><td><strong>10 350 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ⌀25 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>30 м.п.</td><td><strong>14 400 ₽</strong></td></tr>
+                    <tr><td><strong>Заполнение системы отопления</strong></td><td></td><td>1 компл.</td><td><strong>4 200 ₽</strong></td></tr>
+                    <tr><td><strong>Опрессовка системы отопления</strong></td><td></td><td>1 компл.</td><td><strong>3 600 ₽</strong></td></tr>
+                    <tr><td><strong>Расходные материалы</strong></td><td></td><td>1 компл.</td><td><strong>3 500 ₽</strong></td></tr>
                 </tbody>
                 <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (радиаторное отопление):</td><td class="price-total"><strong>244 250 ₽</strong></td></tr></tfoot>
             </table>
         </div>
+        
+        <p style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: #666;"><i class="fas fa-calculator"></i> *Окончательная стоимость зависит от сложности работ и выбранного оборудования</p>
     </div>
 </section>
 
@@ -1057,6 +1092,19 @@
         </div>
     </div>
 </section>
+
+<!-- Подписка на рассылку -->
+<div class="subscribe-section" data-aos="fade-up">
+    <div class="container">
+        <h3>📧 Будьте в курсе акций и новинок</h3>
+        <p>Подпишитесь на нашу рассылку и получайте первыми информацию о скидках и новых услугах</p>
+        <form class="subscribe-form" id="subscribeForm">
+            <input type="email" id="subscribeEmail" placeholder="Ваш email" required>
+            <button type="submit">Подписаться</button>
+        </form>
+        <p style="font-size: 0.75rem; margin-top: 15px; opacity: 0.7;">Никакого спама, только полезная информация</p>
+    </div>
+</div>
 
 <section id="zakaz" data-aos="fade-up">
     <div class="container">
@@ -1085,9 +1133,9 @@
             <div class="footer-links">
                 <a href="index.html">Главная</a>
                 <a href="#uslugi">Услуги</a>
-                <a href="#calculator">Калькулятор</a>
                 <a href="#prices">Цены</a>
                 <a href="blog.html">Статьи</a>
+                <a href="#kontakty">Контакты</a>
             </div>
             <div>
                 <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
@@ -1105,7 +1153,6 @@
 
 <div class="chat-button" id="openChatBtn">
     <i class="fas fa-comment-dots"></i>
-    <span style="position: absolute; top: -5px; right: -5px; background: #e74c3c; width: 18px; height: 18px; border-radius: 50%; font-size: 10px; display: flex; align-items: center; justify-content: center;">1</span>
 </div>
 
 <script>
@@ -1145,33 +1192,6 @@ function validatePhone(phone) {
     return digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'));
 }
 
-// Калькулятор
-function updateCalculator() {
-    const type = document.getElementById('calcType').value;
-    const area = parseInt(document.getElementById('calcArea').value) || 80;
-    const work = document.getElementById('calcWork').value;
-    
-    let basePrice = 0;
-    if (type === 'apartment') basePrice = 1800;
-    else if (type === 'house') basePrice = 2200;
-    else basePrice = 2000;
-    
-    let multiplier = 1;
-    if (work === 'water') multiplier = 0.35;
-    else if (work === 'heating') multiplier = 0.4;
-    else if (work === 'sewage') multiplier = 0.25;
-    else if (work === 'warmfloor') multiplier = 0.3;
-    
-    let total = Math.round(basePrice * area * multiplier);
-    total = Math.max(total, 15000);
-    document.getElementById('calcPrice').innerHTML = `от ${total.toLocaleString()} ₽`;
-}
-
-document.getElementById('calcType')?.addEventListener('change', updateCalculator);
-document.getElementById('calcArea')?.addEventListener('input', updateCalculator);
-document.getElementById('calcWork')?.addEventListener('change', updateCalculator);
-updateCalculator();
-
 // Кнопка "Наверх"
 const scrollTopBtn = document.getElementById('scrollTop');
 window.addEventListener('scroll', () => {
@@ -1180,17 +1200,41 @@ window.addEventListener('scroll', () => {
 });
 scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-// Кнопка калькулятора
-document.getElementById('calcRequestBtn')?.addEventListener('click', () => {
-    document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
-});
+// Подписка на рассылку
+const subscribeForm = document.getElementById('subscribeForm');
+if (subscribeForm) {
+    subscribeForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const email = document.getElementById('subscribeEmail').value.trim();
+        if (!email || !email.includes('@')) {
+            showToast('Введите корректный email', 'error');
+            return;
+        }
+        const submitBtn = subscribeForm.querySelector('button');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправка...';
+        try {
+            await fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ Email: email, Тип: 'Подписка на рассылку' })
+            });
+            showToast('✅ Спасибо! Вы подписаны на рассылку', 'success');
+            subscribeForm.reset();
+        } catch (error) {
+            showToast('❌ Ошибка. Попробуйте позже', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Подписаться';
+        }
+    });
+}
 
 // Вкладки таблиц
 function initTabs() {
     const tabs = document.querySelectorAll('.tab-btn');
     const warmfloorTab = document.getElementById('warmfloorTab');
     const radiatorTab = document.getElementById('radiatorTab');
-    
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             tabs.forEach(t => t.classList.remove('active'));
@@ -1207,7 +1251,7 @@ function initTabs() {
 }
 initTabs();
 
-// Маркиз опросник (упрощенная версия)
+// Маркиз опросник
 let selectedObject = null, selectedTime = null, selectedBudget = null;
 const step1 = document.getElementById('step1'), step2 = document.getElementById('step2'), step3 = document.getElementById('step3'), step4 = document.getElementById('step4');
 const nextBtn1 = document.getElementById('nextStep1'), nextBtn2 = document.getElementById('nextStep2'), nextBtn3 = document.getElementById('nextStep3');
@@ -1275,129 +1319,14 @@ document.getElementById('callbackForm').addEventListener('submit', async functio
 
 // Клик по карточкам услуг
 document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('click', () => document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' }));
+    card.addEventListener('click', () => document.getElementById('prices').scrollIntoView({ behavior: 'smooth' }));
 });
 
 // Чат-бот
-const chatBot = document.getElementById('chatBot');
-const openChatBtn = document.getElementById('openChatBtn');
-
-openChatBtn?.addEventListener('click', () => {
+const chatBot = document.getElementById('openChatBtn');
+chatBot?.addEventListener('click', () => {
     showToast('Здравствуйте! Наш специалист скоро ответит. Позвоните +7(977)325-27-28', 'info');
 });
-</script>
-
-<!-- Простой чат-бот (для демонстрации) -->
-<style>
-.chat-bot-container {
-    position: fixed;
-    bottom: 100px;
-    right: 30px;
-    width: 350px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-    z-index: 1001;
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-}
-.chat-bot-header {
-    background: #1e4660;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-}
-.chat-bot-messages {
-    height: 300px;
-    overflow-y: auto;
-    padding: 15px;
-    background: #f8fafc;
-}
-.chat-bot-input {
-    display: flex;
-    padding: 15px;
-    background: white;
-    border-top: 1px solid #edf2f7;
-    gap: 10px;
-}
-.chat-bot-input input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-}
-.chat-bot-input button {
-    background: #e67e22;
-    border: none;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-}
-@media (max-width: 768px) {
-    .chat-bot-container { width: calc(100vw - 40px); right: 20px; bottom: 80px; }
-}
-</style>
-
-<div class="chat-bot-container" id="chatBot">
-    <div class="chat-bot-header" id="chatHeader">
-        <h4><i class="fas fa-user-circle"></i> Олег, менеджер</h4>
-        <button class="close-chat" id="closeChatBtn" style="background:none; border:none; color:white; font-size:20px;">×</button>
-    </div>
-    <div class="chat-bot-messages" id="chatMessages">
-        <div class="message bot">Здравствуйте! Я Олег, чем могу помочь?</div>
-    </div>
-    <div class="chat-bot-input">
-        <input type="text" id="chatInput" placeholder="Напишите вопрос...">
-        <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
-    </div>
-</div>
-
-<script>
-const chatBotContainer = document.getElementById('chatBot');
-const openChat = document.getElementById('openChatBtn');
-const closeChat = document.getElementById('closeChatBtn');
-const chatHeader = document.getElementById('chatHeader');
-
-openChat?.addEventListener('click', () => { chatBotContainer.style.display = 'flex'; openChat.style.display = 'none'; });
-closeChat?.addEventListener('click', () => { chatBotContainer.style.display = 'none'; openChat.style.display = 'flex'; });
-chatHeader?.addEventListener('click', (e) => { if (e.target !== closeChat) { chatBotContainer.style.display = 'none'; openChat.style.display = 'flex'; } });
-
-const chatInput = document.getElementById('chatInput');
-const sendChat = document.getElementById('sendChatBtn');
-const chatMessages = document.getElementById('chatMessages');
-
-function addChatMessage(text, isUser = false) {
-    const msgDiv = document.createElement('div');
-    msgDiv.style.cssText = `margin-bottom:10px; text-align:${isUser ? 'right' : 'left'};`;
-    msgDiv.innerHTML = `<div style="display:inline-block; background:${isUser ? '#e67e22' : '#1e4660'}; color:white; padding:8px 12px; border-radius:18px; max-width:80%;">${text}</div>`;
-    chatMessages.appendChild(msgDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function botAnswer(message) {
-    const msg = message.toLowerCase();
-    if (msg.includes('цен') || msg.includes('стоим')) return '💰 Цены зависят от объема работ. Примерно: водоснабжение от 15 000 ₽, отопление от 45 000 ₽. Хотите точный расчет? Оставьте заявку!';
-    if (msg.includes('срок') || msg.includes('быстр')) return '⏱ Сроки: квартира — 1-3 дня, дом до 100м² — 3-5 дней. Точные сроки скажу после замера!';
-    if (msg.includes('монтаж') || msg.includes('установк')) return '🔧 Выполняем: отопление, водоснабжение, теплые полы, сантехнику. Выезжаем на замер бесплатно!';
-    if (msg.match(/\d/)) return `📞 Спасибо! Я записал ваш номер. Менеджер перезвонит в течение 15 минут.`;
-    return 'Здравствуйте! Я Олег. Могу рассказать о ценах, сроках монтажа или организовать бесплатный выезд на замер. Что вас интересует?';
-}
-
-sendChat?.addEventListener('click', () => {
-    const msg = chatInput.value.trim();
-    if (!msg) return;
-    addChatMessage(msg, true);
-    chatInput.value = '';
-    setTimeout(() => {
-        addChatMessage(botAnswer(msg), false);
-    }, 500);
-});
-chatInput?.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendChat.click(); });
 </script>
 </body>
 </html>
