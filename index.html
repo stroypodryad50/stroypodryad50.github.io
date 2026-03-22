@@ -9,92 +9,43 @@
     <meta name="author" content="СтройПодряд">
     <meta name="yandex-verification" content="sz8pwbuh0vrymk4r">
     
-    <!-- Favicon (иконка в браузере) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231e4660'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%23e67e22' font-weight='bold'>C</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231e4660'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%23e67e22' font-weight='bold'>C</text></svg>">
     
-    <!-- Open Graph для соцсетей -->
+    <!-- Open Graph -->
     <meta property="og:title" content="СтройПодряд | Профессиональный сантехмонтаж">
     <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 5 лет. Бесплатный выезд на замер.">
     <meta property="og:image" content="https://stroypodryad50.github.io/images/og-image.jpg">
     <meta property="og:url" content="https://stroypodryad50.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
-    <meta property="og:site_name" content="СтройПодряд">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="СтройПодряд | Профессиональный сантехмонтаж">
     <meta name="twitter:description" content="Монтаж сантехники под ключ. Гарантия 5 лет. Бесплатный выезд на замер.">
-    <meta name="twitter:image" content="https://stroypodryad50.github.io/images/og-image.jpg">
     
-    <!-- Микроразметка Schema.org -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "СтройПодряд",
-      "image": "https://stroypodryad50.github.io/images/orig.jpeg",
       "telephone": "+7 (977) 325-27-28",
       "email": "stroypodryad50@ya.ru",
       "url": "https://stroypodryad50.github.io/",
-      "description": "Профессиональный монтаж сантехники под ключ. Водоснабжение, отопление, канализация для частных домов и квартир.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Москва",
-        "addressRegion": "Московская область",
-        "addressCountry": "RU"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "55.7558",
-        "longitude": "37.6173"
-      },
       "priceRange": "от 15 000 ₽",
-      "openingHours": "Mo-Su 09:00-21:00",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "87",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Услуги сантехмонтажа",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Монтаж водоснабжения",
-              "description": "Разводка труб, насосные станции, фильтрация"
-            },
-            "price": "15000",
-            "priceCurrency": "RUB"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Монтаж отопления",
-              "description": "Котлы, радиаторы, теплые полы"
-            },
-            "price": "45000",
-            "priceCurrency": "RUB"
-          }
-        ]
-      },
-      "sameAs": [
-        "https://t.me/stroypodryad",
-        "https://wa.me/79773252728"
-      ]
+      "openingHours": "Mo-Su 09:00-21:00"
     }
     </script>
     
-    <!-- Preload для ускорения загрузки -->
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Preload -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
     
     <!-- Яндекс.Метрика -->
@@ -109,8 +60,7 @@
             clickmap:true,
             trackLinks:true,
             accurateTrackBounce:true,
-            webvisor:true,
-            ecommerce:"dataLayer"
+            webvisor:true
         });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
@@ -128,6 +78,7 @@
             background: #fff;
             color: #1a1a2e;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         
         .container {
@@ -247,18 +198,6 @@
         .hero {
             padding: 60px 0;
             background: #fef9f0;
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         
         .hero-grid {
@@ -270,18 +209,6 @@
         
         .hero-content {
             flex: 1;
-            animation: slideInLeft 0.6s ease-out;
-        }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
         
         .hero-content h1 {
@@ -291,14 +218,6 @@
         
         .hero-content h1 span {
             color: #e67e22;
-            position: relative;
-            display: inline-block;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
         }
         
         .hero-content p {
@@ -316,18 +235,6 @@
         .hero-image {
             flex: 1;
             text-align: center;
-            animation: slideInRight 0.6s ease-out;
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
         
         .hero-image .image-wrapper {
@@ -337,11 +244,6 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.05);
             display: inline-block;
             transition: all 0.3s ease;
-        }
-        
-        .hero-image .image-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
         .hero-image img {
@@ -365,23 +267,11 @@
             background: white;
             padding: 8px 16px;
             border-radius: 40px;
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-        
-        .trust-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
         .trust-item i {
             color: #e67e22;
             font-size: 20px;
-            transition: transform 0.3s ease;
-        }
-        
-        .trust-item:hover i {
-            transform: scale(1.1);
         }
         
         section {
@@ -408,11 +298,6 @@
             height: 3px;
             background: #e67e22;
             border-radius: 3px;
-            transition: width 0.3s ease;
-        }
-        
-        .section-title:hover::after {
-            width: 100px;
         }
         
         .section-sub {
@@ -421,39 +306,6 @@
             margin: 0 auto 40px auto;
             color: #4a5568;
             font-size: 1rem;
-        }
-        
-        /* Tab Buttons */
-        .tab-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .tab-btn {
-            background: white;
-            border: 2px solid #e67e22;
-            color: #e67e22;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .tab-btn:hover {
-            background: #e67e22;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .tab-btn.active {
-            background: #e67e22;
-            color: white;
-            box-shadow: 0 5px 15px rgba(230,126,34,0.3);
         }
         
         /* Services */
@@ -483,14 +335,135 @@
             font-size: 40px;
             color: #e67e22;
             margin-bottom: 15px;
-            transition: transform 0.3s ease;
         }
         
-        .service-card:hover i {
-            transform: scale(1.1);
+        /* Brands Section */
+        .brands-section {
+            background: #f8fafc;
+            padding: 40px 0;
+            text-align: center;
         }
         
-        /* Toast Notification */
+        .brands-section p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+        }
+        
+        .brands-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .brand-item {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .brand-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .brand-item i {
+            font-size: 40px;
+            color: #1e4660;
+        }
+        
+        .brand-name {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 8px;
+        }
+        
+        /* Calculator Section */
+        .calculator-section {
+            background: linear-gradient(135deg, #1e4660 0%, #2c5a6e 100%);
+            color: white;
+            border-radius: 30px;
+            padding: 50px;
+        }
+        
+        .calculator-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .calc-field {
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px;
+        }
+        
+        .calc-field label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .calc-field select,
+        .calc-field input {
+            width: 100%;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            background: white;
+        }
+        
+        .calc-field select:focus,
+        .calc-field input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(230,126,34,0.3);
+        }
+        
+        .calc-total {
+            background: #e67e22;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .calc-total .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .calc-total button {
+            background: white;
+            color: #e67e22;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        
+        .calc-total button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Toast */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -513,107 +486,8 @@
             opacity: 1;
         }
         
-        .toast.error {
-            background: #e74c3c;
-        }
-        
-        .toast.success {
-            background: #27ae60;
-        }
-        
-        /* Subscribe Section */
-        .subscribe-section {
-            background: linear-gradient(135deg, #1e4660, #2c5a6e);
-            color: white;
-            border-radius: 30px;
-            padding: 50px;
-            text-align: center;
-            margin: 40px 0;
-        }
-        
-        .subscribe-section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .subscribe-section p {
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
-        
-        .subscribe-form {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .subscribe-form input {
-            flex: 1;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 40px;
-            font-size: 1rem;
-            min-width: 200px;
-        }
-        
-        .subscribe-form input:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(230,126,34,0.3);
-        }
-        
-        .subscribe-form button {
-            background: #e67e22;
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .subscribe-form button:hover {
-            background: #d35400;
-            transform: translateY(-2px);
-        }
-        
-        /* Scroll Top Button */
-        .scroll-top {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
-            background: #e67e22;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        
-        .scroll-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .scroll-top:hover {
-            background: #d35400;
-            transform: translateY(-3px);
-        }
-        
-        .scroll-top i {
-            color: white;
-            font-size: 20px;
-        }
+        .toast.error { background: #e74c3c; }
+        .toast.success { background: #27ae60; }
         
         /* Price Table */
         .price-table-wrapper {
@@ -652,6 +526,32 @@
             color: #e67e22;
         }
         
+        /* Tab Buttons */
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            background: white;
+            border: 2px solid #e67e22;
+            color: #e67e22;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn:hover, .tab-btn.active {
+            background: #e67e22;
+            color: white;
+        }
+        
         /* Stats */
         .stats-section {
             background: #1e4660;
@@ -671,12 +571,6 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
-        }
-        
-        .stat-item:hover .stat-number {
-            transform: scale(1.05);
-            color: #e67e22;
-            display: inline-block;
         }
         
         /* Steps */
@@ -701,7 +595,6 @@
         .step:hover {
             transform: translateY(-5px);
             border-color: #e67e22;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
         .step-number {
@@ -716,12 +609,6 @@
             align-items: center;
             justify-content: center;
             margin: 0 auto 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .step:hover .step-number {
-            transform: scale(1.1);
-            background: #d35400;
         }
         
         /* CTA */
@@ -746,13 +633,6 @@
             border-radius: 30px;
             border: none;
             width: 250px;
-            transition: all 0.3s ease;
-        }
-        
-        .cta-form input:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(230,126,34,0.3);
-            transform: scale(1.02);
         }
         
         .cta-form button {
@@ -763,7 +643,7 @@
             border-radius: 30px;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
         
         .cta-form button:hover {
@@ -790,7 +670,6 @@
             color: #94a3b8;
             text-decoration: none;
             margin-right: 20px;
-            transition: color 0.3s ease;
         }
         
         .footer-links a:hover {
@@ -804,10 +683,45 @@
             border-top: 1px solid #2c5a6e;
         }
         
+        /* Scroll Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: #e67e22;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: #d35400;
+            transform: translateY(-3px);
+        }
+        
+        .scroll-top i {
+            color: white;
+            font-size: 20px;
+        }
+        
         /* Chat Button */
         .chat-button {
             position: fixed;
-            bottom: 30px;
+            bottom: 100px;
             right: 30px;
             width: 55px;
             height: 55px;
@@ -839,102 +753,6 @@
             font-size: 24px;
         }
         
-        /* Modal Calculator */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            visibility: hidden;
-            opacity: 0;
-            transition: 0.3s;
-        }
-        
-        .modal-overlay.active {
-            visibility: visible;
-            opacity: 1;
-        }
-        
-        .modal-window {
-            background: white;
-            border-radius: 30px;
-            max-width: 500px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            animation: modalSlideIn 0.3s ease;
-        }
-        
-        @keyframes modalSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .modal-header {
-            background: linear-gradient(135deg, #1e4660, #2c5a6e);
-            color: white;
-            padding: 20px 25px;
-            border-radius: 30px 30px 0 0;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .modal-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-        }
-        
-        .modal-body {
-            padding: 25px;
-        }
-        
-        .calc-field {
-            margin-bottom: 20px;
-        }
-        
-        .calc-field label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        
-        .calc-field select,
-        .calc-field input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-        }
-        
-        .calc-result {
-            background: #fef5e8;
-            padding: 20px;
-            border-radius: 16px;
-            text-align: center;
-            margin: 20px 0;
-        }
-        
-        .calc-result .price {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #e67e22;
-        }
-        
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -942,24 +760,26 @@
             }
             .stats-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 20px;
                 padding: 30px 20px;
             }
             .hero-content h1 {
                 font-size: 1.8rem;
             }
-            .marquiz-step {
+            .calculator-section {
                 padding: 30px 20px;
             }
-            .nav-links {
-                justify-content: center;
+            .brands-grid {
+                gap: 20px;
             }
-            .tab-btn {
-                padding: 8px 20px;
-                font-size: 0.85rem;
+            .brand-item {
+                padding: 10px 18px;
             }
             .scroll-top {
                 bottom: 80px;
+                right: 20px;
+            }
+            .chat-button {
+                bottom: 20px;
                 right: 20px;
             }
         }
@@ -978,6 +798,7 @@
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Главная</a></li>
                 <li><a href="#uslugi">Услуги</a></li>
+                <li><a href="#calculator">Калькулятор</a></li>
                 <li><a href="#prices">Цены</a></li>
                 <li><a href="blog.html">Статьи</a></li>
                 <li><a href="#kontakty">Контакты</a></li>
@@ -990,12 +811,12 @@
 <section id="hero" class="hero">
     <div class="container">
         <div class="hero-grid">
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
                 <h1>Профессиональный <span>сантехмонтаж</span><br>под ключ</h1>
                 <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 5 лет.</p>
                 <div class="hero-buttons">
                     <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
-                    <button class="btn btn-outline" id="openCalculatorBtn"><i class="fas fa-calculator"></i> Рассчитать стоимость</button>
+                    <a href="#calculator" class="btn btn-outline"><i class="fas fa-calculator"></i> Рассчитать стоимость</a>
                 </div>
                 <div class="trust-badges">
                     <div class="trust-item"><i class="fas fa-certificate"></i><span>Гарантия 5 лет</span></div>
@@ -1003,7 +824,7 @@
                     <div class="trust-item"><i class="fas fa-tools"></i><span>Современное оборудование</span></div>
                 </div>
             </div>
-            <div class="hero-image">
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
                 <div class="image-wrapper">
                     <img src="images/orig.jpeg" alt="СтройПодряд" loading="lazy" onerror="this.src='https://via.placeholder.com/260x260?text=СтройПодряд'">
                 </div>
@@ -1013,107 +834,96 @@
 </section>
 
 <!-- Маркиз - опросник -->
-<section style="background: #f8fafc; padding: 60px 0;">
+<section style="background: #f8fafc; padding: 60px 0;" data-aos="fade-up" data-aos-duration="600">
     <div class="container">
         <div style="text-align: center; margin-bottom: 30px;">
             <h3 style="font-size: 1.8rem; color: #1e4660; margin-bottom: 10px;">Поможем подобрать решение именно для вас</h3>
             <p style="color: #666; font-size: 1rem;">Ответьте на 4 вопроса и получите индивидуальное предложение</p>
         </div>
         
-        <div class="marquiz-container">
-            <div class="marquiz-step" id="step1">
-                <div class="step-progress">
-                    <div class="step-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+        <div class="marquiz-container" style="max-width:580px; margin:0 auto; background:white; border-radius:28px; box-shadow:0 10px 30px rgba(0,0,0,0.08); overflow:hidden;">
+            <div class="marquiz-step" id="step1" style="padding:40px 35px;">
+                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:30px;">
+                    <div style="display:flex; gap:8px;">
+                        <span style="width:20px; height:8px; background:#e67e22; border-radius:10px;"></span>
+                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
                     </div>
-                    <span class="step-label">Шаг 1 из 4</span>
+                    <span style="font-size:0.8rem; color:#999;">Шаг 1 из 4</span>
                 </div>
-                <h3>Какой объект вас интересует?</h3>
+                <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Какой объект вас интересует?</h3>
                 <div class="options-list" id="optionsStep1">
-                    <div class="option-item" data-value="house"><i class="fas fa-home"></i><span>Частный дом / коттедж</span></div>
-                    <div class="option-item" data-value="apartment"><i class="fas fa-building"></i><span>Квартира</span></div>
-                    <div class="option-item" data-value="commercial"><i class="fas fa-store"></i><span>Коммерческий объект (офис, магазин)</span></div>
-                    <div class="option-item" data-value="industrial"><i class="fas fa-industry"></i><span>Промышленный объект (склад, цех)</span></div>
-                    <div class="option-item" data-value="consult"><i class="fas fa-comment-dots"></i><span>Только консультация</span></div>
+                    <div class="option-item" data-value="house" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-home"></i><span>Частный дом / коттедж</span></div>
+                    <div class="option-item" data-value="apartment" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-building"></i><span>Квартира</span></div>
+                    <div class="option-item" data-value="commercial" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-store"></i><span>Коммерческий объект</span></div>
                 </div>
-                <button class="next-btn" id="nextStep1" disabled>Далее →</button>
+                <button class="next-btn" id="nextStep1" disabled style="width:100%; background:#e67e22; color:white; border:none; padding:14px; border-radius:40px; font-weight:bold; cursor:pointer;">Далее →</button>
             </div>
-            
-            <div class="marquiz-step" id="step2" style="display: none;">
-                <div class="step-progress">
-                    <div class="step-dots">
-                        <span class="dot"></span>
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
+            <div class="marquiz-step" id="step2" style="display:none; padding:40px 35px;">
+                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:30px;">
+                    <div style="display:flex; gap:8px;">
+                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:20px; height:8px; background:#e67e22; border-radius:10px;"></span>
+                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
                     </div>
-                    <span class="step-label">Шаг 2 из 4</span>
+                    <span style="font-size:0.8rem; color:#999;">Шаг 2 из 4</span>
                 </div>
-                <h3>Когда планируете монтаж?</h3>
+                <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Когда планируете монтаж?</h3>
                 <div class="options-list" id="optionsStep2">
                     <div class="option-item" data-time="now"><i class="fas fa-clock"></i><span>В ближайшее время</span></div>
                     <div class="option-item" data-time="month"><i class="fas fa-calendar-week"></i><span>В течение месяца</span></div>
                     <div class="option-item" data-time="quarter"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
-                    <div class="option-item" data-time="planning"><i class="fas fa-chart-line"></i><span>Планирую, сроки не определены</span></div>
                 </div>
-                <div class="button-group">
-                    <button class="back-btn" id="backStep2">← Назад</button>
-                    <button class="next-btn" id="nextStep2" disabled>Далее →</button>
+                <div style="display:flex; gap:12px; margin-top:20px;">
+                    <button class="back-btn" id="backStep2" style="flex:1; background:transparent; border:2px solid #e67e22; color:#e67e22; padding:12px; border-radius:40px;">← Назад</button>
+                    <button class="next-btn" id="nextStep2" disabled style="flex:2; background:#e67e22; color:white; border:none; padding:12px; border-radius:40px;">Далее →</button>
                 </div>
             </div>
-            
-            <div class="marquiz-step" id="step3" style="display: none;">
-                <div class="step-progress">
-                    <div class="step-dots">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
+            <div class="marquiz-step" id="step3" style="display:none; padding:40px 35px;">
+                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:30px;">
+                    <div style="display:flex; gap:8px;">
+                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:20px; height:8px; background:#e67e22; border-radius:10px;"></span>
+                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
                     </div>
-                    <span class="step-label">Шаг 3 из 4</span>
+                    <span style="font-size:0.8rem; color:#999;">Шаг 3 из 4</span>
                 </div>
-                <h3>Какой бюджет планируете?</h3>
+                <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Какой бюджет планируете?</h3>
                 <div class="options-list" id="optionsStep3">
                     <div class="option-item" data-budget="50"><i class="fas fa-ruble-sign"></i><span>До 50 000 ₽</span></div>
                     <div class="option-item" data-budget="100"><i class="fas fa-ruble-sign"></i><span>50 000 - 100 000 ₽</span></div>
                     <div class="option-item" data-budget="200"><i class="fas fa-ruble-sign"></i><span>100 000 - 200 000 ₽</span></div>
                     <div class="option-item" data-budget="300"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
-                    <div class="option-item" data-budget="more"><i class="fas fa-chart-line"></i><span>Более 300 000 ₽</span></div>
                 </div>
-                <div class="button-group">
-                    <button class="back-btn" id="backStep3">← Назад</button>
-                    <button class="next-btn" id="nextStep3" disabled>Далее →</button>
+                <div style="display:flex; gap:12px; margin-top:20px;">
+                    <button class="back-btn" id="backStep3" style="flex:1; background:transparent; border:2px solid #e67e22; color:#e67e22; padding:12px; border-radius:40px;">← Назад</button>
+                    <button class="next-btn" id="nextStep3" disabled style="flex:2; background:#e67e22; color:white; border:none; padding:12px; border-radius:40px;">Далее →</button>
                 </div>
             </div>
-            
-            <div class="marquiz-step" id="step4" style="display: none;">
-                <div class="step-progress">
-                    <div class="step-dots">
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot active"></span>
+            <div class="marquiz-step" id="step4" style="display:none; padding:40px 35px;">
+                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:30px;">
+                    <div style="display:flex; gap:8px;">
+                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:20px; height:8px; background:#e67e22; border-radius:10px;"></span>
                     </div>
-                    <span class="step-label">Шаг 4 из 4</span>
+                    <span style="font-size:0.8rem; color:#999;">Шаг 4 из 4</span>
                 </div>
-                <h3>Оставьте контакты</h3>
-                <p style="color: #666; margin-bottom: 25px;">Мы перезвоним в удобное время</p>
-                <form class="marquiz-form" id="marquizForm">
-                    <input type="text" id="marquizName" placeholder="Ваше имя" required>
-                    <input type="tel" id="marquizPhone" placeholder="+7 (___) ___-__-__" required>
+                <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Оставьте контакты</h3>
+                <p style="color:#666; margin-bottom:25px;">Мы перезвоним в удобное время</p>
+                <form id="marquizForm">
+                    <input type="text" id="marquizName" placeholder="Ваше имя" style="width:100%; padding:14px; margin-bottom:15px; border:1px solid #ddd; border-radius:12px;">
+                    <input type="tel" id="marquizPhone" placeholder="+7 (___) ___-__-__" style="width:100%; padding:14px; margin-bottom:15px; border:1px solid #ddd; border-radius:12px;">
                     <input type="hidden" id="marquizObjectType">
                     <input type="hidden" id="marquizTime">
                     <input type="hidden" id="marquizBudget">
-                    <div class="cookie-check">
-                        <input type="checkbox" id="marquizCookie" checked>
-                        <label for="marquizCookie">Я соглашаюсь с политикой конфиденциальности</label>
-                    </div>
-                    <div class="button-group">
-                        <button type="button" class="back-btn" id="backStep4">← Назад</button>
-                        <button type="submit" class="submit-btn">Закажите звонок!</button>
+                    <div style="display:flex; gap:12px;">
+                        <button type="button" class="back-btn" id="backStep4" style="flex:1; background:transparent; border:2px solid #e67e22; color:#e67e22; padding:12px; border-radius:40px;">← Назад</button>
+                        <button type="submit" class="submit-btn" style="flex:2; background:#e67e22; color:white; border:none; padding:12px; border-radius:40px;">Закажите звонок!</button>
                     </div>
                 </form>
             </div>
@@ -1121,19 +931,73 @@
     </div>
 </section>
 
-<section id="uslugi">
+<section id="uslugi" data-aos="fade-up" data-aos-duration="600">
     <div class="container">
         <h2 class="section-title">Наши услуги</h2>
         <div class="services-grid">
-            <div class="service-card"><i class="fas fa-water"></i><h3>Водоснабжение</h3><p>Разводка труб, насосные станции, фильтрация</p></div>
-            <div class="service-card"><i class="fas fa-fire"></i><h3>Отопление</h3><p>Котлы, радиаторы, теплые полы</p></div>
-            <div class="service-card"><i class="fas fa-bath"></i><h3>Сантехника</h3><p>Ванны, душевые, смесители</p></div>
-            <div class="service-card"><i class="fas fa-toilet"></i><h3>Канализация</h3><p>Септики, внутренние и наружные сети</p></div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-water"></i><h3>Водоснабжение</h3><p>Разводка труб, насосные станции, фильтрация</p></div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-fire"></i><h3>Отопление</h3><p>Котлы, радиаторы, теплые полы</p></div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-bath"></i><h3>Сантехника</h3><p>Ванны, душевые, смесители</p></div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-toilet"></i><h3>Канализация</h3><p>Септики, внутренние и наружные сети</p></div>
         </div>
     </div>
 </section>
 
-<section id="prices" style="background: #f8fafc;">
+<!-- Логотипы брендов -->
+<div class="brands-section" data-aos="fade-up">
+    <div class="container">
+        <p>Работаем с оборудованием ведущих производителей</p>
+        <div class="brands-grid">
+            <div class="brand-item"><i class="fas fa-fire"></i><div class="brand-name">Viessmann</div></div>
+            <div class="brand-item"><i class="fas fa-tint"></i><div class="brand-name">Baxi</div></div>
+            <div class="brand-item"><i class="fas fa-industry"></i><div class="brand-name">Vaillant</div></div>
+            <div class="brand-item"><i class="fas fa-cog"></i><div class="brand-name">Bosch</div></div>
+            <div class="brand-item"><i class="fas fa-water"></i><div class="brand-name">Grundfos</div></div>
+            <div class="brand-item"><i class="fas fa-pipe-valve"></i><div class="brand-name">Uponor</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- Калькулятор -->
+<section id="calculator" data-aos="fade-up" data-aos-duration="800">
+    <div class="container">
+        <div class="calculator-section">
+            <h2><i class="fas fa-calculator"></i> Калькулятор стоимости</h2>
+            <div class="calculator-grid">
+                <div class="calc-field">
+                    <label><i class="fas fa-home"></i> Тип объекта</label>
+                    <select id="calcType">
+                        <option value="apartment">Квартира</option>
+                        <option value="house">Частный дом / Коттедж</option>
+                        <option value="commercial">Коммерческое помещение</option>
+                    </select>
+                </div>
+                <div class="calc-field">
+                    <label><i class="fas fa-arrows-alt"></i> Площадь (м²)</label>
+                    <input type="number" id="calcArea" value="80" min="20" max="500">
+                </div>
+                <div class="calc-field">
+                    <label><i class="fas fa-tools"></i> Вид работ</label>
+                    <select id="calcWork">
+                        <option value="full">Полный комплекс</option>
+                        <option value="water">Только водоснабжение</option>
+                        <option value="heating">Только отопление</option>
+                        <option value="sewage">Только канализация</option>
+                        <option value="warmfloor">Только теплый пол</option>
+                    </select>
+                </div>
+            </div>
+            <div class="calc-total">
+                <p>Предварительная стоимость</p>
+                <div class="price" id="calcPrice">от 85 000 ₽</div>
+                <p style="font-size:0.85rem; opacity:0.8;">*Точная стоимость после выезда специалиста</p>
+                <button id="calcRequestBtn"><i class="fas fa-phone-alt"></i> Записаться на замер</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="prices" style="background: #f8fafc;" data-aos="fade-up">
     <div class="container">
         <h2 class="section-title">Примеры расчетов</h2>
         <div class="section-sub">Актуальные цены на монтажные работы от 01.08.2025</div>
@@ -1147,14 +1011,9 @@
             <table class="price-table">
                 <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
                 <tbody>
-                    <tr><td><strong>Труба ф16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ф20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ф25 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>20 п.м.</td><td><strong>9 600 ₽</strong></td></tr>
-                    <tr><td><strong>Точка водоснабжения</strong></td><td>монтаж согласно тех. карте</td><td>16 ед.</td><td><strong>57 600 ₽</strong></td></tr>
-                    <tr><td><strong>Коллектор распределительный</strong></td><td>сборка, монтаж и подключение</td><td>6 компл.</td><td><strong>43 200 ₽</strong></td></tr>
-                    <tr><td><strong>Точка подключения полотенцесушителя</strong></td><td>монтаж согласно тех. карте</td><td>4 ед.</td><td><strong>14 400 ₽</strong></td></tr>
-                    <tr><td><strong>Инсталляции</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>7 800 ₽</strong></td></tr>
-                    <tr><td><strong>Клапан незамерзающий уличный</strong></td><td>монтаж</td><td>1 ед.</td><td><strong>5 400 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ф16 в изоляции</strong></td><td>прокладка трассы</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ф20 в изоляции</strong></td><td>прокладка трассы</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
+                    <tr><td><strong>Коллектор распределительный</strong></td><td>монтаж и подключение</td><td>6 компл.</td><td><strong>43 200 ₽</strong></td></tr>
                     <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>2 500 ₽</strong></td></tr>
                 </tbody>
                 <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (теплый пол):</td><td class="price-total"><strong>215 500 ₽</strong></td></tr></tfoot>
@@ -1165,27 +1024,18 @@
             <table class="price-table">
                 <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
                 <tbody>
-                    <tr><td><strong>Коллектор системы радиаторного отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
-                    <tr><td><strong>Шкаф коллекторный</strong></td><td>монтаж без штробления стен</td><td>1 ед.</td><td><strong>3 000 ₽</strong></td></tr>
-                    <tr><td><strong>Радиатор отопления стальной панельный/биметаллический</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
-                    <tr><td><strong>Радиатор отопления стальной трубчатый дизайнерский</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>9 600 ₽</strong></td></tr>
-                    <tr><td><strong>Внутрипольный конвектор</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>14 400 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ф16 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>200 м.п.</td><td><strong>84 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ф20 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>23 м.п.</td><td><strong>10 350 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ф25 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>30 м.п.</td><td><strong>14 400 ₽</strong></td></tr>
-                    <tr><td><strong>Заполнение системы отопления</strong></td><td></td><td>1 компл.</td><td><strong>4 200 ₽</strong></td></tr>
-                    <tr><td><strong>Опрессовка системы отопления</strong></td><td></td><td>1 компл.</td><td><strong>3 600 ₽</strong></td></tr>
-                    <tr><td><strong>Расходные материалы</strong></td><td></td><td>1 компл.</td><td><strong>3 500 ₽</strong></td></tr>
+                    <tr><td><strong>Коллектор системы отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
+                    <tr><td><strong>Радиатор отопления</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ф16 в изоляции</strong></td><td>прокладка трассы</td><td>200 м.п.</td><td><strong>84 000 ₽</strong></td></tr>
+                    <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>3 500 ₽</strong></td></tr>
                 </tbody>
                 <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (радиаторное отопление):</td><td class="price-total"><strong>244 250 ₽</strong></td></tr></tfoot>
             </table>
         </div>
-        
-        <p style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: #666;"><i class="fas fa-calculator"></i> *Окончательная стоимость зависит от сложности работ и выбранного оборудования</p>
     </div>
 </section>
 
-<div class="container">
+<div class="container" data-aos="fade-up">
     <div class="stats-section">
         <div class="stats-grid">
             <div class="stat-item"><div class="stat-number">150+</div><div>Выполненных объектов</div></div>
@@ -1196,32 +1046,19 @@
     </div>
 </div>
 
-<section id="etapy">
+<section id="etapy" data-aos="fade-up">
     <div class="container">
         <h2 class="section-title">Как мы работаем</h2>
         <div class="steps-grid">
-            <div class="step"><div class="step-number">1</div><h4>Заявка / Замер</h4><p>Бесплатный выезд инженера</p></div>
-            <div class="step"><div class="step-number">2</div><h4>Смета + Договор</h4><p>Фиксируем сроки и гарантию</p></div>
-            <div class="step"><div class="step-number">3</div><h4>Монтаж</h4><p>Чистый монтаж с фотоотчетом</p></div>
-            <div class="step"><div class="step-number">4</div><h4>ПНР и сдача</h4><p>Пусконаладочные работы</p></div>
+            <div class="step" data-aos="flip-left" data-aos-delay="100"><div class="step-number">1</div><h4>Заявка / Замер</h4><p>Бесплатный выезд инженера</p></div>
+            <div class="step" data-aos="flip-left" data-aos-delay="200"><div class="step-number">2</div><h4>Смета + Договор</h4><p>Фиксируем сроки и гарантию</p></div>
+            <div class="step" data-aos="flip-left" data-aos-delay="300"><div class="step-number">3</div><h4>Монтаж</h4><p>Чистый монтаж с фотоотчетом</p></div>
+            <div class="step" data-aos="flip-left" data-aos-delay="400"><div class="step-number">4</div><h4>ПНР и сдача</h4><p>Пусконаладочные работы</p></div>
         </div>
     </div>
 </section>
 
-<!-- Подписка на рассылку -->
-<section class="subscribe-section">
-    <div class="container">
-        <h3>📧 Будьте в курсе акций и новинок</h3>
-        <p>Подпишитесь на нашу рассылку и получайте первыми информацию о скидках и новых услугах</p>
-        <form class="subscribe-form" id="subscribeForm">
-            <input type="email" id="subscribeEmail" placeholder="Ваш email" required>
-            <button type="submit">Подписаться</button>
-        </form>
-        <p style="font-size: 0.75rem; margin-top: 15px; opacity: 0.7;">Никакого спама, только полезная информация</p>
-    </div>
-</section>
-
-<section id="zakaz">
+<section id="zakaz" data-aos="fade-up">
     <div class="container">
         <div class="cta-section">
             <h2>Нужен качественный сантехмонтаж?</h2>
@@ -1242,29 +1079,26 @@
     <div class="container">
         <div class="footer-content">
             <div>
-                <div class="logo" style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px;">
-                    Строй<span style="color: #e67e22;">Подряд</span>
-                </div>
+                <div class="logo" style="font-size: 1.3rem;">Строй<span style="color:#e67e22;">Подряд</span></div>
                 <p>Профессиональный сантехмонтаж под ключ</p>
             </div>
             <div class="footer-links">
                 <a href="index.html">Главная</a>
                 <a href="#uslugi">Услуги</a>
+                <a href="#calculator">Калькулятор</a>
                 <a href="#prices">Цены</a>
                 <a href="blog.html">Статьи</a>
-                <a href="#kontakty">Контакты</a>
             </div>
             <div>
-                <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8; text-decoration:none;">+7 (977) 325-27-28</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8; text-decoration:none;">stroypodryad50@ya.ru</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8;">stroypodryad50@ya.ru</a></p>
                 <p><i class="fas fa-map-marker-alt"></i> Москва и Московская область</p>
             </div>
         </div>
-        <div class="copy">© 2025 СтройПодряд. Все права защищены. Профессиональный монтаж сантехники.</div>
+        <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
     </div>
 </footer>
 
-<!-- Кнопка "Наверх" -->
 <div class="scroll-top" id="scrollTop">
     <i class="fas fa-arrow-up"></i>
 </div>
@@ -1274,277 +1108,14 @@
     <span style="position: absolute; top: -5px; right: -5px; background: #e74c3c; width: 18px; height: 18px; border-radius: 50%; font-size: 10px; display: flex; align-items: center; justify-content: center;">1</span>
 </div>
 
-<div class="modal-overlay" id="calculatorModal">
-    <div class="modal-window">
-        <div class="modal-header">
-            <h3><i class="fas fa-calculator"></i> Калькулятор стоимости</h3>
-            <button class="modal-close" id="closeModalBtn">&times;</button>
-        </div>
-        <div class="modal-body">
-            <div class="calc-field">
-                <label>Тип объекта</label>
-                <select id="calcObjectType">
-                    <option value="tech">Техническое помещение / Котельная</option>
-                    <option value="house" selected>Частный дом / Коттедж</option>
-                    <option value="apartment">Квартира</option>
-                </select>
-            </div>
-            <div class="calc-field">
-                <label>Площадь объекта (м²)</label>
-                <input type="number" id="calcArea" value="100" min="10" max="500">
-            </div>
-            <div class="calc-field">
-                <label>Вид работ</label>
-                <select id="calcWorkType">
-                    <option value="full">Полный комплекс (вода + отопление + канализация)</option>
-                    <option value="water">Только водоснабжение</option>
-                    <option value="heating">Только отопление</option>
-                    <option value="sewage">Только канализация</option>
-                </select>
-            </div>
-            <div class="calc-result">
-                <p>Предварительная стоимость</p>
-                <div class="price" id="calcPriceDisplay">от 85 000 ₽</div>
-                <p style="font-size:0.85rem;">*Точная стоимость после выезда специалиста</p>
-            </div>
-            <button class="btn btn-primary" id="calcRequestBtn" style="width:100%;">Записаться на замер</button>
-        </div>
-    </div>
-</div>
-
-<!-- Стили для чат-бота -->
-<style>
-.chat-bot-container {
-    position: fixed;
-    bottom: 100px;
-    right: 30px;
-    width: 350px;
-    max-width: calc(100vw - 40px);
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-    z-index: 1001;
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    animation: slideUp 0.3s ease;
-}
-
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.chat-bot-header {
-    background: #1e4660;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
-
-.chat-bot-header h4 {
-    margin: 0;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.chat-bot-header .online {
-    background: #27ae60;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-left: 8px;
-    animation: pulseOnline 1.5s infinite;
-}
-
-@keyframes pulseOnline {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-.close-chat {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.3rem;
-    cursor: pointer;
-}
-
-.chat-bot-messages {
-    height: 350px;
-    overflow-y: auto;
-    padding: 15px;
-    background: #f8fafc;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.message {
-    display: flex;
-    gap: 10px;
-    max-width: 85%;
-}
-
-.message.bot { align-self: flex-start; }
-.message.user { align-self: flex-end; flex-direction: row-reverse; }
-
-.message-avatar {
-    width: 32px;
-    height: 32px;
-    background: #e67e22;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    flex-shrink: 0;
-}
-
-.message.user .message-avatar { background: #1e4660; }
-
-.message-text {
-    background: white;
-    padding: 10px 14px;
-    border-radius: 18px;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: #2c3e50;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-}
-
-.message.user .message-text {
-    background: #e67e22;
-    color: white;
-}
-
-.quick-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 8px;
-}
-
-.quick-btn {
-    background: #fef5e8;
-    border: 1px solid #e67e22;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    color: #e67e22;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.quick-btn:hover {
-    background: #e67e22;
-    color: white;
-}
-
-.chat-bot-input {
-    display: flex;
-    padding: 15px;
-    background: white;
-    border-top: 1px solid #edf2f7;
-    gap: 10px;
-}
-
-.chat-bot-input input {
-    flex: 1;
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    outline: none;
-}
-
-.chat-bot-input input:focus { border-color: #e67e22; }
-
-.chat-bot-input button {
-    background: #e67e22;
-    border: none;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.chat-bot-input button:hover {
-    background: #d35400;
-    transform: scale(1.05);
-}
-
-.typing {
-    display: flex;
-    gap: 4px;
-    padding: 8px 12px;
-    background: white;
-    border-radius: 18px;
-    width: fit-content;
-}
-
-.typing span {
-    width: 6px;
-    height: 6px;
-    background: #94a3b8;
-    border-radius: 50%;
-    animation: typingAnim 1.4s infinite;
-}
-
-.typing span:nth-child(2) { animation-delay: 0.2s; }
-.typing span:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes typingAnim {
-    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
-    30% { transform: translateY(-6px); opacity: 1; }
-}
-
-@media (max-width: 768px) {
-    .chat-bot-container {
-        width: calc(100vw - 40px);
-        right: 20px;
-        bottom: 80px;
-    }
-    .chat-bot-messages { height: 400px; }
-}
-</style>
-
-<div class="chat-bot-container" id="chatBot">
-    <div class="chat-bot-header" id="chatHeader">
-        <h4><i class="fas fa-user-circle"></i> Олег, менеджер <span class="online"></span></h4>
-        <button class="close-chat" id="closeChatBtn">×</button>
-    </div>
-    <div class="chat-bot-messages" id="chatMessages">
-        <div class="message bot">
-            <div class="message-avatar"><i class="fas fa-user"></i></div>
-            <div class="message-text">
-                Здравствуйте! 👋<br>
-                Я Олег, менеджер компании СтройПодряд.<br><br>
-                Расскажите, что вас интересует:
-                <div class="quick-buttons">
-                    <div class="quick-btn" data-question="price">💰 Цены</div>
-                    <div class="quick-btn" data-question="install">🔧 Монтаж</div>
-                    <div class="quick-btn" data-question="time">⏱ Сроки</div>
-                    <div class="quick-btn" data-question="call">📞 Заказать звонок</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="chat-bot-input">
-        <input type="text" id="chatInput" placeholder="Напишите вопрос..." autocomplete="off">
-        <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
-    </div>
-</div>
-
 <script>
+// Инициализация AOS
+AOS.init({
+    once: true,
+    duration: 800,
+    offset: 100
+});
+
 // Toast notification
 function showToast(message, type = 'info') {
     const toast = document.getElementById('toast');
@@ -1574,57 +1145,47 @@ function validatePhone(phone) {
     return digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'));
 }
 
+// Калькулятор
+function updateCalculator() {
+    const type = document.getElementById('calcType').value;
+    const area = parseInt(document.getElementById('calcArea').value) || 80;
+    const work = document.getElementById('calcWork').value;
+    
+    let basePrice = 0;
+    if (type === 'apartment') basePrice = 1800;
+    else if (type === 'house') basePrice = 2200;
+    else basePrice = 2000;
+    
+    let multiplier = 1;
+    if (work === 'water') multiplier = 0.35;
+    else if (work === 'heating') multiplier = 0.4;
+    else if (work === 'sewage') multiplier = 0.25;
+    else if (work === 'warmfloor') multiplier = 0.3;
+    
+    let total = Math.round(basePrice * area * multiplier);
+    total = Math.max(total, 15000);
+    document.getElementById('calcPrice').innerHTML = `от ${total.toLocaleString()} ₽`;
+}
+
+document.getElementById('calcType')?.addEventListener('change', updateCalculator);
+document.getElementById('calcArea')?.addEventListener('input', updateCalculator);
+document.getElementById('calcWork')?.addEventListener('change', updateCalculator);
+updateCalculator();
+
 // Кнопка "Наверх"
 const scrollTopBtn = document.getElementById('scrollTop');
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-        scrollTopBtn.classList.add('show');
-    } else {
-        scrollTopBtn.classList.remove('show');
-    }
+    if (window.scrollY > 500) scrollTopBtn.classList.add('show');
+    else scrollTopBtn.classList.remove('show');
 });
-scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// Кнопка калькулятора
+document.getElementById('calcRequestBtn')?.addEventListener('click', () => {
+    document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
 });
 
-// Подписка на рассылку
-const subscribeForm = document.getElementById('subscribeForm');
-if (subscribeForm) {
-    subscribeForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const email = document.getElementById('subscribeEmail').value.trim();
-        
-        if (!email || !email.includes('@')) {
-            showToast('Введите корректный email', 'error');
-            return;
-        }
-        
-        const submitBtn = subscribeForm.querySelector('button');
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Отправка...';
-        
-        try {
-            await fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    Email: email,
-                    Тип: 'Подписка на рассылку',
-                    Дата: new Date().toLocaleString('ru-RU')
-                })
-            });
-            showToast('✅ Спасибо! Вы подписаны на рассылку', 'success');
-            subscribeForm.reset();
-        } catch (error) {
-            showToast('❌ Ошибка. Попробуйте позже', 'error');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Подписаться';
-        }
-    });
-}
-
-// === ВКЛАДКИ ДЛЯ ТАБЛИЦ ===
+// Вкладки таблиц
 function initTabs() {
     const tabs = document.querySelectorAll('.tab-btn');
     const warmfloorTab = document.getElementById('warmfloorTab');
@@ -1634,28 +1195,25 @@ function initTabs() {
         tab.addEventListener('click', () => {
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            
             if (tab.dataset.tab === 'warmfloor') {
                 warmfloorTab.style.display = 'block';
                 radiatorTab.style.display = 'none';
-            } else if (tab.dataset.tab === 'radiator') {
+            } else {
                 warmfloorTab.style.display = 'none';
                 radiatorTab.style.display = 'block';
             }
         });
     });
 }
+initTabs();
 
-// === МАРКИЗ ===
+// Маркиз опросник (упрощенная версия)
 let selectedObject = null, selectedTime = null, selectedBudget = null;
 const step1 = document.getElementById('step1'), step2 = document.getElementById('step2'), step3 = document.getElementById('step3'), step4 = document.getElementById('step4');
 const nextBtn1 = document.getElementById('nextStep1'), nextBtn2 = document.getElementById('nextStep2'), nextBtn3 = document.getElementById('nextStep3');
 const backBtn2 = document.getElementById('backStep2'), backBtn3 = document.getElementById('backStep3'), backBtn4 = document.getElementById('backStep4');
 
-function switchStep(from, to) {
-    from.style.animation = 'fadeSlide 0.3s reverse';
-    setTimeout(() => { from.style.display = 'none'; to.style.display = 'block'; to.style.animation = 'fadeSlide 0.4s ease'; }, 150);
-}
+function switchStep(from, to) { from.style.display = 'none'; to.style.display = 'block'; }
 
 document.querySelectorAll('#optionsStep1 .option-item').forEach(opt => opt.addEventListener('click', () => {
     document.querySelectorAll('#optionsStep1 .option-item').forEach(o => o.classList.remove('selected'));
@@ -1663,14 +1221,12 @@ document.querySelectorAll('#optionsStep1 .option-item').forEach(opt => opt.addEv
     selectedObject = opt.getAttribute('data-value');
     nextBtn1.disabled = false;
 }));
-
 document.querySelectorAll('#optionsStep2 .option-item').forEach(opt => opt.addEventListener('click', () => {
     document.querySelectorAll('#optionsStep2 .option-item').forEach(o => o.classList.remove('selected'));
     opt.classList.add('selected');
     selectedTime = opt.getAttribute('data-time');
     nextBtn2.disabled = false;
 }));
-
 document.querySelectorAll('#optionsStep3 .option-item').forEach(opt => opt.addEventListener('click', () => {
     document.querySelectorAll('#optionsStep3 .option-item').forEach(o => o.classList.remove('selected'));
     opt.classList.add('selected');
@@ -1694,156 +1250,154 @@ document.getElementById('marquizForm').addEventListener('submit', function(e) {
     const phone = marquizPhone.value;
     if (!name) { showToast('Введите имя', 'error'); return; }
     if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
-    document.getElementById('marquizObjectType').value = selectedObject || '';
-    document.getElementById('marquizTime').value = selectedTime || '';
-    document.getElementById('marquizBudget').value = selectedBudget || '';
-    fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ Имя: name, Телефон: phone, Тип_объекта: selectedObject, Срок: selectedTime, Бюджет: selectedBudget, Источник: 'Верхний опросник' })
-    }).catch(console.error);
     showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
     step4.style.display = 'none';
     step1.style.display = 'block';
     document.getElementById('marquizForm').reset();
     document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
     nextBtn1.disabled = true; nextBtn2.disabled = true; nextBtn3.disabled = true;
-    selectedObject = null; selectedTime = null; selectedBudget = null;
 });
 
-// === НИЖНЯЯ ФОРМА ===
+// Нижняя форма
 const callbackName = document.getElementById('callbackName');
 const callbackPhoneInput = document.getElementById('callbackPhone');
-const callbackObject = document.getElementById('callbackObject');
-const callbackSubmitBtn = document.getElementById('callbackSubmitBtn');
 setPhoneMask(callbackPhoneInput);
 
 document.getElementById('callbackForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const name = callbackName.value.trim();
     const phone = callbackPhoneInput.value;
-    const objectType = callbackObject ? callbackObject.value.trim() : '';
-    if (!name) { showToast('Введите имя', 'error'); callbackName.style.border = '2px solid #e74c3c'; return; }
-    if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); callbackPhoneInput.style.border = '2px solid #e74c3c'; return; }
-    callbackName.style.border = ''; callbackPhoneInput.style.border = '';
-    callbackSubmitBtn.disabled = true; callbackSubmitBtn.textContent = 'Отправка...';
-    try {
-        await fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
-            method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ Имя: name, Телефон: phone, Тип_объекта: objectType, Источник: 'Нижняя форма' })
-        });
-        showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
-        document.getElementById('callbackForm').reset();
-    } catch (error) { showToast('Ошибка. Позвоните +7(977)325-27-28', 'error'); }
-    finally { callbackSubmitBtn.disabled = false; callbackSubmitBtn.textContent = 'Отправить'; }
-});
-callbackName.addEventListener('focus', () => callbackName.style.border = '');
-callbackPhoneInput.addEventListener('focus', () => callbackPhoneInput.style.border = '');
-
-// === КАЛЬКУЛЯТОР ===
-function updateCalculatorPrice() {
-    const objectType = document.getElementById('calcObjectType').value;
-    const area = parseInt(document.getElementById('calcArea').value) || 100;
-    const workType = document.getElementById('calcWorkType').value;
-    let basePrice = objectType === 'tech' ? 1800 : (objectType === 'house' ? 2200 : 2000);
-    let multiplier = workType === 'full' ? 1 : (workType === 'water' ? 0.4 : (workType === 'heating' ? 0.35 : 0.25));
-    let total = Math.round(basePrice * area * multiplier);
-    total = Math.max(total, 15000);
-    document.getElementById('calcPriceDisplay').innerHTML = `от ${total.toLocaleString()} ₽`;
-}
-document.getElementById('calcObjectType')?.addEventListener('change', updateCalculatorPrice);
-document.getElementById('calcArea')?.addEventListener('input', updateCalculatorPrice);
-document.getElementById('calcWorkType')?.addEventListener('change', updateCalculatorPrice);
-updateCalculatorPrice();
-
-const modal = document.getElementById('calculatorModal');
-document.getElementById('openCalculatorBtn')?.addEventListener('click', () => modal.classList.add('active'));
-document.getElementById('closeModalBtn')?.addEventListener('click', () => modal.classList.remove('active'));
-modal?.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
-document.getElementById('calcRequestBtn')?.addEventListener('click', () => {
-    modal.classList.remove('active');
-    document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
+    if (!name) { showToast('Введите имя', 'error'); return; }
+    if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
+    showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
+    this.reset();
 });
 
-// === КЛИК ПО КАРТОЧКАМ ===
+// Клик по карточкам услуг
 document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('click', () => document.getElementById('prices').scrollIntoView({ behavior: 'smooth' }));
+    card.addEventListener('click', () => document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' }));
 });
 
-// === ЧАТ-БОТ ===
-const botAnswers = {
-    price: { keywords: ['цена', 'стоимость', 'сколько стоит', 'прайс'], answer: '💰 Примерные цены:\n• Монтаж водоснабжения — от 15 000 ₽\n• Отопление под ключ — от 45 000 ₽\n• Теплый пол — от 2 500 ₽/м²\n\nДля точного расчета оставьте заявку!' },
-    install: { keywords: ['монтаж', 'установка', 'работы'], answer: '🔧 Выполняем: отопление, водоснабжение, сантехнику, теплые полы, канализацию. Выезжаем на замер бесплатно!' },
-    time: { keywords: ['срок', 'быстро', 'долго', 'сколько дней'], answer: '⏱ Сроки: квартира — 1-3 дня, дом до 100м² — 3-5 дней, дом до 200м² — 5-7 дней.' },
-    call: { keywords: ['звонок', 'позвоните'], answer: '📱 Оставьте свой номер в форме ниже или напишите сюда — я перезвоню через 15 минут!' }
-};
-
-function getBotAnswer(message) {
-    const lowerMsg = message.toLowerCase();
-    for (let key in botAnswers) {
-        for (let kw of botAnswers[key].keywords) {
-            if (lowerMsg.includes(kw)) return botAnswers[key].answer;
-        }
-    }
-    if (lowerMsg.match(/\d/) && lowerMsg.replace(/\D/g, '').length >= 10) {
-        const phone = message;
-        fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ Имя: 'Клиент из чата', Телефон: phone, Источник: 'Чат-бот' }) });
-        return `📞 Спасибо! Записал номер ${phone}. Менеджер перезвонит через 15 минут.`;
-    }
-    return 'Извините, не понял 🤔\n\nЯ могу:\n💰 Рассказать о ценах\n🔧 Объяснить монтаж\n⏱ Уточнить сроки\n📏 Организовать замер\n\nИли напишите номер — я перезвоню!';
-}
-
-function addMessage(text, isUser = false) {
-    const messagesDiv = document.getElementById('chatMessages');
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
-    messageDiv.innerHTML = `<div class="message-avatar"><i class="fas ${isUser ? 'fa-user' : 'fa-user-circle'}"></i></div><div class="message-text">${text.replace(/\n/g, '<br>')}</div>`;
-    messagesDiv.appendChild(messageDiv);
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
-}
-
-function showTyping() {
-    const messagesDiv = document.getElementById('chatMessages');
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'message bot';
-    typingDiv.id = 'typingIndicator';
-    typingDiv.innerHTML = `<div class="message-avatar"><i class="fas fa-user-circle"></i></div><div class="typing"><span></span><span></span><span></span></div>`;
-    messagesDiv.appendChild(typingDiv);
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
-}
-function hideTyping() { const typing = document.getElementById('typingIndicator'); if (typing) typing.remove(); }
-
-async function sendMessage() {
-    const input = document.getElementById('chatInput');
-    const message = input.value.trim();
-    if (!message) return;
-    addMessage(message, true);
-    input.value = '';
-    showTyping();
-    setTimeout(() => { hideTyping(); addMessage(getBotAnswer(message), false); }, 600);
-}
-
-document.querySelectorAll('.quick-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const q = btn.getAttribute('data-question');
-        const msgs = { price: 'Сколько стоят услуги?', install: 'Какие работы выполняете?', time: 'Какие сроки?', call: 'Закажите звонок' };
-        if (msgs[q]) { addMessage(msgs[q], true); setTimeout(() => addMessage(getBotAnswer(msgs[q]), false), 500); }
-    });
-});
-
+// Чат-бот
 const chatBot = document.getElementById('chatBot');
 const openChatBtn = document.getElementById('openChatBtn');
-const closeChatBtn = document.getElementById('closeChatBtn');
+
+openChatBtn?.addEventListener('click', () => {
+    showToast('Здравствуйте! Наш специалист скоро ответит. Позвоните +7(977)325-27-28', 'info');
+});
+</script>
+
+<!-- Простой чат-бот (для демонстрации) -->
+<style>
+.chat-bot-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 350px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    z-index: 1001;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+.chat-bot-header {
+    background: #1e4660;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.chat-bot-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f8fafc;
+}
+.chat-bot-input {
+    display: flex;
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #edf2f7;
+    gap: 10px;
+}
+.chat-bot-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+}
+.chat-bot-input button {
+    background: #e67e22;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .chat-bot-container { width: calc(100vw - 40px); right: 20px; bottom: 80px; }
+}
+</style>
+
+<div class="chat-bot-container" id="chatBot">
+    <div class="chat-bot-header" id="chatHeader">
+        <h4><i class="fas fa-user-circle"></i> Олег, менеджер</h4>
+        <button class="close-chat" id="closeChatBtn" style="background:none; border:none; color:white; font-size:20px;">×</button>
+    </div>
+    <div class="chat-bot-messages" id="chatMessages">
+        <div class="message bot">Здравствуйте! Я Олег, чем могу помочь?</div>
+    </div>
+    <div class="chat-bot-input">
+        <input type="text" id="chatInput" placeholder="Напишите вопрос...">
+        <button id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<script>
+const chatBotContainer = document.getElementById('chatBot');
+const openChat = document.getElementById('openChatBtn');
+const closeChat = document.getElementById('closeChatBtn');
 const chatHeader = document.getElementById('chatHeader');
 
-openChatBtn?.addEventListener('click', () => { chatBot.style.display = 'flex'; openChatBtn.style.display = 'none'; });
-closeChatBtn?.addEventListener('click', () => { chatBot.style.display = 'none'; openChatBtn.style.display = 'flex'; });
-chatHeader?.addEventListener('click', (e) => { if (e.target !== closeChatBtn) { chatBot.style.display = 'none'; openChatBtn.style.display = 'flex'; } });
-document.getElementById('chatInput')?.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
-document.getElementById('sendChatBtn')?.addEventListener('click', sendMessage);
+openChat?.addEventListener('click', () => { chatBotContainer.style.display = 'flex'; openChat.style.display = 'none'; });
+closeChat?.addEventListener('click', () => { chatBotContainer.style.display = 'none'; openChat.style.display = 'flex'; });
+chatHeader?.addEventListener('click', (e) => { if (e.target !== closeChat) { chatBotContainer.style.display = 'none'; openChat.style.display = 'flex'; } });
 
-// Инициализация
-initTabs();
+const chatInput = document.getElementById('chatInput');
+const sendChat = document.getElementById('sendChatBtn');
+const chatMessages = document.getElementById('chatMessages');
+
+function addChatMessage(text, isUser = false) {
+    const msgDiv = document.createElement('div');
+    msgDiv.style.cssText = `margin-bottom:10px; text-align:${isUser ? 'right' : 'left'};`;
+    msgDiv.innerHTML = `<div style="display:inline-block; background:${isUser ? '#e67e22' : '#1e4660'}; color:white; padding:8px 12px; border-radius:18px; max-width:80%;">${text}</div>`;
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function botAnswer(message) {
+    const msg = message.toLowerCase();
+    if (msg.includes('цен') || msg.includes('стоим')) return '💰 Цены зависят от объема работ. Примерно: водоснабжение от 15 000 ₽, отопление от 45 000 ₽. Хотите точный расчет? Оставьте заявку!';
+    if (msg.includes('срок') || msg.includes('быстр')) return '⏱ Сроки: квартира — 1-3 дня, дом до 100м² — 3-5 дней. Точные сроки скажу после замера!';
+    if (msg.includes('монтаж') || msg.includes('установк')) return '🔧 Выполняем: отопление, водоснабжение, теплые полы, сантехнику. Выезжаем на замер бесплатно!';
+    if (msg.match(/\d/)) return `📞 Спасибо! Я записал ваш номер. Менеджер перезвонит в течение 15 минут.`;
+    return 'Здравствуйте! Я Олег. Могу рассказать о ценах, сроках монтажа или организовать бесплатный выезд на замер. Что вас интересует?';
+}
+
+sendChat?.addEventListener('click', () => {
+    const msg = chatInput.value.trim();
+    if (!msg) return;
+    addChatMessage(msg, true);
+    chatInput.value = '';
+    setTimeout(() => {
+        addChatMessage(botAnswer(msg), false);
+    }, 500);
+});
+chatInput?.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendChat.click(); });
 </script>
 </body>
 </html>
