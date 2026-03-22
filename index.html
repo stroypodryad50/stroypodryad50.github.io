@@ -1136,7 +1136,6 @@
     </div>
 </section>
 
-<!-- НИЖНЯЯ ФОРМА - ИСПРАВЛЕНА, РАБОТАЕТ КАК ВЕРХНЯЯ -->
 <section id="zakaz">
     <div class="container">
         <div class="cta-section">
@@ -1180,7 +1179,10 @@
     </div>
 </footer>
 
-<div class="chat-button" id="chatButton"><i class="fas fa-comment-dots"></i></div>
+<div class="chat-button" id="openChatBtn">
+    <i class="fas fa-comment-dots"></i>
+    <span style="position: absolute; top: -5px; right: -5px; background: #e74c3c; width: 18px; height: 18px; border-radius: 50%; font-size: 10px; display: flex; align-items: center; justify-content: center;">1</span>
+</div>
 
 <div class="modal-overlay" id="calculatorModal">
     <div class="modal-window">
@@ -1220,8 +1222,281 @@
     </div>
 </div>
 
+<!-- Стили для чат-бота -->
+<style>
+.chat-bot-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 350px;
+    max-width: calc(100vw - 40px);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    z-index: 1001;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chat-bot-header {
+    background: #1e4660;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat-bot-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-bot-header h4 i {
+    font-size: 1.3rem;
+}
+
+.chat-bot-header .online {
+    background: #27ae60;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 8px;
+    animation: pulseOnline 1.5s infinite;
+}
+
+@keyframes pulseOnline {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.close-chat {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.chat-bot-messages {
+    height: 350px;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    display: flex;
+    gap: 10px;
+    max-width: 85%;
+}
+
+.message.bot {
+    align-self: flex-start;
+}
+
+.message.user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.message-avatar {
+    width: 32px;
+    height: 32px;
+    background: #e67e22;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.message.user .message-avatar {
+    background: #1e4660;
+}
+
+.message-text {
+    background: white;
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #2c3e50;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.message.user .message-text {
+    background: #e67e22;
+    color: white;
+}
+
+.message.bot .message-text {
+    border-bottom-left-radius: 4px;
+}
+
+.message.user .message-text {
+    border-bottom-right-radius: 4px;
+}
+
+.quick-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.quick-btn {
+    background: #fef5e8;
+    border: 1px solid #e67e22;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: #e67e22;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quick-btn:hover {
+    background: #e67e22;
+    color: white;
+}
+
+.chat-bot-input {
+    display: flex;
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #edf2f7;
+    gap: 10px;
+}
+
+.chat-bot-input input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.chat-bot-input input:focus {
+    border-color: #e67e22;
+}
+
+.chat-bot-input button {
+    background: #e67e22;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.chat-bot-input button:hover {
+    background: #d35400;
+    transform: scale(1.05);
+}
+
+.typing {
+    display: flex;
+    gap: 4px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 18px;
+    width: fit-content;
+}
+
+.typing span {
+    width: 6px;
+    height: 6px;
+    background: #94a3b8;
+    border-radius: 50%;
+    animation: typingAnim 1.4s infinite;
+}
+
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingAnim {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-6px); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .chat-bot-container {
+        width: calc(100vw - 40px);
+        right: 20px;
+        bottom: 80px;
+    }
+    .chat-bot-messages {
+        height: 400px;
+    }
+}
+</style>
+
+<!-- HTML чат-бота -->
+<div class="chat-bot-container" id="chatBot">
+    <div class="chat-bot-header" id="chatHeader">
+        <h4>
+            <i class="fas fa-user-circle"></i>
+            Олег, менеджер
+            <span class="online"></span>
+        </h4>
+        <button class="close-chat" id="closeChatBtn">×</button>
+    </div>
+    <div class="chat-bot-messages" id="chatMessages">
+        <div class="message bot">
+            <div class="message-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="message-text">
+                Здравствуйте! 👋<br>
+                Я Олег, менеджер компании СтройПодряд.<br><br>
+                Расскажите, что вас интересует:
+                <div class="quick-buttons">
+                    <div class="quick-btn" data-question="price">💰 Цены</div>
+                    <div class="quick-btn" data-question="install">🔧 Монтаж</div>
+                    <div class="quick-btn" data-question="time">⏱ Сроки</div>
+                    <div class="quick-btn" data-question="call">📞 Заказать звонок</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-bot-input">
+        <input type="text" id="chatInput" placeholder="Напишите вопрос..." autocomplete="off">
+        <button id="sendChatBtn">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
 <script>
-// Toast notification
+// === Toast уведомления ===
 function showToast(message, type = 'info') {
     const toast = document.getElementById('toast');
     toast.textContent = message;
@@ -1231,8 +1506,9 @@ function showToast(message, type = 'info') {
     }, 3000);
 }
 
-// Маска для телефона
+// === Маска для телефона ===
 function setPhoneMask(inputElement) {
+    if (!inputElement) return;
     inputElement.addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
         if (value.length > 11) value = value.slice(0, 11);
@@ -1246,13 +1522,13 @@ function setPhoneMask(inputElement) {
     });
 }
 
-// Валидация телефона
+// === Валидация телефона ===
 function validatePhone(phone) {
     const digits = phone.replace(/\D/g, '');
     return digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'));
 }
 
-// ========== МАРКИЗ - 4 вопроса ==========
+// === МАРКИЗ - опросник ===
 let selectedObject = null;
 let selectedTime = null;
 let selectedBudget = null;
@@ -1312,11 +1588,9 @@ backBtn3.addEventListener('click', () => switchStep(step3, step2));
 nextBtn3.addEventListener('click', () => switchStep(step3, step4));
 backBtn4.addEventListener('click', () => switchStep(step4, step3));
 
-// Маска для телефона в опроснике
 const marquizPhone = document.getElementById('marquizPhone');
 setPhoneMask(marquizPhone);
 
-// Отправка опросника
 document.getElementById('marquizForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const name = document.getElementById('marquizName').value.trim();
@@ -1343,7 +1617,8 @@ document.getElementById('marquizForm').addEventListener('submit', function(e) {
             Телефон: phone,
             Тип_объекта: selectedObject,
             Срок: selectedTime,
-            Бюджет: selectedBudget
+            Бюджет: selectedBudget,
+            Источник: 'Верхний опросник'
         })
     }).catch(console.error);
     
@@ -1361,16 +1636,14 @@ document.getElementById('marquizForm').addEventListener('submit', function(e) {
     selectedBudget = null;
 });
 
-// ========== НИЖНЯЯ ФОРМА (работает как верхняя) ==========
+// === НИЖНЯЯ ФОРМА ===
 const callbackName = document.getElementById('callbackName');
 const callbackPhoneInput = document.getElementById('callbackPhone');
 const callbackObject = document.getElementById('callbackObject');
 const callbackSubmitBtn = document.getElementById('callbackSubmitBtn');
 
-// Маска для телефона нижней формы
 setPhoneMask(callbackPhoneInput);
 
-// Обработка отправки нижней формы
 const callbackForm = document.getElementById('callbackForm');
 if (callbackForm) {
     callbackForm.addEventListener('submit', async function(e) {
@@ -1407,12 +1680,12 @@ if (callbackForm) {
                     Телефон: phone,
                     Тип_объекта: objectType || 'Не указан',
                     Дата: new Date().toLocaleString('ru-RU'),
-                    Страница: 'Нижняя форма'
+                    Источник: 'Нижняя форма'
                 })
             });
             
             if (response.ok) {
-                showToast(`✅ Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.`, 'success');
+                showToast(`✅ Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
                 callbackForm.reset();
             } else {
                 throw new Error('Ошибка отправки');
@@ -1430,14 +1703,7 @@ if (callbackForm) {
     callbackPhoneInput.addEventListener('focus', () => callbackPhoneInput.style.border = '');
 }
 
-// Клик по карточкам услуг
-document.querySelectorAll('.service-card').forEach((card) => {
-    card.addEventListener('click', () => {
-        document.getElementById('prices').scrollIntoView({ behavior: 'smooth' });
-    });
-});
-
-// Калькулятор
+// === Калькулятор ===
 function updateCalculatorPrice() {
     const objectType = document.getElementById('calcObjectType').value;
     const area = parseInt(document.getElementById('calcArea').value) || 100;
@@ -1449,27 +1715,233 @@ function updateCalculatorPrice() {
     document.getElementById('calcPriceDisplay').innerHTML = `от ${total.toLocaleString()} ₽`;
 }
 
-document.getElementById('calcObjectType').addEventListener('change', updateCalculatorPrice);
-document.getElementById('calcArea').addEventListener('input', updateCalculatorPrice);
-document.getElementById('calcWorkType').addEventListener('change', updateCalculatorPrice);
+const calcObjectType = document.getElementById('calcObjectType');
+const calcArea = document.getElementById('calcArea');
+const calcWorkType = document.getElementById('calcWorkType');
+if (calcObjectType) calcObjectType.addEventListener('change', updateCalculatorPrice);
+if (calcArea) calcArea.addEventListener('input', updateCalculatorPrice);
+if (calcWorkType) calcWorkType.addEventListener('change', updateCalculatorPrice);
 updateCalculatorPrice();
 
 const modal = document.getElementById('calculatorModal');
-document.getElementById('openCalculatorBtn').addEventListener('click', () => {
-    modal.classList.add('active');
-    updateCalculatorPrice();
-});
-document.getElementById('closeModalBtn').addEventListener('click', () => modal.classList.remove('active'));
-modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
-document.getElementById('calcRequestBtn').addEventListener('click', () => {
-    modal.classList.remove('active');
-    document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
+const openCalculatorBtn = document.getElementById('openCalculatorBtn');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const calcRequestBtn = document.getElementById('calcRequestBtn');
+
+if (openCalculatorBtn) {
+    openCalculatorBtn.addEventListener('click', () => {
+        if (modal) modal.classList.add('active');
+        updateCalculatorPrice();
+    });
+}
+if (closeModalBtn) closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+if (calcRequestBtn) {
+    calcRequestBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
+    });
+}
+
+// === КЛИК ПО КАРТОЧКАМ УСЛУГ ===
+document.querySelectorAll('.service-card').forEach((card) => {
+    card.addEventListener('click', () => {
+        document.getElementById('prices').scrollIntoView({ behavior: 'smooth' });
+    });
 });
 
-// Чат-бот
-document.getElementById('chatButton').addEventListener('click', () => {
-    showToast('Здравствуйте! Наш специалист скоро ответит. Или позвоните +7(977)325-27-28', 'info');
-});
+// === ЧАТ-БОТ ОЛЕГ ===
+
+// База знаний бота
+const botAnswers = {
+    price: {
+        keywords: ['цена', 'стоимость', 'сколько стоит', 'прайс', 'расценки', 'цены', 'дорого', 'дешево'],
+        answer: '💰 Стоимость зависит от объема работ. Примерные цены:\n\n• Монтаж водоснабжения — от 15 000 ₽\n• Отопление под ключ — от 45 000 ₽\n• Теплый пол — от 2 500 ₽/м²\n• Канализация — от 25 000 ₽\n\nДля точного расчета оставьте заявку — я сделаю индивидуальную смету бесплатно!'
+    },
+    install: {
+        keywords: ['монтаж', 'установка', 'поставить', 'сделать', 'смонтировать', 'работы', 'услуги'],
+        answer: '🔧 Мы выполняем полный комплекс сантехнических работ:\n\n✓ Монтаж систем отопления\n✓ Разводка водоснабжения\n✓ Установка сантехники (унитазы, раковины, ванны)\n✓ Монтаж теплых полов\n✓ Монтаж канализации и септиков\n✓ Установка насосных станций\n\nВыезжаем на замер бесплатно!'
+    },
+    time: {
+        keywords: ['срок', 'быстро', 'долго', 'сколько дней', 'когда', 'время'],
+        answer: '⏱ Сроки выполнения работ:\n\n• Квартира (1-комнатная) — 1-2 дня\n• Квартира (3-комнатная) — 2-3 дня\n• Частный дом (до 100 м²) — 3-5 дней\n• Частный дом (100-200 м²) — 5-7 дней\n• Коттедж (200+ м²) — 7-14 дней\n\nТочные сроки скажу после выезда на замер!'
+    },
+    warranty: {
+        keywords: ['гарантия', 'гарантий', 'ответственность', 'надежно'],
+        answer: '✅ Мы даем официальную гарантию 5 лет на все виды работ!\n\nТакже у нас есть:\n• Страховка ответственности\n• Договор с четкими сроками\n• Поэтапная оплата\n• Фотоотчет о работе'
+    },
+    payment: {
+        keywords: ['оплата', 'карта', 'наличные', 'безнал', 'рассрочка', 'деньги'],
+        answer: '💳 Способы оплаты:\n\n• Наличные (по факту выполнения)\n• Банковская карта (Visa/Mastercard)\n• Безналичный расчет (для юрлиц)\n• Рассрочка от банков-партнеров (Т-Банк, Альфа-Банк)\n\nОплата поэтапно: предоплата 30%, остальное после завершения работ.'
+    },
+    measure: {
+        keywords: ['замер', 'выезд', 'приехать', 'посмотреть', 'оценка'],
+        answer: '📏 Выезд на замер — БЕСПЛАТНО!\n\nСпециалист приедет в удобное для вас время:\n• Сделает все необходимые замеры\n• Проконсультирует по материалам\n• Составит подробную смету\n• Ответит на все вопросы\n\nОставьте заявку, и мы согласуем время выезда!'
+    },
+    contact: {
+        keywords: ['телефон', 'позвонить', 'контакт', 'номер', 'связаться', 'перезвоните'],
+        answer: '📞 Наш телефон: +7 (977) 325-27-28\n\nРежим работы: ежедневно с 9:00 до 21:00\n\nИли оставьте свой номер в форме ниже — я перезвоню вам в течение 15 минут!'
+    },
+    call: {
+        keywords: ['звонок', 'позвоните', 'свяжитесь', 'обратный звонок'],
+        answer: '📱 Хорошо! Оставьте, пожалуйста, свой номер телефона в форме ниже или напишите его сюда — я перезвоню вам в течение 15 минут.'
+    },
+    thanks: {
+        keywords: ['спасибо', 'благодарю', 'отлично', 'понятно', 'хорошо'],
+        answer: 'Пожалуйста! 😊 Рад был помочь. Если есть еще вопросы — спрашивайте. Или оставьте заявку, я подготовлю для вас индивидуальный расчет.'
+    },
+    hello: {
+        keywords: ['привет', 'здравствуй', 'добрый день', 'добрый вечер', 'здрасте', 'приветствую'],
+        answer: 'Здравствуйте! 👋 Я Олег, менеджер компании СтройПодряд. Чем могу помочь? Расскажите, что вас интересует: цены, монтаж или хотите вызвать замерщика?'
+    }
+};
+
+function getBotAnswer(message) {
+    const lowerMsg = message.toLowerCase();
+    
+    for (let key in botAnswers) {
+        const keywords = botAnswers[key].keywords;
+        for (let kw of keywords) {
+            if (lowerMsg.includes(kw)) {
+                return botAnswers[key].answer;
+            }
+        }
+    }
+    
+    if (lowerMsg.match(/\d/) && lowerMsg.replace(/\D/g, '').length >= 10) {
+        const phone = message;
+        fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                Имя: 'Клиент из чата',
+                Телефон: phone,
+                Источник: 'Чат-бот Олег',
+                Дата: new Date().toLocaleString('ru-RU')
+            })
+        }).catch(console.error);
+        return `📞 Спасибо! Я записал ваш номер ${phone}. Передаю заявку менеджеру, он перезвонит вам в течение 15 минут.`;
+    }
+    
+    return 'Извините, не совсем понял вопрос 🤔\n\nЯ могу:\n💰 Рассказать о ценах\n🔧 Объяснить как проходит монтаж\n⏱ Уточнить сроки\n📏 Организовать бесплатный замер\n\nИли напишите свой номер — я перезвоню и все расскажу!';
+}
+
+function addMessage(text, isUser = false) {
+    const messagesDiv = document.getElementById('chatMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+    
+    messageDiv.innerHTML = `
+        <div class="message-avatar">
+            <i class="fas ${isUser ? 'fa-user' : 'fa-user-circle'}"></i>
+        </div>
+        <div class="message-text">
+            ${text.replace(/\n/g, '<br>')}
+            ${!isUser && text.includes('форме') ? '<div class="quick-buttons"><div class="quick-btn" data-action="openForm">📝 Заполнить заявку</div></div>' : ''}
+        </div>
+    `;
+    
+    messagesDiv.appendChild(messageDiv);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    
+    const formBtn = messageDiv.querySelector('[data-action="openForm"]');
+    if (formBtn) {
+        formBtn.addEventListener('click', () => {
+            document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
+            addMessage('Отлично! Заполните форму ниже, и я свяжусь с вами.', false);
+        });
+    }
+}
+
+function showTyping() {
+    const messagesDiv = document.getElementById('chatMessages');
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'message bot';
+    typingDiv.id = 'typingIndicator';
+    typingDiv.innerHTML = `
+        <div class="message-avatar">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="typing">
+            <span></span><span></span><span></span>
+        </div>
+    `;
+    messagesDiv.appendChild(typingDiv);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+function hideTyping() {
+    const typing = document.getElementById('typingIndicator');
+    if (typing) typing.remove();
+}
+
+async function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const message = input.value.trim();
+    if (!message) return;
+    
+    addMessage(message, true);
+    input.value = '';
+    
+    showTyping();
+    setTimeout(() => {
+        hideTyping();
+        const answer = getBotAnswer(message);
+        addMessage(answer, false);
+    }, 600);
+}
+
+function setupQuickButtons() {
+    document.querySelectorAll('.quick-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const question = btn.getAttribute('data-question');
+            const messages = {
+                price: 'Сколько стоят ваши услуги?',
+                install: 'Какие работы вы выполняете?',
+                time: 'Какие сроки монтажа?',
+                call: 'Закажите звонок'
+            };
+            if (messages[question]) {
+                addMessage(messages[question], true);
+                setTimeout(() => {
+                    const answer = getBotAnswer(messages[question]);
+                    addMessage(answer, false);
+                }, 500);
+            }
+        });
+    });
+}
+
+const chatBot = document.getElementById('chatBot');
+const openChatBtn = document.getElementById('openChatBtn');
+const closeChatBtn = document.getElementById('closeChatBtn');
+const chatHeader = document.getElementById('chatHeader');
+const sendChatBtn = document.getElementById('sendChatBtn');
+const chatInput = document.getElementById('chatInput');
+
+if (openChatBtn) {
+    openChatBtn.addEventListener('click', () => {
+        chatBot.style.display = 'flex';
+        openChatBtn.style.display = 'none';
+    });
+}
+
+function closeChat() {
+    chatBot.style.display = 'none';
+    openChatBtn.style.display = 'flex';
+}
+
+if (closeChatBtn) closeChatBtn.addEventListener('click', closeChat);
+if (chatHeader) chatHeader.addEventListener('click', (e) => { if (e.target !== closeChatBtn) closeChat(); });
+
+if (chatInput) {
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendMessage();
+    });
+}
+if (sendChatBtn) sendChatBtn.addEventListener('click', sendMessage);
+
+setTimeout(setupQuickButtons, 100);
 </script>
 </body>
 </html>
