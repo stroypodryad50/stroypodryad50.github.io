@@ -175,6 +175,18 @@
             box-shadow: 0 5px 15px rgba(230,126,34,0.3);
         }
         
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #e67e22;
+            color: #e67e22;
+        }
+        
+        .btn-outline:hover {
+            background: #e67e22;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
         /* Hero Section */
         .hero {
             padding: 60px 0;
@@ -195,7 +207,6 @@
         .hero-content h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            line-height: 1.3;
         }
         
         .hero-content h1 span {
@@ -206,14 +217,12 @@
             font-size: 1.1rem;
             color: #4a5568;
             margin-bottom: 25px;
-            line-height: 1.5;
         }
         
         .hero-buttons {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
-            margin-bottom: 35px;
         }
         
         .hero-image {
@@ -230,11 +239,6 @@
             transition: all 0.3s ease;
         }
         
-        .hero-image .image-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
         .hero-image img {
             width: 260px;
             max-width: 100%;
@@ -242,7 +246,6 @@
             display: block;
         }
         
-        /* Trust badges (оригинальный стиль) */
         .trust-badges {
             display: flex;
             gap: 25px;
@@ -257,23 +260,11 @@
             background: white;
             padding: 8px 16px;
             border-radius: 40px;
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-        
-        .trust-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
         .trust-item i {
             color: #e67e22;
             font-size: 20px;
-            transition: transform 0.3s ease;
-        }
-        
-        .trust-item:hover i {
-            transform: scale(1.1);
         }
         
         section {
@@ -781,9 +772,6 @@
             .hero-content h1 {
                 font-size: 1.8rem;
             }
-            .trust-badges {
-                gap: 12px;
-            }
             .brands-grid {
                 gap: 15px;
             }
@@ -1038,9 +1026,10 @@
             <button class="tab-btn" data-tab="radiator">🔥 Радиаторное отопление (150 м²)</button>
         </div>
         
+        <!-- Таблица теплого пола с значком диаметра ⌀ -->
         <div class="price-table-wrapper" id="warmfloorTab">
             <table class="price-table">
-                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
+                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
                 <tbody>
                     <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
                     <tr><td><strong>Труба ⌀20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
@@ -1056,6 +1045,7 @@
             </table>
         </div>
         
+        <!-- Таблица радиаторного отопления с значком диаметра ⌀ -->
         <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
             <table class="price-table">
                 <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
@@ -1101,7 +1091,7 @@
             <div class="step" data-aos="flip-left" data-aos-delay="400"><div class="step-number">4</div><h4>ПНР и сдача</h4><p>Пусконаладочные работы</p></div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- Подписка на рассылку -->
 <div class="subscribe-section" data-aos="fade-up">
@@ -1204,13 +1194,11 @@ function validatePhone(phone) {
 
 // Кнопка "Наверх"
 const scrollTopBtn = document.getElementById('scrollTop');
-if (scrollTopBtn) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) scrollTopBtn.classList.add('show');
-        else scrollTopBtn.classList.remove('show');
-    });
-    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-}
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) scrollTopBtn.classList.add('show');
+    else scrollTopBtn.classList.remove('show');
+});
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 // Подписка на рассылку
 const subscribeForm = document.getElementById('subscribeForm');
@@ -1335,12 +1323,10 @@ document.querySelectorAll('.service-card').forEach(card => {
 });
 
 // Чат-бот
-const chatBtn = document.getElementById('openChatBtn');
-if (chatBtn) {
-    chatBtn.addEventListener('click', () => {
-        showToast('Здравствуйте! Наш специалист скоро ответит. Позвоните +7(977)325-27-28', 'info');
-    });
-}
+const chatBot = document.getElementById('openChatBtn');
+chatBot?.addEventListener('click', () => {
+    showToast('Здравствуйте! Наш специалист скоро ответит. Позвоните +7(977)325-27-28', 'info');
+});
 </script>
 </body>
 </html>
