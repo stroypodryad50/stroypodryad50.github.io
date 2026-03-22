@@ -14,9 +14,10 @@
         }
         
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background: #fff;
             color: #1a1a2e;
+            scroll-behavior: smooth;
         }
         
         .container {
@@ -69,6 +70,7 @@
             border-radius: 40px;
             transition: all 0.3s ease;
             font-size: 0.95rem;
+            cursor: pointer;
         }
         
         .nav-links a:hover {
@@ -312,7 +314,7 @@
             font-size: 1rem;
         }
         
-        /* Services - с постоянной анимацией */
+        /* Services */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -329,22 +331,9 @@
             cursor: pointer;
             position: relative;
             z-index: 1;
-            animation: gentlePulseShadow 3s ease-in-out infinite;
-        }
-        
-        @keyframes gentlePulseShadow {
-            0%, 100% {
-                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-                border-color: #edf2f7;
-            }
-            50% {
-                box-shadow: 0 15px 30px rgba(230,126,34,0.25);
-                border-color: #e67e22;
-            }
         }
         
         .service-card:hover {
-            animation: none;
             transform: translateY(-8px);
             border-color: #e67e22;
             box-shadow: 0 20px 35px rgba(0,0,0,0.15);
@@ -352,7 +341,6 @@
         
         .service-card:active {
             transform: translateY(-4px) scale(0.98);
-            transition: all 0.05s ease;
         }
         
         .service-card:hover i {
@@ -364,6 +352,37 @@
             color: #e67e22;
             margin-bottom: 15px;
             transition: transform 0.3s ease;
+        }
+        
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #1e4660;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            z-index: 3000;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+        
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+        
+        .toast.error {
+            background: #e74c3c;
+        }
+        
+        .toast.success {
+            background: #27ae60;
         }
         
         /* Маркиз - опросник */
@@ -572,6 +591,11 @@
             box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
         }
         
+        .marquiz-form input.error {
+            border-color: #e74c3c;
+            background: #fff5f5;
+        }
+        
         /* Price Table */
         .price-table-wrapper {
             background: white;
@@ -717,6 +741,10 @@
             transform: scale(1.02);
         }
         
+        .cta-form input.error {
+            border: 2px solid #e74c3c;
+        }
+        
         .cta-form button {
             background: #e67e22;
             color: white;
@@ -753,6 +781,7 @@
             text-decoration: none;
             margin-right: 20px;
             transition: color 0.3s ease;
+            cursor: pointer;
         }
         
         .footer-links a:hover {
@@ -947,6 +976,8 @@
 </head>
 <body>
 
+<div id="toast" class="toast"></div>
+
 <header>
     <div class="container">
         <div class="navbar">
@@ -954,25 +985,25 @@
                 Строй<span>Подряд</span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="#uslugi">Услуги</a></li>
-                <li><a href="#prices">Цены</a></li>
-                <li><a href="blog.html">Статьи</a></li>
-                <li><a href="#kontakty">Контакты</a></li>
+                <li><a data-scroll="hero">Главная</a></li>
+                <li><a data-scroll="uslugi">Услуги</a></li>
+                <li><a data-scroll="prices">Цены</a></li>
+                <li><a data-scroll="blog">Статьи</a></li>
+                <li><a data-scroll="kontakty">Контакты</a></li>
             </ul>
             <a href="tel:+79773252728" class="header-phone"><i class="fas fa-phone-alt"></i> +7 (977) 325-27-28</a>
         </div>
     </div>
 </header>
 
-<section class="hero">
+<section id="hero" class="hero">
     <div class="container">
         <div class="hero-grid">
             <div class="hero-content">
                 <h1>Профессиональный <span>сантехмонтаж</span><br>под ключ</h1>
                 <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 5 лет.</p>
                 <div class="hero-buttons">
-                    <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
+                    <a data-scroll="zakaz" class="btn btn-primary">Получить консультацию</a>
                     <button class="btn btn-outline" id="openCalculatorBtn"><i class="fas fa-calculator"></i> Рассчитать стоимость</button>
                 </div>
                 <div class="trust-badges">
@@ -983,7 +1014,7 @@
             </div>
             <div class="hero-image">
                 <div class="image-wrapper">
-                    <img src="images/orig.jpeg" alt="СтройПодряд">
+                    <img src="images/orig.jpeg" alt="СтройПодряд" onerror="this.src='https://via.placeholder.com/260x260?text=СтройПодряд'">
                 </div>
             </div>
         </div>
@@ -991,7 +1022,7 @@
 </section>
 
 <!-- Маркиз - опросник -->
-<section style="background: #f8fafc; padding: 60px 0;">
+<section id="blog" style="background: #f8fafc; padding: 60px 0;">
     <div class="container">
         <div style="text-align: center; margin-bottom: 30px;">
             <h3 style="font-size: 1.8rem; color: #1e4660; margin-bottom: 10px;">Поможем подобрать решение именно для вас</h3>
@@ -999,7 +1030,6 @@
         </div>
         
         <div class="marquiz-container">
-            <!-- Шаг 1: Тип объекта -->
             <div class="marquiz-step" id="step1">
                 <div class="step-progress">
                     <div class="step-dots">
@@ -1021,7 +1051,6 @@
                 <button class="next-btn" id="nextStep1" disabled>Далее →</button>
             </div>
             
-            <!-- Шаг 2: Сроки -->
             <div class="marquiz-step" id="step2" style="display: none;">
                 <div class="step-progress">
                     <div class="step-dots">
@@ -1045,7 +1074,6 @@
                 </div>
             </div>
             
-            <!-- Шаг 3: Бюджет -->
             <div class="marquiz-step" id="step3" style="display: none;">
                 <div class="step-progress">
                     <div class="step-dots">
@@ -1070,7 +1098,6 @@
                 </div>
             </div>
             
-            <!-- Шаг 4: Контакты -->
             <div class="marquiz-step" id="step4" style="display: none;">
                 <div class="step-progress">
                     <div class="step-dots">
@@ -1085,7 +1112,7 @@
                 <p style="color: #666; margin-bottom: 25px;">Мы перезвоним в удобное время</p>
                 <form class="marquiz-form" id="marquizForm">
                     <input type="text" id="marquizName" placeholder="Ваше имя" required>
-                    <input type="tel" id="marquizPhone" placeholder="Номер телефона" required>
+                    <input type="tel" id="marquizPhone" placeholder="+7 (___) ___-__-__" required>
                     <input type="hidden" id="marquizObjectType">
                     <input type="hidden" id="marquizTime">
                     <input type="hidden" id="marquizBudget">
@@ -1115,7 +1142,6 @@
     </div>
 </section>
 
-<!-- Блок с примерным расчетом теплого пола -->
 <section id="prices" style="background: #f8fafc;">
     <div class="container">
         <h2 class="section-title">Пример расчета теплого пола</h2>
@@ -1174,12 +1200,9 @@
         <div class="cta-section">
             <h2>Нужен качественный сантехмонтаж?</h2>
             <p>Оставьте заявку — получите бесплатную консультацию</p>
-            <form class="cta-form" id="callbackForm" action="https://formsubmit.co/stroypodryad50@ya.ru" method="POST">
-                <input type="hidden" name="_subject" value="Новая заявка с сайта СтройПодряд">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://stroypodryad50.github.io/thanks.html">
+            <form class="cta-form" id="callbackForm">
                 <input type="text" name="Имя" placeholder="Ваше имя" required>
-                <input type="tel" name="Телефон" placeholder="Номер телефона" required>
+                <input type="tel" name="Телефон" id="callbackPhone" placeholder="+7 (___) ___-__-__" required>
                 <input type="text" name="Тип объекта" placeholder="Тип объекта">
                 <button type="submit">Отправить</button>
             </form>
@@ -1198,11 +1221,11 @@
                 <p>Профессиональный сантехмонтаж</p>
             </div>
             <div class="footer-links">
-                <a href="index.html">Главная</a>
-                <a href="#uslugi">Услуги</a>
-                <a href="#prices">Цены</a>
-                <a href="blog.html">Статьи</a>
-                <a href="#kontakty">Контакты</a>
+                <a data-scroll="hero">Главная</a>
+                <a data-scroll="uslugi">Услуги</a>
+                <a data-scroll="prices">Цены</a>
+                <a data-scroll="blog">Статьи</a>
+                <a data-scroll="kontakty">Контакты</a>
             </div>
             <div>
                 <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8; text-decoration:none;">+7 (977) 325-27-28</a></p>
@@ -1254,7 +1277,50 @@
 </div>
 
 <script>
-    // ========== МАРКИЗ - 4 вопроса с анимациями ==========
+    // Toast notification
+    function showToast(message, type = 'info') {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.className = `toast ${type} show`;
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+    
+    // Phone mask
+    function setPhoneMask(inputElement) {
+        inputElement.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.slice(0, 11);
+            let formatted = '';
+            if (value.length > 0) formatted = '+7';
+            if (value.length > 1) formatted += ' (' + value.slice(1, 4);
+            if (value.length > 4) formatted += ') ' + value.slice(4, 7);
+            if (value.length > 7) formatted += '-' + value.slice(7, 9);
+            if (value.length > 9) formatted += '-' + value.slice(9, 11);
+            e.target.value = formatted;
+        });
+    }
+    
+    // Validate phone
+    function validatePhone(phone) {
+        const digits = phone.replace(/\D/g, '');
+        return digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'));
+    }
+    
+    // Smooth scroll
+    document.querySelectorAll('[data-scroll]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('data-scroll');
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+    
+    // Маркиз
     let selectedObject = null;
     let selectedTime = null;
     let selectedBudget = null;
@@ -1271,37 +1337,6 @@
     const backBtn3 = document.getElementById('backStep3');
     const backBtn4 = document.getElementById('backStep4');
     
-    // Шаг 1: выбор объекта
-    document.querySelectorAll('#optionsStep1 .option-item').forEach(opt => {
-        opt.addEventListener('click', () => {
-            document.querySelectorAll('#optionsStep1 .option-item').forEach(o => o.classList.remove('selected'));
-            opt.classList.add('selected');
-            selectedObject = opt.getAttribute('data-value');
-            nextBtn1.disabled = false;
-        });
-    });
-    
-    // Шаг 2: выбор сроков
-    document.querySelectorAll('#optionsStep2 .option-item').forEach(opt => {
-        opt.addEventListener('click', () => {
-            document.querySelectorAll('#optionsStep2 .option-item').forEach(o => o.classList.remove('selected'));
-            opt.classList.add('selected');
-            selectedTime = opt.getAttribute('data-time');
-            nextBtn2.disabled = false;
-        });
-    });
-    
-    // Шаг 3: выбор бюджета
-    document.querySelectorAll('#optionsStep3 .option-item').forEach(opt => {
-        opt.addEventListener('click', () => {
-            document.querySelectorAll('#optionsStep3 .option-item').forEach(o => o.classList.remove('selected'));
-            opt.classList.add('selected');
-            selectedBudget = opt.getAttribute('data-budget');
-            nextBtn3.disabled = false;
-        });
-    });
-    
-    // Переходы с анимацией
     function switchStep(from, to) {
         from.style.animation = 'fadeSlide 0.3s reverse';
         setTimeout(() => {
@@ -1311,6 +1346,33 @@
         }, 150);
     }
     
+    document.querySelectorAll('#optionsStep1 .option-item').forEach(opt => {
+        opt.addEventListener('click', () => {
+            document.querySelectorAll('#optionsStep1 .option-item').forEach(o => o.classList.remove('selected'));
+            opt.classList.add('selected');
+            selectedObject = opt.getAttribute('data-value');
+            nextBtn1.disabled = false;
+        });
+    });
+    
+    document.querySelectorAll('#optionsStep2 .option-item').forEach(opt => {
+        opt.addEventListener('click', () => {
+            document.querySelectorAll('#optionsStep2 .option-item').forEach(o => o.classList.remove('selected'));
+            opt.classList.add('selected');
+            selectedTime = opt.getAttribute('data-time');
+            nextBtn2.disabled = false;
+        });
+    });
+    
+    document.querySelectorAll('#optionsStep3 .option-item').forEach(opt => {
+        opt.addEventListener('click', () => {
+            document.querySelectorAll('#optionsStep3 .option-item').forEach(o => o.classList.remove('selected'));
+            opt.classList.add('selected');
+            selectedBudget = opt.getAttribute('data-budget');
+            nextBtn3.disabled = false;
+        });
+    });
+    
     nextBtn1.addEventListener('click', () => switchStep(step1, step2));
     backBtn2.addEventListener('click', () => switchStep(step2, step1));
     nextBtn2.addEventListener('click', () => switchStep(step2, step3));
@@ -1318,55 +1380,62 @@
     nextBtn3.addEventListener('click', () => switchStep(step3, step4));
     backBtn4.addEventListener('click', () => switchStep(step4, step3));
     
-    // Отправка формы
+    // Phone mask for marquiz
+    const marquizPhone = document.getElementById('marquizPhone');
+    setPhoneMask(marquizPhone);
+    
     document.getElementById('marquizForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        const name = document.getElementById('marquizName').value;
-        const phone = document.getElementById('marquizPhone').value;
+        const name = document.getElementById('marquizName').value.trim();
+        const phone = marquizPhone.value;
         
-        if(name && phone) {
-            document.getElementById('marquizObjectType').value = selectedObject;
-            document.getElementById('marquizTime').value = selectedTime;
-            document.getElementById('marquizBudget').value = selectedBudget;
-            
-            fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({
-                    Имя: name,
-                    Телефон: phone,
-                    Тип_объекта: selectedObject,
-                    Срок: selectedTime,
-                    Бюджет: selectedBudget
-                })
-            });
-            
-            alert(`Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.`);
-            
-            // Сброс
-            step4.style.display = 'none';
-            step1.style.display = 'block';
-            document.getElementById('marquizForm').reset();
-            document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
-            nextBtn1.disabled = true;
-            nextBtn2.disabled = true;
-            nextBtn3.disabled = true;
-            selectedObject = null;
-            selectedTime = null;
-            selectedBudget = null;
-        } else {
-            alert('Пожалуйста, заполните имя и телефон');
+        if (!name) {
+            showToast('Пожалуйста, введите ваше имя', 'error');
+            return;
         }
+        if (!validatePhone(phone)) {
+            showToast('Пожалуйста, введите корректный номер телефона (11 цифр)', 'error');
+            return;
+        }
+        
+        document.getElementById('marquizObjectType').value = selectedObject || '';
+        document.getElementById('marquizTime').value = selectedTime || '';
+        document.getElementById('marquizBudget').value = selectedBudget || '';
+        
+        fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+                Имя: name,
+                Телефон: phone,
+                Тип_объекта: selectedObject,
+                Срок: selectedTime,
+                Бюджет: selectedBudget
+            })
+        }).catch(console.error);
+        
+        showToast(`Спасибо, ${name}! Мы свяжемся с вами в ближайшее время.`, 'success');
+        
+        step4.style.display = 'none';
+        step1.style.display = 'block';
+        document.getElementById('marquizForm').reset();
+        document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
+        nextBtn1.disabled = true;
+        nextBtn2.disabled = true;
+        nextBtn3.disabled = true;
+        selectedObject = null;
+        selectedTime = null;
+        selectedBudget = null;
     });
     
-    // Клик по карточке услуг - скролл к ценам
+    // Service cards click
     document.querySelectorAll('.service-card').forEach((card) => {
         card.addEventListener('click', () => {
             document.getElementById('prices').scrollIntoView({ behavior: 'smooth' });
         });
     });
     
-    // Калькулятор
+    // Calculator
     function updateCalculatorPrice() {
         const objectType = document.getElementById('calcObjectType').value;
         const area = parseInt(document.getElementById('calcArea').value) || 100;
@@ -1395,20 +1464,31 @@
         document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
     });
     
+    // Chat button
     document.getElementById('chatButton').addEventListener('click', () => {
-        alert('Здравствуйте! Наш специалист скоро ответит. Или позвоните +7(977)325-27-28');
+        showToast('Здравствуйте! Наш специалист скоро ответит. Или позвоните +7(977)325-27-28', 'info');
     });
+    
+    // Callback form
+    const callbackPhone = document.getElementById('callbackPhone');
+    setPhoneMask(callbackPhone);
     
     document.getElementById('callbackForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        const name = document.querySelector('#callbackForm input[name="Имя"]').value;
-        const phone = document.querySelector('#callbackForm input[name="Телефон"]').value;
-        if(name && phone) {
-            alert(`Спасибо, ${name}! Мы свяжемся с вами по номеру ${phone}`);
-            this.reset();
-        } else {
-            alert('Пожалуйста, заполните имя и телефон');
+        const name = document.querySelector('#callbackForm input[name="Имя"]').value.trim();
+        const phone = callbackPhone.value;
+        
+        if (!name) {
+            showToast('Пожалуйста, введите ваше имя', 'error');
+            return;
         }
+        if (!validatePhone(phone)) {
+            showToast('Пожалуйста, введите корректный номер телефона (11 цифр)', 'error');
+            return;
+        }
+        
+        showToast(`Спасибо, ${name}! Мы свяжемся с вами по номеру ${phone}`, 'success');
+        this.reset();
     });
 </script>
 </body>
