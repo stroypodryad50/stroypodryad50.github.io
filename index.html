@@ -70,7 +70,6 @@
             border-radius: 40px;
             transition: all 0.3s ease;
             font-size: 0.95rem;
-            cursor: pointer;
         }
         
         .nav-links a:hover {
@@ -985,11 +984,11 @@
                 Строй<span>Подряд</span>
             </div>
             <ul class="nav-links">
-                <li><a data-scroll="hero">Главная</a></li>
-                <li><a data-scroll="uslugi">Услуги</a></li>
-                <li><a data-scroll="prices">Цены</a></li>
-                <li><a data-scroll="blog">Статьи</a></li>
-                <li><a data-scroll="kontakty">Контакты</a></li>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="#uslugi">Услуги</a></li>
+                <li><a href="#prices">Цены</a></li>
+                <li><a href="blog.html">Статьи</a></li>
+                <li><a href="#kontakty">Контакты</a></li>
             </ul>
             <a href="tel:+79773252728" class="header-phone"><i class="fas fa-phone-alt"></i> +7 (977) 325-27-28</a>
         </div>
@@ -1003,7 +1002,7 @@
                 <h1>Профессиональный <span>сантехмонтаж</span><br>под ключ</h1>
                 <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 5 лет.</p>
                 <div class="hero-buttons">
-                    <a data-scroll="zakaz" class="btn btn-primary">Получить консультацию</a>
+                    <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
                     <button class="btn btn-outline" id="openCalculatorBtn"><i class="fas fa-calculator"></i> Рассчитать стоимость</button>
                 </div>
                 <div class="trust-badges">
@@ -1022,7 +1021,7 @@
 </section>
 
 <!-- Маркиз - опросник -->
-<section id="blog" style="background: #f8fafc; padding: 60px 0;">
+<section style="background: #f8fafc; padding: 60px 0;">
     <div class="container">
         <div style="text-align: center; margin-bottom: 30px;">
             <h3 style="font-size: 1.8rem; color: #1e4660; margin-bottom: 10px;">Поможем подобрать решение именно для вас</h3>
@@ -1218,21 +1217,22 @@
                 <div class="logo" style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px;">
                     Строй<span style="color: #e67e22;">Подряд</span>
                 </div>
-                <p>Профессиональный сантехмонтаж</p>
+                <p>Профессиональный сантехмонтаж под ключ</p>
             </div>
             <div class="footer-links">
-                <a data-scroll="hero">Главная</a>
-                <a data-scroll="uslugi">Услуги</a>
-                <a data-scroll="prices">Цены</a>
-                <a data-scroll="blog">Статьи</a>
-                <a data-scroll="kontakty">Контакты</a>
+                <a href="index.html">Главная</a>
+                <a href="#uslugi">Услуги</a>
+                <a href="#prices">Цены</a>
+                <a href="blog.html">Статьи</a>
+                <a href="#kontakty">Контакты</a>
             </div>
             <div>
                 <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8; text-decoration:none;">+7 (977) 325-27-28</a></p>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8; text-decoration:none;">stroypodryad50@ya.ru</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Москва и Московская область</p>
             </div>
         </div>
-        <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
+        <div class="copy">© 2025 СтройПодряд. Все права защищены. Профессиональный монтаж сантехники.</div>
     </div>
 </footer>
 
@@ -1308,13 +1308,15 @@
         return digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'));
     }
     
-    // Smooth scroll
-    document.querySelectorAll('[data-scroll]').forEach(link => {
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('data-scroll');
+            const href = this.getAttribute('href');
+            if (href === '#' || href === '#') return;
+            const targetId = href.substring(1);
             const target = document.getElementById(targetId);
             if (target) {
+                e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
