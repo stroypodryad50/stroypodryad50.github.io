@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СтройПодряд | Профессиональный монтаж сантехники в Москве, Подольске, Чехове</title>
-    <meta name="description" content="СтройПодряд — монтаж сантехники под ключ в Москве и Подмосковье. Водоснабжение, отопление, канализация. Гарантия 2 года. ☎ +7(977) 325-27-28">
-    <meta name="keywords" content="сантехмонтаж Москва, монтаж отопления Подольск, водоснабжение Чехов, теплый пол Московская область, сантехника под ключ">
+    <title>СтройПодряд | Профессиональный монтаж сантехники</title>
+    <meta name="description" content="СтройПодряд — монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года. ☎ +7(977) 325-27-28">
+    <meta name="keywords" content="сантехмонтаж, монтаж отопления, водоснабжение, теплый пол, сантехника">
     <meta name="author" content="СтройПодряд">
-    <meta name="geo.region" content="RU-MOS">
-    <meta name="geo.placename" content="Москва, Московская область">
     <meta name="yandex-verification" content="sz8pwbuh0vrymk4r">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231e4660'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%23e67e22' font-weight='bold'>C</text></svg>">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="СтройПодряд | Профессиональный сантехмонтаж в Москве и области">
-    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года. Работаем в Москве, Подольске, Чехове и области.">
+    <meta property="og:title" content="СтройПодряд | Профессиональный сантехмонтаж">
+    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года.">
     <meta property="og:url" content="https://stroypodryad50.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
@@ -31,15 +29,11 @@
       "email": "stroypodryad50@ya.ru",
       "url": "https://stroypodryad50.github.io/",
       "priceRange": "от 15 000 ₽",
-      "openingHours": "Mo-Su 09:00-21:00",
-      "areaServed": {
-        "@type": "City",
-        "name": "Москва и Московская область"
-      }
+      "openingHours": "Mo-Su 09:00-21:00"
     }
     </script>
     
-    <!-- Google Fonts - Montserrat для дорогого вида -->
+    <!-- Google Fonts - Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- AOS Animation Library -->
@@ -304,7 +298,7 @@
             font-size: 1rem;
         }
         
-        /* Services */
+        /* Services - убрана подсказка */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -319,7 +313,6 @@
             border: 1px solid #edf2f7;
             transition: all 0.3s ease;
             cursor: pointer;
-            position: relative;
         }
         
         .service-card:hover {
@@ -337,22 +330,6 @@
         
         .service-card:hover i {
             transform: scale(1.1);
-        }
-        
-        .service-card .card-hint {
-            position: absolute;
-            bottom: 15px;
-            left: 0;
-            right: 0;
-            font-size: 0.7rem;
-            color: #e67e22;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .service-card:hover .card-hint {
-            opacity: 1;
         }
         
         /* Brands Section */
@@ -547,7 +524,7 @@
             font-weight: bold;
         }
         
-        /* Steps - КНОПКИ ЭТАПОВ ВЫДЕЛЕНЫ СИНИМ */
+        /* Steps */
         .steps-grid {
             display: flex;
             flex-wrap: wrap;
@@ -771,6 +748,25 @@
             font-size: 20px;
         }
         
+        /* Стили для опросника - выделение выбора */
+        .option-item {
+            transition: all 0.2s ease;
+        }
+        
+        .option-item.selected {
+            background: #e67e22;
+            border-color: #e67e22 !important;
+            color: white;
+        }
+        
+        .option-item.selected i {
+            color: white;
+        }
+        
+        .option-item.selected span {
+            color: white;
+        }
+        
         /* Кнопки опросника */
         .next-btn, .submit-btn {
             background: #1e4660 !important;
@@ -881,8 +877,8 @@
     <div class="container">
         <div class="hero-grid">
             <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
-                <h1>Профессиональный <span>сантехмонтаж</span><br>в Москве и Подмосковье</h1>
-                <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Работаем в Москве, Подольске, Чехове и области. Гарантия 2 года.</p>
+                <h1>Профессиональный <span>сантехмонтаж</span><br>под ключ</h1>
+                <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 2 года.</p>
                 <div class="hero-buttons">
                     <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
                 </div>
@@ -940,9 +936,9 @@
                 </div>
                 <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Когда планируете монтаж?</h3>
                 <div class="options-list" id="optionsStep2">
-                    <div class="option-item" data-time="now"><i class="fas fa-clock"></i><span>В ближайшее время</span></div>
-                    <div class="option-item" data-time="month"><i class="fas fa-calendar-week"></i><span>В течение месяца</span></div>
-                    <div class="option-item" data-time="quarter"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
+                    <div class="option-item" data-time="now" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-clock"></i><span>В ближайшее время</span></div>
+                    <div class="option-item" data-time="month" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-calendar-week"></i><span>В течение месяца</span></div>
+                    <div class="option-item" data-time="quarter" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
                 </div>
                 <div style="display:flex; gap:12px; margin-top:20px;">
                     <button class="back-btn" id="backStep2" style="flex:1; padding:12px; border-radius:40px; font-weight:bold;">← Назад</button>
@@ -961,10 +957,10 @@
                 </div>
                 <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Какой бюджет планируете?</h3>
                 <div class="options-list" id="optionsStep3">
-                    <div class="option-item" data-budget="50"><i class="fas fa-ruble-sign"></i><span>До 50 000 ₽</span></div>
-                    <div class="option-item" data-budget="100"><i class="fas fa-ruble-sign"></i><span>50 000 - 100 000 ₽</span></div>
-                    <div class="option-item" data-budget="200"><i class="fas fa-ruble-sign"></i><span>100 000 - 200 000 ₽</span></div>
-                    <div class="option-item" data-budget="300"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
+                    <div class="option-item" data-budget="50" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>До 50 000 ₽</span></div>
+                    <div class="option-item" data-budget="100" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>50 000 - 100 000 ₽</span></div>
+                    <div class="option-item" data-budget="200" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>100 000 - 200 000 ₽</span></div>
+                    <div class="option-item" data-budget="300" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
                 </div>
                 <div style="display:flex; gap:12px; margin-top:20px;">
                     <button class="back-btn" id="backStep3" style="flex:1; padding:12px; border-radius:40px; font-weight:bold;">← Назад</button>
@@ -1007,25 +1003,21 @@
                 <i class="fas fa-water"></i>
                 <h3>Водоснабжение</h3>
                 <p>Разводка труб, насосные станции, фильтрация</p>
-                <div class="card-hint"><i class="fas fa-mouse-pointer"></i> Нажмите для просмотра цен</div>
             </div>
             <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
                 <i class="fas fa-fire"></i>
                 <h3>Отопление</h3>
                 <p>Котлы, радиаторы, теплые полы</p>
-                <div class="card-hint"><i class="fas fa-mouse-pointer"></i> Нажмите для просмотра цен</div>
             </div>
             <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
                 <i class="fas fa-bath"></i>
                 <h3>Сантехника</h3>
                 <p>Ванны, душевые, смесители</p>
-                <div class="card-hint"><i class="fas fa-mouse-pointer"></i> Нажмите для просмотра цен</div>
             </div>
             <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
                 <i class="fas fa-toilet"></i>
                 <h3>Канализация</h3>
                 <p>Септики, внутренние и наружные сети</p>
-                <div class="card-hint"><i class="fas fa-mouse-pointer"></i> Нажмите для просмотра цен</div>
             </div>
         </div>
     </div>
@@ -1100,7 +1092,7 @@
         
         <div class="price-table-wrapper" id="warmfloorTab">
             <table class="price-table">
-                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
+                <thead>眉<th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
                 <tbody>
                     <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
                     <tr><td><strong>Труба ⌀20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
@@ -1118,7 +1110,7 @@
         
         <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
             <table class="price-table">
-                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
+                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
                 <tbody>
                     <tr><td><strong>Коллектор системы радиаторного отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
                     <tr><td><strong>Шкаф коллекторный</strong></td><td>монтаж без штробления стен</td><td>1 ед.</td><td><strong>3 000 ₽</strong></td></tr>
@@ -1214,7 +1206,7 @@
         <div class="footer-content">
             <div>
                 <div class="logo" style="font-size: 1.3rem;">Строй<span style="color:#e67e22;">Подряд</span></div>
-                <p>Профессиональный сантехмонтаж в Москве и области</p>
+                <p>Профессиональный сантехмонтаж под ключ</p>
             </div>
             <div class="footer-links">
                 <a href="index.html">Главная</a>
@@ -1226,7 +1218,7 @@
             <div>
                 <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8;">stroypodryad50@ya.ru</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Москва, Подольск, Чехов и область</p>
+                <p><i class="fas fa-map-marker-alt"></i> Москва и Московская область</p>
             </div>
         </div>
         <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
@@ -1335,7 +1327,7 @@ function initTabs() {
 }
 initTabs();
 
-// Маркиз опросник
+// Маркиз опросник - с выделением выбора
 let selectedObject = null, selectedTime = null, selectedBudget = null;
 const step1 = document.getElementById('step1'), step2 = document.getElementById('step2'), step3 = document.getElementById('step3'), step4 = document.getElementById('step4');
 const nextBtn1 = document.getElementById('nextStep1'), nextBtn2 = document.getElementById('nextStep2'), nextBtn3 = document.getElementById('nextStep3');
@@ -1343,24 +1335,31 @@ const backBtn2 = document.getElementById('backStep2'), backBtn3 = document.getEl
 
 function switchStep(from, to) { from.style.display = 'none'; to.style.display = 'block'; }
 
-document.querySelectorAll('#optionsStep1 .option-item').forEach(opt => opt.addEventListener('click', () => {
-    document.querySelectorAll('#optionsStep1 .option-item').forEach(o => o.classList.remove('selected'));
-    opt.classList.add('selected');
+// Функция для добавления выделения
+function setupOptionSelection(containerId, callback) {
+    document.querySelectorAll(`#${containerId} .option-item`).forEach(opt => {
+        opt.addEventListener('click', () => {
+            document.querySelectorAll(`#${containerId} .option-item`).forEach(o => o.classList.remove('selected'));
+            opt.classList.add('selected');
+            callback(opt);
+        });
+    });
+}
+
+setupOptionSelection('optionsStep1', (opt) => {
     selectedObject = opt.getAttribute('data-value');
     nextBtn1.disabled = false;
-}));
-document.querySelectorAll('#optionsStep2 .option-item').forEach(opt => opt.addEventListener('click', () => {
-    document.querySelectorAll('#optionsStep2 .option-item').forEach(o => o.classList.remove('selected'));
-    opt.classList.add('selected');
+});
+
+setupOptionSelection('optionsStep2', (opt) => {
     selectedTime = opt.getAttribute('data-time');
     nextBtn2.disabled = false;
-}));
-document.querySelectorAll('#optionsStep3 .option-item').forEach(opt => opt.addEventListener('click', () => {
-    document.querySelectorAll('#optionsStep3 .option-item').forEach(o => o.classList.remove('selected'));
-    opt.classList.add('selected');
+});
+
+setupOptionSelection('optionsStep3', (opt) => {
     selectedBudget = opt.getAttribute('data-budget');
     nextBtn3.disabled = false;
-}));
+});
 
 nextBtn1.addEventListener('click', () => switchStep(step1, step2));
 backBtn2.addEventListener('click', () => switchStep(step2, step1));
@@ -1379,11 +1378,13 @@ document.getElementById('marquizForm').addEventListener('submit', function(e) {
     if (!name) { showToast('Введите имя', 'error'); return; }
     if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
     showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
+    // Сброс формы
     step4.style.display = 'none';
     step1.style.display = 'block';
     document.getElementById('marquizForm').reset();
     document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
     nextBtn1.disabled = true; nextBtn2.disabled = true; nextBtn3.disabled = true;
+    selectedObject = null; selectedTime = null; selectedBudget = null;
 });
 
 // Нижняя форма
