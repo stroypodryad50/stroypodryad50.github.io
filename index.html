@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>СтройПодряд | Профессиональный монтаж сантехники</title>
-    <meta name="description" content="СтройПодряд — монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 5 лет. ☎ +7(977) 325-27-28">
+    <meta name="description" content="СтройПодряд — монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года. ☎ +7(977) 325-27-28">
     <meta name="keywords" content="сантехмонтаж, монтаж отопления, водоснабжение, теплый пол, сантехника">
     <meta name="author" content="СтройПодряд">
     <meta name="yandex-verification" content="sz8pwbuh0vrymk4r">
@@ -14,7 +14,7 @@
     
     <!-- Open Graph -->
     <meta property="og:title" content="СтройПодряд | Профессиональный сантехмонтаж">
-    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 5 лет.">
+    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года.">
     <meta property="og:url" content="https://stroypodryad50.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
@@ -242,7 +242,7 @@
             display: block;
         }
         
-        /* Trust badges (оригинальный стиль) */
+        /* Trust badges */
         .trust-badges {
             display: flex;
             gap: 25px;
@@ -483,7 +483,7 @@
             color: #e67e22;
         }
         
-        /* Tab Buttons */
+        /* Tab Buttons - ОТДЕЛЕН ОТ ФОНА СИНИМ ЦВЕТОМ */
         .tab-buttons {
             display: flex;
             justify-content: center;
@@ -493,9 +493,9 @@
         }
         
         .tab-btn {
-            background: white;
-            border: 2px solid #e67e22;
-            color: #e67e22;
+            background: transparent;
+            border: 2px solid #1e4660;
+            color: #1e4660;
             padding: 12px 28px;
             border-radius: 40px;
             font-size: 1rem;
@@ -505,8 +505,9 @@
         }
         
         .tab-btn:hover, .tab-btn.active {
-            background: #e67e22;
+            background: #1e4660;
             color: white;
+            border-color: #1e4660;
         }
         
         /* Stats */
@@ -702,7 +703,7 @@
         /* Scroll Top */
         .scroll-top {
             position: fixed;
-            bottom: 100px;
+            bottom: 30px;
             right: 30px;
             width: 45px;
             height: 45px;
@@ -734,39 +735,26 @@
             font-size: 20px;
         }
         
-        /* Chat Button */
-        .chat-button {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 55px;
-            height: 55px;
-            background: #e67e22;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
+        /* Кнопки в опроснике (Маркиз) и формы — синие для контраста */
+        .next-btn, .submit-btn, .back-btn {
             transition: all 0.3s ease;
-            animation: bounce 2s infinite;
         }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+        .next-btn, .submit-btn {
+            background: #1e4660 !important;
+            color: white !important;
         }
-        
-        .chat-button:hover {
-            transform: scale(1.1);
-            background: #d35400;
-            animation: none;
+        .next-btn:hover, .submit-btn:hover {
+            background: #0f2e44 !important;
+            transform: translateY(-2px);
         }
-        
-        .chat-button i {
-            color: white;
-            font-size: 24px;
+        .back-btn {
+            border: 2px solid #1e4660 !important;
+            color: #1e4660 !important;
+            background: transparent !important;
+        }
+        .back-btn:hover {
+            background: #1e4660 !important;
+            color: white !important;
         }
         
         @media (max-width: 768px) {
@@ -805,10 +793,6 @@
                 right: -35px;
             }
             .scroll-top {
-                bottom: 80px;
-                right: 20px;
-            }
-            .chat-button {
                 bottom: 20px;
                 right: 20px;
             }
@@ -842,12 +826,12 @@
         <div class="hero-grid">
             <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
                 <h1>Профессиональный <span>сантехмонтаж</span><br>под ключ</h1>
-                <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 5 лет.</p>
+                <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 2 года.</p>
                 <div class="hero-buttons">
                     <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
                 </div>
                 <div class="trust-badges">
-                    <div class="trust-item"><i class="fas fa-certificate"></i><span>Гарантия 5 лет</span></div>
+                    <div class="trust-item"><i class="fas fa-certificate"></i><span>Гарантия 2 года</span></div>
                     <div class="trust-item"><i class="fas fa-clock"></i><span>Соблюдение сроков</span></div>
                     <div class="trust-item"><i class="fas fa-tools"></i><span>Современное оборудование</span></div>
                 </div>
@@ -886,7 +870,7 @@
                     <div class="option-item" data-value="apartment" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-building"></i><span>Квартира</span></div>
                     <div class="option-item" data-value="commercial" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-store"></i><span>Коммерческий объект</span></div>
                 </div>
-                <button class="next-btn" id="nextStep1" disabled style="width:100%; background:#e67e22; color:white; border:none; padding:14px; border-radius:40px; font-weight:bold; cursor:pointer;">Далее →</button>
+                <button class="next-btn" id="nextStep1" disabled style="width:100%; border:none; padding:14px; border-radius:40px; font-weight:bold; cursor:pointer;">Далее →</button>
             </div>
             <div class="marquiz-step" id="step2" style="display:none; padding:40px 35px;">
                 <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:30px;">
@@ -905,8 +889,8 @@
                     <div class="option-item" data-time="quarter"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
                 </div>
                 <div style="display:flex; gap:12px; margin-top:20px;">
-                    <button class="back-btn" id="backStep2" style="flex:1; background:transparent; border:2px solid #e67e22; color:#e67e22; padding:12px; border-radius:40px;">← Назад</button>
-                    <button class="next-btn" id="nextStep2" disabled style="flex:2; background:#e67e22; color:white; border:none; padding:12px; border-radius:40px;">Далее →</button>
+                    <button class="back-btn" id="backStep2" style="flex:1; padding:12px; border-radius:40px; font-weight:bold;">← Назад</button>
+                    <button class="next-btn" id="nextStep2" disabled style="flex:2; border:none; padding:12px; border-radius:40px; font-weight:bold;">Далее →</button>
                 </div>
             </div>
             <div class="marquiz-step" id="step3" style="display:none; padding:40px 35px;">
@@ -927,8 +911,8 @@
                     <div class="option-item" data-budget="300"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
                 </div>
                 <div style="display:flex; gap:12px; margin-top:20px;">
-                    <button class="back-btn" id="backStep3" style="flex:1; background:transparent; border:2px solid #e67e22; color:#e67e22; padding:12px; border-radius:40px;">← Назад</button>
-                    <button class="next-btn" id="nextStep3" disabled style="flex:2; background:#e67e22; color:white; border:none; padding:12px; border-radius:40px;">Далее →</button>
+                    <button class="back-btn" id="backStep3" style="flex:1; padding:12px; border-radius:40px; font-weight:bold;">← Назад</button>
+                    <button class="next-btn" id="nextStep3" disabled style="flex:2; border:none; padding:12px; border-radius:40px; font-weight:bold;">Далее →</button>
                 </div>
             </div>
             <div class="marquiz-step" id="step4" style="display:none; padding:40px 35px;">
@@ -950,8 +934,8 @@
                     <input type="hidden" id="marquizTime">
                     <input type="hidden" id="marquizBudget">
                     <div style="display:flex; gap:12px;">
-                        <button type="button" class="back-btn" id="backStep4" style="flex:1; background:transparent; border:2px solid #e67e22; color:#e67e22; padding:12px; border-radius:40px;">← Назад</button>
-                        <button type="submit" class="submit-btn" style="flex:2; background:#e67e22; color:white; border:none; padding:12px; border-radius:40px;">Закажите звонок!</button>
+                        <button type="button" class="back-btn" id="backStep4" style="flex:1; padding:12px; border-radius:40px; font-weight:bold;">← Назад</button>
+                        <button type="submit" class="submit-btn" style="flex:2; border:none; padding:12px; border-radius:40px; font-weight:bold;">Закажите звонок!</button>
                     </div>
                 </form>
             </div>
@@ -1084,7 +1068,7 @@
     <div class="stats-section">
         <div class="stats-grid">
             <div class="stat-item"><div class="stat-number">150+</div><div>Выполненных объектов</div></div>
-            <div class="stat-item"><div class="stat-number">5 лет</div><div>Гарантии</div></div>
+            <div class="stat-item"><div class="stat-number">2 года</div><div>Гарантии</div></div>
             <div class="stat-item"><div class="stat-number">24/7</div><div>Поддержка</div></div>
             <div class="stat-item"><div class="stat-number">98%</div><div>Довольных клиентов</div></div>
         </div>
@@ -1101,7 +1085,7 @@
             <div class="step" data-aos="flip-left" data-aos-delay="400"><div class="step-number">4</div><h4>ПНР и сдача</h4><p>Пусконаладочные работы</p></div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- Подписка на рассылку -->
 <div class="subscribe-section" data-aos="fade-up">
@@ -1159,10 +1143,6 @@
 
 <div class="scroll-top" id="scrollTop">
     <i class="fas fa-arrow-up"></i>
-</div>
-
-<div class="chat-button" id="openChatBtn">
-    <i class="fas fa-comment-dots"></i>
 </div>
 
 <script>
@@ -1334,13 +1314,6 @@ document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('click', () => document.getElementById('prices').scrollIntoView({ behavior: 'smooth' }));
 });
 
-// Чат-бот
-const chatBtn = document.getElementById('openChatBtn');
-if (chatBtn) {
-    chatBtn.addEventListener('click', () => {
-        showToast('Здравствуйте! Наш специалист скоро ответит. Позвоните +7(977)325-27-28', 'info');
-    });
-}
 </script>
 </body>
 </html>
