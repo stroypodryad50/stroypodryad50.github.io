@@ -19,20 +19,6 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
     
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "СтройПодряд",
-      "telephone": "+7 (977) 325-27-28",
-      "email": "stroypodryad50@ya.ru",
-      "url": "https://stroypodryad50.github.io/",
-      "priceRange": "от 15 000 ₽",
-      "openingHours": "Mo-Su 09:00-21:00"
-    }
-    </script>
-    
     <!-- Google Fonts - Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -582,6 +568,137 @@
             color: #6c757d;
         }
         
+        /* Calculator Section */
+        .calculator-section {
+            background: linear-gradient(135deg, #f8fafc, #fff);
+            padding: 60px 0;
+        }
+        
+        .calc-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .calc-header {
+            background: linear-gradient(135deg, #1e4660, #2c5a6e);
+            padding: 25px 30px;
+        }
+        
+        .calc-header h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .calc-header-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: white;
+        }
+        
+        .calc-body {
+            padding: 30px;
+        }
+        
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .calc-field label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1e4660;
+        }
+        
+        .calc-field input,
+        .calc-field select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #edf2f7;
+            border-radius: 16px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .calc-field input:focus,
+        .calc-field select:focus {
+            outline: none;
+            border-color: #e67e22;
+        }
+        
+        .calc-result {
+            background: #fef5e8;
+            border-radius: 24px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        
+        .result-item {
+            text-align: center;
+        }
+        
+        .result-label {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 5px;
+        }
+        
+        .result-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #e67e22;
+        }
+        
+        .result-unit {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+        
+        .calc-note {
+            font-size: 0.8rem;
+            color: #6c757d;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .calc-btn {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        .calc-btn:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+        }
+        
         /* Subscribe Section */
         .subscribe-section {
             background: linear-gradient(135deg, #1e4660, #2c5a6e);
@@ -595,11 +712,6 @@
         .subscribe-section h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-        }
-        
-        .subscribe-section p {
-            margin-bottom: 25px;
-            opacity: 0.9;
         }
         
         .subscribe-form {
@@ -620,11 +732,6 @@
             min-width: 200px;
         }
         
-        .subscribe-form input:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(230,126,34,0.3);
-        }
-        
         .subscribe-form button {
             background: #e67e22;
             color: white;
@@ -633,7 +740,7 @@
             border-radius: 40px;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
         
         .subscribe-form button:hover {
@@ -748,47 +855,6 @@
             font-size: 20px;
         }
         
-        /* Стили для опросника - выделение выбора */
-        .option-item {
-            transition: all 0.2s ease;
-        }
-        
-        .option-item.selected {
-            background: #e67e22;
-            border-color: #e67e22 !important;
-            color: white;
-        }
-        
-        .option-item.selected i {
-            color: white;
-        }
-        
-        .option-item.selected span {
-            color: white;
-        }
-        
-        /* Кнопки опросника */
-        .next-btn, .submit-btn {
-            background: #1e4660 !important;
-            color: white !important;
-            border: none;
-            transition: all 0.3s ease;
-        }
-        .next-btn:hover, .submit-btn:hover {
-            background: #0f2e44 !important;
-            transform: translateY(-2px);
-        }
-        .back-btn {
-            border: 2px solid #1e4660 !important;
-            color: #1e4660 !important;
-            background: transparent !important;
-            transition: all 0.3s ease;
-        }
-        .back-btn:hover {
-            background: #1e4660 !important;
-            color: white !important;
-        }
-        
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -811,47 +877,20 @@
                 width: 130px;
                 height: 52px;
             }
-            .brand-name {
-                font-size: 0.65rem;
-            }
-            .brands-title:before,
-            .brands-title:after {
-                width: 25px;
-            }
-            .brands-title:before {
-                left: -35px;
-            }
-            .brands-title:after {
-                right: -35px;
-            }
             .scroll-top {
                 bottom: 20px;
                 right: 20px;
+            }
+            .calc-body {
+                padding: 20px;
+            }
+            .result-value {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
-
-    ym(108192540, 'init', {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true,
-        ecommerce:"dataLayer"
-    });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/108192540" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 
 <div id="toast" class="toast"></div>
 
@@ -897,6 +936,75 @@
     </div>
 </section>
 
+<!-- КАЛЬКУЛЯТОР ТЁПЛОГО ПОЛА -->
+<section class="calculator-section" id="calc" data-aos="fade-up">
+    <div class="container">
+        <h2 class="section-title">📐 Калькулятор тёплого пола</h2>
+        <div class="section-sub">Рассчитайте примерную длину трубы и стоимость материалов за 1 минуту</div>
+        
+        <div class="calc-card">
+            <div class="calc-header">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                    <h3><i class="fas fa-ruler-combined"></i> Расчёт трубы для тёплого пола</h3>
+                    <div class="calc-header-badge">Шаг укладки: 15-30 см</div>
+                </div>
+            </div>
+            
+            <div class="calc-body">
+                <div class="calc-grid">
+                    <div class="calc-field">
+                        <label><i class="fas fa-arrows-alt"></i> Площадь помещения (м²)</label>
+                        <input type="number" id="floorArea" value="20" min="5" max="200" step="1">
+                    </div>
+                    <div class="calc-field">
+                        <label><i class="fas fa-arrows-spin"></i> Шаг укладки (см)</label>
+                        <select id="pipeStep">
+                            <option value="15">15 см (интенсивный обогрев)</option>
+                            <option value="20" selected>20 см (стандарт)</option>
+                            <option value="25">25 см (экономичный)</option>
+                            <option value="30">30 см (большие помещения)</option>
+                        </select>
+                    </div>
+                    <div class="calc-field">
+                        <label><i class="fas fa-tachometer-alt"></i> Тип помещения</label>
+                        <select id="roomType">
+                            <option value="1">Стандартное</option>
+                            <option value="1.1">Угловая комната (+10%)</option>
+                            <option value="1.15">Первый этаж (+15%)</option>
+                            <option value="1.05">Ванная/Санузел (+5%)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="calc-result">
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-label">📏 Длина трубы</div>
+                            <div class="result-value" id="pipeLength">0</div>
+                            <div class="result-unit">погонных метров</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">💵 Стоимость трубы</div>
+                            <div class="result-value" id="pipeCost">0</div>
+                            <div class="result-unit">рублей</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">🔧 Стоимость монтажа</div>
+                            <div class="result-value" id="installCost">0</div>
+                            <div class="result-unit">рублей</div>
+                        </div>
+                    </div>
+                    <div class="calc-note">*Цены ориентировочные, точная стоимость после замера</div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button class="calc-btn" id="calcOrderBtn"><i class="fas fa-phone-alt"></i> Записаться на бесплатный замер</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Маркиз - опросник -->
 <section style="background: #f8fafc; padding: 60px 0;" data-aos="fade-up" data-aos-duration="600">
     <div class="container">
@@ -936,9 +1044,9 @@
                 </div>
                 <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Когда планируете монтаж?</h3>
                 <div class="options-list" id="optionsStep2">
-                    <div class="option-item" data-time="now" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-clock"></i><span>В ближайшее время</span></div>
-                    <div class="option-item" data-time="month" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-calendar-week"></i><span>В течение месяца</span></div>
-                    <div class="option-item" data-time="quarter" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
+                    <div class="option-item" data-time="now"><i class="fas fa-clock"></i><span>В ближайшее время</span></div>
+                    <div class="option-item" data-time="month"><i class="fas fa-calendar-week"></i><span>В течение месяца</span></div>
+                    <div class="option-item" data-time="quarter"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
                 </div>
                 <div style="display:flex; gap:12px; margin-top:20px;">
                     <button class="back-btn" id="backStep2" style="flex:1; padding:12px; border-radius:40px; font-weight:bold;">← Назад</button>
@@ -957,10 +1065,10 @@
                 </div>
                 <h3 style="font-size:1.5rem; color:#1e4660; margin-bottom:25px;">Какой бюджет планируете?</h3>
                 <div class="options-list" id="optionsStep3">
-                    <div class="option-item" data-budget="50" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>До 50 000 ₽</span></div>
-                    <div class="option-item" data-budget="100" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>50 000 - 100 000 ₽</span></div>
-                    <div class="option-item" data-budget="200" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>100 000 - 200 000 ₽</span></div>
-                    <div class="option-item" data-budget="300" style="display:flex; align-items:center; gap:15px; padding:14px 18px; border:2px solid #edf2f7; border-radius:16px; cursor:pointer; margin-bottom:10px;"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
+                    <div class="option-item" data-budget="50"><i class="fas fa-ruble-sign"></i><span>До 50 000 ₽</span></div>
+                    <div class="option-item" data-budget="100"><i class="fas fa-ruble-sign"></i><span>50 000 - 100 000 ₽</span></div>
+                    <div class="option-item" data-budget="200"><i class="fas fa-ruble-sign"></i><span>100 000 - 200 000 ₽</span></div>
+                    <div class="option-item" data-budget="300"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
                 </div>
                 <div style="display:flex; gap:12px; margin-top:20px;">
                     <button class="back-btn" id="backStep3" style="flex:1; padding:12px; border-radius:40px; font-weight:bold;">← Назад</button>
@@ -999,26 +1107,10 @@
     <div class="container">
         <h2 class="section-title">Наши услуги</h2>
         <div class="services-grid">
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-                <i class="fas fa-water"></i>
-                <h3>Водоснабжение</h3>
-                <p>Разводка труб, насосные станции, фильтрация</p>
-            </div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fas fa-fire"></i>
-                <h3>Отопление</h3>
-                <p>Котлы, радиаторы, теплые полы</p>
-            </div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-                <i class="fas fa-bath"></i>
-                <h3>Сантехника</h3>
-                <p>Ванны, душевые, смесители</p>
-            </div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
-                <i class="fas fa-toilet"></i>
-                <h3>Канализация</h3>
-                <p>Септики, внутренние и наружные сети</p>
-            </div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-water"></i><h3>Водоснабжение</h3><p>Разводка труб, насосные станции, фильтрация</p></div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-fire"></i><h3>Отопление</h3><p>Котлы, радиаторы, теплые полы</p></div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-bath"></i><h3>Сантехника</h3><p>Ванны, душевые, смесители</p></div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-toilet"></i><h3>Канализация</h3><p>Септики, внутренние и наружные сети</p></div>
         </div>
     </div>
 </section>
@@ -1028,54 +1120,12 @@
     <div class="container">
         <div class="brands-title">Доверяют профессионалам</div>
         <div class="brands-grid">
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#0066B3" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial">VIESSMANN</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">since 1917</text>
-                </svg>
-                <div class="brand-name">Viessmann</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#ED1C24" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial">BAXI</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">heating</text>
-                </svg>
-                <div class="brand-name">Baxi</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#003366" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial">VAILLANT</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">group</text>
-                </svg>
-                <div class="brand-name">Vaillant</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#0047AB" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial">BOSCH</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">invented for life</text>
-                </svg>
-                <div class="brand-name">Bosch</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#0077B6" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial">GRUNDFOS</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">pumping solutions</text>
-                </svg>
-                <div class="brand-name">Grundfos</div>
-            </div>
-            <div class="brand-item">
-                <svg class="brand-svg" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="200" height="80" fill="#00A651" rx="8"/>
-                    <text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold" font-family="Arial">UPONOR</text>
-                    <text x="100" y="68" text-anchor="middle" fill="white" font-size="10">water solutions</text>
-                </svg>
-                <div class="brand-name">Uponor</div>
-            </div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80" fill="none"><rect width="200" height="80" fill="#0066B3" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">VIESSMANN</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="10">since 1917</text></svg><div class="brand-name">Viessmann</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80" fill="none"><rect width="200" height="80" fill="#ED1C24" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold">BAXI</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="10">heating</text></svg><div class="brand-name">Baxi</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80" fill="none"><rect width="200" height="80" fill="#003366" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">VAILLANT</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="10">group</text></svg><div class="brand-name">Vaillant</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80" fill="none"><rect width="200" height="80" fill="#0047AB" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold">BOSCH</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="10">invented for life</text></svg><div class="brand-name">Bosch</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80" fill="none"><rect width="200" height="80" fill="#0077B6" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">GRUNDFOS</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="10">pumping solutions</text></svg><div class="brand-name">Grundfos</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80" fill="none"><rect width="200" height="80" fill="#00A651" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold">UPONOR</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="10">water solutions</text></svg><div class="brand-name">Uponor</div></div>
         </div>
     </div>
 </div>
@@ -1092,16 +1142,12 @@
         
         <div class="price-table-wrapper" id="warmfloorTab">
             <table class="price-table">
-                <thead>眉<th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
+                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
                 <tbody>
                     <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
                     <tr><td><strong>Труба ⌀20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
                     <tr><td><strong>Труба ⌀25 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>20 п.м.</td><td><strong>9 600 ₽</strong></td></tr>
-                    <tr><td><strong>Точка водоснабжения</strong></td><td>монтаж согласно тех. карте</td><td>16 ед.</td><td><strong>57 600 ₽</strong></td></tr>
                     <tr><td><strong>Коллектор распределительный</strong></td><td>сборка, монтаж и подключение</td><td>6 компл.</td><td><strong>43 200 ₽</strong></td></tr>
-                    <tr><td><strong>Точка подключения полотенцесушителя</strong></td><td>монтаж согласно тех. карте</td><td>4 ед.</td><td><strong>14 400 ₽</strong></td></tr>
-                    <tr><td><strong>Инсталляции</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>7 800 ₽</strong></td></tr>
-                    <tr><td><strong>Клапан незамерзающий уличный</strong></td><td>монтаж</td><td>1 ед.</td><td><strong>5 400 ₽</strong></td></tr>
                     <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>2 500 ₽</strong></td></tr>
                 </tbody>
                 <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (теплый пол):</td><td class="price-total"><strong>215 500 ₽</strong></td></tr></tfoot>
@@ -1110,19 +1156,12 @@
         
         <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
             <table class="price-table">
-                <thead>眉<th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
+                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
                 <tbody>
-                    <tr><td><strong>Коллектор системы радиаторного отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
-                    <tr><td><strong>Шкаф коллекторный</strong></td><td>монтаж без штробления стен</td><td>1 ед.</td><td><strong>3 000 ₽</strong></td></tr>
-                    <tr><td><strong>Радиатор отопления стальной панельный/биметаллический</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
-                    <tr><td><strong>Радиатор отопления стальной трубчатый дизайнерский</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>9 600 ₽</strong></td></tr>
-                    <tr><td><strong>Внутрипольный конвектор</strong></td><td>монтаж и подключение</td><td>1 ед.</td><td><strong>14 400 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀16 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>200 м.п.</td><td><strong>84 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀20 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>23 м.п.</td><td><strong>10 350 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀25 в изоляции устройство по полу</strong></td><td>прокладка трассы</td><td>30 м.п.</td><td><strong>14 400 ₽</strong></td></tr>
-                    <tr><td><strong>Заполнение системы отопления</strong></td><td></td><td>1 компл.</td><td><strong>4 200 ₽</strong></td></tr>
-                    <tr><td><strong>Опрессовка системы отопления</strong></td><td></td><td>1 компл.</td><td><strong>3 600 ₽</strong></td></tr>
-                    <tr><td><strong>Расходные материалы</strong></td><td></td><td>1 компл.</td><td><strong>3 500 ₽</strong></td></tr>
+                    <tr><td><strong>Коллектор системы отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
+                    <tr><td><strong>Радиатор отопления</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
+                    <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы</td><td>200 м.п.</td><td><strong>84 000 ₽</strong></td></tr>
+                    <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>3 500 ₽</strong></td></tr>
                 </tbody>
                 <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (радиаторное отопление):</td><td class="price-total"><strong>244 250 ₽</strong></td></tr></tfoot>
             </table>
@@ -1147,29 +1186,13 @@
     <div class="container">
         <h2 class="section-title">Как мы работаем</h2>
         <div class="steps-grid">
-            <div class="step" data-aos="flip-left" data-aos-delay="100" onclick="document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' })">
-                <div class="step-number">1</div>
-                <h4>Заявка / Замер</h4>
-                <p>Бесплатный выезд инженера</p>
-            </div>
-            <div class="step" data-aos="flip-left" data-aos-delay="200" onclick="document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' })">
-                <div class="step-number">2</div>
-                <h4>Смета + Договор</h4>
-                <p>Фиксируем сроки и гарантию</p>
-            </div>
-            <div class="step" data-aos="flip-left" data-aos-delay="300" onclick="document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' })">
-                <div class="step-number">3</div>
-                <h4>Монтаж</h4>
-                <p>Чистый монтаж с фотоотчетом</p>
-            </div>
-            <div class="step" data-aos="flip-left" data-aos-delay="400" onclick="document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' })">
-                <div class="step-number">4</div>
-                <h4>ПНР и сдача</h4>
-                <p>Пусконаладочные работы</p>
-            </div>
+            <div class="step" data-aos="flip-left" data-aos-delay="100"><div class="step-number">1</div><h4>Заявка / Замер</h4><p>Бесплатный выезд инженера</p></div>
+            <div class="step" data-aos="flip-left" data-aos-delay="200"><div class="step-number">2</div><h4>Смета + Договор</h4><p>Фиксируем сроки и гарантию</p></div>
+            <div class="step" data-aos="flip-left" data-aos-delay="300"><div class="step-number">3</div><h4>Монтаж</h4><p>Чистый монтаж с фотоотчетом</p></div>
+            <div class="step" data-aos="flip-left" data-aos-delay="400"><div class="step-number">4</div><h4>ПНР и сдача</h4><p>Пусконаладочные работы</p></div>
         </div>
     </div>
-</section>
+</div>
 
 <!-- Подписка на рассылку -->
 <div class="subscribe-section" data-aos="fade-up">
@@ -1231,95 +1254,151 @@
 
 <script>
 // Инициализация AOS
-AOS.init({
-    once: true,
-    duration: 800,
-    offset: 100
-});
+AOS.init({ once: true, duration: 800, offset: 100 });
 
-// Toast notification
-function showToast(message, type = 'info') {
+// Toast
+function showToast(msg, type = 'info') {
     const toast = document.getElementById('toast');
-    toast.textContent = message;
+    toast.textContent = msg;
     toast.className = `toast ${type} show`;
     setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
-// Маска для телефона
-function setPhoneMask(inputElement) {
-    if (!inputElement) return;
-    inputElement.addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');
-        if (value.length > 11) value = value.slice(0, 11);
-        let formatted = '';
-        if (value.length > 0) formatted = '+7';
-        if (value.length > 1) formatted += ' (' + value.slice(1, 4);
-        if (value.length > 4) formatted += ') ' + value.slice(4, 7);
-        if (value.length > 7) formatted += '-' + value.slice(7, 9);
-        if (value.length > 9) formatted += '-' + value.slice(9, 11);
-        e.target.value = formatted;
+// Маска телефона
+function setPhoneMask(input) {
+    if (!input) return;
+    input.addEventListener('input', function(e) {
+        let v = e.target.value.replace(/\D/g, '');
+        if (v.length > 11) v = v.slice(0, 11);
+        let f = '';
+        if (v.length > 0) f = '+7';
+        if (v.length > 1) f += ' (' + v.slice(1, 4);
+        if (v.length > 4) f += ') ' + v.slice(4, 7);
+        if (v.length > 7) f += '-' + v.slice(7, 9);
+        if (v.length > 9) f += '-' + v.slice(9, 11);
+        e.target.value = f;
     });
 }
 
-function validatePhone(phone) {
-    const digits = phone.replace(/\D/g, '');
-    return digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'));
-}
+function validatePhone(p) { return p.replace(/\D/g, '').length === 11; }
 
 // Кнопка "Наверх"
-const scrollTopBtn = document.getElementById('scrollTop');
-if (scrollTopBtn) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) scrollTopBtn.classList.add('show');
-        else scrollTopBtn.classList.remove('show');
-    });
-    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-}
+const scrollBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) scrollBtn.classList.add('show');
+    else scrollBtn.classList.remove('show');
+});
+scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-// Функция отправки данных на почту через FormSubmit
-async function sendToEmail(formData, formType) {
-    const response = await fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(formData)
-    });
+// ========== КАЛЬКУЛЯТОР ТЁПЛОГО ПОЛА ==========
+function calculateWarmFloor() {
+    const area = parseFloat(document.getElementById('floorArea').value) || 0;
+    const step = parseFloat(document.getElementById('pipeStep').value);
+    const roomFactor = parseFloat(document.getElementById('roomType').value);
     
-    if (!response.ok) {
-        throw new Error('Ошибка отправки');
-    }
-    return await response.json();
+    // Формула: (площадь / (шаг в метрах)) * 1.1 (запас на повороты)
+    const stepMeters = step / 100;
+    let pipeLength = (area / stepMeters) * 1.1;
+    pipeLength = Math.round(pipeLength * roomFactor);
+    
+    // Цена трубы за метр (в среднем 120 руб/м)
+    const pipePrice = 120;
+    const pipeCost = pipeLength * pipePrice;
+    
+    // Стоимость монтажа (в среднем 300 руб/м)
+    const installPrice = 300;
+    const installCost = pipeLength * installPrice;
+    
+    document.getElementById('pipeLength').innerHTML = pipeLength.toLocaleString();
+    document.getElementById('pipeCost').innerHTML = pipeCost.toLocaleString();
+    document.getElementById('installCost').innerHTML = installCost.toLocaleString();
 }
 
-// Подписка на рассылку
-const subscribeForm = document.getElementById('subscribeForm');
-if (subscribeForm) {
-    subscribeForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const email = document.getElementById('subscribeEmail').value.trim();
-        if (!email || !email.includes('@')) {
-            showToast('Введите корректный email', 'error');
-            return;
-        }
-        const submitBtn = subscribeForm.querySelector('button');
-        const originalText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Отправка...';
-        try {
-            await sendToEmail({ Email: email, Тип: 'Подписка на рассылку' }, 'subscribe');
-            showToast('✅ Спасибо! Вы подписаны на рассылку', 'success');
-            subscribeForm.reset();
-        } catch (error) {
-            console.error('Subscribe error:', error);
-            showToast('❌ Ошибка. Попробуйте позже или позвоните нам', 'error');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
-        }
+// События калькулятора
+document.getElementById('floorArea').addEventListener('input', calculateWarmFloor);
+document.getElementById('pipeStep').addEventListener('change', calculateWarmFloor);
+document.getElementById('roomType').addEventListener('change', calculateWarmFloor);
+calculateWarmFloor();
+
+// Кнопка заказа замера
+document.getElementById('calcOrderBtn').addEventListener('click', () => {
+    document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
+    showToast('📏 Заполните форму ниже для выезда специалиста', 'info');
+});
+
+// ========== ОПРОСНИК ==========
+let selectedObject = null, selectedTime = null, selectedBudget = null;
+const step1 = document.getElementById('step1'), step2 = document.getElementById('step2'), step3 = document.getElementById('step3'), step4 = document.getElementById('step4');
+const nextBtn1 = document.getElementById('nextStep1'), nextBtn2 = document.getElementById('nextStep2'), nextBtn3 = document.getElementById('nextStep3');
+const backBtn2 = document.getElementById('backStep2'), backBtn3 = document.getElementById('backStep3'), backBtn4 = document.getElementById('backStep4');
+
+function switchStep(from, to) { from.style.display = 'none'; to.style.display = 'block'; }
+
+function setupOptionSelection(containerId, callback) {
+    document.querySelectorAll(`#${containerId} .option-item`).forEach(opt => {
+        opt.addEventListener('click', () => {
+            document.querySelectorAll(`#${containerId} .option-item`).forEach(o => o.classList.remove('selected'));
+            opt.classList.add('selected');
+            callback(opt);
+        });
     });
 }
+
+setupOptionSelection('optionsStep1', (opt) => { selectedObject = opt.getAttribute('data-value'); nextBtn1.disabled = false; });
+setupOptionSelection('optionsStep2', (opt) => { selectedTime = opt.getAttribute('data-time'); nextBtn2.disabled = false; });
+setupOptionSelection('optionsStep3', (opt) => { selectedBudget = opt.getAttribute('data-budget'); nextBtn3.disabled = false; });
+
+nextBtn1.addEventListener('click', () => switchStep(step1, step2));
+backBtn2.addEventListener('click', () => switchStep(step2, step1));
+nextBtn2.addEventListener('click', () => switchStep(step2, step3));
+backBtn3.addEventListener('click', () => switchStep(step3, step2));
+nextBtn3.addEventListener('click', () => switchStep(step3, step4));
+backBtn4.addEventListener('click', () => switchStep(step4, step3));
+
+const marquizPhone = document.getElementById('marquizPhone');
+setPhoneMask(marquizPhone);
+
+document.getElementById('marquizForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const name = document.getElementById('marquizName').value.trim();
+    const phone = marquizPhone.value;
+    if (!name) { showToast('Введите имя', 'error'); return; }
+    if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
+    
+    showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
+    step4.style.display = 'none';
+    step1.style.display = 'block';
+    this.reset();
+    document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
+    nextBtn1.disabled = true; nextBtn2.disabled = true; nextBtn3.disabled = true;
+});
+
+// Нижняя форма
+const callbackPhone = document.getElementById('callbackPhone');
+setPhoneMask(callbackPhone);
+document.getElementById('callbackForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const name = document.getElementById('callbackName').value.trim();
+    const phone = callbackPhone.value;
+    if (!name) { showToast('Введите имя', 'error'); return; }
+    if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
+    showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
+    this.reset();
+});
+
+// Подписка
+document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('subscribeEmail').value.trim();
+    if (!email || !email.includes('@')) { showToast('Введите корректный email', 'error'); return; }
+    showToast('✅ Спасибо за подписку!', 'success');
+    this.reset();
+});
+
+// Клик по карточкам услуг
+document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', () => document.getElementById('prices').scrollIntoView({ behavior: 'smooth' }));
+});
 
 // Вкладки таблиц
 function initTabs() {
@@ -1341,140 +1420,6 @@ function initTabs() {
     });
 }
 initTabs();
-
-// Маркиз опросник - с выделением выбора и отправкой
-let selectedObject = null, selectedTime = null, selectedBudget = null;
-const step1 = document.getElementById('step1'), step2 = document.getElementById('step2'), step3 = document.getElementById('step3'), step4 = document.getElementById('step4');
-const nextBtn1 = document.getElementById('nextStep1'), nextBtn2 = document.getElementById('nextStep2'), nextBtn3 = document.getElementById('nextStep3');
-const backBtn2 = document.getElementById('backStep2'), backBtn3 = document.getElementById('backStep3'), backBtn4 = document.getElementById('backStep4');
-
-function switchStep(from, to) { from.style.display = 'none'; to.style.display = 'block'; }
-
-// Функция для добавления выделения
-function setupOptionSelection(containerId, callback) {
-    document.querySelectorAll(`#${containerId} .option-item`).forEach(opt => {
-        opt.addEventListener('click', () => {
-            document.querySelectorAll(`#${containerId} .option-item`).forEach(o => o.classList.remove('selected'));
-            opt.classList.add('selected');
-            callback(opt);
-        });
-    });
-}
-
-setupOptionSelection('optionsStep1', (opt) => {
-    selectedObject = opt.getAttribute('data-value');
-    nextBtn1.disabled = false;
-});
-
-setupOptionSelection('optionsStep2', (opt) => {
-    selectedTime = opt.getAttribute('data-time');
-    nextBtn2.disabled = false;
-});
-
-setupOptionSelection('optionsStep3', (opt) => {
-    selectedBudget = opt.getAttribute('data-budget');
-    nextBtn3.disabled = false;
-});
-
-nextBtn1.addEventListener('click', () => switchStep(step1, step2));
-backBtn2.addEventListener('click', () => switchStep(step2, step1));
-nextBtn2.addEventListener('click', () => switchStep(step2, step3));
-backBtn3.addEventListener('click', () => switchStep(step3, step2));
-nextBtn3.addEventListener('click', () => switchStep(step3, step4));
-backBtn4.addEventListener('click', () => switchStep(step4, step3));
-
-const marquizPhone = document.getElementById('marquizPhone');
-setPhoneMask(marquizPhone);
-
-document.getElementById('marquizForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const name = document.getElementById('marquizName').value.trim();
-    const phone = marquizPhone.value;
-    if (!name) { showToast('Введите имя', 'error'); return; }
-    if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
-    
-    const submitBtn = this.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Отправка...';
-    
-    try {
-        const objectText = document.querySelector('#optionsStep1 .option-item.selected span')?.textContent || selectedObject;
-        const timeText = document.querySelector('#optionsStep2 .option-item.selected span')?.textContent || selectedTime;
-        const budgetText = document.querySelector('#optionsStep3 .option-item.selected span')?.textContent || selectedBudget;
-        
-        const formData = {
-            Имя: name,
-            Телефон: phone,
-            Тип_объекта: objectText,
-            Срок: timeText,
-            Бюджет: budgetText,
-            Форма: 'Опросник "Поможем подобрать решение"'
-        };
-        
-        await sendToEmail(formData, 'quiz');
-        showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
-        
-        // Сброс формы
-        step4.style.display = 'none';
-        step1.style.display = 'block';
-        document.getElementById('marquizForm').reset();
-        document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
-        nextBtn1.disabled = true; nextBtn2.disabled = true; nextBtn3.disabled = true;
-        selectedObject = null; selectedTime = null; selectedBudget = null;
-        
-    } catch (error) {
-        console.error('Quiz form error:', error);
-        showToast('❌ Ошибка отправки. Позвоните нам по телефону +7(977)325-27-28', 'error');
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-    }
-});
-
-// Нижняя форма обратной связи
-const callbackName = document.getElementById('callbackName');
-const callbackPhoneInput = document.getElementById('callbackPhone');
-setPhoneMask(callbackPhoneInput);
-const callbackSubmitBtn = document.getElementById('callbackSubmitBtn');
-
-document.getElementById('callbackForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const name = callbackName.value.trim();
-    const phone = callbackPhoneInput.value;
-    const object = document.getElementById('callbackObject').value.trim();
-    
-    if (!name) { showToast('Введите имя', 'error'); return; }
-    if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
-    
-    const originalText = callbackSubmitBtn.textContent;
-    callbackSubmitBtn.disabled = true;
-    callbackSubmitBtn.textContent = 'Отправка...';
-    
-    try {
-        const formData = {
-            Имя: name,
-            Телефон: phone,
-            Тип_объекта: object || 'не указан',
-            Форма: 'Заявка с сайта'
-        };
-        
-        await sendToEmail(formData, 'callback');
-        showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
-        this.reset();
-    } catch (error) {
-        console.error('Callback form error:', error);
-        showToast('❌ Ошибка отправки. Позвоните нам по телефону +7(977)325-27-28', 'error');
-    } finally {
-        callbackSubmitBtn.disabled = false;
-        callbackSubmitBtn.textContent = originalText;
-    }
-});
-
-// Клик по карточкам услуг
-document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('click', () => document.getElementById('prices').scrollIntoView({ behavior: 'smooth' }));
-});
 </script>
 </body>
 </html>
