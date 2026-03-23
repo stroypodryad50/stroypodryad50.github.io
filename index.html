@@ -74,6 +74,7 @@
             font-weight: 800;
             color: #1e4660;
             white-space: nowrap;
+            text-decoration: none;
         }
         
         .logo span {
@@ -467,42 +468,7 @@
             color: #e67e22;
         }
         
-        /* Tab Buttons for Calculator */
-        .calc-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .calc-tab-btn {
-            background: transparent;
-            border: 2px solid #1e4660;
-            color: #1e4660;
-            padding: 12px 32px;
-            border-radius: 40px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .calc-tab-btn:hover, .calc-tab-btn.active {
-            background: #1e4660;
-            color: white;
-            border-color: #1e4660;
-        }
-        
-        .calc-panel {
-            display: none;
-        }
-        
-        .calc-panel.active {
-            display: block;
-        }
-        
-        /* Tab Buttons for Prices */
+        /* Tab Buttons */
         .tab-buttons {
             display: flex;
             justify-content: center;
@@ -612,190 +578,59 @@
             color: #6c757d;
         }
         
-        /* Calculator Section */
-        .calculator-section {
-            background: linear-gradient(135deg, #f8fafc, #fff);
-            padding: 60px 0;
-        }
-        
-        .calc-card {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 32px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            overflow: hidden;
-        }
-        
-        .calc-header {
+        /* Calculator Invite Block */
+        .calc-invite {
             background: linear-gradient(135deg, #1e4660, #2c5a6e);
-            padding: 20px 30px;
+            border-radius: 30px;
+            margin: 40px 0;
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
         
-        .calc-header h3 {
-            color: white;
-            font-size: 1.2rem;
-            margin: 0;
+        .calc-invite:hover {
+            transform: translateY(-5px);
         }
         
-        .calc-body {
-            padding: 30px;
-        }
-        
-        .calc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-bottom: 25px;
-        }
-        
-        .calc-field label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #1e4660;
-            font-size: 0.85rem;
-        }
-        
-        .calc-field input,
-        .calc-field select {
-            width: 100%;
-            padding: 10px 14px;
-            border: 2px solid #edf2f7;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-        
-        .calc-field input:focus,
-        .calc-field select:focus {
-            outline: none;
-            border-color: #e67e22;
-        }
-        
-        .calc-result {
-            background: #fef5e8;
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .result-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
-        }
-        
-        .result-item {
+        .calc-invite-content {
+            padding: 50px 40px;
             text-align: center;
         }
         
-        .result-label {
-            font-size: 0.8rem;
-            color: #6c757d;
-            margin-bottom: 5px;
-        }
-        
-        .result-value {
-            font-size: 1.8rem;
-            font-weight: 800;
+        .calc-invite i {
+            font-size: 48px;
             color: #e67e22;
+            margin-bottom: 20px;
+            display: inline-block;
         }
         
-        .result-unit {
-            font-size: 0.75rem;
-            color: #6c757d;
-        }
-        
-        .calc-note {
-            font-size: 0.75rem;
-            color: #6c757d;
-            text-align: center;
-            margin-top: 12px;
-        }
-        
-        .materials-list {
-            background: #f8fafc;
-            border-radius: 20px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-        
-        .materials-list h4 {
-            color: #1e4660;
+        .calc-invite h2 {
+            color: white;
+            font-size: 1.8rem;
             margin-bottom: 15px;
+        }
+        
+        .calc-invite p {
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto 25px;
             font-size: 1rem;
         }
         
-        .materials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 12px;
-        }
-        
-        .material-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 15px;
-            background: white;
-            border-radius: 12px;
-            border: 1px solid #edf2f7;
-            transition: all 0.2s;
-        }
-        
-        .material-item:hover {
-            border-color: #e67e22;
-            transform: translateX(5px);
-        }
-        
-        .material-item i {
-            color: #e67e22;
-            font-size: 20px;
-            width: 30px;
-        }
-        
-        .material-item strong {
-            color: #1e4660;
-        }
-        
-        .calc-warning {
-            background: #fff3e0;
-            border-left: 4px solid #e67e22;
-            padding: 12px 18px;
-            border-radius: 12px;
-            margin-top: 20px;
-            font-size: 0.8rem;
-            color: #856404;
-        }
-        
-        .calc-warning i {
-            color: #e67e22;
-            margin-right: 8px;
-        }
-        
-        .calc-warning a {
-            color: #e67e22;
-            text-decoration: underline;
-        }
-        
-        .calc-btn {
-            display: inline-block;
+        .calc-invite-btn {
             background: #e67e22;
             color: white;
-            border: none;
-            padding: 10px 28px;
+            padding: 12px 32px;
             border-radius: 40px;
+            text-decoration: none;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.9rem;
+            display: inline-block;
+            transition: all 0.3s ease;
         }
         
-        .calc-btn:hover {
+        .calc-invite-btn:hover {
             background: #d35400;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230,126,34,0.3);
         }
         
         /* Subscribe Section */
@@ -912,6 +747,7 @@
             color: #94a3b8;
             text-decoration: none;
             margin-right: 20px;
+            font-size: 0.85rem;
         }
         
         .footer-links a:hover {
@@ -923,6 +759,7 @@
             padding-top: 20px;
             margin-top: 20px;
             border-top: 1px solid #2c5a6e;
+            font-size: 0.7rem;
         }
         
         /* Scroll Top */
@@ -995,6 +832,12 @@
             .hero-content h1 {
                 font-size: 1.8rem;
             }
+            .calc-invite-content {
+                padding: 40px 30px;
+            }
+            .calc-invite h2 {
+                font-size: 1.4rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1012,12 +855,6 @@
                 width: 130px;
                 height: 52px;
             }
-            .calc-body {
-                padding: 20px;
-            }
-            .result-value {
-                font-size: 1.4rem;
-            }
         }
     </style>
 </head>
@@ -1028,13 +865,13 @@
 <header>
     <div class="container">
         <div class="navbar">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 Строй<span>Подряд</span>
-            </div>
+            </a>
             <ul class="nav-links">
                 <li><a href="#hero" class="active">Главная</a></li>
                 <li><a href="#uslugi">Услуги</a></li>
-                <li><a href="#calc">Калькуляторы</a></li>
+                <li><a href="calculators.html">Калькуляторы</a></li>
                 <li><a href="#prices">Цены</a></li>
                 <li><a href="#zakaz">Контакты</a></li>
             </ul>
@@ -1067,193 +904,17 @@
     </div>
 </section>
 
-<!-- КАЛЬКУЛЯТОРЫ (ТЁПЛЫЙ ПОЛ + ОТОПЛЕНИЕ) -->
-<section class="calculator-section" id="calc" data-aos="fade-up">
-    <div class="container">
-        <h2 class="section-title">📐 Инженерные калькуляторы</h2>
-        <div class="section-sub">Рассчитайте длину трубы для тёплого пола или подберите радиаторы отопления</div>
-        
-        <div class="calc-card">
-            <div class="calc-header">
-                <div class="calc-tabs">
-                    <button class="calc-tab-btn active" data-calc-tab="warmfloor">🌡 Тёплый пол</button>
-                    <button class="calc-tab-btn" data-calc-tab="heating">🔥 Отопление (радиаторы)</button>
-                </div>
-            </div>
-            
-            <!-- Панель Тёплый пол -->
-            <div class="calc-panel active" id="warmfloorPanel">
-                <div class="calc-body">
-                    <div class="calc-grid">
-                        <div class="calc-field">
-                            <label><i class="fas fa-arrows-alt"></i> Общая площадь (м²)</label>
-                            <input type="number" id="floorArea" value="40" min="5" max="300" step="1">
-                        </div>
-                        <div class="calc-field">
-                            <label><i class="fas fa-layer-group"></i> Количество контуров</label>
-                            <input type="number" id="contoursCount" value="2" min="1" max="10" step="1">
-                        </div>
-                        <div class="calc-field">
-                            <label><i class="fas fa-arrows-spin"></i> Шаг укладки (см)</label>
-                            <select id="pipeStep">
-                                <option value="15">15 см (интенсивный обогрев)</option>
-                                <option value="20" selected>20 см (стандарт)</option>
-                                <option value="25">25 см (экономичный)</option>
-                                <option value="30">30 см (большие помещения)</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="calc-result">
-                        <div class="result-grid">
-                            <div class="result-item">
-                                <div class="result-label">📏 Общая длина трубы</div>
-                                <div class="result-value" id="pipeLength">0</div>
-                                <div class="result-unit">погонных метров</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-label">🔄 Длина на один контур</div>
-                                <div class="result-value" id="pipePerContour">0</div>
-                                <div class="result-unit">метров</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-label">📦 Количество контуров</div>
-                                <div class="result-value" id="contoursDisplay">0</div>
-                                <div class="result-unit">штук</div>
-                            </div>
-                        </div>
-                        <div class="calc-note">*Максимальная длина одного контура — 80-100 м для равномерного прогрева</div>
-                    </div>
-                    
-                    <div class="materials-list">
-                        <h4><i class="fas fa-clipboard-list"></i> Что нужно для монтажа тёплого пола:</h4>
-                        <div class="materials-grid">
-                            <div class="material-item"><i class="fas fa-pipe-valve"></i><div><strong>Труба PEX ⌀16-20 мм</strong><br><span id="materialPipe">0</span> м</div></div>
-                            <div class="material-item"><i class="fas fa-th-large"></i><div><strong>Теплоизоляция</strong><br><span id="materialInsulation">0</span> м²</div></div>
-                            <div class="material-item"><i class="fas fa-gripfire"></i><div><strong>Демпферная лента</strong><br><span id="materialTape">0</span> м</div></div>
-                            <div class="material-item"><i class="fas fa-tools"></i><div><strong>Коллекторный шкаф</strong><br>на <span id="collectorOutlets">0</span> выходов</div></div>
-                            <div class="material-item"><i class="fas fa-link"></i><div><strong>Крепления (клипсы)</strong><br>по 2-3 шт/м²</div></div>
-                            <div class="material-item"><i class="fas fa-thermometer-half"></i><div><strong>Терморегулятор</strong><br>1 шт на систему</div></div>
-                        </div>
-                    </div>
-                    
-                    <div class="calc-warning">
-                        <i class="fas fa-info-circle"></i>
-                        <strong>Внимание!</strong> Данный калькулятор носит ознакомительный характер. Для точного расчета необходим выезд инженера. 
-                        <a href="#zakaz">Запишитесь на бесплатный замер</a>!
-                    </div>
-                    
-                    <div style="text-align: center; margin-top: 20px;">
-                        <button class="calc-btn" id="calcOrderBtnWF"><i class="fas fa-phone-alt"></i> Записаться на замер</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Панель Отопление (радиаторы) -->
-            <div class="calc-panel" id="heatingPanel">
-                <div class="calc-body">
-                    <div class="calc-grid">
-                        <div class="calc-field">
-                            <label><i class="fas fa-arrows-alt"></i> Площадь помещения (м²)</label>
-                            <input type="number" id="roomArea" value="30" min="5" max="500" step="1">
-                        </div>
-                        <div class="calc-field">
-                            <label><i class="fas fa-chart-line"></i> Высота потолков (м)</label>
-                            <input type="number" id="ceilHeight" value="2.7" min="2.2" max="4.5" step="0.1">
-                        </div>
-                        <div class="calc-field">
-                            <label><i class="fas fa-building"></i> Тип теплоизоляции</label>
-                            <select id="insulation">
-                                <option value="poor">Плохая (старый дом, тонкие стены)</option>
-                                <option value="medium" selected>Средняя (кирпич, частичное утепление)</option>
-                                <option value="good">Хорошая (современные материалы)</option>
-                                <option value="excellent">Высокая (пассивный дом)</option>
-                            </select>
-                        </div>
-                        <div class="calc-field">
-                            <label><i class="fas fa-window-maximize"></i> Количество окон</label>
-                            <input type="number" id="windowsCount" value="2" min="0" max="20" step="1">
-                        </div>
-                        <div class="calc-field">
-                            <label><i class="fas fa-temperature-low"></i> Климатическая зона</label>
-                            <select id="climateZone">
-                                <option value="warm">Тёплая (до -10°C)</option>
-                                <option value="moderate" selected>Умеренная (-10...-20°C)</option>
-                                <option value="cold">Холодная (-20...-30°C)</option>
-                                <option value="verycold">Очень холодная (ниже -30°C)</option>
-                            </select>
-                        </div>
-                        <div class="calc-field">
-                            <label><i class="fas fa-home"></i> Особенности помещения</label>
-                            <select id="roomFeatures">
-                                <option value="normal">Обычная комната</option>
-                                <option value="corner">Угловая комната</option>
-                                <option value="firstLast">Первый/последний этаж</option>
-                                <option value="cornerFirst">Угловая + первый/последний этаж</option>
-                            </select>
-                        </div>
-                        <div class="calc-field">
-                            <label><i class="fas fa-microchip"></i> Тип радиаторов</label>
-                            <select id="radiatorType">
-                                <option value="aluminum">Алюминиевые (170-200 Вт/секция)</option>
-                                <option value="bimetallic" selected>Биметаллические (160-190 Вт/секция)</option>
-                                <option value="castiron">Чугунные (80-120 Вт/секция)</option>
-                                <option value="steel">Стальные панельные</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="calc-result">
-                        <div class="result-grid">
-                            <div class="result-item">
-                                <div class="result-label">🔥 Требуемая мощность</div>
-                                <div class="result-value" id="requiredPower">0</div>
-                                <div class="result-unit">Вт / <span id="requiredKw">0</span> кВт</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-label">🔄 Биметаллические</div>
-                                <div class="result-value" id="sectionsBimetal">0</div>
-                                <div class="result-unit">секций</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-label">🔩 Алюминиевые</div>
-                                <div class="result-value" id="sectionsAlu">0</div>
-                                <div class="result-unit">секций</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-label">⚙️ Чугунные</div>
-                                <div class="result-value" id="sectionsCast">0</div>
-                                <div class="result-unit">секций</div>
-                            </div>
-                        </div>
-                        <div class="calc-note">*Расчёт произведён с запасом 15% на теплопотери</div>
-                    </div>
-                    
-                    <div class="materials-list">
-                        <h4><i class="fas fa-chart-simple"></i> Рекомендации по выбору:</h4>
-                        <div class="materials-grid">
-                            <div class="material-item"><i class="fas fa-chart-simple"></i><div><strong>Теплопотери помещения</strong><br><span id="heatLoss">0</span> Вт/м²</div></div>
-                            <div class="material-item"><i class="fas fa-temperature-high"></i><div><strong>Рекомендуемая мощность</strong><br>100-150 Вт/м² для средней полосы</div></div>
-                            <div class="material-item"><i class="fas fa-lightbulb"></i><div><strong>Совет</strong><br>Для угловых комнат добавляйте +20% к мощности</div></div>
-                        </div>
-                    </div>
-                    
-                    <div class="calc-warning">
-                        <i class="fas fa-info-circle"></i>
-                        <strong>Важно!</strong> Данные расчёты являются предварительными. Для точного подбора радиаторов рекомендуем вызвать инженера.
-                        <a href="#zakaz">Оставить заявку на консультацию</a>
-                    </div>
-                    
-                    <div style="text-align: center; margin-top: 20px;">
-                        <button class="calc-btn" id="calcOrderBtnHeat"><i class="fas fa-phone-alt"></i> Получить точный расчёт</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- БЛОК-ПРИГЛАШЕНИЕ НА СТРАНИЦУ КАЛЬКУЛЯТОРОВ -->
+<div class="calc-invite" data-aos="fade-up">
+    <div class="calc-invite-content">
+        <i class="fas fa-calculator"></i>
+        <h2>Инженерные калькуляторы</h2>
+        <p>Рассчитайте мощность котла, расход топлива, подберите водонагреватель и тёплый пол — все инструменты в одном месте</p>
+        <a href="calculators.html" class="calc-invite-btn">Перейти к калькуляторам →</a>
     </div>
-</section>
+</div>
 
-<!-- Маркиз - опросник -->
+<!-- ОПРОСНИК -->
 <section style="background: #f8fafc; padding: 60px 0;" data-aos="fade-up">
     <div class="container">
         <div style="text-align: center; margin-bottom: 30px;">
@@ -1387,7 +1048,7 @@
         
         <div class="price-table-wrapper" id="warmfloorTab">
             <table class="price-table">
-                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
+                <thead>2长<th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
                 <tbody>
                     <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
                     <tr><td><strong>Труба ⌀20 в изоляции</strong></td><td>прокладка трассы</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
@@ -1400,7 +1061,7 @@
         
         <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
             <table class="price-table">
-                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
+                <thead>2长<th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
                 <tbody>
                     <tr><td><strong>Коллектор системы отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
                     <tr><td><strong>Радиатор отопления</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
@@ -1466,24 +1127,24 @@
     </div>
 </section>
 
-<footer id="kontakty">
+<footer>
     <div class="container">
         <div class="footer-content">
             <div>
-                <div class="logo" style="font-size: 1.3rem;">Строй<span style="color:#e67e22;">Подряд</span></div>
-                <p>Профессиональный сантехмонтаж под ключ</p>
+                <div class="logo" style="font-size: 1.3rem; color: white;">Строй<span style="color:#e67e22;">Подряд</span></div>
+                <p style="font-size: 0.8rem;">Профессиональный сантехмонтаж под ключ</p>
             </div>
             <div class="footer-links">
                 <a href="#hero">Главная</a>
                 <a href="#uslugi">Услуги</a>
-                <a href="#calc">Калькуляторы</a>
+                <a href="calculators.html">Калькуляторы</a>
                 <a href="#prices">Цены</a>
                 <a href="#zakaz">Контакты</a>
             </div>
             <div>
-                <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8;">stroypodryad50@ya.ru</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Москва и Московская область</p>
+                <p style="font-size: 0.8rem;"><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
+                <p style="font-size: 0.8rem;"><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8;">stroypodryad50@ya.ru</a></p>
+                <p style="font-size: 0.8rem;"><i class="fas fa-map-marker-alt"></i> Москва и Московская область</p>
             </div>
         </div>
         <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
@@ -1521,104 +1182,13 @@ function setPhoneMask(input) {
 
 function validatePhone(p) { return p.replace(/\D/g, '').length === 11; }
 
+// Scroll Top
 const scrollBtn = document.getElementById('scrollTop');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 300) scrollBtn.classList.add('show');
     else scrollBtn.classList.remove('show');
 });
 scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-// Переключение вкладок калькулятора
-const calcTabs = document.querySelectorAll('.calc-tab-btn');
-calcTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const targetId = tab.getAttribute('data-calc-tab');
-        calcTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        document.querySelectorAll('.calc-panel').forEach(panel => {
-            panel.classList.remove('active');
-            if (panel.id === targetId + 'Panel') panel.classList.add('active');
-        });
-    });
-});
-
-// Калькулятор тёплого пола
-function calculateWarmFloor() {
-    const area = parseFloat(document.getElementById('floorArea').value) || 0;
-    const step = parseFloat(document.getElementById('pipeStep').value);
-    let contours = parseInt(document.getElementById('contoursCount').value) || 1;
-    const stepMeters = step / 100;
-    let totalPipeLength = Math.round((area / stepMeters) * 1.1);
-    let pipePerContour = Math.round(totalPipeLength / contours);
-    if (pipePerContour > 100) {
-        const needed = Math.ceil(totalPipeLength / 100);
-        contours = Math.max(contours, needed);
-        pipePerContour = Math.round(totalPipeLength / contours);
-    }
-    const perimeter = Math.round(Math.sqrt(area) * 4);
-    document.getElementById('pipeLength').innerHTML = totalPipeLength.toLocaleString();
-    document.getElementById('pipePerContour').innerHTML = pipePerContour;
-    document.getElementById('contoursDisplay').innerHTML = contours;
-    document.getElementById('materialPipe').innerHTML = totalPipeLength.toLocaleString();
-    document.getElementById('materialInsulation').innerHTML = area.toLocaleString();
-    document.getElementById('materialTape').innerHTML = perimeter.toLocaleString();
-    document.getElementById('collectorOutlets').innerHTML = contours;
-}
-document.getElementById('floorArea').addEventListener('input', calculateWarmFloor);
-document.getElementById('pipeStep').addEventListener('change', calculateWarmFloor);
-document.getElementById('contoursCount').addEventListener('input', calculateWarmFloor);
-calculateWarmFloor();
-
-// Калькулятор отопления
-function calculateHeating() {
-    const area = parseFloat(document.getElementById('roomArea').value) || 0;
-    const height = parseFloat(document.getElementById('ceilHeight').value) || 2.5;
-    const insulation = document.getElementById('insulation').value;
-    const windows = parseInt(document.getElementById('windowsCount').value) || 0;
-    const climate = document.getElementById('climateZone').value;
-    const features = document.getElementById('roomFeatures').value;
-    
-    const insulationFactors = { poor: 1.4, medium: 1.0, good: 0.7, excellent: 0.5 };
-    const climateFactors = { warm: 0.7, moderate: 1.0, cold: 1.3, verycold: 1.6 };
-    const featuresFactors = { normal: 1.0, corner: 1.2, firstLast: 1.15, cornerFirst: 1.35 };
-    
-    const volume = area * height;
-    let power = volume * 40;
-    power *= insulationFactors[insulation];
-    power *= climateFactors[climate];
-    power *= featuresFactors[features];
-    power += windows * 100;
-    const finalPower = Math.round(power * 1.15);
-    
-    const sectionsBimetal = Math.ceil(finalPower / 175);
-    const sectionsAlu = Math.ceil(finalPower / 185);
-    const sectionsCast = Math.ceil(finalPower / 100);
-    
-    document.getElementById('requiredPower').innerHTML = finalPower.toLocaleString();
-    document.getElementById('requiredKw').innerHTML = (finalPower / 1000).toFixed(1);
-    document.getElementById('sectionsBimetal').innerHTML = sectionsBimetal;
-    document.getElementById('sectionsAlu').innerHTML = sectionsAlu;
-    document.getElementById('sectionsCast').innerHTML = sectionsCast;
-    document.getElementById('heatLoss').innerHTML = Math.round(finalPower / area);
-}
-const heatingInputs = ['roomArea', 'ceilHeight', 'insulation', 'windowsCount', 'climateZone', 'roomFeatures'];
-heatingInputs.forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-        el.addEventListener('input', calculateHeating);
-        if (el.tagName === 'SELECT') el.addEventListener('change', calculateHeating);
-    }
-});
-calculateHeating();
-
-document.getElementById('calcOrderBtnWF').addEventListener('click', () => {
-    document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
-    showToast('Заполните форму ниже для выезда специалиста', 'info');
-});
-document.getElementById('calcOrderBtnHeat').addEventListener('click', () => {
-    document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' });
-    showToast('Оставьте заявку для точного расчёта', 'info');
-});
 
 // Опросник
 let selectedObject = null, selectedTime = null, selectedBudget = null;
