@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СтройПодряд | Профессиональный монтаж сантехники</title>
-    <meta name="description" content="СтройПодряд — монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года. ☎ +7(977) 325-27-28">
-    <meta name="keywords" content="сантехмонтаж, монтаж отопления, водоснабжение, теплый пол, сантехника">
+    <title>СтройПодряд | Профессиональный монтаж сантехники в Москве, Подольске, Чехове</title>
+    <meta name="description" content="СтройПодряд — монтаж сантехники под ключ в Москве и Подмосковье. Водоснабжение, отопление, канализация. Гарантия 2 года. ☎ +7(977) 325-27-28">
+    <meta name="keywords" content="сантехмонтаж Москва, монтаж отопления Подольск, водоснабжение Чехов, теплый пол Московская область, сантехника под ключ">
     <meta name="author" content="СтройПодряд">
+    <meta name="geo.region" content="RU-MOS">
+    <meta name="geo.placename" content="Москва, Московская область">
     <meta name="yandex-verification" content="sz8pwbuh0vrymk4r">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231e4660'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%23e67e22' font-weight='bold'>C</text></svg>">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="СтройПодряд | Профессиональный сантехмонтаж">
-    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года.">
+    <meta property="og:title" content="СтройПодряд | Профессиональный сантехмонтаж в Москве и области">
+    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года. Работаем в Москве, Подольске, Чехове и области.">
     <meta property="og:url" content="https://stroypodryad50.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
@@ -29,9 +31,16 @@
       "email": "stroypodryad50@ya.ru",
       "url": "https://stroypodryad50.github.io/",
       "priceRange": "от 15 000 ₽",
-      "openingHours": "Mo-Su 09:00-21:00"
+      "openingHours": "Mo-Su 09:00-21:00",
+      "areaServed": {
+        "@type": "City",
+        "name": "Москва и Московская область"
+      }
     }
     </script>
+    
+    <!-- Google Fonts - Montserrat для дорогого вида -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -40,23 +49,6 @@
     <!-- Preload -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
-    
-    <!-- Яндекс.Метрика -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(XXXXXXXX, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-        });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -67,7 +59,7 @@
         }
         
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
             background: #fff;
             color: #1a1a2e;
             scroll-behavior: smooth;
@@ -100,7 +92,7 @@
         
         .logo {
             font-size: 1.8rem;
-            font-weight: bold;
+            font-weight: 800;
             color: #1e4660;
         }
         
@@ -118,7 +110,7 @@
         .nav-links a {
             text-decoration: none;
             color: #2c3e50;
-            font-weight: 500;
+            font-weight: 600;
             padding: 8px 18px;
             border: 2px solid transparent;
             border-radius: 40px;
@@ -196,6 +188,7 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
             line-height: 1.3;
+            font-weight: 700;
         }
         
         .hero-content h1 span {
@@ -288,6 +281,7 @@
             display: inline-block;
             left: 50%;
             transform: translateX(-50%);
+            font-weight: 700;
         }
         
         .section-title::after {
@@ -325,18 +319,40 @@
             border: 1px solid #edf2f7;
             transition: all 0.3s ease;
             cursor: pointer;
+            position: relative;
         }
         
         .service-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px) scale(1.02);
             border-color: #e67e22;
-            box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 25px 40px rgba(0,0,0,0.15);
         }
         
         .service-card i {
-            font-size: 40px;
+            font-size: 48px;
             color: #e67e22;
             margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover i {
+            transform: scale(1.1);
+        }
+        
+        .service-card .card-hint {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            font-size: 0.7rem;
+            color: #e67e22;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .service-card:hover .card-hint {
+            opacity: 1;
         }
         
         /* Brands Section */
@@ -483,7 +499,7 @@
             color: #e67e22;
         }
         
-        /* Tab Buttons - спокойный синий, сочетается с общим стилем */
+        /* Tab Buttons */
         .tab-buttons {
             display: flex;
             justify-content: center;
@@ -531,7 +547,7 @@
             font-weight: bold;
         }
         
-        /* Steps */
+        /* Steps - КНОПКИ ЭТАПОВ ВЫДЕЛЕНЫ СИНИМ */
         .steps-grid {
             display: flex;
             flex-wrap: wrap;
@@ -546,27 +562,47 @@
             text-align: center;
             flex: 1;
             min-width: 180px;
-            border: 1px solid #edf2f7;
+            border: 2px solid #edf2f7;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .step:hover {
-            transform: translateY(-5px);
-            border-color: #e67e22;
+            transform: translateY(-8px);
+            border-color: #1e4660;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
         .step-number {
-            width: 50px;
-            height: 50px;
-            background: #e67e22;
+            width: 60px;
+            height: 60px;
+            background: #1e4660;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
-            border-radius: 15px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .step:hover .step-number {
+            background: #e67e22;
+            transform: scale(1.05);
+        }
+        
+        .step h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1e4660;
+        }
+        
+        .step p {
+            font-size: 0.85rem;
+            color: #6c757d;
         }
         
         /* Subscribe Section */
@@ -735,7 +771,7 @@
             font-size: 20px;
         }
         
-        /* Кнопки в опроснике — спокойный синий, не выделяется резко */
+        /* Кнопки опросника */
         .next-btn, .submit-btn {
             background: #1e4660 !important;
             color: white !important;
@@ -801,6 +837,26 @@
 </head>
 <body>
 
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+    ym(108192540, 'init', {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        ecommerce:"dataLayer"
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108192540" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
 <div id="toast" class="toast"></div>
 
 <header>
@@ -825,8 +881,8 @@
     <div class="container">
         <div class="hero-grid">
             <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
-                <h1>Профессиональный <span>сантехмонтаж</span><br>под ключ</h1>
-                <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 2 года.</p>
+                <h1>Профессиональный <span>сантехмонтаж</span><br>в Москве и Подмосковье</h1>
+                <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Работаем в Москве, Подольске, Чехове и области. Гарантия 2 года.</p>
                 <div class="hero-buttons">
                     <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
                 </div>
@@ -947,10 +1003,30 @@
     <div class="container">
         <h2 class="section-title">Наши услуги</h2>
         <div class="services-grid">
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-water"></i><h3>Водоснабжение</h3><p>Разводка труб, насосные станции, фильтрация</p></div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-fire"></i><h3>Отопление</h3><p>Котлы, радиаторы, теплые полы</p></div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-bath"></i><h3>Сантехника</h3><p>Ванны, душевые, смесители</p></div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-toilet"></i><h3>Канализация</h3><p>Септики, внутренние и наружные сети</p></div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-water"></i>
+                <h3>Водоснабжение</h3>
+                <p>Разводка труб, насосные станции, фильтрация</p>
+                <div class="card-hint"><i class="fas fa-mouse-pointer"></i> Нажмите для просмотра цен</div>
+            </div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-fire"></i>
+                <h3>Отопление</h3>
+                <p>Котлы, радиаторы, теплые полы</p>
+                <div class="card-hint"><i class="fas fa-mouse-pointer"></i> Нажмите для просмотра цен</div>
+            </div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                <i class="fas fa-bath"></i>
+                <h3>Сантехника</h3>
+                <p>Ванны, душевые, смесители</p>
+                <div class="card-hint"><i class="fas fa-mouse-pointer"></i> Нажмите для просмотра цен</div>
+            </div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fas fa-toilet"></i>
+                <h3>Канализация</h3>
+                <p>Септики, внутренние и наружные сети</p>
+                <div class="card-hint"><i class="fas fa-mouse-pointer"></i> Нажмите для просмотра цен</div>
+            </div>
         </div>
     </div>
 </section>
@@ -1079,10 +1155,26 @@
     <div class="container">
         <h2 class="section-title">Как мы работаем</h2>
         <div class="steps-grid">
-            <div class="step" data-aos="flip-left" data-aos-delay="100"><div class="step-number">1</div><h4>Заявка / Замер</h4><p>Бесплатный выезд инженера</p></div>
-            <div class="step" data-aos="flip-left" data-aos-delay="200"><div class="step-number">2</div><h4>Смета + Договор</h4><p>Фиксируем сроки и гарантию</p></div>
-            <div class="step" data-aos="flip-left" data-aos-delay="300"><div class="step-number">3</div><h4>Монтаж</h4><p>Чистый монтаж с фотоотчетом</p></div>
-            <div class="step" data-aos="flip-left" data-aos-delay="400"><div class="step-number">4</div><h4>ПНР и сдача</h4><p>Пусконаладочные работы</p></div>
+            <div class="step" data-aos="flip-left" data-aos-delay="100" onclick="document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' })">
+                <div class="step-number">1</div>
+                <h4>Заявка / Замер</h4>
+                <p>Бесплатный выезд инженера</p>
+            </div>
+            <div class="step" data-aos="flip-left" data-aos-delay="200" onclick="document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' })">
+                <div class="step-number">2</div>
+                <h4>Смета + Договор</h4>
+                <p>Фиксируем сроки и гарантию</p>
+            </div>
+            <div class="step" data-aos="flip-left" data-aos-delay="300" onclick="document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' })">
+                <div class="step-number">3</div>
+                <h4>Монтаж</h4>
+                <p>Чистый монтаж с фотоотчетом</p>
+            </div>
+            <div class="step" data-aos="flip-left" data-aos-delay="400" onclick="document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' })">
+                <div class="step-number">4</div>
+                <h4>ПНР и сдача</h4>
+                <p>Пусконаладочные работы</p>
+            </div>
         </div>
     </div>
 </section>
@@ -1122,7 +1214,7 @@
         <div class="footer-content">
             <div>
                 <div class="logo" style="font-size: 1.3rem;">Строй<span style="color:#e67e22;">Подряд</span></div>
-                <p>Профессиональный сантехмонтаж под ключ</p>
+                <p>Профессиональный сантехмонтаж в Москве и области</p>
             </div>
             <div class="footer-links">
                 <a href="index.html">Главная</a>
@@ -1134,7 +1226,7 @@
             <div>
                 <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8;">stroypodryad50@ya.ru</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Москва и Московская область</p>
+                <p><i class="fas fa-map-marker-alt"></i> Москва, Подольск, Чехов и область</p>
             </div>
         </div>
         <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
@@ -1313,7 +1405,6 @@ document.getElementById('callbackForm').addEventListener('submit', async functio
 document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('click', () => document.getElementById('prices').scrollIntoView({ behavior: 'smooth' }));
 });
-
 </script>
 </body>
 </html>
