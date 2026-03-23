@@ -298,7 +298,7 @@
             font-size: 1rem;
         }
         
-        /* Services - убрана подсказка */
+        /* Services */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1110,7 +1110,7 @@
         
         <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
             <table class="price-table">
-                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
+                <thead>眉<th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
                 <tbody>
                     <tr><td><strong>Коллектор системы радиаторного отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
                     <tr><td><strong>Шкаф коллекторный</strong></td><td>монтаж без штробления стен</td><td>1 ед.</td><td><strong>3 000 ₽</strong></td></tr>
@@ -1276,6 +1276,23 @@ if (scrollTopBtn) {
     scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
+// Функция отправки данных на почту через FormSubmit
+async function sendToEmail(formData, formType) {
+    const response = await fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    });
+    
+    if (!response.ok) {
+        throw new Error('Ошибка отправки');
+    }
+    return await response.json();
+}
+
 // Подписка на рассылку
 const subscribeForm = document.getElementById('subscribeForm');
 if (subscribeForm) {
@@ -1287,21 +1304,19 @@ if (subscribeForm) {
             return;
         }
         const submitBtn = subscribeForm.querySelector('button');
+        const originalText = submitBtn.textContent;
         submitBtn.disabled = true;
         submitBtn.textContent = 'Отправка...';
         try {
-            await fetch('https://formsubmit.co/ajax/stroypodryad50@ya.ru', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ Email: email, Тип: 'Подписка на рассылку' })
-            });
+            await sendToEmail({ Email: email, Тип: 'Подписка на рассылку' }, 'subscribe');
             showToast('✅ Спасибо! Вы подписаны на рассылку', 'success');
             subscribeForm.reset();
         } catch (error) {
-            showToast('❌ Ошибка. Попробуйте позже', 'error');
+            console.error('Subscribe error:', error);
+            showToast('❌ Ошибка. Попробуйте позже или позвоните нам', 'error');
         } finally {
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Подписаться';
+            submitBtn.textContent = originalText;
         }
     });
 }
@@ -1327,7 +1342,7 @@ function initTabs() {
 }
 initTabs();
 
-// Маркиз опросник - с выделением выбора
+// Маркиз опросник - с выделением выбора и отправкой
 let selectedObject = null, selectedTime = null, selectedBudget = null;
 const step1 = document.getElementById('step1'), step2 = document.getElementById('step2'), step3 = document.getElementById('step3'), step4 = document.getElementById('step4');
 const nextBtn1 = document.getElementById('nextStep1'), nextBtn2 = document.getElementById('nextStep2'), nextBtn3 = document.getElementById('nextStep3');
@@ -1371,35 +1386,89 @@ backBtn4.addEventListener('click', () => switchStep(step4, step3));
 const marquizPhone = document.getElementById('marquizPhone');
 setPhoneMask(marquizPhone);
 
-document.getElementById('marquizForm').addEventListener('submit', function(e) {
+document.getElementById('marquizForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const name = document.getElementById('marquizName').value.trim();
     const phone = marquizPhone.value;
     if (!name) { showToast('Введите имя', 'error'); return; }
     if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
-    showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
-    // Сброс формы
-    step4.style.display = 'none';
-    step1.style.display = 'block';
-    document.getElementById('marquizForm').reset();
-    document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
-    nextBtn1.disabled = true; nextBtn2.disabled = true; nextBtn3.disabled = true;
-    selectedObject = null; selectedTime = null; selectedBudget = null;
+    
+    const submitBtn = this.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправка...';
+    
+    try {
+        const objectText = document.querySelector('#optionsStep1 .option-item.selected span')?.textContent || selectedObject;
+        const timeText = document.querySelector('#optionsStep2 .option-item.selected span')?.textContent || selectedTime;
+        const budgetText = document.querySelector('#optionsStep3 .option-item.selected span')?.textContent || selectedBudget;
+        
+        const formData = {
+            Имя: name,
+            Телефон: phone,
+            Тип_объекта: objectText,
+            Срок: timeText,
+            Бюджет: budgetText,
+            Форма: 'Опросник "Поможем подобрать решение"'
+        };
+        
+        await sendToEmail(formData, 'quiz');
+        showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
+        
+        // Сброс формы
+        step4.style.display = 'none';
+        step1.style.display = 'block';
+        document.getElementById('marquizForm').reset();
+        document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
+        nextBtn1.disabled = true; nextBtn2.disabled = true; nextBtn3.disabled = true;
+        selectedObject = null; selectedTime = null; selectedBudget = null;
+        
+    } catch (error) {
+        console.error('Quiz form error:', error);
+        showToast('❌ Ошибка отправки. Позвоните нам по телефону +7(977)325-27-28', 'error');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+    }
 });
 
-// Нижняя форма
+// Нижняя форма обратной связи
 const callbackName = document.getElementById('callbackName');
 const callbackPhoneInput = document.getElementById('callbackPhone');
 setPhoneMask(callbackPhoneInput);
+const callbackSubmitBtn = document.getElementById('callbackSubmitBtn');
 
 document.getElementById('callbackForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const name = callbackName.value.trim();
     const phone = callbackPhoneInput.value;
+    const object = document.getElementById('callbackObject').value.trim();
+    
     if (!name) { showToast('Введите имя', 'error'); return; }
     if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
-    showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
-    this.reset();
+    
+    const originalText = callbackSubmitBtn.textContent;
+    callbackSubmitBtn.disabled = true;
+    callbackSubmitBtn.textContent = 'Отправка...';
+    
+    try {
+        const formData = {
+            Имя: name,
+            Телефон: phone,
+            Тип_объекта: object || 'не указан',
+            Форма: 'Заявка с сайта'
+        };
+        
+        await sendToEmail(formData, 'callback');
+        showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
+        this.reset();
+    } catch (error) {
+        console.error('Callback form error:', error);
+        showToast('❌ Ошибка отправки. Позвоните нам по телефону +7(977)325-27-28', 'error');
+    } finally {
+        callbackSubmitBtn.disabled = false;
+        callbackSubmitBtn.textContent = originalText;
+    }
 });
 
 // Клик по карточкам услуг
