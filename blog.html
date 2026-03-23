@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
-
-    ym(47499124, 'init', {webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/47499124" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог | СтройПодряд</title>
     <meta name="description" content="Полезные статьи о сантехнике, монтаже отопления, водоснабжения и канализации. Советы экспертов, новинки, сравнение материалов.">
+    <meta property="og:title" content="Блог | СтройПодряд">
+    <meta property="og:description" content="Полезные статьи о сантехнике, монтаже отопления, водоснабжения и канализации">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stroypodryad50.github.io/blog.html">
+    
+    <!-- Google Fonts - Montserrat (как на главной) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -31,9 +26,10 @@
         }
         
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
             background: #fff;
             color: #1a1a2e;
+            scroll-behavior: smooth;
         }
         
         .container {
@@ -42,7 +38,7 @@
             padding: 0 20px;
         }
         
-        /* Header */
+        /* Header - такой же как на главной */
         header {
             background: #fff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -62,7 +58,7 @@
         
         .logo {
             font-size: 1.8rem;
-            font-weight: bold;
+            font-weight: 800;
             color: #1e4660;
         }
         
@@ -80,7 +76,7 @@
         .nav-links a {
             text-decoration: none;
             color: #2c3e50;
-            font-weight: 500;
+            font-weight: 600;
             padding: 8px 18px;
             border: 2px solid transparent;
             border-radius: 40px;
@@ -115,51 +111,87 @@
             box-shadow: 0 5px 15px rgba(230,126,34,0.3);
         }
         
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #fef9f0 0%, #fff5e6 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: #1e4660;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .page-header h1 i {
+            color: #e67e22;
+            margin-right: 15px;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
         /* Articles Grid */
         .articles-grid {
-            padding: 50px 0;
+            padding: 60px 0;
         }
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 30px;
         }
         
         .article-card {
             background: white;
-            border-radius: 16px;
-            border: 1px solid #eef2f6;
+            border-radius: 20px;
+            border: 1px solid #edf2f7;
             overflow: hidden;
             transition: all 0.3s ease;
             cursor: pointer;
         }
         
         .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+            transform: translateY(-10px) scale(1.02);
             border-color: #e67e22;
+            box-shadow: 0 25px 40px rgba(0,0,0,0.15);
         }
         
         .card-icon {
-            background: #fef5e8;
-            padding: 25px 0;
+            background: linear-gradient(135deg, #fef5e8, #ffe8d4);
+            padding: 30px 0;
             text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .article-card:hover .card-icon {
+            background: linear-gradient(135deg, #ffe8d4, #fed7b0);
         }
         
         .card-icon i {
-            font-size: 42px;
+            font-size: 48px;
             color: #e67e22;
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover .card-icon i {
+            transform: scale(1.1);
         }
         
         .card-content {
-            padding: 20px 22px 25px;
+            padding: 25px 25px 30px;
         }
         
         .card-meta {
             display: flex;
-            gap: 12px;
-            font-size: 0.7rem;
+            gap: 15px;
+            font-size: 0.75rem;
             color: #94a3b8;
             margin-bottom: 12px;
         }
@@ -167,75 +199,79 @@
         .card-meta span {
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 5px;
         }
         
         .card-content h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: #1e4660;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             line-height: 1.4;
         }
         
         .card-content p {
             color: #4a5568;
             font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
         
         .read-link {
             color: #e67e22;
             text-decoration: none;
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             transition: gap 0.2s;
         }
         
         .read-link:hover {
-            gap: 10px;
+            gap: 12px;
         }
         
         /* Article Full View */
         .article-full {
             background: white;
-            border-radius: 20px;
+            border-radius: 24px;
             border: 1px solid #edf2f7;
             margin-bottom: 40px;
             overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
         
         .article-full-header {
             background: linear-gradient(135deg, #fef5e8, #fff5e6);
-            padding: 30px 35px;
+            padding: 35px 40px;
             border-bottom: 1px solid #edf2f7;
         }
         
         .article-full-header h2 {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: #1e4660;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
         
         .article-full-meta {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             color: #94a3b8;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             flex-wrap: wrap;
         }
         
         .article-full-content {
-            padding: 35px;
+            padding: 40px;
         }
         
         .article-full-content h3 {
             color: #1e4660;
-            margin: 25px 0 12px 0;
-            font-size: 1.2rem;
+            margin: 30px 0 15px 0;
+            font-size: 1.3rem;
+            font-weight: 600;
         }
         
         .article-full-content h3:first-of-type {
@@ -243,90 +279,94 @@
         }
         
         .article-full-content p {
-            line-height: 1.65;
+            line-height: 1.7;
             color: #2d3748;
-            margin-bottom: 18px;
-            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-size: 1rem;
         }
         
         .article-full-content ul, .article-full-content ol {
-            margin: 12px 0 20px 24px;
+            margin: 15px 0 25px 25px;
             color: #2d3748;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         
         .article-full-content li {
-            margin-bottom: 6px;
-            font-size: 0.9rem;
+            margin-bottom: 8px;
         }
         
         .highlight-box {
             background: #fef5e8;
-            padding: 18px 22px;
-            border-left: 3px solid #e67e22;
-            border-radius: 12px;
-            margin: 25px 0;
-            font-size: 0.9rem;
+            padding: 20px 25px;
+            border-left: 4px solid #e67e22;
+            border-radius: 16px;
+            margin: 30px 0;
+            font-size: 0.95rem;
         }
         
         .article-full-footer {
-            padding: 20px 35px 35px;
+            padding: 25px 40px 40px;
             border-top: 1px solid #edf2f7;
         }
         
         .back-btn {
-            display: inline-block;
-            padding: 8px 22px;
-            background: #e67e22;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-        }
-        
-        .back-btn:hover {
-            background: #d35400;
-        }
-        
-        /* CTA */
-        .cta-blog {
-            background: #1e4660;
-            color: white;
-            border-radius: 28px;
-            padding: 40px;
-            text-align: center;
-            margin: 20px 0 60px;
-        }
-        
-        .cta-blog h3 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-        }
-        
-        .cta-blog p {
-            opacity: 0.9;
-            font-size: 0.95rem;
-        }
-        
-        .cta-blog .btn {
             display: inline-block;
             padding: 10px 28px;
             background: #e67e22;
             color: white;
             text-decoration: none;
             border-radius: 40px;
-            font-weight: 500;
-            margin-top: 18px;
-            transition: all 0.2s;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230,126,34,0.3);
+        }
+        
+        /* CTA */
+        .cta-blog {
+            background: #1e4660;
+            color: white;
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            margin: 0 0 60px;
+        }
+        
+        .cta-blog h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .cta-blog p {
+            opacity: 0.9;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+        
+        .cta-blog .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: #e67e22;
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.3s;
         }
         
         .cta-blog .btn:hover {
             background: #d35400;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230,126,34,0.3);
         }
         
-        /* Footer */
+        /* Footer - как на главной */
         footer {
             background: #0a2c3b;
             color: #94a3b8;
@@ -360,6 +400,41 @@
             font-size: 0.8rem;
         }
         
+        /* Scroll Top - как на главной */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: #e67e22;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: #d35400;
+            transform: translateY(-3px);
+        }
+        
+        .scroll-top i {
+            color: white;
+            font-size: 20px;
+        }
+        
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -371,17 +446,24 @@
             .grid {
                 grid-template-columns: 1fr;
             }
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
             .article-full-header {
-                padding: 20px;
+                padding: 25px;
             }
             .article-full-header h2 {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
             }
             .article-full-content {
-                padding: 20px;
+                padding: 25px;
             }
             .cta-blog {
                 padding: 30px 20px;
+            }
+            .scroll-top {
+                bottom: 20px;
+                right: 20px;
             }
         }
     </style>
@@ -406,12 +488,18 @@
     </div>
 </header>
 
+<div class="page-header" data-aos="fade-up">
+    <div class="container">
+        <h1><i class="fas fa-newspaper"></i> Блог</h1>
+        <p>Полезные материалы, советы экспертов, новинки рынка</p>
+    </div>
+</div>
+
 <div class="articles-grid">
     <div class="container">
-        <!-- Сетка карточек -->
         <div class="grid" id="articlesGrid">
             <!-- Карточка 1 -->
-            <div class="article-card" data-article="1">
+            <div class="article-card" data-article="1" data-aos="fade-up" data-aos-delay="100">
                 <div class="card-icon">
                     <i class="fas fa-microchip"></i>
                 </div>
@@ -422,12 +510,12 @@
                     </div>
                     <h3>Умный дом: автоматизация сантехники</h3>
                     <p>Системы защиты от протечек, умное отопление, интеллектуальные смесители — как сделать дом безопасным и экономичным.</p>
-                    <a href="#" class="read-link" data-article="1">Читать →</a>
+                    <a href="#" class="read-link" data-article="1">Читать статью →</a>
                 </div>
             </div>
             
             <!-- Карточка 2 -->
-            <div class="article-card" data-article="2">
+            <div class="article-card" data-article="2" data-aos="fade-up" data-aos-delay="200">
                 <div class="card-icon">
                     <i class="fas fa-tint"></i>
                 </div>
@@ -438,12 +526,12 @@
                     </div>
                     <h3>Новинки 2025: энергоэффективные котлы</h3>
                     <p>Конденсационные котлы с КПД до 108%, управление через Wi-Fi, рейтинг лучших моделей.</p>
-                    <a href="#" class="read-link" data-article="2">Читать →</a>
+                    <a href="#" class="read-link" data-article="2">Читать статью →</a>
                 </div>
             </div>
             
             <!-- Карточка 3 -->
-            <div class="article-card" data-article="3">
+            <div class="article-card" data-article="3" data-aos="fade-up" data-aos-delay="300">
                 <div class="card-icon">
                     <i class="fas fa-pipe-valve"></i>
                 </div>
@@ -454,18 +542,17 @@
                     </div>
                     <h3>PEX против полипропилена: что выбрать?</h3>
                     <p>Сравнение материалов для водоснабжения: гибкость, долговечность, стоимость. Что лучше для дома и квартиры?</p>
-                    <a href="#" class="read-link" data-article="3">Читать →</a>
+                    <a href="#" class="read-link" data-article="3">Читать статью →</a>
                 </div>
             </div>
         </div>
         
-        <!-- Контейнер для полных статей -->
         <div id="fullArticleContainer"></div>
     </div>
 </div>
 
 <div class="container">
-    <div class="cta-blog">
+    <div class="cta-blog" data-aos="fade-up">
         <h3>Остались вопросы?</h3>
         <p>Получите бесплатную консультацию инженера — подберем оптимальное решение</p>
         <a href="index.html#zakaz" class="btn">Получить консультацию</a>
@@ -476,10 +563,10 @@
     <div class="container">
         <div class="footer-content">
             <div>
-                <div class="logo" style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px;">
+                <div class="logo" style="font-size: 1.3rem; font-weight: 800; margin-bottom: 10px;">
                     Строй<span style="color: #e67e22;">Подряд</span>
                 </div>
-                <p>Профессиональный сантехмонтаж</p>
+                <p>Профессиональный сантехмонтаж под ключ</p>
             </div>
             <div class="footer-links">
                 <a href="index.html">Главная</a>
@@ -491,148 +578,167 @@
             <div>
                 <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8; text-decoration:none;">+7 (977) 325-27-28</a></p>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8; text-decoration:none;">stroypodryad50@ya.ru</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Москва и Московская область</p>
             </div>
         </div>
         <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
     </div>
 </footer>
 
+<div class="scroll-top" id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
 <script>
-    // Полные тексты статей
-    const articles = {
-        1: {
-            title: "Умный дом: автоматизация сантехники",
-            date: "15 марта 2025",
-            readTime: "5 минут",
-            icon: "fa-microchip",
-            content: `
-                <p>Современные технологии позволяют сделать систему водоснабжения и отопления не просто удобной, но и по-настоящему "умной". Автоматизация сантехники — это комфорт и существенная экономия ресурсов.</p>
-                
-                <h3>Системы защиты от протечек</h3>
-                <p>Одна из важнейших функций — автоматическое отключение воды при обнаружении протечки. Система состоит из датчиков протечки (устанавливаются под мойкой, за унитазом, у стиральной машины), шаровых кранов с электроприводом и контроллера, который управляет всей системой и отправляет уведомления на смартфон.</p>
-                <p>Популярные системы: "Нептун", "Аквасторож", Gidrolock. Время срабатывания — от 2 до 20 секунд.</p>
-                
-                <div class="highlight-box">
-                    <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> При выборе системы защиты от протечек обращайте внимание на материал кранов — латунь надежнее силумина.
-                </div>
-                
-                <h3>Умное отопление</h3>
-                <p>Терморегуляторы с Wi-Fi позволяют программировать температуру по времени суток, управлять отоплением удаленно, следить за расходом тепла. Экономия — до 25% на отоплении.</p>
-                
-                <h3>Интеллектуальные смесители</h3>
-                <p>Сенсорные смесители с бесконтактным управлением включаются движением руки, позволяют задавать точную температуру, а некоторые модели управляются голосом.</p>
-            `
-        },
-        2: {
-            title: "Новинки 2025: энергоэффективные котлы",
-            date: "10 марта 2025",
-            readTime: "6 минут",
-            icon: "fa-tint",
-            content: `
-                <p>Конденсационные котлы используют не только теплоту сгорания газа, но и теплоту конденсации водяного пара. Это позволяет достичь КПД до 108%.</p>
-                
-                <h3>Топ-5 моделей 2025 года</h3>
-                <ul>
-                    <li><strong>Vaillant ecoTEC exclusive</strong> — КПД 108%, встроенный Wi-Fi, от 95 000 ₽</li>
-                    <li><strong>Bosch Condens 9000iW</strong> — интегрированный бойлер, управление через приложение, от 110 000 ₽</li>
-                    <li><strong>Baxi Duo-tec Compact</strong> — отличное соотношение цена/качество, от 65 000 ₽</li>
-                    <li><strong>Protherm Lynx</strong> — надежность, простая настройка, от 58 000 ₽</li>
-                    <li><strong>Viessmann Vitodens 200-W</strong> — премиум-сегмент, от 125 000 ₽</li>
-                </ul>
-                
-                <div class="highlight-box">
-                    <i class="fas fa-chart-line"></i> <strong>Экономия:</strong> Конденсационные котлы снижают расход газа на 20-25%. Окупаемость — 2-3 сезона.
-                </div>
-                
-                <h3>Умные функции</h3>
-                <ul>
-                    <li>Погодозависимое регулирование — автоматическая корректировка температуры</li>
-                    <li>Дистанционное управление через смартфон</li>
-                    <li>Автоматическая диагностика неисправностей</li>
-                </ul>
-            `
-        },
-        3: {
-            title: "PEX против полипропилена: что выбрать?",
-            date: "5 марта 2025",
-            readTime: "7 минут",
-            icon: "fa-pipe-valve",
-            content: `
-                <p>Выбор материала для труб влияет на долговечность и надежность системы. Рассмотрим два основных материала — PEX (сшитый полиэтилен) и полипропилен.</p>
-                
-                <h3>PEX (сшитый полиэтилен)</h3>
-                <p><strong>Преимущества:</strong> высокая гибкость (укладка с минимумом соединений), память формы, морозостойкость (выдерживает замерзание), срок службы 50-70 лет.</p>
-                <p><strong>Где использовать:</strong> водяные теплые полы, скрытая прокладка в стенах, системы с высокими требованиями к надежности.</p>
-                
-                <h3>Полипропилен (PPR)</h3>
-                <p><strong>Преимущества:</strong> жесткость, низкая стоимость, простой монтаж пайкой, химическая стойкость, срок службы 50 лет.</p>
-                <p><strong>Где использовать:</strong> открытые участки водопровода, стояки, магистральные линии.</p>
-                
-                <div class="highlight-box">
-                    <i class="fas fa-check-circle"></i> <strong>Итог:</strong> Для теплого пола и скрытой прокладки — PEX. Для открытых магистралей и при ограниченном бюджете — полипропилен.
-                </div>
-            `
-        }
-    };
+// Инициализация AOS
+AOS.init({
+    once: true,
+    duration: 800,
+    offset: 100
+});
+
+// Кнопка "Наверх"
+const scrollTopBtn = document.getElementById('scrollTop');
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) scrollTopBtn.classList.add('show');
+        else scrollTopBtn.classList.remove('show');
+    });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+// Полные тексты статей
+const articles = {
+    1: {
+        title: "Умный дом: автоматизация сантехники",
+        date: "15 марта 2025",
+        readTime: "5 минут",
+        content: `
+            <p>Современные технологии позволяют сделать систему водоснабжения и отопления не просто удобной, но и по-настоящему "умной". Автоматизация сантехники — это комфорт и существенная экономия ресурсов.</p>
+            
+            <h3>Системы защиты от протечек</h3>
+            <p>Одна из важнейших функций — автоматическое отключение воды при обнаружении протечки. Система состоит из датчиков протечки (устанавливаются под мойкой, за унитазом, у стиральной машины), шаровых кранов с электроприводом и контроллера, который управляет всей системой и отправляет уведомления на смартфон.</p>
+            <p>Популярные системы: "Нептун", "Аквасторож", Gidrolock. Время срабатывания — от 2 до 20 секунд.</p>
+            
+            <div class="highlight-box">
+                <i class="fas fa-lightbulb"></i> <strong>Совет:</strong> При выборе системы защиты от протечек обращайте внимание на материал кранов — латунь надежнее силумина.
+            </div>
+            
+            <h3>Умное отопление</h3>
+            <p>Терморегуляторы с Wi-Fi позволяют программировать температуру по времени суток, управлять отоплением удаленно, следить за расходом тепла. Экономия — до 25% на отоплении.</p>
+            
+            <h3>Интеллектуальные смесители</h3>
+            <p>Сенсорные смесители с бесконтактным управлением включаются движением руки, позволяют задавать точную температуру, а некоторые модели управляются голосом.</p>
+        `
+    },
+    2: {
+        title: "Новинки 2025: энергоэффективные котлы",
+        date: "10 марта 2025",
+        readTime: "6 минут",
+        content: `
+            <p>Конденсационные котлы используют не только теплоту сгорания газа, но и теплоту конденсации водяного пара. Это позволяет достичь КПД до 108%.</p>
+            
+            <h3>Топ-5 моделей 2025 года</h3>
+            <ul>
+                <li><strong>Vaillant ecoTEC exclusive</strong> — КПД 108%, встроенный Wi-Fi, от 95 000 ₽</li>
+                <li><strong>Bosch Condens 9000iW</strong> — интегрированный бойлер, управление через приложение, от 110 000 ₽</li>
+                <li><strong>Baxi Duo-tec Compact</strong> — отличное соотношение цена/качество, от 65 000 ₽</li>
+                <li><strong>Protherm Lynx</strong> — надежность, простая настройка, от 58 000 ₽</li>
+                <li><strong>Viessmann Vitodens 200-W</strong> — премиум-сегмент, от 125 000 ₽</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <i class="fas fa-chart-line"></i> <strong>Экономия:</strong> Конденсационные котлы снижают расход газа на 20-25%. Окупаемость — 2-3 сезона.
+            </div>
+            
+            <h3>Умные функции</h3>
+            <ul>
+                <li>Погодозависимое регулирование — автоматическая корректировка температуры</li>
+                <li>Дистанционное управление через смартфон</li>
+                <li>Автоматическая диагностика неисправностей</li>
+            </ul>
+        `
+    },
+    3: {
+        title: "PEX против полипропилена: что выбрать?",
+        date: "5 марта 2025",
+        readTime: "7 минут",
+        content: `
+            <p>Выбор материала для труб влияет на долговечность и надежность системы. Рассмотрим два основных материала — PEX (сшитый полиэтилен) и полипропилен.</p>
+            
+            <h3>PEX (сшитый полиэтилен)</h3>
+            <p><strong>Преимущества:</strong> высокая гибкость (укладка с минимумом соединений), память формы, морозостойкость (выдерживает замерзание), срок службы 50-70 лет.</p>
+            <p><strong>Где использовать:</strong> водяные теплые полы, скрытая прокладка в стенах, системы с высокими требованиями к надежности.</p>
+            
+            <h3>Полипропилен (PPR)</h3>
+            <p><strong>Преимущества:</strong> жесткость, низкая стоимость, простой монтаж пайкой, химическая стойкость, срок службы 50 лет.</p>
+            <p><strong>Где использовать:</strong> открытые участки водопровода, стояки, магистральные линии.</p>
+            
+            <div class="highlight-box">
+                <i class="fas fa-check-circle"></i> <strong>Итог:</strong> Для теплого пола и скрытой прокладки — PEX. Для открытых магистралей и при ограниченном бюджете — полипропилен.
+            </div>
+        `
+    }
+};
+
+const grid = document.getElementById('articlesGrid');
+const container = document.getElementById('fullArticleContainer');
+
+function showArticle(articleId) {
+    const article = articles[articleId];
+    if (!article) return;
     
-    const grid = document.getElementById('articlesGrid');
-    const container = document.getElementById('fullArticleContainer');
-    
-    function showArticle(articleId) {
-        const article = articles[articleId];
-        if (!article) return;
-        
-        const articleHtml = `
-            <div class="article-full">
-                <div class="article-full-header">
-                    <h2>${article.title}</h2>
-                    <div class="article-full-meta">
-                        <span><i class="far fa-calendar-alt"></i> ${article.date}</span>
-                        <span><i class="far fa-clock"></i> ${article.readTime}</span>
-                    </div>
-                </div>
-                <div class="article-full-content">
-                    ${article.content}
-                </div>
-                <div class="article-full-footer">
-                    <a href="#" class="back-btn" id="backToGrid">← Ко всем статьям</a>
+    const articleHtml = `
+        <div class="article-full" data-aos="fade-up">
+            <div class="article-full-header">
+                <h2>${article.title}</h2>
+                <div class="article-full-meta">
+                    <span><i class="far fa-calendar-alt"></i> ${article.date}</span>
+                    <span><i class="far fa-clock"></i> ${article.readTime}</span>
                 </div>
             </div>
-        `;
-        
-        grid.style.display = 'none';
-        container.innerHTML = articleHtml;
-        
-        document.getElementById('backToGrid').addEventListener('click', (e) => {
-            e.preventDefault();
-            grid.style.display = 'grid';
-            container.innerHTML = '';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
+            <div class="article-full-content">
+                ${article.content}
+            </div>
+            <div class="article-full-footer">
+                <a href="#" class="back-btn" id="backToGrid">← Ко всем статьям</a>
+            </div>
+        </div>
+    `;
     
-    document.querySelectorAll('.read-link, .article-card').forEach(el => {
-        el.addEventListener('click', (e) => {
-            if (e.target.closest('.read-link')) {
-                e.preventDefault();
-            }
-            const card = e.target.closest('.article-card');
-            if (card) {
-                const articleId = card.getAttribute('data-article');
-                showArticle(articleId);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        });
+    grid.style.display = 'none';
+    container.innerHTML = articleHtml;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    document.getElementById('backToGrid').addEventListener('click', (e) => {
+        e.preventDefault();
+        grid.style.display = 'grid';
+        container.innerHTML = '';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    
-    // Обработка якорей
-    if (window.location.hash) {
-        const hash = window.location.hash.replace('#', '');
-        if (hash.startsWith('article')) {
-            const num = hash.replace('article', '');
-            if (articles[num]) showArticle(num);
+}
+
+document.querySelectorAll('.read-link, .article-card').forEach(el => {
+    el.addEventListener('click', (e) => {
+        if (e.target.closest('.read-link')) {
+            e.preventDefault();
         }
+        const card = e.target.closest('.article-card');
+        if (card) {
+            const articleId = card.getAttribute('data-article');
+            showArticle(articleId);
+        }
+    });
+});
+
+// Обработка якорей
+if (window.location.hash) {
+    const hash = window.location.hash.replace('#', '');
+    if (hash.startsWith('article')) {
+        const num = hash.replace('article', '');
+        if (articles[num]) showArticle(num);
     }
+}
 </script>
 </body>
 </html>
