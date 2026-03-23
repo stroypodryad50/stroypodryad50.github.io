@@ -575,7 +575,7 @@
         }
         
         .calc-card {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             background: white;
             border-radius: 32px;
@@ -611,7 +611,7 @@
         
         .calc-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 25px;
             margin-bottom: 30px;
         }
@@ -681,17 +681,66 @@
             margin-top: 15px;
         }
         
+        .calc-warning {
+            background: #fff3e0;
+            border-left: 4px solid #e67e22;
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #856404;
+        }
+        
+        .calc-warning i {
+            color: #e67e22;
+            margin-right: 10px;
+        }
+        
+        .materials-list {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+        
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        
+        .material-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: white;
+            border-radius: 14px;
+            border: 1px solid #edf2f7;
+            transition: all 0.2s;
+        }
+        
+        .material-item:hover {
+            border-color: #e67e22;
+            transform: translateX(5px);
+        }
+        
+        .material-item i {
+            color: #e67e22;
+            font-size: 22px;
+            width: 35px;
+        }
+        
         .calc-btn {
             display: inline-block;
             background: #e67e22;
             color: white;
             border: none;
-            padding: 12px 28px;
+            padding: 12px 32px;
             border-radius: 40px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            margin-top: 10px;
         }
         
         .calc-btn:hover {
@@ -887,6 +936,9 @@
             .result-value {
                 font-size: 1.5rem;
             }
+            .materials-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -940,7 +992,7 @@
 <section class="calculator-section" id="calc" data-aos="fade-up">
     <div class="container">
         <h2 class="section-title">📐 Калькулятор тёплого пола</h2>
-        <div class="section-sub">Рассчитайте примерную длину трубы и стоимость материалов за 1 минуту</div>
+        <div class="section-sub">Рассчитайте примерную длину трубы и получите список необходимых материалов</div>
         
         <div class="calc-card">
             <div class="calc-header">
@@ -953,8 +1005,12 @@
             <div class="calc-body">
                 <div class="calc-grid">
                     <div class="calc-field">
-                        <label><i class="fas fa-arrows-alt"></i> Площадь помещения (м²)</label>
-                        <input type="number" id="floorArea" value="20" min="5" max="200" step="1">
+                        <label><i class="fas fa-arrows-alt"></i> Общая площадь (м²)</label>
+                        <input type="number" id="floorArea" value="40" min="5" max="300" step="1">
+                    </div>
+                    <div class="calc-field">
+                        <label><i class="fas fa-layer-group"></i> Количество контуров (комнат)</label>
+                        <input type="number" id="contoursCount" value="2" min="1" max="10" step="1">
                     </div>
                     <div class="calc-field">
                         <label><i class="fas fa-arrows-spin"></i> Шаг укладки (см)</label>
@@ -965,39 +1021,76 @@
                             <option value="30">30 см (большие помещения)</option>
                         </select>
                     </div>
-                    <div class="calc-field">
-                        <label><i class="fas fa-tachometer-alt"></i> Тип помещения</label>
-                        <select id="roomType">
-                            <option value="1">Стандартное</option>
-                            <option value="1.1">Угловая комната (+10%)</option>
-                            <option value="1.15">Первый этаж (+15%)</option>
-                            <option value="1.05">Ванная/Санузел (+5%)</option>
-                        </select>
-                    </div>
                 </div>
                 
+                <!-- Результаты расчёта -->
                 <div class="calc-result">
                     <div class="result-grid">
                         <div class="result-item">
-                            <div class="result-label">📏 Длина трубы</div>
+                            <div class="result-label">📏 Общая длина трубы</div>
                             <div class="result-value" id="pipeLength">0</div>
                             <div class="result-unit">погонных метров</div>
                         </div>
                         <div class="result-item">
-                            <div class="result-label">💵 Стоимость трубы</div>
-                            <div class="result-value" id="pipeCost">0</div>
-                            <div class="result-unit">рублей</div>
+                            <div class="result-label">🔄 Длина на один контур</div>
+                            <div class="result-value" id="pipePerContour">0</div>
+                            <div class="result-unit">метров</div>
                         </div>
                         <div class="result-item">
-                            <div class="result-label">🔧 Стоимость монтажа</div>
-                            <div class="result-value" id="installCost">0</div>
-                            <div class="result-unit">рублей</div>
+                            <div class="result-label">📦 Количество контуров</div>
+                            <div class="result-value" id="contoursDisplay">0</div>
+                            <div class="result-unit">штук</div>
                         </div>
                     </div>
-                    <div class="calc-note">*Цены ориентировочные, точная стоимость после замера</div>
+                    <div class="calc-note">*Максимальная длина одного контура — 80-100 м для равномерного прогрева</div>
                 </div>
                 
-                <div style="text-align: center;">
+                <!-- Список материалов -->
+                <div class="materials-list">
+                    <h4 style="color: #1e4660; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-clipboard-list"></i> Что нужно для монтажа тёплого пола:
+                    </h4>
+                    <div class="materials-grid">
+                        <div class="material-item">
+                            <i class="fas fa-pipe-valve"></i>
+                            <div><strong style="color: #1e4660;">Труба PEX ⌀16-20 мм</strong><br><span id="materialPipe">0</span> м (расчетная длина)</div>
+                        </div>
+                        <div class="material-item">
+                            <i class="fas fa-th-large"></i>
+                            <div><strong>Теплоизоляция (пенополистирол)</strong><br><span id="materialInsulation">0</span> м² (по площади помещения)</div>
+                        </div>
+                        <div class="material-item">
+                            <i class="fas fa-gripfire"></i>
+                            <div><strong>Демпферная лента</strong><br><span id="materialTape">0</span> м (по периметру)</div>
+                        </div>
+                        <div class="material-item">
+                            <i class="fas fa-tools"></i>
+                            <div><strong>Коллекторный шкаф с гребенкой</strong><br><span id="materialCollector">1</span> шт (на <span id="collectorOutlets">0</span> выходов)</div>
+                        </div>
+                        <div class="material-item">
+                            <i class="fas fa-link"></i>
+                            <div><strong>Крепления (клипсы, монтажная лента)</strong><br>по 2-3 шт/м²</div>
+                        </div>
+                        <div class="material-item">
+                            <i class="fas fa-thermometer-half"></i>
+                            <div><strong>Терморегулятор с датчиком</strong><br>1 шт на систему</div>
+                        </div>
+                        <div class="material-item">
+                            <i class="fas fa-water"></i>
+                            <div><strong>Запорная арматура и фитинги</strong><br>по количеству подключений</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Предупреждение -->
+                <div class="calc-warning">
+                    <i class="fas fa-info-circle"></i>
+                    <strong>Внимание!</strong> Данный калькулятор носит ознакомительный характер и позволяет произвести предварительный расчет. 
+                    Для точного расчета необходимых материалов и составления сметы требуется выезд нашего инженера непосредственно на объект 
+                    с учетом всех особенностей помещения. <a href="#zakaz" style="color: #e67e22; text-decoration: underline;">Запишитесь на бесплатный замер</a> прямо сейчас!
+                </div>
+                
+                <div style="text-align: center; margin-top: 25px;">
                     <button class="calc-btn" id="calcOrderBtn"><i class="fas fa-phone-alt"></i> Записаться на бесплатный замер</button>
                 </div>
             </div>
@@ -1142,7 +1235,7 @@
         
         <div class="price-table-wrapper" id="warmfloorTab">
             <table class="price-table">
-                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
+                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
                 <tbody>
                     <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
                     <tr><td><strong>Труба ⌀20 в изоляции</strong></td><td>прокладка трассы по полу и стенам</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
@@ -1156,7 +1249,7 @@
         
         <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
             <table class="price-table">
-                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
+                <thead> <tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr> </thead>
                 <tbody>
                     <tr><td><strong>Коллектор системы отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
                     <tr><td><strong>Радиатор отопления</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
@@ -1192,7 +1285,7 @@
             <div class="step" data-aos="flip-left" data-aos-delay="400"><div class="step-number">4</div><h4>ПНР и сдача</h4><p>Пусконаладочные работы</p></div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- Подписка на рассылку -->
 <div class="subscribe-section" data-aos="fade-up">
@@ -1294,30 +1387,50 @@ scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 's
 function calculateWarmFloor() {
     const area = parseFloat(document.getElementById('floorArea').value) || 0;
     const step = parseFloat(document.getElementById('pipeStep').value);
-    const roomFactor = parseFloat(document.getElementById('roomType').value);
+    let contours = parseInt(document.getElementById('contoursCount').value) || 1;
     
     // Формула: (площадь / (шаг в метрах)) * 1.1 (запас на повороты)
     const stepMeters = step / 100;
-    let pipeLength = (area / stepMeters) * 1.1;
-    pipeLength = Math.round(pipeLength * roomFactor);
+    let totalPipeLength = Math.round((area / stepMeters) * 1.1);
     
-    // Цена трубы за метр (в среднем 120 руб/м)
-    const pipePrice = 120;
-    const pipeCost = pipeLength * pipePrice;
+    // Корректировка по количеству контуров
+    let pipePerContour = Math.round(totalPipeLength / contours);
     
-    // Стоимость монтажа (в среднем 300 руб/м)
-    const installPrice = 300;
-    const installCost = pipeLength * installPrice;
+    // Максимальная длина контура 100 м, если больше - увеличиваем количество контуров
+    if (pipePerContour > 100) {
+        const neededContours = Math.ceil(totalPipeLength / 100);
+        contours = Math.max(contours, neededContours);
+        pipePerContour = Math.round(totalPipeLength / contours);
+        document.getElementById('contoursDisplay').innerHTML = contours;
+        document.getElementById('collectorOutlets').innerHTML = contours;
+        document.getElementById('materialCollector').innerHTML = 1;
+    } else {
+        document.getElementById('contoursDisplay').innerHTML = contours;
+        document.getElementById('collectorOutlets').innerHTML = contours;
+        document.getElementById('materialCollector').innerHTML = 1;
+    }
     
-    document.getElementById('pipeLength').innerHTML = pipeLength.toLocaleString();
-    document.getElementById('pipeCost').innerHTML = pipeCost.toLocaleString();
-    document.getElementById('installCost').innerHTML = installCost.toLocaleString();
+    // Если контур слишком короткий (менее 40 м) - предупреждение
+    if (pipePerContour < 40 && pipePerContour > 0) {
+        document.getElementById('pipePerContour').innerHTML = pipePerContour + ' ⚠️';
+    } else {
+        document.getElementById('pipePerContour').innerHTML = pipePerContour;
+    }
+    
+    // Периметр для демпферной ленты (приблизительно)
+    const perimeter = Math.round(Math.sqrt(area) * 4);
+    
+    // Обновляем значения
+    document.getElementById('pipeLength').innerHTML = totalPipeLength.toLocaleString();
+    document.getElementById('materialPipe').innerHTML = totalPipeLength.toLocaleString();
+    document.getElementById('materialInsulation').innerHTML = area.toLocaleString();
+    document.getElementById('materialTape').innerHTML = perimeter.toLocaleString();
 }
 
 // События калькулятора
 document.getElementById('floorArea').addEventListener('input', calculateWarmFloor);
 document.getElementById('pipeStep').addEventListener('change', calculateWarmFloor);
-document.getElementById('roomType').addEventListener('change', calculateWarmFloor);
+document.getElementById('contoursCount').addEventListener('input', calculateWarmFloor);
 calculateWarmFloor();
 
 // Кнопка заказа замера
