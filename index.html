@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>СтройПодряд | Профессиональный монтаж сантехники</title>
-    <meta name="description" content="СтройПодряд — монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года. ☎ +7(977) 325-27-28">
-    <meta name="keywords" content="сантехмонтаж, монтаж отопления, водоснабжение, теплый пол, сантехника">
+    <meta name="description" content="СтройПодряд — монтаж сантехники под ключ. Водоснабжение, отопление, канализация для частных домов, коттеджей и коммерческой недвижимости. Гарантия 2 года. ☎ +7(977) 325-27-28">
+    <meta name="keywords" content="сантехмонтаж, монтаж отопления, водоснабжение, теплый пол, сантехника, монтаж коттеджа, сантехника для дома">
     <meta name="author" content="СтройПодряд">
     <meta name="yandex-verification" content="sz8pwbuh0vrymk4r">
     
@@ -14,7 +14,7 @@
     
     <!-- Open Graph -->
     <meta property="og:title" content="СтройПодряд | Профессиональный сантехмонтаж">
-    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года.">
+    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация для частных домов, коттеджей и коммерческой недвижимости. Гарантия 2 года.">
     <meta property="og:url" content="https://stroypodryad50.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ru_RU">
@@ -240,15 +240,28 @@
         
         /* Hero Section */
         .hero {
-            padding: 50px 0;
-            background: #fef9f0;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #fef9f0 0%, #fff5e6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(circle at 100% 50%, rgba(230,126,34,0.05) 0%, transparent 70%);
+            pointer-events: none;
         }
         
         .hero-grid {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
         }
         
         .hero-content {
@@ -256,28 +269,67 @@
         }
         
         .hero-content h1 {
-            font-size: 2rem;
-            margin-bottom: 15px;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
             line-height: 1.3;
-            font-weight: 700;
+            font-weight: 800;
+            color: #1e4660;
         }
         
         .hero-content h1 span {
             color: #e67e22;
+            position: relative;
         }
         
-        .hero-content p {
-            font-size: 0.95rem;
+        /* Профессиональное описание с выделением */
+        .hero-description {
+            margin-bottom: 25px;
+        }
+        
+        .hero-description p {
+            font-size: 1.05rem;
+            line-height: 1.6;
             color: #4a5568;
-            margin-bottom: 20px;
-            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-text {
+            background: linear-gradient(120deg, rgba(230,126,34,0.1) 0%, rgba(230,126,34,0.05) 100%);
+            padding: 18px 22px;
+            border-radius: 20px;
+            border-left: 4px solid #e67e22;
+            margin: 15px 0;
+        }
+        
+        .highlight-text p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: #2d3748;
+        }
+        
+        .highlight-text strong {
+            color: #e67e22;
+            font-weight: 700;
+        }
+        
+        .badge-guarantee {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #1e4660;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
         }
         
         .hero-buttons {
             display: flex;
-            gap: 12px;
+            gap: 15px;
             flex-wrap: wrap;
-            margin-bottom: 25px;
+            margin: 25px 0 30px;
         }
         
         .hero-image {
@@ -287,40 +339,58 @@
         
         .hero-image .image-wrapper {
             background: white;
-            border-radius: 20px;
-            padding: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border-radius: 24px;
+            padding: 16px;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
             display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-image .image-wrapper:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 45px rgba(0,0,0,0.15);
         }
         
         .hero-image img {
-            width: 200px;
+            width: 240px;
             max-width: 100%;
-            border-radius: 14px;
+            border-radius: 16px;
             display: block;
         }
         
         /* Trust badges */
         .trust-badges {
             display: flex;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 15px;
+            margin-top: 15px;
             flex-wrap: wrap;
         }
         
         .trust-item {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             background: white;
-            padding: 5px 12px;
+            padding: 8px 18px;
             border-radius: 40px;
-            font-size: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+        }
+        
+        .trust-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
         
         .trust-item i {
             color: #e67e22;
-            font-size: 14px;
+            font-size: 18px;
+        }
+        
+        .trust-item span {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #2c3e50;
         }
         
         section {
@@ -329,8 +399,8 @@
         
         .section-title {
             text-align: center;
-            font-size: 1.6rem;
-            margin-bottom: 14px;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
             position: relative;
             display: inline-block;
             left: 50%;
@@ -341,10 +411,10 @@
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
+            width: 60px;
             height: 3px;
             background: #e67e22;
             border-radius: 3px;
@@ -352,22 +422,22 @@
         
         .section-sub {
             text-align: center;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto 30px auto;
             color: #4a5568;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
         
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
         }
         
         .service-card {
             background: white;
-            padding: 25px 20px;
+            padding: 30px 20px;
             border-radius: 20px;
             text-align: center;
             border: 1px solid #edf2f7;
@@ -376,24 +446,24 @@
         }
         
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: #e67e22;
-            box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
         }
         
         .service-card i {
-            font-size: 38px;
+            font-size: 42px;
             color: #e67e22;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .service-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 6px;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
         }
         
         .service-card p {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: #6c757d;
         }
         
@@ -409,7 +479,7 @@
         .brands-title {
             color: #1e4660;
             margin-bottom: 30px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -422,13 +492,13 @@
             content: '';
             position: absolute;
             top: 50%;
-            width: 30px;
+            width: 35px;
             height: 2px;
             background: #e67e22;
         }
         
-        .brands-title:before { left: -40px; }
-        .brands-title:after { right: -40px; }
+        .brands-title:before { left: -45px; }
+        .brands-title:after { right: -45px; }
         
         .brands-grid {
             display: flex;
@@ -436,7 +506,7 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
@@ -446,24 +516,24 @@
         }
         
         .brand-svg {
-            width: 110px;
-            height: 44px;
+            width: 120px;
+            height: 48px;
             transition: all 0.3s ease;
             filter: grayscale(0.2);
             opacity: 0.8;
         }
         
         .brand-item:hover .brand-svg {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             filter: grayscale(0);
             opacity: 1;
         }
         
         .brand-name {
-            font-size: 0.6rem;
+            font-size: 0.65rem;
             font-weight: 500;
             color: #6c757d;
-            margin-top: 4px;
+            margin-top: 5px;
         }
         
         /* Toast */
@@ -474,7 +544,7 @@
             transform: translateX(-50%) translateY(100px);
             background: #1e4660;
             color: white;
-            padding: 8px 18px;
+            padding: 10px 20px;
             border-radius: 40px;
             font-size: 0.8rem;
             z-index: 3000;
@@ -502,52 +572,52 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            padding: 35px 25px;
+            gap: 20px;
+            padding: 40px 30px;
             text-align: center;
         }
         
         .stat-number {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
         }
         
         .stat-item div:last-child {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
         }
         
         /* Steps */
         .steps-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
         }
         
         .step {
             background: white;
-            padding: 18px;
+            padding: 20px;
             border-radius: 18px;
             text-align: center;
             flex: 1;
-            min-width: 140px;
+            min-width: 160px;
             border: 1px solid #edf2f7;
             transition: all 0.3s;
             cursor: pointer;
         }
         
         .step:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
             border-color: #1e4660;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.08);
         }
         
         .step-number {
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             background: #1e4660;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: bold;
             border-radius: 14px;
             display: flex;
@@ -561,14 +631,14 @@
         }
         
         .step h4 {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             color: #1e4660;
         }
         
         .step p {
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             color: #6c757d;
         }
         
@@ -590,33 +660,33 @@
         }
         
         .calc-invite i {
-            font-size: 36px;
+            font-size: 40px;
             color: #e67e22;
             margin-bottom: 12px;
         }
         
         .calc-invite h2 {
             color: white;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
         }
         
         .calc-invite p {
             color: rgba(255,255,255,0.9);
-            max-width: 450px;
+            max-width: 500px;
             margin: 0 auto 18px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
         
         .calc-invite-btn {
             background: #e67e22;
             color: white;
-            padding: 8px 24px;
+            padding: 10px 28px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
         
         .calc-invite-btn:hover {
@@ -628,13 +698,13 @@
             background: linear-gradient(135deg, #1e4660, #2c5a6e);
             color: white;
             border-radius: 24px;
-            padding: 35px 25px;
+            padding: 40px 30px;
             text-align: center;
             margin: 30px 0;
         }
         
         .subscribe-section h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
         }
         
@@ -643,24 +713,24 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-            max-width: 400px;
+            max-width: 450px;
             margin: 0 auto;
         }
         
         .subscribe-form input {
             flex: 1;
-            padding: 10px 16px;
+            padding: 10px 18px;
             border: none;
             border-radius: 40px;
-            font-size: 0.8rem;
-            min-width: 160px;
+            font-size: 0.85rem;
+            min-width: 180px;
         }
         
         .subscribe-form button {
             background: #e67e22;
             color: white;
             border: none;
-            padding: 10px 22px;
+            padding: 10px 24px;
             border-radius: 40px;
             font-weight: bold;
             cursor: pointer;
@@ -671,36 +741,36 @@
             background: #1e4660;
             color: white;
             border-radius: 24px;
-            padding: 35px 25px;
+            padding: 40px 30px;
             text-align: center;
         }
         
         .cta-section h2 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
         }
         
         .cta-form {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            margin-top: 18px;
+            gap: 12px;
+            margin-top: 20px;
         }
         
         .cta-form input {
-            padding: 9px 16px;
+            padding: 10px 18px;
             border-radius: 30px;
             border: none;
-            width: 200px;
-            font-size: 0.8rem;
+            width: 220px;
+            font-size: 0.85rem;
         }
         
         .cta-form button {
             background: #e67e22;
             color: white;
             border: none;
-            padding: 9px 24px;
+            padding: 10px 28px;
             border-radius: 30px;
             font-weight: bold;
             cursor: pointer;
@@ -710,7 +780,7 @@
         footer {
             background: #0a2c3b;
             color: #94a3b8;
-            padding: 35px 0 20px;
+            padding: 40px 0 20px;
             margin-top: 40px;
         }
         
@@ -718,14 +788,14 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 20px;
+            gap: 25px;
         }
         
         .footer-links a {
             color: #94a3b8;
             text-decoration: none;
             margin-right: 15px;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
         }
         
         .footer-links a:hover {
@@ -734,10 +804,10 @@
         
         .copy {
             text-align: center;
-            padding-top: 18px;
-            margin-top: 18px;
+            padding-top: 20px;
+            margin-top: 20px;
             border-top: 1px solid #2c5a6e;
-            font-size: 0.6rem;
+            font-size: 0.65rem;
         }
         
         /* Scroll Top */
@@ -745,8 +815,8 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             background: #e67e22;
             border-radius: 50%;
             display: flex;
@@ -771,15 +841,15 @@
         
         .scroll-top i {
             color: white;
-            font-size: 16px;
+            font-size: 18px;
         }
         
         /* Marquiz стили */
         .marquiz-container .option-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 12px;
+            gap: 12px;
+            padding: 10px 14px;
             border: 2px solid #edf2f7;
             border-radius: 12px;
             cursor: pointer;
@@ -793,28 +863,22 @@
             background: #fef5e8;
         }
         
-        /* ========== АДАПТИВНОСТЬ ========== */
         @media (max-width: 900px) {
             .navbar {
                 flex-direction: column;
                 align-items: stretch;
             }
-            
             .nav-links {
                 justify-content: center;
                 order: 2;
             }
-            
             .header-phone {
                 text-align: center;
                 order: 3;
             }
-            
             .logo {
                 text-align: center;
             }
-            
-            /* Мобильное меню - не выпадает, а отображается статически */
             .dropdown-menu {
                 position: static;
                 width: 100%;
@@ -827,12 +891,10 @@
                 background: #f8fafc;
                 padding: 12px;
             }
-            
             .dropdown-grid {
                 grid-template-columns: 1fr;
                 gap: 8px;
             }
-            
             .dropdown-card {
                 display: flex;
                 align-items: center;
@@ -840,41 +902,27 @@
                 gap: 12px;
                 padding: 10px 12px;
             }
-            
             .dropdown-card-icon {
                 margin: 0;
                 width: 32px;
                 height: 32px;
             }
-            
-            .dropdown-card-icon i {
-                font-size: 16px;
-            }
-            
             .dropdown-card-title {
                 font-size: 0.75rem;
-                margin-bottom: 0;
             }
-            
             .dropdown-card-items {
                 margin-top: 0;
                 padding-top: 0;
                 border-top: none;
                 margin-left: auto;
             }
-            
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-                padding: 25px 20px;
+                gap: 15px;
+                padding: 30px 20px;
             }
-            
             .hero-content h1 {
-                font-size: 1.6rem;
-            }
-            
-            .section-title {
-                font-size: 1.4rem;
+                font-size: 1.8rem;
             }
         }
         
@@ -883,34 +931,24 @@
                 flex-direction: column;
                 text-align: center;
             }
-            
             .trust-badges {
                 justify-content: center;
             }
-            
+            .highlight-text {
+                text-align: left;
+            }
             .brands-grid {
                 gap: 15px;
             }
-            
             .brand-svg {
-                width: 90px;
-                height: 36px;
+                width: 100px;
+                height: 40px;
             }
-            
             .steps-grid {
                 flex-direction: column;
             }
-            
             .step {
                 min-width: auto;
-            }
-            
-            .calc-invite-content {
-                padding: 25px 20px;
-            }
-            
-            .calc-invite h2 {
-                font-size: 1.1rem;
             }
         }
         
@@ -919,22 +957,11 @@
                 padding: 5px 10px;
                 font-size: 0.7rem;
             }
-            
             .trust-item {
-                font-size: 0.65rem;
-                padding: 3px 8px;
+                padding: 5px 12px;
             }
-            
-            .service-card {
-                padding: 18px 12px;
-            }
-            
-            .service-card i {
-                font-size: 32px;
-            }
-            
-            .service-card h3 {
-                font-size: 0.9rem;
+            .trust-item span {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -953,85 +980,41 @@
                     <a href="#">Услуги <i class="fas fa-chevron-down" style="font-size: 0.6rem; margin-left: 4px;"></i></a>
                     <div class="dropdown-menu">
                         <div class="dropdown-grid">
-                            <!-- Карточка 1: Отопление -->
                             <div class="dropdown-card">
-                                <div class="dropdown-card-icon">
-                                    <i class="fas fa-fire"></i>
-                                </div>
+                                <div class="dropdown-card-icon"><i class="fas fa-fire"></i></div>
                                 <div class="dropdown-card-title">Отопление</div>
-                                <div class="dropdown-card-items">
-                                    <span>Радиаторы</span>
-                                    <span>Тёплый пол</span>
-                                    <span>Котельные</span>
-                                </div>
+                                <div class="dropdown-card-items"><span>Радиаторы</span><span>Тёплый пол</span><span>Котельные</span></div>
                             </div>
-                            
-                            <!-- Карточка 2: Водоснабжение -->
                             <div class="dropdown-card">
-                                <div class="dropdown-card-icon">
-                                    <i class="fas fa-water"></i>
-                                </div>
+                                <div class="dropdown-card-icon"><i class="fas fa-water"></i></div>
                                 <div class="dropdown-card-title">Водоснабжение</div>
-                                <div class="dropdown-card-items">
-                                    <span>Водонагреватели</span>
-                                    <span>Водоочистка</span>
-                                    <span>Насосы</span>
-                                </div>
+                                <div class="dropdown-card-items"><span>Водонагреватели</span><span>Водоочистка</span><span>Насосы</span></div>
                             </div>
-                            
-                            <!-- Карточка 3: Сантехника -->
                             <div class="dropdown-card">
-                                <div class="dropdown-card-icon">
-                                    <i class="fas fa-bath"></i>
-                                </div>
+                                <div class="dropdown-card-icon"><i class="fas fa-bath"></i></div>
                                 <div class="dropdown-card-title">Сантехника</div>
-                                <div class="dropdown-card-items">
-                                    <span>Унитазы</span>
-                                    <span>Раковины</span>
-                                    <span>Полотенцесушители</span>
-                                </div>
+                                <div class="dropdown-card-items"><span>Унитазы</span><span>Раковины</span><span>Полотенцесушители</span></div>
                             </div>
-                            
-                            <!-- Карточка 4: Канализация -->
                             <div class="dropdown-card">
-                                <div class="dropdown-card-icon">
-                                    <i class="fas fa-toilet"></i>
-                                </div>
+                                <div class="dropdown-card-icon"><i class="fas fa-toilet"></i></div>
                                 <div class="dropdown-card-title">Канализация</div>
-                                <div class="dropdown-card-items">
-                                    <span>Внутренние сети</span>
-                                    <span>Наружные сети</span>
-                                </div>
+                                <div class="dropdown-card-items"><span>Внутренние сети</span><span>Наружные сети</span></div>
                             </div>
-                            
-                            <!-- Карточка 5: Автоматика -->
                             <div class="dropdown-card">
-                                <div class="dropdown-card-icon">
-                                    <i class="fas fa-microchip"></i>
-                                </div>
+                                <div class="dropdown-card-icon"><i class="fas fa-microchip"></i></div>
                                 <div class="dropdown-card-title">Автоматика</div>
-                                <div class="dropdown-card-items">
-                                    <span>Защита от протечек</span>
-                                    <span>Управление отоплением</span>
-                                </div>
+                                <div class="dropdown-card-items"><span>Защита от протечек</span><span>Управление отоплением</span></div>
                             </div>
-                            
-                            <!-- Карточка 6: Ремонт -->
                             <div class="dropdown-card">
-                                <div class="dropdown-card-icon">
-                                    <i class="fas fa-tools"></i>
-                                </div>
+                                <div class="dropdown-card-icon"><i class="fas fa-tools"></i></div>
                                 <div class="dropdown-card-title">Ремонт и сервис</div>
-                                <div class="dropdown-card-items">
-                                    <span>Диагностика</span>
-                                    <span>Ремонт</span>
-                                    <span>Обслуживание</span>
-                                </div>
+                                <div class="dropdown-card-items"><span>Диагностика</span><span>Ремонт</span><span>Обслуживание</span></div>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li><a href="calculators.html">Калькуляторы</a></li>
+                <li><a href="blog.html">Блог</a></li>
                 <li><a href="#zakaz">Контакты</a></li>
             </ul>
             <a href="tel:+79773252728" class="header-phone"><i class="fas fa-phone-alt"></i> +7 (977) 325-27-28</a>
@@ -1044,10 +1027,21 @@
         <div class="hero-grid">
             <div class="hero-content" data-aos="fade-right">
                 <h1>Профессиональный <span>сантехмонтаж</span><br>под ключ</h1>
-                <p>Водоснабжение, отопление, канализация для частных домов, коттеджей и технических помещений. Гарантия 2 года.</p>
+                
+                <div class="hero-description">
+                    <div class="highlight-text" data-aos="fade-up" data-aos-delay="100">
+                        <p>🏠 <strong>Водоснабжение</strong> | <strong>Отопление</strong> | <strong>Канализация</strong></p>
+                        <p>для частных домов, коттеджей и коммерческой недвижимости</p>
+                        <div class="badge-guarantee">
+                            <i class="fas fa-shield-alt"></i> Гарантия 2 года
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="hero-buttons">
                     <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
                 </div>
+                
                 <div class="trust-badges">
                     <div class="trust-item"><i class="fas fa-certificate"></i><span>Гарантия 2 года</span></div>
                     <div class="trust-item"><i class="fas fa-clock"></i><span>Соблюдение сроков</span></div>
@@ -1056,7 +1050,7 @@
             </div>
             <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
                 <div class="image-wrapper">
-                    <img src="images/orig.jpeg" alt="СтройПодряд" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200?text=СтройПодряд'">
+                    <img src="images/orig.jpeg" alt="СтройПодряд" loading="lazy" onerror="this.src='https://via.placeholder.com/240x240?text=СтройПодряд'">
                 </div>
             </div>
         </div>
@@ -1074,14 +1068,14 @@
 </div>
 
 <!-- ОПРОСНИК -->
-<section style="background: #f8fafc; padding: 40px 0;" data-aos="fade-up">
+<section style="background: #f8fafc; padding: 50px 0;" data-aos="fade-up">
     <div class="container">
-        <div style="text-align: center; margin-bottom: 20px;">
-            <h3 style="font-size: 1.3rem; color: #1e4660;">Поможем подобрать решение для вас</h3>
-            <p style="color: #666; font-size: 0.8rem;">Ответьте на 4 вопроса и получите индивидуальное предложение</p>
+        <div style="text-align: center; margin-bottom: 25px;">
+            <h3 style="font-size: 1.4rem; color: #1e4660;">Поможем подобрать решение для вас</h3>
+            <p style="color: #666; font-size: 0.85rem;">Ответьте на 4 вопроса и получите индивидуальное предложение</p>
         </div>
         
-        <div class="marquiz-container" style="max-width:500px; margin:0 auto; background:white; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.08); overflow:hidden;">
+        <div class="marquiz-container" style="max-width:500px; margin:0 auto; background:white; border-radius:24px; box-shadow:0 10px 25px rgba(0,0,0,0.08); overflow:hidden;">
             <div class="marquiz-step" id="step1" style="padding:25px 20px;">
                 <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:20px;">
                     <div style="display:flex; gap:5px;">
@@ -1096,7 +1090,7 @@
                 <div id="optionsStep1">
                     <div class="option-item" data-value="house"><i class="fas fa-home"></i><span>Частный дом / коттедж</span></div>
                     <div class="option-item" data-value="apartment"><i class="fas fa-building"></i><span>Квартира</span></div>
-                    <div class="option-item" data-value="commercial"><i class="fas fa-store"></i><span>Коммерческий объект</span></div>
+                    <div class="option-item" data-value="commercial"><i class="fas fa-store"></i><span>Коммерческая недвижимость</span></div>
                 </div>
                 <button class="next-btn" id="nextStep1" disabled style="width:100%; padding:10px; border-radius:40px; background:#e67e22; color:white; border:none; cursor:pointer; margin-top:8px;">Далее →</button>
             </div>
@@ -1241,7 +1235,7 @@
                 <input type="text" id="callbackObject" placeholder="Тип объекта">
                 <button type="submit">Отправить</button>
             </form>
-            <p style="margin-top: 10px; font-size: 0.65rem;"><i class="fas fa-lock"></i> Ваши данные защищены</p>
+            <p style="margin-top: 12px; font-size: 0.7rem;"><i class="fas fa-lock"></i> Ваши данные защищены</p>
         </div>
     </div>
 </section>
@@ -1257,6 +1251,7 @@
                 <a href="#hero">Главная</a>
                 <a href="#">Услуги</a>
                 <a href="calculators.html">Калькуляторы</a>
+                <a href="blog.html">Блог</a>
                 <a href="#zakaz">Контакты</a>
             </div>
             <div>
@@ -1273,7 +1268,7 @@
 </div>
 
 <script>
-AOS.init({ once: true, duration: 500, offset: 60 });
+AOS.init({ once: true, duration: 600, offset: 80 });
 
 function showToast(msg, type = 'info') {
     const toast = document.getElementById('toast');
