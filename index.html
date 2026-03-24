@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>СтройПодряд | Профессиональный монтаж сантехники</title>
     <meta name="description" content="СтройПодряд — монтаж сантехники под ключ. Водоснабжение, отопление, канализация. Гарантия 2 года. ☎ +7(977) 325-27-28">
     <meta name="keywords" content="сантехмонтаж, монтаж отопления, водоснабжение, теплый пол, сантехника">
@@ -66,12 +66,12 @@
             justify-content: space-between;
             align-items: center;
             padding: 12px 0;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
         
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: #1e4660;
             text-decoration: none;
@@ -83,7 +83,7 @@
         
         .nav-links {
             display: flex;
-            gap: 8px;
+            gap: 5px;
             list-style: none;
             flex-wrap: wrap;
             align-items: center;
@@ -97,11 +97,12 @@
             text-decoration: none;
             color: #2c3e50;
             font-weight: 600;
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 30px;
             transition: all 0.2s;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: block;
+            white-space: nowrap;
         }
         
         .nav-links > li > a:hover,
@@ -110,13 +111,14 @@
             background: #fef5e8;
         }
         
-        /* Выпадающее меню - квадратное/плиточное (как на скриншоте) */
+        /* Выпадающее меню - адаптивное */
         .dropdown-menu {
             position: absolute;
             top: 100%;
             left: 0;
             background: white;
-            width: 560px;
+            width: 580px;
+            max-width: 90vw;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.12);
             opacity: 0;
@@ -134,7 +136,7 @@
             transform: translateY(0);
         }
         
-        /* Сетка меню - 2 колонки */
+        /* Сетка меню - адаптивная */
         .dropdown-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -179,7 +181,7 @@
         }
         
         .dropdown-card-desc {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #6c757d;
             line-height: 1.4;
         }
@@ -190,14 +192,14 @@
             border-top: 1px solid #edf2f7;
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
         
         .dropdown-card-items span {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: #e67e22;
             background: white;
-            padding: 3px 10px;
+            padding: 3px 8px;
             border-radius: 20px;
             transition: all 0.2s;
         }
@@ -209,12 +211,12 @@
         
         .header-phone {
             background: #e67e22;
-            padding: 8px 18px;
+            padding: 6px 14px;
             border-radius: 30px;
             color: white;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             transition: all 0.2s;
             white-space: nowrap;
         }
@@ -248,7 +250,7 @@
         
         /* Hero Section */
         .hero {
-            padding: 60px 0;
+            padding: 50px 0;
             background: #fef9f0;
         }
         
@@ -256,7 +258,7 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 40px;
+            gap: 30px;
         }
         
         .hero-content {
@@ -264,8 +266,8 @@
         }
         
         .hero-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
             line-height: 1.3;
             font-weight: 700;
         }
@@ -275,9 +277,9 @@
         }
         
         .hero-content p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #4a5568;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             line-height: 1.5;
         }
         
@@ -285,7 +287,7 @@
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
         
         .hero-image {
@@ -295,14 +297,14 @@
         
         .hero-image .image-wrapper {
             background: white;
-            border-radius: 24px;
-            padding: 16px;
+            border-radius: 20px;
+            padding: 12px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.05);
             display: inline-block;
         }
         
         .hero-image img {
-            width: 260px;
+            width: 220px;
             max-width: 100%;
             border-radius: 16px;
             display: block;
@@ -311,8 +313,8 @@
         /* Trust badges */
         .trust-badges {
             display: flex;
-            gap: 25px;
-            margin-top: 30px;
+            gap: 15px;
+            margin-top: 25px;
             flex-wrap: wrap;
         }
         
@@ -321,22 +323,23 @@
             align-items: center;
             gap: 8px;
             background: white;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 40px;
+            font-size: 0.8rem;
         }
         
         .trust-item i {
             color: #e67e22;
-            font-size: 20px;
+            font-size: 16px;
         }
         
         section {
-            padding: 60px 0;
+            padding: 50px 0;
         }
         
         .section-title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 16px;
             position: relative;
             display: inline-block;
@@ -351,7 +354,7 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 50px;
             height: 3px;
             background: #e67e22;
             border-radius: 3px;
@@ -360,21 +363,21 @@
         .section-sub {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto 30px auto;
             color: #4a5568;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
         }
         
         .service-card {
             background: white;
-            padding: 30px;
+            padding: 25px 20px;
             border-radius: 20px;
             text-align: center;
             border: 1px solid #edf2f7;
@@ -383,21 +386,31 @@
         }
         
         .service-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-8px);
             border-color: #e67e22;
-            box-shadow: 0 25px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
         }
         
         .service-card i {
-            font-size: 48px;
+            font-size: 42px;
             color: #e67e22;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .service-card p {
+            font-size: 0.8rem;
+            color: #6c757d;
         }
         
         /* Brands Section */
         .brands-section {
             background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
-            padding: 60px 0;
+            padding: 50px 0;
             text-align: center;
             border-top: 1px solid #e9ecef;
             border-bottom: 1px solid #e9ecef;
@@ -405,8 +418,8 @@
         
         .brands-title {
             color: #1e4660;
-            margin-bottom: 40px;
-            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-size: 1rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -419,21 +432,21 @@
             content: '';
             position: absolute;
             top: 50%;
-            width: 40px;
+            width: 30px;
             height: 2px;
             background: #e67e22;
         }
         
-        .brands-title:before { left: -50px; }
-        .brands-title:after { right: -50px; }
+        .brands-title:before { left: -40px; }
+        .brands-title:after { right: -40px; }
         
         .brands-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 25px;
-            max-width: 1100px;
+            gap: 20px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
@@ -443,8 +456,8 @@
         }
         
         .brand-svg {
-            width: 140px;
-            height: 56px;
+            width: 120px;
+            height: 48px;
             transition: all 0.3s ease;
             filter: grayscale(0.2);
             opacity: 0.8;
@@ -457,10 +470,10 @@
         }
         
         .brand-name {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 500;
             color: #6c757d;
-            margin-top: 6px;
+            margin-top: 5px;
         }
         
         /* Toast */
@@ -471,13 +484,14 @@
             transform: translateX(-50%) translateY(100px);
             background: #1e4660;
             color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-size: 0.95rem;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-size: 0.85rem;
             z-index: 3000;
             opacity: 0;
             transition: all 0.3s;
             pointer-events: none;
+            white-space: nowrap;
         }
         
         .toast.show {
@@ -499,65 +513,81 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            padding: 50px;
+            gap: 20px;
+            padding: 40px 30px;
             text-align: center;
         }
         
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bold;
+        }
+        
+        .stat-item div:last-child {
+            font-size: 0.8rem;
         }
         
         /* Steps */
         .steps-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
         }
         
         .step {
             background: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 20px;
             text-align: center;
             flex: 1;
-            min-width: 180px;
+            min-width: 150px;
             border: 2px solid #edf2f7;
             transition: all 0.3s;
             cursor: pointer;
         }
         
         .step:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             border-color: #1e4660;
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
         .step-number {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: #1e4660;
             color: white;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: bold;
-            border-radius: 20px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 15px;
+            margin: 0 auto 12px;
         }
         
         .step:hover .step-number {
             background: #e67e22;
         }
         
+        .step h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #1e4660;
+        }
+        
+        .step p {
+            font-size: 0.75rem;
+            color: #6c757d;
+        }
+        
         /* Calculator Invite Block */
         .calc-invite {
             background: linear-gradient(135deg, #1e4660, #2c5a6e);
-            border-radius: 30px;
-            margin: 40px 0;
+            border-radius: 25px;
+            margin: 30px 0;
             transition: transform 0.3s;
         }
         
@@ -566,36 +596,38 @@
         }
         
         .calc-invite-content {
-            padding: 50px 40px;
+            padding: 40px 30px;
             text-align: center;
         }
         
         .calc-invite i {
-            font-size: 48px;
+            font-size: 40px;
             color: #e67e22;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .calc-invite h2 {
             color: white;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
         }
         
         .calc-invite p {
             color: rgba(255,255,255,0.9);
-            max-width: 600px;
-            margin: 0 auto 25px;
+            max-width: 500px;
+            margin: 0 auto 20px;
+            font-size: 0.9rem;
         }
         
         .calc-invite-btn {
             background: #e67e22;
             color: white;
-            padding: 12px 32px;
+            padding: 10px 28px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
+            font-size: 0.9rem;
             transition: all 0.3s;
         }
         
@@ -608,35 +640,40 @@
         .subscribe-section {
             background: linear-gradient(135deg, #1e4660, #2c5a6e);
             color: white;
-            border-radius: 30px;
-            padding: 50px;
+            border-radius: 25px;
+            padding: 40px 30px;
             text-align: center;
-            margin: 40px 0;
+            margin: 30px 0;
+        }
+        
+        .subscribe-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
         }
         
         .subscribe-form {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            max-width: 500px;
+            gap: 12px;
+            max-width: 450px;
             margin: 0 auto;
         }
         
         .subscribe-form input {
             flex: 1;
-            padding: 14px 20px;
+            padding: 12px 18px;
             border: none;
             border-radius: 40px;
-            font-size: 1rem;
-            min-width: 200px;
+            font-size: 0.9rem;
+            min-width: 180px;
         }
         
         .subscribe-form button {
             background: #e67e22;
             color: white;
             border: none;
-            padding: 14px 28px;
+            padding: 12px 24px;
             border-radius: 40px;
             font-weight: bold;
             cursor: pointer;
@@ -646,31 +683,37 @@
         .cta-section {
             background: #1e4660;
             color: white;
-            border-radius: 30px;
-            padding: 50px;
+            border-radius: 25px;
+            padding: 40px 30px;
             text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
         }
         
         .cta-form {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 12px;
+            margin-top: 20px;
         }
         
         .cta-form input {
-            padding: 12px 20px;
+            padding: 10px 18px;
             border-radius: 30px;
             border: none;
-            width: 250px;
+            width: 220px;
+            font-size: 0.85rem;
         }
         
         .cta-form button {
             background: #e67e22;
             color: white;
             border: none;
-            padding: 12px 30px;
+            padding: 10px 28px;
             border-radius: 30px;
             font-weight: bold;
             cursor: pointer;
@@ -688,14 +731,14 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 30px;
+            gap: 25px;
         }
         
         .footer-links a {
             color: #94a3b8;
             text-decoration: none;
-            margin-right: 20px;
-            font-size: 0.85rem;
+            margin-right: 15px;
+            font-size: 0.8rem;
         }
         
         .footer-links a:hover {
@@ -707,16 +750,16 @@
             padding-top: 20px;
             margin-top: 20px;
             border-top: 1px solid #2c5a6e;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
         }
         
         /* Scroll Top */
         .scroll-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
             background: #e67e22;
             border-radius: 50%;
             display: flex;
@@ -740,16 +783,21 @@
             transform: translateY(-3px);
         }
         
+        .scroll-top i {
+            color: white;
+            font-size: 18px;
+        }
+        
         /* Marquiz стили */
         .marquiz-container .option-item {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 14px 18px;
+            gap: 12px;
+            padding: 12px 15px;
             border: 2px solid #edf2f7;
-            border-radius: 16px;
+            border-radius: 14px;
             cursor: pointer;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             transition: all 0.2s;
         }
         
@@ -759,34 +807,85 @@
             background: #fef5e8;
         }
         
+        /* ========== АДАПТИВНОСТЬ ========== */
         @media (max-width: 900px) {
             .navbar {
-                flex-wrap: wrap;
-                justify-content: center;
+                flex-direction: column;
+                align-items: stretch;
             }
+            
             .nav-links {
-                flex-wrap: wrap;
                 justify-content: center;
+                order: 2;
             }
+            
+            .header-phone {
+                text-align: center;
+                order: 3;
+            }
+            
+            .logo {
+                text-align: center;
+            }
+            
+            /* Мобильное выпадающее меню - на всю ширину */
             .dropdown-menu {
                 position: static;
                 width: 100%;
+                max-width: 100%;
                 box-shadow: none;
                 opacity: 1;
                 visibility: visible;
                 transform: none;
                 margin-top: 10px;
                 background: #f8fafc;
+                border: 1px solid #edf2f7;
+                padding: 15px;
             }
+            
             .dropdown-grid {
                 grid-template-columns: 1fr;
+                gap: 12px;
             }
+            
+            .dropdown-card {
+                padding: 14px;
+            }
+            
+            .dropdown-card-icon {
+                width: 38px;
+                height: 38px;
+            }
+            
+            .dropdown-card-icon i {
+                font-size: 18px;
+            }
+            
+            .dropdown-card-title {
+                font-size: 0.9rem;
+            }
+            
+            .dropdown-card-desc {
+                font-size: 0.65rem;
+            }
+            
+            .dropdown-card-items span {
+                font-size: 0.6rem;
+                padding: 2px 6px;
+            }
+            
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
-                padding: 30px;
+                gap: 15px;
+                padding: 30px 20px;
             }
+            
             .hero-content h1 {
                 font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
             }
         }
         
@@ -795,15 +894,68 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
             .trust-badges {
                 justify-content: center;
             }
+            
             .brands-grid {
-                gap: 15px;
+                gap: 12px;
             }
+            
             .brand-svg {
-                width: 110px;
-                height: 44px;
+                width: 100px;
+                height: 40px;
+            }
+            
+            .steps-grid {
+                flex-direction: column;
+            }
+            
+            .step {
+                min-width: auto;
+            }
+            
+            .calc-invite-content {
+                padding: 30px 20px;
+            }
+            
+            .calc-invite h2 {
+                font-size: 1.3rem;
+            }
+            
+            .toast {
+                white-space: normal;
+                max-width: 90%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 3px;
+            }
+            
+            .nav-links > li > a {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+            }
+            
+            .trust-item {
+                font-size: 0.7rem;
+                padding: 4px 10px;
+            }
+            
+            .service-card {
+                padding: 20px 15px;
+            }
+            
+            .service-card i {
+                font-size: 36px;
+            }
+            
+            .service-card h3 {
+                font-size: 1rem;
             }
         }
     </style>
@@ -819,7 +971,7 @@
             <ul class="nav-links">
                 <li><a href="#hero" class="active">Главная</a></li>
                 <li>
-                    <a href="#">Услуги <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                    <a href="#">Услуги <i class="fas fa-chevron-down" style="font-size: 0.65rem; margin-left: 4px;"></i></a>
                     <div class="dropdown-menu">
                         <div class="dropdown-grid">
                             <!-- Карточка 1: Отопление -->
@@ -937,7 +1089,7 @@
             </div>
             <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
                 <div class="image-wrapper">
-                    <img src="images/orig.jpeg" alt="СтройПодряд" loading="lazy" onerror="this.src='https://via.placeholder.com/260x260?text=СтройПодряд'">
+                    <img src="images/orig.jpeg" alt="СтройПодряд" loading="lazy" onerror="this.src='https://via.placeholder.com/220x220?text=СтройПодряд'">
                 </div>
             </div>
         </div>
@@ -949,99 +1101,99 @@
     <div class="calc-invite-content">
         <i class="fas fa-calculator"></i>
         <h2>Инженерные калькуляторы</h2>
-        <p>Рассчитайте мощность котла, расход топлива, подберите водонагреватель и тёплый пол — все инструменты в одном месте</p>
+        <p>Рассчитайте мощность котла, расход топлива, подберите водонагреватель и тёплый пол</p>
         <a href="calculators.html" class="calc-invite-btn">Перейти к калькуляторам →</a>
     </div>
 </div>
 
 <!-- ОПРОСНИК -->
-<section style="background: #f8fafc; padding: 60px 0;" data-aos="fade-up">
+<section style="background: #f8fafc; padding: 50px 0;" data-aos="fade-up">
     <div class="container">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <h3 style="font-size: 1.8rem; color: #1e4660;">Поможем подобрать решение именно для вас</h3>
+        <div style="text-align: center; margin-bottom: 25px;">
+            <h3 style="font-size: 1.5rem; color: #1e4660;">Поможем подобрать решение для вас</h3>
             <p style="color: #666;">Ответьте на 4 вопроса и получите индивидуальное предложение</p>
         </div>
         
-        <div class="marquiz-container" style="max-width:580px; margin:0 auto; background:white; border-radius:28px; box-shadow:0 10px 30px rgba(0,0,0,0.08); overflow:hidden;">
-            <div class="marquiz-step" id="step1" style="padding:40px 35px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:30px;">
-                    <div style="display:flex; gap:8px;">
-                        <span style="width:20px; height:8px; background:#e67e22; border-radius:10px;"></span>
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:8px; height:8px; background:#ddd; border-radius:50%;"></span>
+        <div class="marquiz-container" style="max-width:550px; margin:0 auto; background:white; border-radius:24px; box-shadow:0 10px 25px rgba(0,0,0,0.08); overflow:hidden;">
+            <div class="marquiz-step" id="step1" style="padding:30px 25px;">
+                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:25px;">
+                    <div style="display:flex; gap:6px;">
+                        <span style="width:18px; height:6px; background:#e67e22; border-radius:8px;"></span>
+                        <span style="width:6px; height:6px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:6px; height:6px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:6px; height:6px; background:#ddd; border-radius:50%;"></span>
                     </div>
-                    <span style="font-size:0.8rem; color:#999;">Шаг 1 из 4</span>
+                    <span style="font-size:0.7rem; color:#999;">Шаг 1 из 4</span>
                 </div>
-                <h3>Какой объект вас интересует?</h3>
+                <h3 style="font-size:1.3rem; color:#1e4660; margin-bottom:20px;">Какой объект вас интересует?</h3>
                 <div id="optionsStep1">
                     <div class="option-item" data-value="house"><i class="fas fa-home"></i><span>Частный дом / коттедж</span></div>
                     <div class="option-item" data-value="apartment"><i class="fas fa-building"></i><span>Квартира</span></div>
                     <div class="option-item" data-value="commercial"><i class="fas fa-store"></i><span>Коммерческий объект</span></div>
                 </div>
-                <button class="next-btn" id="nextStep1" disabled style="width:100%; padding:14px; border-radius:40px; background:#e67e22; color:white; border:none; cursor:pointer;">Далее →</button>
+                <button class="next-btn" id="nextStep1" disabled style="width:100%; padding:12px; border-radius:40px; background:#e67e22; color:white; border:none; cursor:pointer; margin-top:10px;">Далее →</button>
             </div>
-            <div class="marquiz-step" id="step2" style="display:none; padding:40px 35px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:30px;">
-                    <div style="display:flex; gap:8px;">
-                        <span style="width:8px; height:8px; background:#ddd;"></span>
-                        <span style="width:20px; height:8px; background:#e67e22; border-radius:10px;"></span>
-                        <span style="width:8px; height:8px; background:#ddd;"></span>
-                        <span style="width:8px; height:8px; background:#ddd;"></span>
+            <div class="marquiz-step" id="step2" style="display:none; padding:30px 25px;">
+                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:25px;">
+                    <div style="display:flex; gap:6px;">
+                        <span style="width:6px; height:6px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:18px; height:6px; background:#e67e22; border-radius:8px;"></span>
+                        <span style="width:6px; height:6px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:6px; height:6px; background:#ddd; border-radius:50%;"></span>
                     </div>
-                    <span>Шаг 2 из 4</span>
+                    <span style="font-size:0.7rem; color:#999;">Шаг 2 из 4</span>
                 </div>
-                <h3>Когда планируете монтаж?</h3>
+                <h3 style="font-size:1.3rem; color:#1e4660; margin-bottom:20px;">Когда планируете монтаж?</h3>
                 <div id="optionsStep2">
                     <div class="option-item" data-time="now"><i class="fas fa-clock"></i><span>В ближайшее время</span></div>
                     <div class="option-item" data-time="month"><i class="fas fa-calendar-week"></i><span>В течение месяца</span></div>
                     <div class="option-item" data-time="quarter"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
                 </div>
-                <div style="display:flex; gap:12px; margin-top:20px;">
-                    <button class="back-btn" id="backStep2" style="flex:1; padding:12px; border-radius:40px; background:#e2e8f0; border:none; cursor:pointer;">← Назад</button>
-                    <button class="next-btn" id="nextStep2" disabled style="flex:2; padding:12px; border-radius:40px; background:#e67e22; color:white; border:none; cursor:pointer;">Далее →</button>
+                <div style="display:flex; gap:10px; margin-top:15px;">
+                    <button class="back-btn" id="backStep2" style="flex:1; padding:10px; border-radius:40px; background:#e2e8f0; border:none; cursor:pointer;">← Назад</button>
+                    <button class="next-btn" id="nextStep2" disabled style="flex:2; padding:10px; border-radius:40px; background:#e67e22; color:white; border:none; cursor:pointer;">Далее →</button>
                 </div>
             </div>
-            <div class="marquiz-step" id="step3" style="display:none; padding:40px 35px;">
-                <div class="step-progress">
-                    <div style="display:flex; gap:8px;">
-                        <span style="width:8px; height:8px; background:#ddd;"></span>
-                        <span style="width:8px; height:8px; background:#ddd;"></span>
-                        <span style="width:20px; height:8px; background:#e67e22; border-radius:10px;"></span>
-                        <span style="width:8px; height:8px; background:#ddd;"></span>
+            <div class="marquiz-step" id="step3" style="display:none; padding:30px 25px;">
+                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:25px;">
+                    <div style="display:flex; gap:6px;">
+                        <span style="width:6px; height:6px; background:#ddd;"></span>
+                        <span style="width:6px; height:6px; background:#ddd;"></span>
+                        <span style="width:18px; height:6px; background:#e67e22; border-radius:8px;"></span>
+                        <span style="width:6px; height:6px; background:#ddd;"></span>
                     </div>
-                    <span>Шаг 3 из 4</span>
+                    <span style="font-size:0.7rem; color:#999;">Шаг 3 из 4</span>
                 </div>
-                <h3>Какой бюджет планируете?</h3>
+                <h3 style="font-size:1.3rem; color:#1e4660; margin-bottom:20px;">Какой бюджет планируете?</h3>
                 <div id="optionsStep3">
                     <div class="option-item" data-budget="50"><i class="fas fa-ruble-sign"></i><span>До 50 000 ₽</span></div>
                     <div class="option-item" data-budget="100"><i class="fas fa-ruble-sign"></i><span>50 000 - 100 000 ₽</span></div>
                     <div class="option-item" data-budget="200"><i class="fas fa-ruble-sign"></i><span>100 000 - 200 000 ₽</span></div>
                     <div class="option-item" data-budget="300"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
                 </div>
-                <div style="display:flex; gap:12px; margin-top:20px;">
-                    <button class="back-btn" id="backStep3" style="flex:1; padding:12px; border-radius:40px; background:#e2e8f0; border:none;">← Назад</button>
-                    <button class="next-btn" id="nextStep3" disabled style="flex:2; padding:12px; border-radius:40px; background:#e67e22; color:white; border:none;">Далее →</button>
+                <div style="display:flex; gap:10px; margin-top:15px;">
+                    <button class="back-btn" id="backStep3" style="flex:1; padding:10px; border-radius:40px; background:#e2e8f0; border:none;">← Назад</button>
+                    <button class="next-btn" id="nextStep3" disabled style="flex:2; padding:10px; border-radius:40px; background:#e67e22; color:white; border:none;">Далее →</button>
                 </div>
             </div>
-            <div class="marquiz-step" id="step4" style="display:none; padding:40px 35px;">
-                <div class="step-progress">
-                    <div style="display:flex; gap:8px;">
-                        <span style="width:8px; height:8px; background:#ddd;"></span>
-                        <span style="width:8px; height:8px; background:#ddd;"></span>
-                        <span style="width:8px; height:8px; background:#ddd;"></span>
-                        <span style="width:20px; height:8px; background:#e67e22; border-radius:10px;"></span>
+            <div class="marquiz-step" id="step4" style="display:none; padding:30px 25px;">
+                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:25px;">
+                    <div style="display:flex; gap:6px;">
+                        <span style="width:6px; height:6px; background:#ddd;"></span>
+                        <span style="width:6px; height:6px; background:#ddd;"></span>
+                        <span style="width:6px; height:6px; background:#ddd;"></span>
+                        <span style="width:18px; height:6px; background:#e67e22; border-radius:8px;"></span>
                     </div>
-                    <span>Шаг 4 из 4</span>
+                    <span style="font-size:0.7rem; color:#999;">Шаг 4 из 4</span>
                 </div>
-                <h3>Оставьте контакты</h3>
-                <p style="color:#666; margin-bottom:25px;">Мы перезвоним в удобное время</p>
+                <h3 style="font-size:1.3rem; color:#1e4660; margin-bottom:20px;">Оставьте контакты</h3>
+                <p style="color:#666; margin-bottom:20px;">Мы перезвоним в удобное время</p>
                 <form id="marquizForm">
-                    <input type="text" id="marquizName" placeholder="Ваше имя" style="width:100%; padding:14px; margin-bottom:15px; border:1px solid #ddd; border-radius:12px;">
-                    <input type="tel" id="marquizPhone" placeholder="+7 (___) ___-__-__" style="width:100%; padding:14px; margin-bottom:15px; border:1px solid #ddd; border-radius:12px;">
-                    <div style="display:flex; gap:12px;">
-                        <button type="button" class="back-btn" id="backStep4" style="flex:1; padding:12px; border-radius:40px; background:#e2e8f0; border:none;">← Назад</button>
-                        <button type="submit" class="submit-btn" style="flex:2; padding:12px; border-radius:40px; background:#e67e22; color:white; border:none;">Закажите звонок!</button>
+                    <input type="text" id="marquizName" placeholder="Ваше имя" style="width:100%; padding:12px; margin-bottom:12px; border:1px solid #ddd; border-radius:12px;">
+                    <input type="tel" id="marquizPhone" placeholder="+7 (___) ___-__-__" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:12px;">
+                    <div style="display:flex; gap:10px;">
+                        <button type="button" class="back-btn" id="backStep4" style="flex:1; padding:10px; border-radius:40px; background:#e2e8f0; border:none;">← Назад</button>
+                        <button type="submit" class="submit-btn" style="flex:2; padding:10px; border-radius:40px; background:#e67e22; color:white; border:none;">Закажите звонок!</button>
                     </div>
                 </form>
             </div>
@@ -1066,12 +1218,12 @@
     <div class="container">
         <div class="brands-title">Доверяют профессионалам</div>
         <div class="brands-grid">
-            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#0066B3" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">VIESSMANN</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="10">since 1917</text></svg><div class="brand-name">Viessmann</div></div>
-            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#ED1C24" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold">BAXI</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="10">heating</text></svg><div class="brand-name">Baxi</div></div>
-            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#003366" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">VAILLANT</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="10">group</text></svg><div class="brand-name">Vaillant</div></div>
-            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#0047AB" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold">BOSCH</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="10">invented for life</text></svg><div class="brand-name">Bosch</div></div>
-            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#0077B6" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">GRUNDFOS</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="10">pumping solutions</text></svg><div class="brand-name">Grundfos</div></div>
-            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#00A651" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="24" font-weight="bold">UPONOR</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="10">water solutions</text></svg><div class="brand-name">Uponor</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#0066B3" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="18" font-weight="bold">VIESSMANN</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="9">since 1917</text></svg><div class="brand-name">Viessmann</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#ED1C24" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">BAXI</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="9">heating</text></svg><div class="brand-name">Baxi</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#003366" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="18" font-weight="bold">VAILLANT</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="9">group</text></svg><div class="brand-name">Vaillant</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#0047AB" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">BOSCH</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="9">invented for life</text></svg><div class="brand-name">Bosch</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#0077B6" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="18" font-weight="bold">GRUNDFOS</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="9">pumping solutions</text></svg><div class="brand-name">Grundfos</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#00A651" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">UPONOR</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="9">water solutions</text></svg><div class="brand-name">Uponor</div></div>
         </div>
     </div>
 </div>
@@ -1122,7 +1274,7 @@
                 <input type="text" id="callbackObject" placeholder="Тип объекта">
                 <button type="submit">Отправить</button>
             </form>
-            <p style="margin-top: 15px;"><i class="fas fa-lock"></i> Ваши данные защищены</p>
+            <p style="margin-top: 12px; font-size: 0.75rem;"><i class="fas fa-lock"></i> Ваши данные защищены</p>
         </div>
     </div>
 </section>
@@ -1131,8 +1283,8 @@
     <div class="container">
         <div class="footer-content">
             <div>
-                <div class="logo" style="font-size: 1.3rem; color: white;">Строй<span style="color:#e67e22;">Подряд</span></div>
-                <p style="font-size: 0.8rem;">Профессиональный сантехмонтаж под ключ</p>
+                <div class="logo" style="font-size: 1.2rem; color: white;">Строй<span style="color:#e67e22;">Подряд</span></div>
+                <p style="font-size: 0.7rem;">Профессиональный сантехмонтаж под ключ</p>
             </div>
             <div class="footer-links">
                 <a href="#hero">Главная</a>
@@ -1141,9 +1293,9 @@
                 <a href="#zakaz">Контакты</a>
             </div>
             <div>
-                <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8;">stroypodryad50@ya.ru</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Москва и Московская область</p>
+                <p style="font-size: 0.7rem;"><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
+                <p style="font-size: 0.7rem;"><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8;">stroypodryad50@ya.ru</a></p>
+                <p style="font-size: 0.7rem;"><i class="fas fa-map-marker-alt"></i> Москва и МО</p>
             </div>
         </div>
         <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
@@ -1155,7 +1307,7 @@
 </div>
 
 <script>
-AOS.init({ once: true, duration: 800, offset: 100 });
+AOS.init({ once: true, duration: 600, offset: 80 });
 
 function showToast(msg, type = 'info') {
     const toast = document.getElementById('toast');
