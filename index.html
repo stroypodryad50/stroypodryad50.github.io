@@ -52,7 +52,7 @@
             padding: 0 20px;
         }
         
-        /* Header - компактная версия */
+        /* Header */
         header {
             background: #fff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -86,9 +86,14 @@
             gap: 8px;
             list-style: none;
             flex-wrap: wrap;
+            align-items: center;
         }
         
-        .nav-links a {
+        .nav-links > li {
+            position: relative;
+        }
+        
+        .nav-links > li > a {
             text-decoration: none;
             color: #2c3e50;
             font-weight: 600;
@@ -96,11 +101,77 @@
             border-radius: 30px;
             transition: all 0.2s;
             font-size: 0.9rem;
+            display: block;
         }
         
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links > li > a:hover,
+        .nav-links > li > a.active {
             color: #e67e22;
             background: #fef5e8;
+        }
+        
+        /* Выпадающее меню */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 260px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.25s ease;
+            z-index: 1000;
+            padding: 10px 0;
+            border: 1px solid #edf2f7;
+        }
+        
+        .nav-links > li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-category {
+            padding: 8px 16px;
+        }
+        
+        .dropdown-category-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #e67e22;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #edf2f7;
+        }
+        
+        .dropdown-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .dropdown-category ul li {
+            margin-bottom: 5px;
+        }
+        
+        .dropdown-category ul li a {
+            text-decoration: none;
+            color: #4a5568;
+            font-size: 0.85rem;
+            padding: 6px 0 6px 8px;
+            display: block;
+            transition: all 0.2s;
+            border-radius: 8px;
+        }
+        
+        .dropdown-category ul li a:hover {
+            color: #e67e22;
+            background: #fef5e8;
+            transform: translateX(5px);
         }
         
         .header-phone {
@@ -195,7 +266,6 @@
             padding: 16px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.05);
             display: inline-block;
-            transition: all 0.3s ease;
         }
         
         .hero-image img {
@@ -220,8 +290,6 @@
             background: white;
             padding: 8px 16px;
             border-radius: 40px;
-            transition: all 0.3s ease;
-            cursor: default;
         }
         
         .trust-item i {
@@ -291,95 +359,6 @@
             font-size: 48px;
             color: #e67e22;
             margin-bottom: 15px;
-        }
-        
-        /* ========== МНОГОУРОВНЕВОЕ МЕНЮ УСЛУГ ========== */
-        .services-menu {
-            background: #fff;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            padding: 35px;
-            margin: 40px 0;
-        }
-        
-        .services-menu-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #1e4660;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        
-        .menu-category {
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 12px;
-            margin-bottom: 18px;
-        }
-        
-        .menu-category-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #e67e22;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .menu-category-title i {
-            font-size: 1.2rem;
-        }
-        
-        .menu-items {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .menu-items li {
-            margin-bottom: 10px;
-        }
-        
-        .menu-items a {
-            text-decoration: none;
-            color: #4a5568;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            display: block;
-            padding: 5px 0;
-        }
-        
-        .menu-items a:hover {
-            color: #e67e22;
-            transform: translateX(5px);
-        }
-        
-        .view-all {
-            text-align: center;
-            margin-top: 35px;
-            padding-top: 25px;
-            border-top: 1px solid #edf2f7;
-        }
-        
-        .view-all a {
-            display: inline-block;
-            background: #e67e22;
-            color: white;
-            padding: 10px 32px;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .view-all a:hover {
-            background: #d35400;
-            transform: translateY(-2px);
         }
         
         /* Brands Section */
@@ -819,18 +798,24 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                padding-left: 20px;
+                background: transparent;
+            }
+            .nav-links > li:hover .dropdown-menu {
+                transform: none;
+            }
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
                 padding: 30px;
             }
             .hero-content h1 {
                 font-size: 1.8rem;
-            }
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-            .services-menu {
-                padding: 25px;
             }
         }
         
@@ -862,7 +847,47 @@
             <a href="index.html" class="logo">Строй<span>Подряд</span></a>
             <ul class="nav-links">
                 <li><a href="#hero" class="active">Главная</a></li>
-                <li><a href="#uslugi-full">Услуги</a></li>
+                <li>
+                    <a href="#">Услуги <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-category">
+                            <div class="dropdown-category-title"><i class="fas fa-fire"></i> Отопление</div>
+                            <ul>
+                                <li><a href="#">Монтаж радиаторов</a></li>
+                                <li><a href="#">Тёплый пол</a></li>
+                                <li><a href="#">Монтаж котельной</a></li>
+                                <li><a href="#">Внутренние коммуникации</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown-category">
+                            <div class="dropdown-category-title"><i class="fas fa-water"></i> Водоснабжение</div>
+                            <ul>
+                                <li><a href="#">Монтаж водонагревателя</a></li>
+                                <li><a href="#">Монтаж системы водоочистки</a></li>
+                                <li><a href="#">Установка насоса</a></li>
+                                <li><a href="#">Наружные коммуникации</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown-category">
+                            <div class="dropdown-category-title"><i class="fas fa-bath"></i> Сантехника</div>
+                            <ul>
+                                <li><a href="#">Установка унитаза</a></li>
+                                <li><a href="#">Установка раковины</a></li>
+                                <li><a href="#">Установка полотенцесушителя</a></li>
+                                <li><a href="#">Монтаж конечной сантехники</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown-category">
+                            <div class="dropdown-category-title"><i class="fas fa-microchip"></i> Автоматика</div>
+                            <ul>
+                                <li><a href="#">Умный дом для сантехники</a></li>
+                                <li><a href="#">Системы защиты от протечек</a></li>
+                                <li><a href="#">Автоматическое управление отоплением</a></li>
+                                <li><a href="#">Погодозависимая автоматика</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
                 <li><a href="calculators.html">Калькуляторы</a></li>
                 <li><a href="#prices">Цены</a></li>
                 <li><a href="#zakaz">Контакты</a></li>
@@ -1001,101 +1026,14 @@
     </div>
 </section>
 
-<!-- МНОГОУРОВНЕВОЕ МЕНЮ УСЛУГ (как на скриншоте) -->
-<div class="services-menu" id="uslugi-full" data-aos="fade-up">
+<section id="uslugi" data-aos="fade-up">
     <div class="container">
-        <h2 class="services-menu-title">Наши услуги</h2>
-        <div class="menu-grid">
-            <!-- Отопление -->
-            <div>
-                <div class="menu-category">
-                    <div class="menu-category-title"><i class="fas fa-fire"></i> Монтаж системы отопления</div>
-                    <ul class="menu-items">
-                        <li><a href="#">Монтаж радиаторов</a></li>
-                        <li><a href="#">Тёплый пол</a></li>
-                        <li><a href="#">Монтаж котельной</a></li>
-                        <li><a href="#">Внутренние коммуникации</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Водоснабжение -->
-            <div>
-                <div class="menu-category">
-                    <div class="menu-category-title"><i class="fas fa-water"></i> Монтаж системы водоснабжения</div>
-                    <ul class="menu-items">
-                        <li><a href="#">Монтаж водонагревателя</a></li>
-                        <li><a href="#">Монтаж системы водоочистки</a></li>
-                        <li><a href="#">Установка насоса</a></li>
-                        <li><a href="#">Наружные коммуникации</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Сантехника -->
-            <div>
-                <div class="menu-category">
-                    <div class="menu-category-title"><i class="fas fa-bath"></i> Монтаж сантехники</div>
-                    <ul class="menu-items">
-                        <li><a href="#">Установка унитаза</a></li>
-                        <li><a href="#">Установка раковины</a></li>
-                        <li><a href="#">Установка полотенцесушителя</a></li>
-                        <li><a href="#">Монтаж конечной сантехники</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Канализация и септики -->
-            <div>
-                <div class="menu-category">
-                    <div class="menu-category-title"><i class="fas fa-toilet"></i> Монтаж системы водоотведения</div>
-                    <ul class="menu-items">
-                        <li><a href="#">Септики</a></li>
-                        <li><a href="#">Наружные коммуникации</a></li>
-                        <li><a href="#">Внутренние коммуникации</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Автоматика -->
-            <div>
-                <div class="menu-category">
-                    <div class="menu-category-title"><i class="fas fa-microchip"></i> Монтаж и настройка автоматики</div>
-                    <ul class="menu-items">
-                        <li><a href="#">Умный дом для сантехники</a></li>
-                        <li><a href="#">Системы защиты от протечек</a></li>
-                        <li><a href="#">Автоматическое управление отоплением</a></li>
-                        <li><a href="#">Погодозависимая автоматика</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Проектирование -->
-            <div>
-                <div class="menu-category">
-                    <div class="menu-category-title"><i class="fas fa-drafting-compass"></i> Проектирование</div>
-                    <ul class="menu-items">
-                        <li><a href="#">Проект отопления</a></li>
-                        <li><a href="#">Проект водоснабжения</a></li>
-                        <li><a href="#">Проект канализации</a></li>
-                        <li><a href="#">3D-визуализация</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="view-all">
-            <a href="#uslugi">Посмотреть все услуги →</a>
-        </div>
-    </div>
-</div>
-
-<section id="uslugi" data-aos="fade-up" style="display: none;">
-    <div class="container">
+        <h2 class="section-title">Наши услуги</h2>
         <div class="services-grid">
             <div class="service-card"><i class="fas fa-water"></i><h3>Водоснабжение</h3><p>Разводка труб, насосные станции, фильтрация</p></div>
             <div class="service-card"><i class="fas fa-fire"></i><h3>Отопление</h3><p>Котлы, радиаторы, теплые полы</p></div>
             <div class="service-card"><i class="fas fa-bath"></i><h3>Сантехника</h3><p>Ванны, душевые, смесители</p></div>
-            <div class="service-card"><i class="fas fa-toilet"></i><h3>Канализация</h3><p>Септики, внутренние и наружные сети</p></div>
+            <div class="service-card"><i class="fas fa-toilet"></i><h3>Канализация</h3><p>Внутренние и наружные сети</p></div>
         </div>
     </div>
 </section>
@@ -1127,27 +1065,27 @@
         
         <div class="price-table-wrapper" id="warmfloorTab">
             <table class="price-table">
-                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
+                <thead>2长<th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
                 <tbody>
-                    <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы</td><td>150 п.м.</td><td><strong>54 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀20 в изоляции</strong></td><td>прокладка трассы</td><td>50 п.м.</td><td><strong>21 000 ₽</strong></td></tr>
-                    <tr><td><strong>Коллектор распределительный</strong></td><td>сборка, монтаж</td><td>6 компл.</td><td><strong>43 200 ₽</strong></td></tr>
-                    <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>2 500 ₽</strong></td></tr>
+                    60f<strong>Труба ⌀16 в изоляции</strong>60fпрокладка трассы60f150 п.м.60f<strong>54 000 ₽</strong>60f
+                    <tr><strong>Труба ⌀20 в изоляции</strong><td>прокладка трассы<td>50 п.м.<td><strong>21 000 ₽</strong></tr>
+                    <tr><strong>Коллектор распределительный</strong><td>сборка, монтаж<td>6 компл.<td><strong>43 200 ₽</strong></tr>
+                    <tr><strong>Расходные материалы</strong><td>комплект<td>1 компл.<td><strong>2 500 ₽</strong></tr>
                 </tbody>
-                <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (теплый пол):</td><td class="price-total"><strong>215 500 ₽</strong></td></tr></tfoot>
+                <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (теплый пол):<td class="price-total"><strong>215 500 ₽</strong></tr></tfoot>
             </table>
         </div>
         
         <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
             <table class="price-table">
-                <thead><tr><th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th></tr></thead>
+                <thead>2长<th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
                 <tbody>
-                    <tr><td><strong>Коллектор системы отопления</strong></td><td>монтаж и подключение</td><td>2 ед.</td><td><strong>19 200 ₽</strong></td></tr>
-                    <tr><td><strong>Радиатор отопления</strong></td><td>монтаж и подключение</td><td>10 ед.</td><td><strong>78 000 ₽</strong></td></tr>
-                    <tr><td><strong>Труба ⌀16 в изоляции</strong></td><td>прокладка трассы</td><td>200 м.п.</td><td><strong>84 000 ₽</strong></td></tr>
-                    <tr><td><strong>Расходные материалы</strong></td><td>комплект</td><td>1 компл.</td><td><strong>3 500 ₽</strong></td></tr>
+                    <tr><strong>Коллектор системы отопления</strong><td>монтаж и подключение<td>2 ед.<td><strong>19 200 ₽</strong></tr>
+                    <tr><strong>Радиатор отопления</strong><td>монтаж и подключение<td>10 ед.<td><strong>78 000 ₽</strong></tr>
+                    <tr><strong>Труба ⌀16 в изоляции</strong><td>прокладка трассы<td>200 м.п.<td><strong>84 000 ₽</strong></tr>
+                    <tr><strong>Расходные материалы</strong><td>комплект<td>1 компл.<td><strong>3 500 ₽</strong></tr>
                 </tbody>
-                <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (радиаторное отопление):</td><td class="price-total"><strong>244 250 ₽</strong></td></tr></tfoot>
+                <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (радиаторное отопление):<td class="price-total"><strong>244 250 ₽</strong></tr></tfoot>
             </table>
         </div>
         
@@ -1215,7 +1153,7 @@
             </div>
             <div class="footer-links">
                 <a href="#hero">Главная</a>
-                <a href="#uslugi-full">Услуги</a>
+                <a href="#">Услуги</a>
                 <a href="calculators.html">Калькуляторы</a>
                 <a href="#prices">Цены</a>
                 <a href="#zakaz">Контакты</a>
