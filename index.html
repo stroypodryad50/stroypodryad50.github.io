@@ -5,19 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>СтройПодряд | Профессиональный монтаж сантехники</title>
     <meta name="description" content="СтройПодряд — монтаж сантехники под ключ. Водоснабжение, отопление, канализация для частных домов, коттеджей и коммерческой недвижимости. Гарантия 2 года. ☎ +7(977) 325-27-28">
-    <meta name="keywords" content="сантехмонтаж, монтаж отопления, водоснабжение, теплый пол, сантехника, монтаж коттеджа, сантехника для дома">
+    <meta name="keywords" content="сантехмонтаж, монтаж отопления, водоснабжение, теплый пол, сантехника">
     <meta name="author" content="СтройПодряд">
     <meta name="yandex-verification" content="sz8pwbuh0vrymk4r">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231e4660'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='%23e67e22' font-weight='bold'>C</text></svg>">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="СтройПодряд | Профессиональный сантехмонтаж">
-    <meta property="og:description" content="Монтаж сантехники под ключ. Водоснабжение, отопление, канализация для частных домов, коттеджей и коммерческой недвижимости. Гарантия 2 года.">
-    <meta property="og:url" content="https://stroypodryad50.github.io/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="ru_RU">
     
     <!-- Google Fonts - Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,10 +18,6 @@
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Preload -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -111,7 +100,7 @@
             background: #fef5e8;
         }
         
-        /* Выпадающее меню - компактное */
+        /* Выпадающее меню - по умолчанию скрыто */
         .dropdown-menu {
             position: absolute;
             top: 100%;
@@ -128,12 +117,17 @@
             z-index: 1000;
             padding: 15px;
             border: 1px solid #edf2f7;
+            pointer-events: none;
         }
         
-        .nav-links > li:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
+        /* На десктопе - при наведении */
+        @media (min-width: 901px) {
+            .nav-links > li:hover .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
         }
         
         /* Сетка меню */
@@ -181,7 +175,6 @@
             line-height: 1.3;
         }
         
-        /* Теги услуг */
         .dropdown-card-items {
             margin-top: 8px;
             padding-top: 6px;
@@ -200,6 +193,16 @@
             border-radius: 20px;
         }
         
+        /* Кнопка для мобильного открытия меню */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #1e4660;
+            cursor: pointer;
+        }
+        
         .header-phone {
             background: #e67e22;
             padding: 6px 14px;
@@ -214,47 +217,13 @@
         
         .header-phone:hover {
             background: #d35400;
-            transform: translateY(-1px);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 24px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary {
-            background: #e67e22;
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: #d35400;
-            transform: translateY(-2px);
         }
         
         /* Hero Section */
         .hero {
-            padding: 60px 0;
+            padding: 50px 0;
             background: linear-gradient(135deg, #fef9f0 0%, #fff5e6 100%);
             position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 60%;
-            height: 100%;
-            background: radial-gradient(circle at 100% 50%, rgba(230,126,34,0.05) 0%, transparent 70%);
-            pointer-events: none;
         }
         
         .hero-grid {
@@ -269,7 +238,7 @@
         }
         
         .hero-content h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 20px;
             line-height: 1.3;
             font-weight: 800;
@@ -278,58 +247,64 @@
         
         .hero-content h1 span {
             color: #e67e22;
-            position: relative;
         }
         
-        /* Профессиональное описание с выделением */
         .hero-description {
             margin-bottom: 25px;
         }
         
-        .hero-description p {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            color: #4a5568;
-            margin-bottom: 15px;
-        }
-        
         .highlight-text {
-            background: linear-gradient(120deg, rgba(230,126,34,0.1) 0%, rgba(230,126,34,0.05) 100%);
-            padding: 18px 22px;
+            background: rgba(230,126,34,0.08);
+            padding: 16px 20px;
             border-radius: 20px;
             border-left: 4px solid #e67e22;
-            margin: 15px 0;
         }
         
         .highlight-text p {
-            margin-bottom: 0;
-            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            line-height: 1.5;
             color: #2d3748;
         }
         
         .highlight-text strong {
             color: #e67e22;
-            font-weight: 700;
         }
         
         .badge-guarantee {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background: #1e4660;
             color: white;
-            padding: 6px 16px;
+            padding: 5px 14px;
             border-radius: 40px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         
         .hero-buttons {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
-            margin: 25px 0 30px;
+            margin: 20px 0 25px;
+        }
+        
+        .btn-primary {
+            background: #e67e22;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary:hover {
+            background: #d35400;
+            transform: translateY(-2px);
         }
         
         .hero-image {
@@ -339,31 +314,24 @@
         
         .hero-image .image-wrapper {
             background: white;
-            border-radius: 24px;
-            padding: 16px;
-            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            padding: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
             display: inline-block;
-            transition: all 0.3s ease;
-        }
-        
-        .hero-image .image-wrapper:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 45px rgba(0,0,0,0.15);
         }
         
         .hero-image img {
-            width: 240px;
+            width: 220px;
             max-width: 100%;
-            border-radius: 16px;
+            border-radius: 14px;
             display: block;
         }
         
-        /* Trust badges */
         .trust-badges {
             display: flex;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 12px;
             flex-wrap: wrap;
+            margin-top: 15px;
         }
         
         .trust-item {
@@ -371,26 +339,15 @@
             align-items: center;
             gap: 8px;
             background: white;
-            padding: 8px 18px;
+            padding: 6px 14px;
             border-radius: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: all 0.2s;
-        }
-        
-        .trust-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            font-size: 0.7rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
         
         .trust-item i {
             color: #e67e22;
-            font-size: 18px;
-        }
-        
-        .trust-item span {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: #2c3e50;
+            font-size: 14px;
         }
         
         section {
@@ -399,45 +356,38 @@
         
         .section-title {
             text-align: center;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin-bottom: 16px;
+            font-weight: 700;
+            color: #1e4660;
             position: relative;
             display: inline-block;
             left: 50%;
             transform: translateX(-50%);
-            font-weight: 700;
         }
         
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 50px;
             height: 3px;
             background: #e67e22;
             border-radius: 3px;
         }
         
-        .section-sub {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-            color: #4a5568;
-            font-size: 0.9rem;
-        }
-        
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
         }
         
         .service-card {
             background: white;
-            padding: 30px 20px;
+            padding: 25px 20px;
             border-radius: 20px;
             text-align: center;
             border: 1px solid #edf2f7;
@@ -446,30 +396,30 @@
         }
         
         .service-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             border-color: #e67e22;
-            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.08);
         }
         
         .service-card i {
-            font-size: 42px;
+            font-size: 38px;
             color: #e67e22;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         
         .service-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
         }
         
         .service-card p {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #6c757d;
         }
         
         /* Brands Section */
         .brands-section {
-            background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+            background: #f8fafc;
             padding: 50px 0;
             text-align: center;
             border-top: 1px solid #e9ecef;
@@ -479,7 +429,7 @@
         .brands-title {
             color: #1e4660;
             margin-bottom: 30px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -492,13 +442,13 @@
             content: '';
             position: absolute;
             top: 50%;
-            width: 35px;
+            width: 30px;
             height: 2px;
             background: #e67e22;
         }
         
-        .brands-title:before { left: -45px; }
-        .brands-title:after { right: -45px; }
+        .brands-title:before { left: -40px; }
+        .brands-title:after { right: -40px; }
         
         .brands-grid {
             display: flex;
@@ -506,65 +456,31 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .brand-item {
-            text-align: center;
-            transition: all 0.3s ease;
         }
         
         .brand-svg {
-            width: 120px;
-            height: 48px;
-            transition: all 0.3s ease;
+            width: 110px;
+            height: 44px;
             filter: grayscale(0.2);
             opacity: 0.8;
+            transition: all 0.2s;
         }
         
         .brand-item:hover .brand-svg {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             filter: grayscale(0);
             opacity: 1;
         }
         
         .brand-name {
-            font-size: 0.65rem;
-            font-weight: 500;
+            font-size: 0.6rem;
             color: #6c757d;
-            margin-top: 5px;
+            margin-top: 4px;
         }
-        
-        /* Toast */
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: #1e4660;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            z-index: 3000;
-            opacity: 0;
-            transition: all 0.3s;
-            pointer-events: none;
-        }
-        
-        .toast.show {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
-        
-        .toast.error { background: #e74c3c; }
-        .toast.success { background: #27ae60; }
         
         /* Stats */
         .stats-section {
             background: #1e4660;
-            color: white;
             border-radius: 24px;
             margin: 20px 0;
         }
@@ -572,52 +488,48 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 40px 30px;
+            gap: 15px;
+            padding: 35px 25px;
             text-align: center;
+            color: white;
         }
         
         .stat-number {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
-        }
-        
-        .stat-item div:last-child {
-            font-size: 0.75rem;
         }
         
         /* Steps */
         .steps-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
         }
         
         .step {
             background: white;
-            padding: 20px;
+            padding: 18px;
             border-radius: 18px;
             text-align: center;
             flex: 1;
-            min-width: 160px;
+            min-width: 140px;
             border: 1px solid #edf2f7;
-            transition: all 0.3s;
+            transition: all 0.2s;
             cursor: pointer;
         }
         
         .step:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             border-color: #1e4660;
-            box-shadow: 0 15px 25px rgba(0,0,0,0.08);
         }
         
         .step-number {
-            width: 48px;
-            height: 48px;
+            width: 45px;
+            height: 45px;
             background: #1e4660;
             color: white;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             border-radius: 14px;
             display: flex;
@@ -626,32 +538,22 @@
             margin: 0 auto 10px;
         }
         
-        .step:hover .step-number {
-            background: #e67e22;
-        }
-        
         .step h4 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 5px;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
             color: #1e4660;
         }
         
         .step p {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: #6c757d;
         }
         
-        /* Calculator Invite Block */
+        /* Calculator Invite */
         .calc-invite {
             background: linear-gradient(135deg, #1e4660, #2c5a6e);
             border-radius: 24px;
             margin: 30px 0;
-            transition: transform 0.3s;
-        }
-        
-        .calc-invite:hover {
-            transform: translateY(-3px);
         }
         
         .calc-invite-content {
@@ -660,52 +562,45 @@
         }
         
         .calc-invite i {
-            font-size: 40px;
+            font-size: 36px;
             color: #e67e22;
             margin-bottom: 12px;
         }
         
         .calc-invite h2 {
             color: white;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
         }
         
         .calc-invite p {
             color: rgba(255,255,255,0.9);
-            max-width: 500px;
-            margin: 0 auto 18px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            margin-bottom: 18px;
         }
         
         .calc-invite-btn {
             background: #e67e22;
             color: white;
-            padding: 10px 28px;
+            padding: 8px 24px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
         
         .calc-invite-btn:hover {
             background: #d35400;
         }
         
-        /* Subscribe Section */
+        /* Subscribe */
         .subscribe-section {
             background: linear-gradient(135deg, #1e4660, #2c5a6e);
-            color: white;
             border-radius: 24px;
-            padding: 40px 30px;
+            padding: 35px 25px;
             text-align: center;
             margin: 30px 0;
-        }
-        
-        .subscribe-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
         }
         
         .subscribe-form {
@@ -713,16 +608,15 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-            max-width: 450px;
-            margin: 0 auto;
+            margin-top: 15px;
         }
         
         .subscribe-form input {
             flex: 1;
-            padding: 10px 18px;
+            padding: 10px 16px;
             border: none;
             border-radius: 40px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             min-width: 180px;
         }
         
@@ -730,7 +624,7 @@
             background: #e67e22;
             color: white;
             border: none;
-            padding: 10px 24px;
+            padding: 10px 22px;
             border-radius: 40px;
             font-weight: bold;
             cursor: pointer;
@@ -739,38 +633,33 @@
         /* CTA */
         .cta-section {
             background: #1e4660;
-            color: white;
             border-radius: 24px;
-            padding: 40px 30px;
+            padding: 35px 25px;
             text-align: center;
-        }
-        
-        .cta-section h2 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
+            color: white;
         }
         
         .cta-form {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 10px;
+            margin-top: 18px;
         }
         
         .cta-form input {
-            padding: 10px 18px;
+            padding: 9px 16px;
             border-radius: 30px;
             border: none;
-            width: 220px;
-            font-size: 0.85rem;
+            width: 200px;
+            font-size: 0.8rem;
         }
         
         .cta-form button {
             background: #e67e22;
             color: white;
             border: none;
-            padding: 10px 28px;
+            padding: 9px 24px;
             border-radius: 30px;
             font-weight: bold;
             cursor: pointer;
@@ -780,7 +669,7 @@
         footer {
             background: #0a2c3b;
             color: #94a3b8;
-            padding: 40px 0 20px;
+            padding: 35px 0 20px;
             margin-top: 40px;
         }
         
@@ -795,7 +684,7 @@
             color: #94a3b8;
             text-decoration: none;
             margin-right: 15px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
         }
         
         .footer-links a:hover {
@@ -807,10 +696,9 @@
             padding-top: 20px;
             margin-top: 20px;
             border-top: 1px solid #2c5a6e;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
         }
         
-        /* Scroll Top */
         .scroll-top {
             position: fixed;
             bottom: 20px;
@@ -827,7 +715,6 @@
             visibility: hidden;
             transition: all 0.3s;
             z-index: 999;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
         
         .scroll-top.show {
@@ -835,50 +722,65 @@
             visibility: visible;
         }
         
-        .scroll-top:hover {
-            background: #d35400;
-        }
-        
-        .scroll-top i {
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #1e4660;
             color: white;
-            font-size: 18px;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            z-index: 3000;
+            opacity: 0;
+            transition: all 0.3s;
+            pointer-events: none;
         }
         
-        /* Marquiz стили */
-        .marquiz-container .option-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 14px;
-            border: 2px solid #edf2f7;
-            border-radius: 12px;
-            cursor: pointer;
-            margin-bottom: 8px;
-            transition: all 0.2s;
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
         }
         
-        .marquiz-container .option-item:hover,
-        .marquiz-container .option-item.selected {
-            border-color: #e67e22;
-            background: #fef5e8;
-        }
-        
+        /* ========== МОБИЛЬНАЯ АДАПТАЦИЯ ========== */
         @media (max-width: 900px) {
             .navbar {
-                flex-direction: column;
-                align-items: stretch;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
             }
-            .nav-links {
-                justify-content: center;
+            
+            .mobile-menu-btn {
+                display: block;
                 order: 2;
             }
-            .header-phone {
-                text-align: center;
+            
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                padding: 15px 0;
                 order: 3;
             }
-            .logo {
+            
+            .nav-links.open {
+                display: flex;
+            }
+            
+            .nav-links > li {
+                width: 100%;
                 text-align: center;
             }
+            
+            .nav-links > li > a {
+                display: inline-block;
+                white-space: normal;
+            }
+            
+            /* Мобильное выпадающее меню - открывается по клику */
             .dropdown-menu {
                 position: static;
                 width: 100%;
@@ -887,14 +789,22 @@
                 opacity: 1;
                 visibility: visible;
                 transform: none;
-                margin-top: 10px;
+                margin-top: 8px;
                 background: #f8fafc;
                 padding: 12px;
+                display: none;
+                pointer-events: auto;
             }
+            
+            .dropdown-menu.open {
+                display: block;
+            }
+            
             .dropdown-grid {
                 grid-template-columns: 1fr;
                 gap: 8px;
             }
+            
             .dropdown-card {
                 display: flex;
                 align-items: center;
@@ -902,66 +812,76 @@
                 gap: 12px;
                 padding: 10px 12px;
             }
+            
             .dropdown-card-icon {
                 margin: 0;
                 width: 32px;
                 height: 32px;
             }
+            
+            .dropdown-card-icon i {
+                font-size: 16px;
+            }
+            
             .dropdown-card-title {
                 font-size: 0.75rem;
             }
+            
             .dropdown-card-items {
                 margin-top: 0;
                 padding-top: 0;
                 border-top: none;
                 margin-left: auto;
             }
+            
+            .header-phone {
+                order: 1;
+            }
+            
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-                padding: 30px 20px;
+                gap: 12px;
+                padding: 25px 20px;
             }
+            
             .hero-content h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
-        }
-        
-        @media (max-width: 768px) {
+            
             .hero-grid {
                 flex-direction: column;
                 text-align: center;
             }
+            
             .trust-badges {
                 justify-content: center;
             }
+            
             .highlight-text {
                 text-align: left;
-            }
-            .brands-grid {
-                gap: 15px;
-            }
-            .brand-svg {
-                width: 100px;
-                height: 40px;
-            }
-            .steps-grid {
-                flex-direction: column;
-            }
-            .step {
-                min-width: auto;
             }
         }
         
         @media (max-width: 480px) {
-            .nav-links > li > a {
-                padding: 5px 10px;
-                font-size: 0.7rem;
+            .navbar {
+                flex-direction: column;
             }
-            .trust-item {
-                padding: 5px 12px;
+            
+            .mobile-menu-btn {
+                align-self: flex-end;
             }
-            .trust-item span {
-                font-size: 0.7rem;
+            
+            .header-phone {
+                order: 0;
+            }
+            
+            .service-card {
+                padding: 18px 12px;
+            }
+            
+            .brand-svg {
+                width: 90px;
+                height: 36px;
             }
         }
     </style>
@@ -974,11 +894,14 @@
     <div class="container">
         <div class="navbar">
             <a href="index.html" class="logo">Строй<span>Подряд</span></a>
-            <ul class="nav-links">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#hero" class="active">Главная</a></li>
                 <li>
-                    <a href="#">Услуги <i class="fas fa-chevron-down" style="font-size: 0.6rem; margin-left: 4px;"></i></a>
-                    <div class="dropdown-menu">
+                    <a href="#" id="servicesMenuBtn">Услуги <i class="fas fa-chevron-down" style="font-size: 0.6rem; margin-left: 4px;"></i></a>
+                    <div class="dropdown-menu" id="servicesDropdown">
                         <div class="dropdown-grid">
                             <div class="dropdown-card">
                                 <div class="dropdown-card-icon"><i class="fas fa-fire"></i></div>
@@ -1027,9 +950,8 @@
         <div class="hero-grid">
             <div class="hero-content" data-aos="fade-right">
                 <h1>Профессиональный <span>сантехмонтаж</span><br>под ключ</h1>
-                
                 <div class="hero-description">
-                    <div class="highlight-text" data-aos="fade-up" data-aos-delay="100">
+                    <div class="highlight-text">
                         <p>🏠 <strong>Водоснабжение</strong> | <strong>Отопление</strong> | <strong>Канализация</strong></p>
                         <p>для частных домов, коттеджей и коммерческой недвижимости</p>
                         <div class="badge-guarantee">
@@ -1037,11 +959,9 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="hero-buttons">
-                    <a href="#zakaz" class="btn btn-primary">Получить консультацию</a>
+                    <a href="#zakaz" class="btn-primary">Получить консультацию</a>
                 </div>
-                
                 <div class="trust-badges">
                     <div class="trust-item"><i class="fas fa-certificate"></i><span>Гарантия 2 года</span></div>
                     <div class="trust-item"><i class="fas fa-clock"></i><span>Соблюдение сроков</span></div>
@@ -1050,117 +970,21 @@
             </div>
             <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
                 <div class="image-wrapper">
-                    <img src="images/orig.jpeg" alt="СтройПодряд" loading="lazy" onerror="this.src='https://via.placeholder.com/240x240?text=СтройПодряд'">
+                    <img src="images/orig.jpeg" alt="СтройПодряд" loading="lazy" onerror="this.src='https://via.placeholder.com/220x220?text=СтройПодряд'">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- БЛОК-ПРИГЛАШЕНИЕ НА СТРАНИЦУ КАЛЬКУЛЯТОРОВ -->
 <div class="calc-invite" data-aos="fade-up">
     <div class="calc-invite-content">
         <i class="fas fa-calculator"></i>
         <h2>Инженерные калькуляторы</h2>
-        <p>Рассчитайте мощность котла, расход топлива, подберите водонагреватель и тёплый пол</p>
+        <p>Рассчитайте мощность котла, расход воды, тёплый пол и гидроаккумулятор</p>
         <a href="calculators.html" class="calc-invite-btn">Перейти к калькуляторам →</a>
     </div>
 </div>
-
-<!-- ОПРОСНИК -->
-<section style="background: #f8fafc; padding: 50px 0;" data-aos="fade-up">
-    <div class="container">
-        <div style="text-align: center; margin-bottom: 25px;">
-            <h3 style="font-size: 1.4rem; color: #1e4660;">Поможем подобрать решение для вас</h3>
-            <p style="color: #666; font-size: 0.85rem;">Ответьте на 4 вопроса и получите индивидуальное предложение</p>
-        </div>
-        
-        <div class="marquiz-container" style="max-width:500px; margin:0 auto; background:white; border-radius:24px; box-shadow:0 10px 25px rgba(0,0,0,0.08); overflow:hidden;">
-            <div class="marquiz-step" id="step1" style="padding:25px 20px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:20px;">
-                    <div style="display:flex; gap:5px;">
-                        <span style="width:16px; height:5px; background:#e67e22; border-radius:6px;"></span>
-                        <span style="width:5px; height:5px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:5px; height:5px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:5px; height:5px; background:#ddd; border-radius:50%;"></span>
-                    </div>
-                    <span style="font-size:0.65rem; color:#999;">Шаг 1 из 4</span>
-                </div>
-                <h3 style="font-size:1.1rem; color:#1e4660; margin-bottom:15px;">Какой объект вас интересует?</h3>
-                <div id="optionsStep1">
-                    <div class="option-item" data-value="house"><i class="fas fa-home"></i><span>Частный дом / коттедж</span></div>
-                    <div class="option-item" data-value="apartment"><i class="fas fa-building"></i><span>Квартира</span></div>
-                    <div class="option-item" data-value="commercial"><i class="fas fa-store"></i><span>Коммерческая недвижимость</span></div>
-                </div>
-                <button class="next-btn" id="nextStep1" disabled style="width:100%; padding:10px; border-radius:40px; background:#e67e22; color:white; border:none; cursor:pointer; margin-top:8px;">Далее →</button>
-            </div>
-            <div class="marquiz-step" id="step2" style="display:none; padding:25px 20px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:20px;">
-                    <div style="display:flex; gap:5px;">
-                        <span style="width:5px; height:5px; background:#ddd;"></span>
-                        <span style="width:16px; height:5px; background:#e67e22; border-radius:6px;"></span>
-                        <span style="width:5px; height:5px; background:#ddd;"></span>
-                        <span style="width:5px; height:5px; background:#ddd;"></span>
-                    </div>
-                    <span style="font-size:0.65rem; color:#999;">Шаг 2 из 4</span>
-                </div>
-                <h3 style="font-size:1.1rem; color:#1e4660; margin-bottom:15px;">Когда планируете монтаж?</h3>
-                <div id="optionsStep2">
-                    <div class="option-item" data-time="now"><i class="fas fa-clock"></i><span>В ближайшее время</span></div>
-                    <div class="option-item" data-time="month"><i class="fas fa-calendar-week"></i><span>В течение месяца</span></div>
-                    <div class="option-item" data-time="quarter"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
-                </div>
-                <div style="display:flex; gap:8px; margin-top:12px;">
-                    <button class="back-btn" id="backStep2" style="flex:1; padding:8px; border-radius:40px; background:#e2e8f0; border:none; cursor:pointer;">← Назад</button>
-                    <button class="next-btn" id="nextStep2" disabled style="flex:2; padding:8px; border-radius:40px; background:#e67e22; color:white; border:none; cursor:pointer;">Далее →</button>
-                </div>
-            </div>
-            <div class="marquiz-step" id="step3" style="display:none; padding:25px 20px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:20px;">
-                    <div style="display:flex; gap:5px;">
-                        <span style="width:5px; height:5px; background:#ddd;"></span>
-                        <span style="width:5px; height:5px; background:#ddd;"></span>
-                        <span style="width:16px; height:5px; background:#e67e22; border-radius:6px;"></span>
-                        <span style="width:5px; height:5px; background:#ddd;"></span>
-                    </div>
-                    <span style="font-size:0.65rem; color:#999;">Шаг 3 из 4</span>
-                </div>
-                <h3 style="font-size:1.1rem; color:#1e4660; margin-bottom:15px;">Какой бюджет планируете?</h3>
-                <div id="optionsStep3">
-                    <div class="option-item" data-budget="50"><i class="fas fa-ruble-sign"></i><span>До 50 000 ₽</span></div>
-                    <div class="option-item" data-budget="100"><i class="fas fa-ruble-sign"></i><span>50 000 - 100 000 ₽</span></div>
-                    <div class="option-item" data-budget="200"><i class="fas fa-ruble-sign"></i><span>100 000 - 200 000 ₽</span></div>
-                    <div class="option-item" data-budget="300"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
-                </div>
-                <div style="display:flex; gap:8px; margin-top:12px;">
-                    <button class="back-btn" id="backStep3" style="flex:1; padding:8px; border-radius:40px; background:#e2e8f0; border:none;">← Назад</button>
-                    <button class="next-btn" id="nextStep3" disabled style="flex:2; padding:8px; border-radius:40px; background:#e67e22; color:white; border:none;">Далее →</button>
-                </div>
-            </div>
-            <div class="marquiz-step" id="step4" style="display:none; padding:25px 20px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:20px;">
-                    <div style="display:flex; gap:5px;">
-                        <span style="width:5px; height:5px; background:#ddd;"></span>
-                        <span style="width:5px; height:5px; background:#ddd;"></span>
-                        <span style="width:5px; height:5px; background:#ddd;"></span>
-                        <span style="width:16px; height:5px; background:#e67e22; border-radius:6px;"></span>
-                    </div>
-                    <span style="font-size:0.65rem; color:#999;">Шаг 4 из 4</span>
-                </div>
-                <h3 style="font-size:1.1rem; color:#1e4660; margin-bottom:15px;">Оставьте контакты</h3>
-                <p style="color:#666; margin-bottom:15px; font-size:0.75rem;">Мы перезвоним в удобное время</p>
-                <form id="marquizForm">
-                    <input type="text" id="marquizName" placeholder="Ваше имя" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd; border-radius:10px;">
-                    <input type="tel" id="marquizPhone" placeholder="+7 (___) ___-__-__" style="width:100%; padding:10px; margin-bottom:12px; border:1px solid #ddd; border-radius:10px;">
-                    <div style="display:flex; gap:8px;">
-                        <button type="button" class="back-btn" id="backStep4" style="flex:1; padding:8px; border-radius:40px; background:#e2e8f0; border:none;">← Назад</button>
-                        <button type="submit" class="submit-btn" style="flex:2; padding:8px; border-radius:40px; background:#e67e22; color:white; border:none;">Закажите звонок!</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section id="uslugi" data-aos="fade-up">
     <div class="container">
@@ -1174,7 +998,6 @@
     </div>
 </section>
 
-<!-- Логотипы брендов -->
 <div class="brands-section">
     <div class="container">
         <div class="brands-title">Доверяют профессионалам</div>
@@ -1212,7 +1035,6 @@
     </div>
 </section>
 
-<!-- Подписка на рассылку -->
 <div class="subscribe-section">
     <div class="container">
         <h3>📧 Будьте в курсе акций и новинок</h3>
@@ -1235,7 +1057,7 @@
                 <input type="text" id="callbackObject" placeholder="Тип объекта">
                 <button type="submit">Отправить</button>
             </form>
-            <p style="margin-top: 12px; font-size: 0.7rem;"><i class="fas fa-lock"></i> Ваши данные защищены</p>
+            <p style="margin-top: 12px; font-size: 0.65rem;"><i class="fas fa-lock"></i> Ваши данные защищены</p>
         </div>
     </div>
 </section>
@@ -1255,8 +1077,8 @@
                 <a href="#zakaz">Контакты</a>
             </div>
             <div>
-                <p style="font-size: 0.65rem;"><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
-                <p style="font-size: 0.65rem;"><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8;">stroypodryad50@ya.ru</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8;">stroypodryad50@ya.ru</a></p>
             </div>
         </div>
         <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
@@ -1302,55 +1124,39 @@ window.addEventListener('scroll', () => {
 });
 scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-// Опросник
-let selectedObject = null, selectedTime = null, selectedBudget = null;
-const step1 = document.getElementById('step1'), step2 = document.getElementById('step2'), step3 = document.getElementById('step3'), step4 = document.getElementById('step4');
-const nextBtn1 = document.getElementById('nextStep1'), nextBtn2 = document.getElementById('nextStep2'), nextBtn3 = document.getElementById('nextStep3');
-const backBtn2 = document.getElementById('backStep2'), backBtn3 = document.getElementById('backStep3'), backBtn4 = document.getElementById('backStep4');
+// ========== МОБИЛЬНОЕ МЕНЮ ==========
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+const servicesMenuBtn = document.getElementById('servicesMenuBtn');
+const servicesDropdown = document.getElementById('servicesDropdown');
 
-function switchStep(from, to) { from.style.display = 'none'; to.style.display = 'block'; }
-
-function setupOptionSelection(containerId, callback) {
-    document.querySelectorAll(`#${containerId} .option-item`).forEach(opt => {
-        opt.addEventListener('click', () => {
-            document.querySelectorAll(`#${containerId} .option-item`).forEach(o => o.classList.remove('selected'));
-            opt.classList.add('selected');
-            callback(opt);
-        });
-    });
-}
-
-setupOptionSelection('optionsStep1', (opt) => { selectedObject = opt.getAttribute('data-value'); nextBtn1.disabled = false; });
-setupOptionSelection('optionsStep2', (opt) => { selectedTime = opt.getAttribute('data-time'); nextBtn2.disabled = false; });
-setupOptionSelection('optionsStep3', (opt) => { selectedBudget = opt.getAttribute('data-budget'); nextBtn3.disabled = false; });
-
-nextBtn1.addEventListener('click', () => switchStep(step1, step2));
-backBtn2.addEventListener('click', () => switchStep(step2, step1));
-nextBtn2.addEventListener('click', () => switchStep(step2, step3));
-backBtn3.addEventListener('click', () => switchStep(step3, step2));
-nextBtn3.addEventListener('click', () => switchStep(step3, step4));
-backBtn4.addEventListener('click', () => switchStep(step4, step3));
-
-const marquizPhone = document.getElementById('marquizPhone');
-setPhoneMask(marquizPhone);
-
-document.getElementById('marquizForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('marquizName').value.trim();
-    const phone = marquizPhone.value;
-    if (!name) { showToast('Введите имя', 'error'); return; }
-    if (!validatePhone(phone)) { showToast('Введите корректный телефон', 'error'); return; }
-    showToast(`Спасибо, ${name}! Мы свяжемся с вами.`, 'success');
-    step4.style.display = 'none';
-    step1.style.display = 'block';
-    this.reset();
-    document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected'));
-    nextBtn1.disabled = true; nextBtn2.disabled = true; nextBtn3.disabled = true;
+// Открытие/закрытие основного мобильного меню
+mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
 });
 
-// Форма обратной связи
+// Открытие/закрытие выпадающего меню услуг на мобильных
+servicesMenuBtn.addEventListener('click', (e) => {
+    if (window.innerWidth <= 900) {
+        e.preventDefault();
+        servicesDropdown.classList.toggle('open');
+    }
+});
+
+// Закрытие меню при клике на ссылку
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 900 && link.getAttribute('href') !== '#') {
+            navLinks.classList.remove('open');
+            servicesDropdown.classList.remove('open');
+        }
+    });
+});
+
+// ========== ФОРМЫ ==========
 const callbackPhone = document.getElementById('callbackPhone');
 setPhoneMask(callbackPhone);
+
 document.getElementById('callbackForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const name = document.getElementById('callbackName').value.trim();
@@ -1361,7 +1167,6 @@ document.getElementById('callbackForm').addEventListener('submit', function(e) {
     this.reset();
 });
 
-// Подписка
 document.getElementById('subscribeForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const email = document.getElementById('subscribeEmail').value.trim();
