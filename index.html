@@ -111,22 +111,22 @@
             background: #fef5e8;
         }
         
-        /* Выпадающее меню - адаптивное */
+        /* Выпадающее меню - компактное */
         .dropdown-menu {
             position: absolute;
             top: 100%;
             left: 0;
             background: white;
-            width: 580px;
-            max-width: 90vw;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            width: 500px;
+            max-width: 85vw;
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
             opacity: 0;
             visibility: hidden;
-            transform: translateY(-15px);
-            transition: all 0.3s ease;
+            transform: translateY(-10px);
+            transition: all 0.25s ease;
             z-index: 1000;
-            padding: 20px;
+            padding: 15px;
             border: 1px solid #edf2f7;
         }
         
@@ -136,77 +136,68 @@
             transform: translateY(0);
         }
         
-        /* Сетка меню - адаптивная */
+        /* Сетка меню */
         .dropdown-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 10px;
         }
         
         .dropdown-card {
             background: #fefaf5;
-            border-radius: 16px;
-            padding: 16px;
-            transition: all 0.3s ease;
+            border-radius: 12px;
+            padding: 12px;
+            transition: all 0.25s ease;
             cursor: pointer;
+            text-align: center;
         }
         
         .dropdown-card:hover {
             background: #fff5e8;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
         }
         
         .dropdown-card-icon {
-            width: 44px;
-            height: 44px;
+            width: 36px;
+            height: 36px;
             background: #e67e22;
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 12px;
+            margin: 0 auto 8px;
         }
         
         .dropdown-card-icon i {
-            font-size: 22px;
+            font-size: 18px;
             color: white;
         }
         
         .dropdown-card-title {
-            font-weight: 700;
-            font-size: 1rem;
+            font-weight: 600;
+            font-size: 0.8rem;
             color: #1e4660;
-            margin-bottom: 6px;
+            margin-bottom: 0;
+            line-height: 1.3;
         }
         
-        .dropdown-card-desc {
-            font-size: 0.7rem;
-            color: #6c757d;
-            line-height: 1.4;
-        }
-        
+        /* Теги услуг */
         .dropdown-card-items {
-            margin-top: 12px;
-            padding-top: 10px;
+            margin-top: 8px;
+            padding-top: 6px;
             border-top: 1px solid #edf2f7;
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            justify-content: center;
+            gap: 4px;
         }
         
         .dropdown-card-items span {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: #e67e22;
             background: white;
-            padding: 3px 8px;
+            padding: 2px 6px;
             border-radius: 20px;
-            transition: all 0.2s;
-        }
-        
-        .dropdown-card-items span:hover {
-            background: #e67e22;
-            color: white;
         }
         
         .header-phone {
@@ -228,7 +219,7 @@
         
         .btn {
             display: inline-block;
-            padding: 12px 28px;
+            padding: 10px 24px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
@@ -245,7 +236,6 @@
         .btn-primary:hover {
             background: #d35400;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(230,126,34,0.3);
         }
         
         /* Hero Section */
@@ -266,7 +256,7 @@
         }
         
         .hero-content h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 15px;
             line-height: 1.3;
             font-weight: 700;
@@ -277,7 +267,7 @@
         }
         
         .hero-content p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #4a5568;
             margin-bottom: 20px;
             line-height: 1.5;
@@ -285,9 +275,9 @@
         
         .hero-buttons {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .hero-image {
@@ -304,33 +294,33 @@
         }
         
         .hero-image img {
-            width: 220px;
+            width: 200px;
             max-width: 100%;
-            border-radius: 16px;
+            border-radius: 14px;
             display: block;
         }
         
         /* Trust badges */
         .trust-badges {
             display: flex;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 12px;
+            margin-top: 20px;
             flex-wrap: wrap;
         }
         
         .trust-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background: white;
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 40px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
         
         .trust-item i {
             color: #e67e22;
-            font-size: 16px;
+            font-size: 14px;
         }
         
         section {
@@ -339,8 +329,8 @@
         
         .section-title {
             text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 16px;
+            font-size: 1.6rem;
+            margin-bottom: 14px;
             position: relative;
             display: inline-block;
             left: 50%;
@@ -351,7 +341,7 @@
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
             width: 50px;
@@ -362,16 +352,16 @@
         
         .section-sub {
             text-align: center;
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto 30px auto;
             color: #4a5568;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
         
@@ -386,24 +376,24 @@
         }
         
         .service-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             border-color: #e67e22;
-            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.1);
         }
         
         .service-card i {
-            font-size: 42px;
+            font-size: 38px;
             color: #e67e22;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         
         .service-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
         }
         
         .service-card p {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #6c757d;
         }
         
@@ -419,7 +409,7 @@
         .brands-title {
             color: #1e4660;
             margin-bottom: 30px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -446,7 +436,7 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
@@ -456,42 +446,41 @@
         }
         
         .brand-svg {
-            width: 120px;
-            height: 48px;
+            width: 110px;
+            height: 44px;
             transition: all 0.3s ease;
             filter: grayscale(0.2);
             opacity: 0.8;
         }
         
         .brand-item:hover .brand-svg {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             filter: grayscale(0);
             opacity: 1;
         }
         
         .brand-name {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 500;
             color: #6c757d;
-            margin-top: 5px;
+            margin-top: 4px;
         }
         
         /* Toast */
         .toast {
             position: fixed;
-            bottom: 30px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
             background: #1e4660;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 18px;
             border-radius: 40px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             z-index: 3000;
             opacity: 0;
             transition: all 0.3s;
             pointer-events: none;
-            white-space: nowrap;
         }
         
         .toast.show {
@@ -506,25 +495,25 @@
         .stats-section {
             background: #1e4660;
             color: white;
-            border-radius: 30px;
+            border-radius: 24px;
             margin: 20px 0;
         }
         
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 40px 30px;
+            gap: 15px;
+            padding: 35px 25px;
             text-align: center;
         }
         
         .stat-number {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
         }
         
         .stat-item div:last-child {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
         }
         
         /* Steps */
@@ -537,34 +526,34 @@
         
         .step {
             background: white;
-            padding: 20px;
-            border-radius: 20px;
+            padding: 18px;
+            border-radius: 18px;
             text-align: center;
             flex: 1;
-            min-width: 150px;
-            border: 2px solid #edf2f7;
+            min-width: 140px;
+            border: 1px solid #edf2f7;
             transition: all 0.3s;
             cursor: pointer;
         }
         
         .step:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             border-color: #1e4660;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
         
         .step-number {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: #1e4660;
             color: white;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            border-radius: 16px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 12px;
+            margin: 0 auto 10px;
         }
         
         .step:hover .step-number {
@@ -572,108 +561,106 @@
         }
         
         .step h4 {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 700;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             color: #1e4660;
         }
         
         .step p {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             color: #6c757d;
         }
         
         /* Calculator Invite Block */
         .calc-invite {
             background: linear-gradient(135deg, #1e4660, #2c5a6e);
-            border-radius: 25px;
+            border-radius: 24px;
             margin: 30px 0;
             transition: transform 0.3s;
         }
         
         .calc-invite:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
         
         .calc-invite-content {
-            padding: 40px 30px;
+            padding: 35px 25px;
             text-align: center;
         }
         
         .calc-invite i {
-            font-size: 40px;
+            font-size: 36px;
             color: #e67e22;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .calc-invite h2 {
             color: white;
-            font-size: 1.5rem;
-            margin-bottom: 12px;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
         }
         
         .calc-invite p {
             color: rgba(255,255,255,0.9);
-            max-width: 500px;
-            margin: 0 auto 20px;
-            font-size: 0.9rem;
+            max-width: 450px;
+            margin: 0 auto 18px;
+            font-size: 0.8rem;
         }
         
         .calc-invite-btn {
             background: #e67e22;
             color: white;
-            padding: 10px 28px;
+            padding: 8px 24px;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
-            font-size: 0.9rem;
-            transition: all 0.3s;
+            font-size: 0.8rem;
         }
         
         .calc-invite-btn:hover {
             background: #d35400;
-            transform: translateY(-2px);
         }
         
         /* Subscribe Section */
         .subscribe-section {
             background: linear-gradient(135deg, #1e4660, #2c5a6e);
             color: white;
-            border-radius: 25px;
-            padding: 40px 30px;
+            border-radius: 24px;
+            padding: 35px 25px;
             text-align: center;
             margin: 30px 0;
         }
         
         .subscribe-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
         
         .subscribe-form {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
-            max-width: 450px;
+            gap: 10px;
+            max-width: 400px;
             margin: 0 auto;
         }
         
         .subscribe-form input {
             flex: 1;
-            padding: 12px 18px;
+            padding: 10px 16px;
             border: none;
             border-radius: 40px;
-            font-size: 0.9rem;
-            min-width: 180px;
+            font-size: 0.8rem;
+            min-width: 160px;
         }
         
         .subscribe-form button {
             background: #e67e22;
             color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 10px 22px;
             border-radius: 40px;
             font-weight: bold;
             cursor: pointer;
@@ -683,37 +670,37 @@
         .cta-section {
             background: #1e4660;
             color: white;
-            border-radius: 25px;
-            padding: 40px 30px;
+            border-radius: 24px;
+            padding: 35px 25px;
             text-align: center;
         }
         
         .cta-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
         }
         
         .cta-form {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 10px;
+            margin-top: 18px;
         }
         
         .cta-form input {
-            padding: 10px 18px;
+            padding: 9px 16px;
             border-radius: 30px;
             border: none;
-            width: 220px;
-            font-size: 0.85rem;
+            width: 200px;
+            font-size: 0.8rem;
         }
         
         .cta-form button {
             background: #e67e22;
             color: white;
             border: none;
-            padding: 10px 28px;
+            padding: 9px 24px;
             border-radius: 30px;
             font-weight: bold;
             cursor: pointer;
@@ -723,7 +710,7 @@
         footer {
             background: #0a2c3b;
             color: #94a3b8;
-            padding: 40px 0 20px;
+            padding: 35px 0 20px;
             margin-top: 40px;
         }
         
@@ -731,14 +718,14 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 25px;
+            gap: 20px;
         }
         
         .footer-links a {
             color: #94a3b8;
             text-decoration: none;
             margin-right: 15px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
         }
         
         .footer-links a:hover {
@@ -747,10 +734,10 @@
         
         .copy {
             text-align: center;
-            padding-top: 20px;
-            margin-top: 20px;
+            padding-top: 18px;
+            margin-top: 18px;
             border-top: 1px solid #2c5a6e;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
         }
         
         /* Scroll Top */
@@ -758,8 +745,8 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             background: #e67e22;
             border-radius: 50%;
             display: flex;
@@ -770,7 +757,7 @@
             visibility: hidden;
             transition: all 0.3s;
             z-index: 999;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
         
         .scroll-top.show {
@@ -780,22 +767,21 @@
         
         .scroll-top:hover {
             background: #d35400;
-            transform: translateY(-3px);
         }
         
         .scroll-top i {
             color: white;
-            font-size: 18px;
+            font-size: 16px;
         }
         
         /* Marquiz стили */
         .marquiz-container .option-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 15px;
+            gap: 10px;
+            padding: 10px 12px;
             border: 2px solid #edf2f7;
-            border-radius: 14px;
+            border-radius: 12px;
             cursor: pointer;
             margin-bottom: 8px;
             transition: all 0.2s;
@@ -828,7 +814,7 @@
                 text-align: center;
             }
             
-            /* Мобильное выпадающее меню - на всю ширину */
+            /* Мобильное меню - не выпадает, а отображается статически */
             .dropdown-menu {
                 position: static;
                 width: 100%;
@@ -839,53 +825,56 @@
                 transform: none;
                 margin-top: 10px;
                 background: #f8fafc;
-                border: 1px solid #edf2f7;
-                padding: 15px;
+                padding: 12px;
             }
             
             .dropdown-grid {
                 grid-template-columns: 1fr;
-                gap: 12px;
+                gap: 8px;
             }
             
             .dropdown-card {
-                padding: 14px;
+                display: flex;
+                align-items: center;
+                text-align: left;
+                gap: 12px;
+                padding: 10px 12px;
             }
             
             .dropdown-card-icon {
-                width: 38px;
-                height: 38px;
+                margin: 0;
+                width: 32px;
+                height: 32px;
             }
             
             .dropdown-card-icon i {
-                font-size: 18px;
+                font-size: 16px;
             }
             
             .dropdown-card-title {
-                font-size: 0.9rem;
+                font-size: 0.75rem;
+                margin-bottom: 0;
             }
             
-            .dropdown-card-desc {
-                font-size: 0.65rem;
-            }
-            
-            .dropdown-card-items span {
-                font-size: 0.6rem;
-                padding: 2px 6px;
+            .dropdown-card-items {
+                margin-top: 0;
+                padding-top: 0;
+                border-top: none;
+                margin-left: auto;
             }
             
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-                padding: 30px 20px;
+                gap: 12px;
+                padding: 25px 20px;
             }
             
             .hero-content h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
             .section-title {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
         }
         
@@ -900,12 +889,12 @@
             }
             
             .brands-grid {
-                gap: 12px;
+                gap: 15px;
             }
             
             .brand-svg {
-                width: 100px;
-                height: 40px;
+                width: 90px;
+                height: 36px;
             }
             
             .steps-grid {
@@ -917,45 +906,35 @@
             }
             
             .calc-invite-content {
-                padding: 30px 20px;
+                padding: 25px 20px;
             }
             
             .calc-invite h2 {
-                font-size: 1.3rem;
-            }
-            
-            .toast {
-                white-space: normal;
-                max-width: 90%;
-                text-align: center;
+                font-size: 1.1rem;
             }
         }
         
         @media (max-width: 480px) {
-            .nav-links {
-                gap: 3px;
-            }
-            
             .nav-links > li > a {
-                padding: 6px 10px;
-                font-size: 0.75rem;
+                padding: 5px 10px;
+                font-size: 0.7rem;
             }
             
             .trust-item {
-                font-size: 0.7rem;
-                padding: 4px 10px;
+                font-size: 0.65rem;
+                padding: 3px 8px;
             }
             
             .service-card {
-                padding: 20px 15px;
+                padding: 18px 12px;
             }
             
             .service-card i {
-                font-size: 36px;
+                font-size: 32px;
             }
             
             .service-card h3 {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -971,7 +950,7 @@
             <ul class="nav-links">
                 <li><a href="#hero" class="active">Главная</a></li>
                 <li>
-                    <a href="#">Услуги <i class="fas fa-chevron-down" style="font-size: 0.65rem; margin-left: 4px;"></i></a>
+                    <a href="#">Услуги <i class="fas fa-chevron-down" style="font-size: 0.6rem; margin-left: 4px;"></i></a>
                     <div class="dropdown-menu">
                         <div class="dropdown-grid">
                             <!-- Карточка 1: Отопление -->
@@ -980,12 +959,10 @@
                                     <i class="fas fa-fire"></i>
                                 </div>
                                 <div class="dropdown-card-title">Отопление</div>
-                                <div class="dropdown-card-desc">Монтаж систем отопления любой сложности</div>
                                 <div class="dropdown-card-items">
                                     <span>Радиаторы</span>
                                     <span>Тёплый пол</span>
                                     <span>Котельные</span>
-                                    <span>Внутренние коммуникации</span>
                                 </div>
                             </div>
                             
@@ -995,12 +972,10 @@
                                     <i class="fas fa-water"></i>
                                 </div>
                                 <div class="dropdown-card-title">Водоснабжение</div>
-                                <div class="dropdown-card-desc">Водоснабжение дома, квартиры, коттеджа</div>
                                 <div class="dropdown-card-items">
                                     <span>Водонагреватели</span>
                                     <span>Водоочистка</span>
                                     <span>Насосы</span>
-                                    <span>Наружные сети</span>
                                 </div>
                             </div>
                             
@@ -1010,12 +985,10 @@
                                     <i class="fas fa-bath"></i>
                                 </div>
                                 <div class="dropdown-card-title">Сантехника</div>
-                                <div class="dropdown-card-desc">Установка и подключение сантехнического оборудования</div>
                                 <div class="dropdown-card-items">
                                     <span>Унитазы</span>
                                     <span>Раковины</span>
                                     <span>Полотенцесушители</span>
-                                    <span>Смесители</span>
                                 </div>
                             </div>
                             
@@ -1025,11 +998,9 @@
                                     <i class="fas fa-toilet"></i>
                                 </div>
                                 <div class="dropdown-card-title">Канализация</div>
-                                <div class="dropdown-card-desc">Внутренние и наружные сети водоотведения</div>
                                 <div class="dropdown-card-items">
                                     <span>Внутренние сети</span>
                                     <span>Наружные сети</span>
-                                    <span>Ливневка</span>
                                 </div>
                             </div>
                             
@@ -1039,11 +1010,9 @@
                                     <i class="fas fa-microchip"></i>
                                 </div>
                                 <div class="dropdown-card-title">Автоматика</div>
-                                <div class="dropdown-card-desc">Умный дом и системы автоматизации</div>
                                 <div class="dropdown-card-items">
                                     <span>Защита от протечек</span>
                                     <span>Управление отоплением</span>
-                                    <span>Погодозависимая автоматика</span>
                                 </div>
                             </div>
                             
@@ -1053,11 +1022,9 @@
                                     <i class="fas fa-tools"></i>
                                 </div>
                                 <div class="dropdown-card-title">Ремонт и сервис</div>
-                                <div class="dropdown-card-desc">Обслуживание и ремонт сантехнических систем</div>
                                 <div class="dropdown-card-items">
                                     <span>Диагностика</span>
                                     <span>Ремонт</span>
-                                    <span>Замена</span>
                                     <span>Обслуживание</span>
                                 </div>
                             </div>
@@ -1089,7 +1056,7 @@
             </div>
             <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
                 <div class="image-wrapper">
-                    <img src="images/orig.jpeg" alt="СтройПодряд" loading="lazy" onerror="this.src='https://via.placeholder.com/220x220?text=СтройПодряд'">
+                    <img src="images/orig.jpeg" alt="СтройПодряд" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200?text=СтройПодряд'">
                 </div>
             </div>
         </div>
@@ -1107,93 +1074,93 @@
 </div>
 
 <!-- ОПРОСНИК -->
-<section style="background: #f8fafc; padding: 50px 0;" data-aos="fade-up">
+<section style="background: #f8fafc; padding: 40px 0;" data-aos="fade-up">
     <div class="container">
-        <div style="text-align: center; margin-bottom: 25px;">
-            <h3 style="font-size: 1.5rem; color: #1e4660;">Поможем подобрать решение для вас</h3>
-            <p style="color: #666;">Ответьте на 4 вопроса и получите индивидуальное предложение</p>
+        <div style="text-align: center; margin-bottom: 20px;">
+            <h3 style="font-size: 1.3rem; color: #1e4660;">Поможем подобрать решение для вас</h3>
+            <p style="color: #666; font-size: 0.8rem;">Ответьте на 4 вопроса и получите индивидуальное предложение</p>
         </div>
         
-        <div class="marquiz-container" style="max-width:550px; margin:0 auto; background:white; border-radius:24px; box-shadow:0 10px 25px rgba(0,0,0,0.08); overflow:hidden;">
-            <div class="marquiz-step" id="step1" style="padding:30px 25px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:25px;">
-                    <div style="display:flex; gap:6px;">
-                        <span style="width:18px; height:6px; background:#e67e22; border-radius:8px;"></span>
-                        <span style="width:6px; height:6px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:6px; height:6px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:6px; height:6px; background:#ddd; border-radius:50%;"></span>
+        <div class="marquiz-container" style="max-width:500px; margin:0 auto; background:white; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.08); overflow:hidden;">
+            <div class="marquiz-step" id="step1" style="padding:25px 20px;">
+                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:20px;">
+                    <div style="display:flex; gap:5px;">
+                        <span style="width:16px; height:5px; background:#e67e22; border-radius:6px;"></span>
+                        <span style="width:5px; height:5px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:5px; height:5px; background:#ddd; border-radius:50%;"></span>
+                        <span style="width:5px; height:5px; background:#ddd; border-radius:50%;"></span>
                     </div>
-                    <span style="font-size:0.7rem; color:#999;">Шаг 1 из 4</span>
+                    <span style="font-size:0.65rem; color:#999;">Шаг 1 из 4</span>
                 </div>
-                <h3 style="font-size:1.3rem; color:#1e4660; margin-bottom:20px;">Какой объект вас интересует?</h3>
+                <h3 style="font-size:1.1rem; color:#1e4660; margin-bottom:15px;">Какой объект вас интересует?</h3>
                 <div id="optionsStep1">
                     <div class="option-item" data-value="house"><i class="fas fa-home"></i><span>Частный дом / коттедж</span></div>
                     <div class="option-item" data-value="apartment"><i class="fas fa-building"></i><span>Квартира</span></div>
                     <div class="option-item" data-value="commercial"><i class="fas fa-store"></i><span>Коммерческий объект</span></div>
                 </div>
-                <button class="next-btn" id="nextStep1" disabled style="width:100%; padding:12px; border-radius:40px; background:#e67e22; color:white; border:none; cursor:pointer; margin-top:10px;">Далее →</button>
+                <button class="next-btn" id="nextStep1" disabled style="width:100%; padding:10px; border-radius:40px; background:#e67e22; color:white; border:none; cursor:pointer; margin-top:8px;">Далее →</button>
             </div>
-            <div class="marquiz-step" id="step2" style="display:none; padding:30px 25px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:25px;">
-                    <div style="display:flex; gap:6px;">
-                        <span style="width:6px; height:6px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:18px; height:6px; background:#e67e22; border-radius:8px;"></span>
-                        <span style="width:6px; height:6px; background:#ddd; border-radius:50%;"></span>
-                        <span style="width:6px; height:6px; background:#ddd; border-radius:50%;"></span>
+            <div class="marquiz-step" id="step2" style="display:none; padding:25px 20px;">
+                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:20px;">
+                    <div style="display:flex; gap:5px;">
+                        <span style="width:5px; height:5px; background:#ddd;"></span>
+                        <span style="width:16px; height:5px; background:#e67e22; border-radius:6px;"></span>
+                        <span style="width:5px; height:5px; background:#ddd;"></span>
+                        <span style="width:5px; height:5px; background:#ddd;"></span>
                     </div>
-                    <span style="font-size:0.7rem; color:#999;">Шаг 2 из 4</span>
+                    <span style="font-size:0.65rem; color:#999;">Шаг 2 из 4</span>
                 </div>
-                <h3 style="font-size:1.3rem; color:#1e4660; margin-bottom:20px;">Когда планируете монтаж?</h3>
+                <h3 style="font-size:1.1rem; color:#1e4660; margin-bottom:15px;">Когда планируете монтаж?</h3>
                 <div id="optionsStep2">
                     <div class="option-item" data-time="now"><i class="fas fa-clock"></i><span>В ближайшее время</span></div>
                     <div class="option-item" data-time="month"><i class="fas fa-calendar-week"></i><span>В течение месяца</span></div>
                     <div class="option-item" data-time="quarter"><i class="fas fa-calendar-alt"></i><span>В течение квартала</span></div>
                 </div>
-                <div style="display:flex; gap:10px; margin-top:15px;">
-                    <button class="back-btn" id="backStep2" style="flex:1; padding:10px; border-radius:40px; background:#e2e8f0; border:none; cursor:pointer;">← Назад</button>
-                    <button class="next-btn" id="nextStep2" disabled style="flex:2; padding:10px; border-radius:40px; background:#e67e22; color:white; border:none; cursor:pointer;">Далее →</button>
+                <div style="display:flex; gap:8px; margin-top:12px;">
+                    <button class="back-btn" id="backStep2" style="flex:1; padding:8px; border-radius:40px; background:#e2e8f0; border:none; cursor:pointer;">← Назад</button>
+                    <button class="next-btn" id="nextStep2" disabled style="flex:2; padding:8px; border-radius:40px; background:#e67e22; color:white; border:none; cursor:pointer;">Далее →</button>
                 </div>
             </div>
-            <div class="marquiz-step" id="step3" style="display:none; padding:30px 25px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:25px;">
-                    <div style="display:flex; gap:6px;">
-                        <span style="width:6px; height:6px; background:#ddd;"></span>
-                        <span style="width:6px; height:6px; background:#ddd;"></span>
-                        <span style="width:18px; height:6px; background:#e67e22; border-radius:8px;"></span>
-                        <span style="width:6px; height:6px; background:#ddd;"></span>
+            <div class="marquiz-step" id="step3" style="display:none; padding:25px 20px;">
+                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:20px;">
+                    <div style="display:flex; gap:5px;">
+                        <span style="width:5px; height:5px; background:#ddd;"></span>
+                        <span style="width:5px; height:5px; background:#ddd;"></span>
+                        <span style="width:16px; height:5px; background:#e67e22; border-radius:6px;"></span>
+                        <span style="width:5px; height:5px; background:#ddd;"></span>
                     </div>
-                    <span style="font-size:0.7rem; color:#999;">Шаг 3 из 4</span>
+                    <span style="font-size:0.65rem; color:#999;">Шаг 3 из 4</span>
                 </div>
-                <h3 style="font-size:1.3rem; color:#1e4660; margin-bottom:20px;">Какой бюджет планируете?</h3>
+                <h3 style="font-size:1.1rem; color:#1e4660; margin-bottom:15px;">Какой бюджет планируете?</h3>
                 <div id="optionsStep3">
                     <div class="option-item" data-budget="50"><i class="fas fa-ruble-sign"></i><span>До 50 000 ₽</span></div>
                     <div class="option-item" data-budget="100"><i class="fas fa-ruble-sign"></i><span>50 000 - 100 000 ₽</span></div>
                     <div class="option-item" data-budget="200"><i class="fas fa-ruble-sign"></i><span>100 000 - 200 000 ₽</span></div>
                     <div class="option-item" data-budget="300"><i class="fas fa-ruble-sign"></i><span>200 000 - 300 000 ₽</span></div>
                 </div>
-                <div style="display:flex; gap:10px; margin-top:15px;">
-                    <button class="back-btn" id="backStep3" style="flex:1; padding:10px; border-radius:40px; background:#e2e8f0; border:none;">← Назад</button>
-                    <button class="next-btn" id="nextStep3" disabled style="flex:2; padding:10px; border-radius:40px; background:#e67e22; color:white; border:none;">Далее →</button>
+                <div style="display:flex; gap:8px; margin-top:12px;">
+                    <button class="back-btn" id="backStep3" style="flex:1; padding:8px; border-radius:40px; background:#e2e8f0; border:none;">← Назад</button>
+                    <button class="next-btn" id="nextStep3" disabled style="flex:2; padding:8px; border-radius:40px; background:#e67e22; color:white; border:none;">Далее →</button>
                 </div>
             </div>
-            <div class="marquiz-step" id="step4" style="display:none; padding:30px 25px;">
-                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:25px;">
-                    <div style="display:flex; gap:6px;">
-                        <span style="width:6px; height:6px; background:#ddd;"></span>
-                        <span style="width:6px; height:6px; background:#ddd;"></span>
-                        <span style="width:6px; height:6px; background:#ddd;"></span>
-                        <span style="width:18px; height:6px; background:#e67e22; border-radius:8px;"></span>
+            <div class="marquiz-step" id="step4" style="display:none; padding:25px 20px;">
+                <div class="step-progress" style="display:flex; justify-content:space-between; margin-bottom:20px;">
+                    <div style="display:flex; gap:5px;">
+                        <span style="width:5px; height:5px; background:#ddd;"></span>
+                        <span style="width:5px; height:5px; background:#ddd;"></span>
+                        <span style="width:5px; height:5px; background:#ddd;"></span>
+                        <span style="width:16px; height:5px; background:#e67e22; border-radius:6px;"></span>
                     </div>
-                    <span style="font-size:0.7rem; color:#999;">Шаг 4 из 4</span>
+                    <span style="font-size:0.65rem; color:#999;">Шаг 4 из 4</span>
                 </div>
-                <h3 style="font-size:1.3rem; color:#1e4660; margin-bottom:20px;">Оставьте контакты</h3>
-                <p style="color:#666; margin-bottom:20px;">Мы перезвоним в удобное время</p>
+                <h3 style="font-size:1.1rem; color:#1e4660; margin-bottom:15px;">Оставьте контакты</h3>
+                <p style="color:#666; margin-bottom:15px; font-size:0.75rem;">Мы перезвоним в удобное время</p>
                 <form id="marquizForm">
-                    <input type="text" id="marquizName" placeholder="Ваше имя" style="width:100%; padding:12px; margin-bottom:12px; border:1px solid #ddd; border-radius:12px;">
-                    <input type="tel" id="marquizPhone" placeholder="+7 (___) ___-__-__" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:12px;">
-                    <div style="display:flex; gap:10px;">
-                        <button type="button" class="back-btn" id="backStep4" style="flex:1; padding:10px; border-radius:40px; background:#e2e8f0; border:none;">← Назад</button>
-                        <button type="submit" class="submit-btn" style="flex:2; padding:10px; border-radius:40px; background:#e67e22; color:white; border:none;">Закажите звонок!</button>
+                    <input type="text" id="marquizName" placeholder="Ваше имя" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd; border-radius:10px;">
+                    <input type="tel" id="marquizPhone" placeholder="+7 (___) ___-__-__" style="width:100%; padding:10px; margin-bottom:12px; border:1px solid #ddd; border-radius:10px;">
+                    <div style="display:flex; gap:8px;">
+                        <button type="button" class="back-btn" id="backStep4" style="flex:1; padding:8px; border-radius:40px; background:#e2e8f0; border:none;">← Назад</button>
+                        <button type="submit" class="submit-btn" style="flex:2; padding:8px; border-radius:40px; background:#e67e22; color:white; border:none;">Закажите звонок!</button>
                     </div>
                 </form>
             </div>
@@ -1218,12 +1185,12 @@
     <div class="container">
         <div class="brands-title">Доверяют профессионалам</div>
         <div class="brands-grid">
-            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#0066B3" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="18" font-weight="bold">VIESSMANN</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="9">since 1917</text></svg><div class="brand-name">Viessmann</div></div>
-            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#ED1C24" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">BAXI</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="9">heating</text></svg><div class="brand-name">Baxi</div></div>
-            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#003366" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="18" font-weight="bold">VAILLANT</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="9">group</text></svg><div class="brand-name">Vaillant</div></div>
-            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#0047AB" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">BOSCH</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="9">invented for life</text></svg><div class="brand-name">Bosch</div></div>
-            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#0077B6" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="18" font-weight="bold">GRUNDFOS</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="9">pumping solutions</text></svg><div class="brand-name">Grundfos</div></div>
-            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 200 80"><rect width="200" height="80" fill="#00A651" rx="8"/><text x="100" y="48" text-anchor="middle" fill="white" font-size="20" font-weight="bold">UPONOR</text><text x="100" y="68" text-anchor="middle" fill="white" font-size="9">water solutions</text></svg><div class="brand-name">Uponor</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 180 70"><rect width="180" height="70" fill="#0066B3" rx="8"/><text x="90" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">VIESSMANN</text><text x="90" y="58" text-anchor="middle" fill="white" font-size="8">since 1917</text></svg><div class="brand-name">Viessmann</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 180 70"><rect width="180" height="70" fill="#ED1C24" rx="8"/><text x="90" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold">BAXI</text><text x="90" y="58" text-anchor="middle" fill="white" font-size="8">heating</text></svg><div class="brand-name">Baxi</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 180 70"><rect width="180" height="70" fill="#003366" rx="8"/><text x="90" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">VAILLANT</text><text x="90" y="58" text-anchor="middle" fill="white" font-size="8">group</text></svg><div class="brand-name">Vaillant</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 180 70"><rect width="180" height="70" fill="#0047AB" rx="8"/><text x="90" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold">BOSCH</text><text x="90" y="58" text-anchor="middle" fill="white" font-size="8">invented for life</text></svg><div class="brand-name">Bosch</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 180 70"><rect width="180" height="70" fill="#0077B6" rx="8"/><text x="90" y="42" text-anchor="middle" fill="white" font-size="16" font-weight="bold">GRUNDFOS</text><text x="90" y="58" text-anchor="middle" fill="white" font-size="8">pumping solutions</text></svg><div class="brand-name">Grundfos</div></div>
+            <div class="brand-item"><svg class="brand-svg" viewBox="0 0 180 70"><rect width="180" height="70" fill="#00A651" rx="8"/><text x="90" y="42" text-anchor="middle" fill="white" font-size="18" font-weight="bold">UPONOR</text><text x="90" y="58" text-anchor="middle" fill="white" font-size="8">water solutions</text></svg><div class="brand-name">Uponor</div></div>
         </div>
     </div>
 </div>
@@ -1274,7 +1241,7 @@
                 <input type="text" id="callbackObject" placeholder="Тип объекта">
                 <button type="submit">Отправить</button>
             </form>
-            <p style="margin-top: 12px; font-size: 0.75rem;"><i class="fas fa-lock"></i> Ваши данные защищены</p>
+            <p style="margin-top: 10px; font-size: 0.65rem;"><i class="fas fa-lock"></i> Ваши данные защищены</p>
         </div>
     </div>
 </section>
@@ -1283,8 +1250,8 @@
     <div class="container">
         <div class="footer-content">
             <div>
-                <div class="logo" style="font-size: 1.2rem; color: white;">Строй<span style="color:#e67e22;">Подряд</span></div>
-                <p style="font-size: 0.7rem;">Профессиональный сантехмонтаж под ключ</p>
+                <div class="logo" style="font-size: 1.1rem; color: white;">Строй<span style="color:#e67e22;">Подряд</span></div>
+                <p style="font-size: 0.65rem;">Профессиональный сантехмонтаж</p>
             </div>
             <div class="footer-links">
                 <a href="#hero">Главная</a>
@@ -1293,9 +1260,8 @@
                 <a href="#zakaz">Контакты</a>
             </div>
             <div>
-                <p style="font-size: 0.7rem;"><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
-                <p style="font-size: 0.7rem;"><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8;">stroypodryad50@ya.ru</a></p>
-                <p style="font-size: 0.7rem;"><i class="fas fa-map-marker-alt"></i> Москва и МО</p>
+                <p style="font-size: 0.65rem;"><i class="fas fa-phone"></i> <a href="tel:+79773252728" style="color:#94a3b8;">+7 (977) 325-27-28</a></p>
+                <p style="font-size: 0.65rem;"><i class="fas fa-envelope"></i> <a href="mailto:stroypodryad50@ya.ru" style="color:#94a3b8;">stroypodryad50@ya.ru</a></p>
             </div>
         </div>
         <div class="copy">© 2025 СтройПодряд. Все права защищены.</div>
@@ -1307,13 +1273,13 @@
 </div>
 
 <script>
-AOS.init({ once: true, duration: 600, offset: 80 });
+AOS.init({ once: true, duration: 500, offset: 60 });
 
 function showToast(msg, type = 'info') {
     const toast = document.getElementById('toast');
     toast.textContent = msg;
     toast.className = `toast ${type} show`;
-    setTimeout(() => toast.classList.remove('show'), 3000);
+    setTimeout(() => toast.classList.remove('show'), 2500);
 }
 
 function setPhoneMask(input) {
@@ -1336,7 +1302,7 @@ function validatePhone(p) { return p.replace(/\D/g, '').length === 11; }
 // Scroll Top
 const scrollBtn = document.getElementById('scrollTop');
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) scrollBtn.classList.add('show');
+    if (window.scrollY > 250) scrollBtn.classList.add('show');
     else scrollBtn.classList.remove('show');
 });
 scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
