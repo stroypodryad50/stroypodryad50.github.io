@@ -110,21 +110,21 @@
             background: #fef5e8;
         }
         
-        /* Выпадающее меню */
+        /* Выпадающее меню - квадратное/плиточное (как на скриншоте) */
         .dropdown-menu {
             position: absolute;
             top: 100%;
             left: 0;
             background: white;
-            min-width: 260px;
-            border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            width: 560px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
             opacity: 0;
             visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.25s ease;
+            transform: translateY(-15px);
+            transition: all 0.3s ease;
             z-index: 1000;
-            padding: 10px 0;
+            padding: 20px;
             border: 1px solid #edf2f7;
         }
         
@@ -134,44 +134,77 @@
             transform: translateY(0);
         }
         
-        .dropdown-category {
-            padding: 8px 16px;
+        /* Сетка меню - 2 колонки */
+        .dropdown-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
         }
         
-        .dropdown-category-title {
-            font-size: 0.8rem;
+        .dropdown-card {
+            background: #fefaf5;
+            border-radius: 16px;
+            padding: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .dropdown-card:hover {
+            background: #fff5e8;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        
+        .dropdown-card-icon {
+            width: 44px;
+            height: 44px;
+            background: #e67e22;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+        
+        .dropdown-card-icon i {
+            font-size: 22px;
+            color: white;
+        }
+        
+        .dropdown-card-title {
             font-weight: 700;
+            font-size: 1rem;
+            color: #1e4660;
+            margin-bottom: 6px;
+        }
+        
+        .dropdown-card-desc {
+            font-size: 0.75rem;
+            color: #6c757d;
+            line-height: 1.4;
+        }
+        
+        .dropdown-card-items {
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid #edf2f7;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .dropdown-card-items span {
+            font-size: 0.7rem;
             color: #e67e22;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #edf2f7;
-        }
-        
-        .dropdown-category ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .dropdown-category ul li {
-            margin-bottom: 5px;
-        }
-        
-        .dropdown-category ul li a {
-            text-decoration: none;
-            color: #4a5568;
-            font-size: 0.85rem;
-            padding: 6px 0 6px 8px;
-            display: block;
+            background: white;
+            padding: 3px 10px;
+            border-radius: 20px;
             transition: all 0.2s;
-            border-radius: 8px;
         }
         
-        .dropdown-category ul li a:hover {
-            color: #e67e22;
-            background: #fef5e8;
-            transform: translateX(5px);
+        .dropdown-card-items span:hover {
+            background: #e67e22;
+            color: white;
         }
         
         .header-phone {
@@ -455,69 +488,6 @@
         .toast.error { background: #e74c3c; }
         .toast.success { background: #27ae60; }
         
-        /* Price Table */
-        .price-table-wrapper {
-            background: white;
-            border-radius: 24px;
-            overflow-x: auto;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-top: 10px;
-        }
-        
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 600px;
-        }
-        
-        .price-table th {
-            background: #1e4660;
-            color: white;
-            padding: 15px 20px;
-            text-align: left;
-        }
-        
-        .price-table td {
-            padding: 12px 20px;
-            border-bottom: 1px solid #edf2f7;
-        }
-        
-        .price-table .total-row {
-            background: #fef5e8;
-            font-weight: bold;
-        }
-        
-        .price-total {
-            font-size: 1.3rem;
-            color: #e67e22;
-        }
-        
-        /* Tab Buttons */
-        .tab-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .tab-btn {
-            background: transparent;
-            border: 2px solid #1e4660;
-            color: #1e4660;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .tab-btn:hover, .tab-btn.active {
-            background: #1e4660;
-            color: white;
-        }
-        
         /* Stats */
         .stats-section {
             background: #1e4660;
@@ -800,15 +770,16 @@
             }
             .dropdown-menu {
                 position: static;
+                width: 100%;
                 box-shadow: none;
                 opacity: 1;
                 visibility: visible;
                 transform: none;
-                padding-left: 20px;
-                background: transparent;
+                margin-top: 10px;
+                background: #f8fafc;
             }
-            .nav-links > li:hover .dropdown-menu {
-                transform: none;
+            .dropdown-grid {
+                grid-template-columns: 1fr;
             }
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -850,46 +821,98 @@
                 <li>
                     <a href="#">Услуги <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                     <div class="dropdown-menu">
-                        <div class="dropdown-category">
-                            <div class="dropdown-category-title"><i class="fas fa-fire"></i> Отопление</div>
-                            <ul>
-                                <li><a href="#">Монтаж радиаторов</a></li>
-                                <li><a href="#">Тёплый пол</a></li>
-                                <li><a href="#">Монтаж котельной</a></li>
-                                <li><a href="#">Внутренние коммуникации</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown-category">
-                            <div class="dropdown-category-title"><i class="fas fa-water"></i> Водоснабжение</div>
-                            <ul>
-                                <li><a href="#">Монтаж водонагревателя</a></li>
-                                <li><a href="#">Монтаж системы водоочистки</a></li>
-                                <li><a href="#">Установка насоса</a></li>
-                                <li><a href="#">Наружные коммуникации</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown-category">
-                            <div class="dropdown-category-title"><i class="fas fa-bath"></i> Сантехника</div>
-                            <ul>
-                                <li><a href="#">Установка унитаза</a></li>
-                                <li><a href="#">Установка раковины</a></li>
-                                <li><a href="#">Установка полотенцесушителя</a></li>
-                                <li><a href="#">Монтаж конечной сантехники</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown-category">
-                            <div class="dropdown-category-title"><i class="fas fa-microchip"></i> Автоматика</div>
-                            <ul>
-                                <li><a href="#">Умный дом для сантехники</a></li>
-                                <li><a href="#">Системы защиты от протечек</a></li>
-                                <li><a href="#">Автоматическое управление отоплением</a></li>
-                                <li><a href="#">Погодозависимая автоматика</a></li>
-                            </ul>
+                        <div class="dropdown-grid">
+                            <!-- Карточка 1: Отопление -->
+                            <div class="dropdown-card">
+                                <div class="dropdown-card-icon">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="dropdown-card-title">Отопление</div>
+                                <div class="dropdown-card-desc">Монтаж систем отопления любой сложности</div>
+                                <div class="dropdown-card-items">
+                                    <span>Радиаторы</span>
+                                    <span>Тёплый пол</span>
+                                    <span>Котельные</span>
+                                    <span>Внутренние коммуникации</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Карточка 2: Водоснабжение -->
+                            <div class="dropdown-card">
+                                <div class="dropdown-card-icon">
+                                    <i class="fas fa-water"></i>
+                                </div>
+                                <div class="dropdown-card-title">Водоснабжение</div>
+                                <div class="dropdown-card-desc">Водоснабжение дома, квартиры, коттеджа</div>
+                                <div class="dropdown-card-items">
+                                    <span>Водонагреватели</span>
+                                    <span>Водоочистка</span>
+                                    <span>Насосы</span>
+                                    <span>Наружные сети</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Карточка 3: Сантехника -->
+                            <div class="dropdown-card">
+                                <div class="dropdown-card-icon">
+                                    <i class="fas fa-bath"></i>
+                                </div>
+                                <div class="dropdown-card-title">Сантехника</div>
+                                <div class="dropdown-card-desc">Установка и подключение сантехнического оборудования</div>
+                                <div class="dropdown-card-items">
+                                    <span>Унитазы</span>
+                                    <span>Раковины</span>
+                                    <span>Полотенцесушители</span>
+                                    <span>Смесители</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Карточка 4: Канализация -->
+                            <div class="dropdown-card">
+                                <div class="dropdown-card-icon">
+                                    <i class="fas fa-toilet"></i>
+                                </div>
+                                <div class="dropdown-card-title">Канализация</div>
+                                <div class="dropdown-card-desc">Внутренние и наружные сети водоотведения</div>
+                                <div class="dropdown-card-items">
+                                    <span>Внутренние сети</span>
+                                    <span>Наружные сети</span>
+                                    <span>Ливневка</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Карточка 5: Автоматика -->
+                            <div class="dropdown-card">
+                                <div class="dropdown-card-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div class="dropdown-card-title">Автоматика</div>
+                                <div class="dropdown-card-desc">Умный дом и системы автоматизации</div>
+                                <div class="dropdown-card-items">
+                                    <span>Защита от протечек</span>
+                                    <span>Управление отоплением</span>
+                                    <span>Погодозависимая автоматика</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Карточка 6: Ремонт -->
+                            <div class="dropdown-card">
+                                <div class="dropdown-card-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="dropdown-card-title">Ремонт и сервис</div>
+                                <div class="dropdown-card-desc">Обслуживание и ремонт сантехнических систем</div>
+                                <div class="dropdown-card-items">
+                                    <span>Диагностика</span>
+                                    <span>Ремонт</span>
+                                    <span>Замена</span>
+                                    <span>Обслуживание</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </li>
                 <li><a href="calculators.html">Калькуляторы</a></li>
-                <li><a href="#prices">Цены</a></li>
                 <li><a href="#zakaz">Контакты</a></li>
             </ul>
             <a href="tel:+79773252728" class="header-phone"><i class="fas fa-phone-alt"></i> +7 (977) 325-27-28</a>
@@ -1053,46 +1076,6 @@
     </div>
 </div>
 
-<section id="prices" style="background: #f8fafc;">
-    <div class="container">
-        <h2 class="section-title">Примеры расчетов</h2>
-        <div class="section-sub">Актуальные цены на монтажные работы</div>
-        
-        <div class="tab-buttons">
-            <button class="tab-btn active" data-tab="warmfloor">🌡 Теплый пол (40 м²)</button>
-            <button class="tab-btn" data-tab="radiator">🔥 Радиаторное отопление (150 м²)</button>
-        </div>
-        
-        <div class="price-table-wrapper" id="warmfloorTab">
-            <table class="price-table">
-                <thead>2长<th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
-                <tbody>
-                    60f<strong>Труба ⌀16 в изоляции</strong>60fпрокладка трассы60f150 п.м.60f<strong>54 000 ₽</strong>60f
-                    <tr><strong>Труба ⌀20 в изоляции</strong><td>прокладка трассы<td>50 п.м.<td><strong>21 000 ₽</strong></tr>
-                    <tr><strong>Коллектор распределительный</strong><td>сборка, монтаж<td>6 компл.<td><strong>43 200 ₽</strong></tr>
-                    <tr><strong>Расходные материалы</strong><td>комплект<td>1 компл.<td><strong>2 500 ₽</strong></tr>
-                </tbody>
-                <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (теплый пол):<td class="price-total"><strong>215 500 ₽</strong></tr></tfoot>
-            </table>
-        </div>
-        
-        <div class="price-table-wrapper" id="radiatorTab" style="display: none;">
-            <table class="price-table">
-                <thead>2长<th>Оборудование</th><th>Тип услуги</th><th>Кол-во</th><th>Стоимость</th> </thead>
-                <tbody>
-                    <tr><strong>Коллектор системы отопления</strong><td>монтаж и подключение<td>2 ед.<td><strong>19 200 ₽</strong></tr>
-                    <tr><strong>Радиатор отопления</strong><td>монтаж и подключение<td>10 ед.<td><strong>78 000 ₽</strong></tr>
-                    <tr><strong>Труба ⌀16 в изоляции</strong><td>прокладка трассы<td>200 м.п.<td><strong>84 000 ₽</strong></tr>
-                    <tr><strong>Расходные материалы</strong><td>комплект<td>1 компл.<td><strong>3 500 ₽</strong></tr>
-                </tbody>
-                <tfoot><tr class="total-row"><td colspan="3" style="text-align: right;">ИТОГО (радиаторное отопление):<td class="price-total"><strong>244 250 ₽</strong></tr></tfoot>
-            </table>
-        </div>
-        
-        <p style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: #666;"><i class="fas fa-calculator"></i> *Окончательная стоимость зависит от сложности работ и выбранного оборудования</p>
-    </div>
-</section>
-
 <div class="container">
     <div class="stats-section">
         <div class="stats-grid">
@@ -1155,7 +1138,6 @@
                 <a href="#hero">Главная</a>
                 <a href="#">Услуги</a>
                 <a href="calculators.html">Калькуляторы</a>
-                <a href="#prices">Цены</a>
                 <a href="#zakaz">Контакты</a>
             </div>
             <div>
@@ -1277,25 +1259,7 @@ document.getElementById('subscribeForm').addEventListener('submit', function(e) 
 
 // Клик по карточкам услуг
 document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('click', () => document.getElementById('prices').scrollIntoView({ behavior: 'smooth' }));
-});
-
-// Вкладки таблиц цен
-const priceTabs = document.querySelectorAll('.tab-buttons .tab-btn');
-const warmfloorTab = document.getElementById('warmfloorTab');
-const radiatorTab = document.getElementById('radiatorTab');
-priceTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        priceTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        if (tab.dataset.tab === 'warmfloor') {
-            warmfloorTab.style.display = 'block';
-            radiatorTab.style.display = 'none';
-        } else {
-            warmfloorTab.style.display = 'none';
-            radiatorTab.style.display = 'block';
-        }
-    });
+    card.addEventListener('click', () => document.getElementById('zakaz').scrollIntoView({ behavior: 'smooth' }));
 });
 </script>
 </body>
